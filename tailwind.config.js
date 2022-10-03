@@ -1,0 +1,21 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "image" : "url('/assets/bg-image-delegates.jpg')"
+      }
+    },
+    colors: {
+      'magenta-light':'#AB0048',
+      'magenta-dark':'#65002A',
+      'yellow-light':'#FFFDE8',
+      'yellow-dark':'#FDBD55'
+    },
+  },
+  plugins: [],
+}
