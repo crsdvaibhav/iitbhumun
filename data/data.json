@@ -1,0 +1,21 @@
+{
+    "title" : "IIT BHU MUN",
+    "body": "Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit.Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit.Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit.",
+    "reviews" : [
+        {
+            "name" : "Random name",
+            "country": "India",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
+        },
+        {
+            "name" : "Random name",
+            "country": "India",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
+        },
+        {
+            "name" : "Random name",
+            "country": "India",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
+        }
+    ]
+}
