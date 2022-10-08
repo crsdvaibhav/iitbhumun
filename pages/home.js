@@ -23,8 +23,11 @@ export default function Home() {
         <div className='text-center my-4 mx-12 p-4 sm:p-8 sm:text-xl'>
             {data.body}
         </div>
+        <div className='h-[30vh] bg-magenta-dark shadow-2xl shadow-magenta-light/50'>
+          <p className='text-yellow-light text-2xl text-center font-bold p-2'>Sponsors</p>
+        </div>
         <div>
-          <p className='text-2xl sm:text-3xl text-magenta-light text-center font-bold'>About Us</p>
+          <p className='text-2xl sm:text-3xl text-magenta-light text-center font-bold mt-12'>About Us</p>
           <p className='text-center mx-12 sm:p-8 p-4'>{data.body}</p>
         </div>
         <div>
@@ -33,6 +36,7 @@ export default function Home() {
             {data.reviews.map((i)=>{
               return (
                   <ReviewCard
+                    key = {i.id}
                     name = {i.name}
                     country = {i.country}
                     review = {i.review}
@@ -76,22 +80,24 @@ export default function Home() {
                   </div>
                   <div className='m-2'>
                     <p className='text-magenta-light text-xl font-bold my-2'>Follow us</p>
-                    <span className='mr-4'>Home</span>
-                    <span className='border-x-[2px] border-magenta-dark px-4'>FAQ</span>
-                    <span className='mx-4'>About us</span>
+                    <span className='mr-4'><img src='/images/ig.png' className='w-4 inline'></img></span>
+                    <span className='border-x-[2px] border-magenta-dark px-4'><img src='/images/linkedin.png' className='w-4 inline'></img></span>
+                    <span className='mx-4'><img src='/images/twitter.png' className='w-4 inline'></img></span>
                   </div>
                 </div>
                 <div className='w-1/4 flex flex-col justify-center'>
                   <div className='text-magenta-light text-xl font-bold my-2 text-left'>Contact</div>
                   <div>
-                    <div className='py-2'>+91 8645951255</div>
-                    <div className='py-2'>name@itbhu.ac.in</div>
-                    <div className='py-2'>IIT BHU, Varanasi</div>
+                    <div className='py-2'><img src="/images/phone.png" className='w-8 inline px-2'></img>+91 8645951255</div>
+                    <div className='py-2'><img src="/images/mail.png" className='w-8 inline px-2'></img>name@itbhu.ac.in</div>
+                    <div className='py-2'><img src="/images/location.png" className='w-8 inline px-2'></img>IIT BHU, Varanasi</div>
                   </div>
                 </div>
               </div>
-              <div className='p-2 text-center text-xs'>
-                All rights reserved.Privacy.Terms & Conditons
+              <div className='p-2 text-center text-xs flex justify-center'>
+                <span className='p-2'>All rights reserved</span>
+                <span className='p-2'>Privacy</span>
+                <span className='p-2'>Terms & Conditons</span>
               </div>
             </div>
         </div>
