@@ -6,15 +6,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderStyle: ['hover'],
       backgroundImage: {
-        "image" : "url('/assets/bg-image-delegates.jpg')"
+        "image": "url('/assets/bg-image-delegates.jpg')"
       }
     },
     colors: {
-      'magenta-light':'#AB0048',
-      'magenta-dark':'#65002A',
-      'yellow-light':'#FFFDE8',
-      'yellow-dark':'#FDBD55'
+      'magenta-light': '#AB0048',
+      'magenta-dark': '#65002A',
+      'yellow-light': '#FFFDE8',
+      'yellow-dark': '#FDBD55'
     },
   },
   plugins: [],
