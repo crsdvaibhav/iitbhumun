@@ -14,12 +14,5 @@ module.exports = {
         'custom':['"Inter"']
       }
     },
-    colors: {
-      'magenta-light': '#AB0048',
-      'magenta-dark': '#65002A',
-      'yellow-light': '#FFFDE8',
-      'yellow-dark': '#FDBD55'
-    },
   },
-  plugins: [],
 }
