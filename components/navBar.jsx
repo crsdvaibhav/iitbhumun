@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function navBar() {
   return (
     <div>
@@ -12,7 +14,7 @@ export default function navBar() {
                     smooth="true"
                     className="  m-2 py-[5px] px-2 rounded-md text-yellow-light sm:text-xl "
                   >
-                    Home
+                    <Link href="/">Home</Link>
                   </div>
                   <div
                     smooth="true"
@@ -24,11 +26,11 @@ export default function navBar() {
                     smooth="true"
                     className="  m-2 py-[5px] px-2 rounded-md text-yellow-light  sm:text-xl "
                   >
-                    Gallery
+                    <Link href="/gallery">Gallery</Link>
                   </div>
                   <div>
                     <button className="bg-yellow-dark  m-2 py-[5px] px-2 rounded-md text-magenta-dark sm:text-xl font-bold">
-                      Register
+                      <Link href="/register">Register</Link>
                     </button>
                   </div>
                 </div>

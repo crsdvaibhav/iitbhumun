@@ -3,6 +3,7 @@ import ReviewCard from '../components/reviewCard'
 import NavBar from '../components/navBar'
 import ActiveNavbar from '../components/ActiveNavbar';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -26,7 +27,13 @@ export default function Home() {
           <div className="flex flex-col justify-center items-center h-[100%] brightness-100">
             <img src="/images/logo.png" className="sm:w-1/2 w-3/4 mt-12"></img>
             <div className="flex my-12 p-2">
-              <div><button className="bg-yellow-dark  m-2 py-[5px] px-2 rounded-md text-magenta-dark sm:text-xl font-bold">Register</button></div>
+
+              <div>
+                <Link href="/register">
+                  <button className="bg-yellow-dark  m-2 py-[5px] px-2 rounded-md text-magenta-dark sm:text-xl font-bold">Register</button>
+                </Link>
+
+              </div>
               <div><button className="border-[2px] border-white text-white text-yellow-light sm:text-xl font-bold sm:w-36 w-28 m-2 py-[3px] rounded-md">About us</button></div>
             </div>
           </div>
