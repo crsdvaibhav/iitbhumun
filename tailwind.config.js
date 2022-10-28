@@ -11,7 +11,8 @@ module.exports = {
         "image": "url('/assets/bg-image-delegates.jpg')"
       },
       fontFamily:{
-        'custom':['"Inter"']
+        'custom':['"Inter"'],
+        'heading':['"Montserrat"']
       }
     },
   },
