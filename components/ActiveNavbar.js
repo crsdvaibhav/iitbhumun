@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ActiveNavbar() {
   return (
-    <div className="sticky top-0 z-40 w-full bg-[#F1F1F1] h-[90px] shadow-lg shadow-black">
+    <div className="sticky top-0 z-40 w-full bg-[#F1F1F1] h-[90px] shadow-xl shadow-[#F1F1F1]/50">
       <div className="flex justify-between">
         <div className="pl-[70px] py-[11px]">
           <Image
