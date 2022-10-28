@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import data from '../data/data.json'
 import ReviewCard from '../components/reviewCard'
 import NavBar from '../components/navBar'
@@ -5,22 +6,30 @@ import ActiveNavbar from '../components/ActiveNavbar';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+=======
+import data from "../data/data.json";
+import NavBar from "../components/Navbar";
+import ActiveNavbar from "../components/ActiveNavbar";
+import Main from "../components/Main";
+import { useState, useEffect } from "react";
+import Hero from "../components/Hero";
+>>>>>>> 2b78e0fc8f040f590a25b93f5530f8011b4abbf6
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
   const changeNavbar = () => {
-    if (window.scrollY >= 800) {
-      setNavbar(true)
+    if (window.scrollY >= 50) {
+      setNavbar(true);
     } else {
       setNavbar(false);
     }
-  }
+  };
   useEffect(() => {
-    window.addEventListener('scroll', changeNavbar);
-  }, [])
+    window.addEventListener("scroll", changeNavbar);
+  }, []);
   return (
-
     <>
+<<<<<<< HEAD
       {navbar ? <ActiveNavbar className="transition-all" /> : <NavBar />}
       <div className="bg-yellow-light">
         <div className="bg-[url('../public/images/bg-image-delegates(1).jpg')] bg-cover sm:h-[85vh] h-[75vh] shadow-magenta-light/30 shadow-xl">
@@ -127,6 +136,11 @@ export default function Home() {
           </div>
         </div>
       </div>
+=======
+      {navbar ? <ActiveNavbar /> : <NavBar />}
+      <Hero/>
+      <Main/>
+>>>>>>> 2b78e0fc8f040f590a25b93f5530f8011b4abbf6
     </>
   );
 }
