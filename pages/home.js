@@ -1,9 +1,9 @@
-import data from "../data/data.json";
+import { useState, useEffect } from "react";
 import NavBar from "../components/Navbar";
 import ActiveNavbar from "../components/ActiveNavbar";
 import Main from "../components/Main";
-import { useState, useEffect } from "react";
 import Hero from "../components/Hero";
+import Footer from "../components/Footer"
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
@@ -17,11 +17,13 @@ export default function Home() {
   useEffect(() => {
     window.addEventListener("scroll", changeNavbar);
   }, []);
+  
   return (
-    <>
+    <div className="bg-[#F5F5F5]">
       {navbar ? <ActiveNavbar /> : <NavBar />}
       <Hero/>
       <Main/>
-    </>
+      <Footer/>
+    </div>
   );
 }
