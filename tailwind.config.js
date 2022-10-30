@@ -6,14 +6,22 @@ module.exports = {
   ],
   theme: {
     extend: {
-      borderStyle: ['hover'],
       backgroundImage: {
         "image": "url('/assets/bg-image-delegates.jpg')"
       },
+<<<<<<< HEAD
+      backgroundImage_register: {
+        "image": "url('/assets/BG 1.svg')"
+      }
+    }
+  },
+  plugins: []
+=======
       fontFamily:{
         'custom':['"Inter"'],
         'heading':['"Montserrat"']
       }
     },
   },
+>>>>>>> 2b78e0fc8f040f590a25b93f5530f8011b4abbf6
 }
