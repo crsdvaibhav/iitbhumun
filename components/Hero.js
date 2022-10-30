@@ -10,6 +10,7 @@ export default function Hero() {
                     width={1920}
                     height={1080}
                     layout="responsive"
+                    alt="hero images"
                 />
             </div>
             <div className="row-span-full col-span-full">
@@ -18,6 +19,7 @@ export default function Hero() {
                     width={1920}
                     height={1080}
                     layout="responsive"
+                    alt="hero images"
                 />
             </div>
             <div className="row-span-full col-span-full self-center text-center">
@@ -25,6 +27,7 @@ export default function Hero() {
                     src="/images/hero-logo.svg"
                     width={688.71}
                     height={284}
+                    alt="hero images"
                 />
             </div>
             <div className="row-span-full col-span-full self-end text-center pb-4">
@@ -32,6 +35,7 @@ export default function Hero() {
                     src="/images/hero-scroll.svg"
                     width={33.95}
                     height={64.61}
+                    alt="hero images"
                 />
             </div>
         </div>
@@ -42,6 +46,7 @@ export default function Hero() {
                     width={1079}
                     height={2318}
                     layout="responsive"
+                    alt="hero images"
                 />
             </div>
             <div className="row-span-full col-span-full">
@@ -50,6 +55,7 @@ export default function Hero() {
                     width={1079}
                     height={2318}
                     layout="responsive"
+                    alt="hero images"
                 />
             </div>
             <div className="row-span-full col-span-full self-center text-center">
@@ -57,6 +63,7 @@ export default function Hero() {
                     src="/images/hero-logo.svg"
                     width={812}
                     height={334.84}
+                    alt="hero images"
                 />
             </div>
             <div className="row-span-full col-span-full self-end text-center pb-4">
@@ -64,6 +71,7 @@ export default function Hero() {
                     src="/images/hero-scroll.svg"
                     width={33.95}
                     height={64.61}
+                    alt="hero images"
                 />
             </div>
         </div>

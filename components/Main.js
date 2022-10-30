@@ -19,15 +19,15 @@ export default function Main(){
                 </p>
                 <div className="sm:flex justify-center mt-[60px] hidden">
                     <div className="mr-[62.5px] sm:mx-[121px] flex flex-col items-center">
-                        <Image src="/images/legacy-circles.svg" width={230} height={230}/>
+                        <Image src="/images/legacy-circles.svg" width={230} height={230} alt="legacy"/>
                         <span className="mt-[4px] text-[28px] sm:text-[20px] font-custom text-[#189BA5] sm:font-medium font-semibold">Delegates</span>
                     </div>
                     <div className="mx-[62.5px] sm:mx-[121px] flex flex-col items-center">
-                        <Image src="/images/legacy-circles.svg" width={230} height={230}/>
+                        <Image src="/images/legacy-circles.svg" width={230} height={230} alt="legacy"/>
                         <span className="mt-[4px] text-[28px] sm:text-[20px] font-custom text-[#189BA5] sm:font-medium font-semibold">Countries</span>
                     </div>
                     <div className="ml-[62.5px] sm:mx-[121px] flex flex-col items-center">
-                        <Image src="/images/legacy-circles.svg" width={230} height={230}/>
+                        <Image src="/images/legacy-circles.svg" width={230} height={230} alt="legacy"/>
                         <span className="mt-[4px] text-[28px] sm:text-[20px] font-custom text-[#189BA5] sm:font-medium font-semibold">Conferences</span>
                     </div>
                 </div>
@@ -72,20 +72,20 @@ export default function Main(){
                 </p>
                 <div className="mt-[60px] sm:flex justify-center hidden">
                     <div className="flex flex-col items-center mx-[83px]">
-                        <Image src="/images/colab-1.svg" width={469.48} height={166}/>
+                        <Image src="/images/colab-1.svg" width={469.48} height={166} alt="collaborators"/>
                         <span className="font-custom text-[20px] text-[#189BA5] font-medium mt-4">UNESCO (INCCU)</span>
                     </div>
                     <div className="flex flex-col items-center mx-[83px]">
-                        <Image src="/images/colab-2.svg" width={199.06} height={166}/>
+                        <Image src="/images/colab-2.svg" width={199.06} height={166} alt="collaborators"/>
                         <span className="font-custom text-[20px] text-[#189BA5] font-medium mt-4 text-center">UN information Centre for<br/>India and Bhutan</span>
                     </div>
                     <div className="flex flex-col items-center mx-[83px]">
-                        <Image src="/images/colab-3.svg" width={469.4} height={166}/>
+                        <Image src="/images/colab-3.svg" width={469.4} height={166} alt="collaborators"/>
                         <span className="font-custom text-[20px] text-[#189BA5] font-medium mt-4">MUN Refugee Challenge</span>
                     </div>
                 </div>
                 <div className="sm:hidden">
-                    <Image src="/images/mobile-collaborators.svg" width={1080} height={100}/>
+                    <Image src="/images/mobile-collaborators.svg" width={1080} height={100} alt="mobile-collaborators"/>
                     <div className="flex justify-around">
                         <div className="font-custom font-semibold text-[28px] text-[#189BA5]">UNESCO (INCCU</div>
                         <div className="font-custom font-semibold text-[28px] text-[#189BA5]">UN information Centre <br/>for India and Bhutan</div>

@@ -9,6 +9,7 @@ export default function ActiveNavbar() {
             src="/images/active-nav-log.svg"
             width={64.82}
             height={68}
+            alt="active-nav-logo"
           />
         </div>
         <div className="flex justify-end py-[22px] pr-[69.5px]">
@@ -23,10 +24,10 @@ export default function ActiveNavbar() {
 
       <div className="sm:hidden flex items-center justify-between">
           <div>
-            <Image src="/images/mobile-actinav.svg" width={72} height={48}/>
+            <Image src="/images/mobile-actinav.svg" width={72} height={48} alt="mobile-actinav"/>
           </div>
           <div>
-            <Image src="/images/mobile-activenav-logo.svg" width={103.32} height={108.19}/>
+            <Image src="/images/mobile-activenav-logo.svg" width={103.32} height={108.19} alt="mobile-activenav-logo"/>
           </div>
           <div>
             <a>

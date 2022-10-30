@@ -12,7 +12,7 @@ export default function NavBar() {
         <button className="w-[160px] h-[46px] text-black bg-[#F5CE3F] rounded-md text-[18px] font-semibold"><a>Register</a></button>
       </div>
       <div className="sm:hidden">
-        <Image src="/images/mobile-nav.svg" width={72} height={48}/>
+        <Image src="/images/mobile-nav.svg" width={72} height={48} alt="mobile-nav"/>
       </div>
     </div>
   );
