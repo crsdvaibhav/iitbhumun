@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ActiveNavbar() {
   return (
-    <div className="sticky top-0 z-40 w-full bg-[#F1F1F1] sm:h-[90px] h-[170px] shadow-xl shadow-[#F1F1F1]/50">
+    <div className="sticky top-0 z-40 w-full bg-[#F1F1F1] sm:h-[90px] shadow-xl shadow-[#F1F1F1]/50">
       <div className="sm:flex justify-between hidden">
         <div className="pl-[70px] py-[11px]">
           <Image
@@ -22,16 +22,16 @@ export default function ActiveNavbar() {
         </div>
       </div>
 
-      <div className="sm:hidden flex items-center justify-between">
+      <div className="sm:hidden flex items-center justify-between px-2 py-2">
           <div>
-            <Image src="/images/mobile-actinav.svg" width={72} height={48} alt="mobile-actinav"/>
+            <Image src="/images/mobile-actinav.svg" width={52} height={20} alt="mobile-actinav"/>
           </div>
-          <div>
-            <Image src="/images/mobile-activenav-logo.svg" width={103.32} height={108.19} alt="mobile-activenav-logo"/>
+          <div className="ml-12">
+            <Image src="/images/mobile-activenav-logo.svg" width={52} height={54.45} alt="mobile-activenav-logo"/>
           </div>
           <div>
             <a>
-              <button className="h-[86px] w-[243px] font-custom text-[26px] font-semibold text-white bg-[#189BA5] rounded-lg">Register</button>
+              <button className="py-2 px-[24px] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">Register</button>
             </a>
           </div>
       </div>

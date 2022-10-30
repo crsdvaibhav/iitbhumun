@@ -60,8 +60,8 @@ export default function Footer(){
                 </div>
             </div>
 
-            <div>
-
+            <div className="bg-[#1A1E21] mt-12 text-center text-white font-custom p-4 text-xs">
+                Footer-Mobile
             </div>
         </div>
     )

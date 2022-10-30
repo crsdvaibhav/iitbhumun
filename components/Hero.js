@@ -61,8 +61,8 @@ export default function Hero() {
             <div className="row-span-full col-span-full self-center text-center">
                 <Image
                     src="/images/hero-logo.svg"
-                    width={812}
-                    height={334.84}
+                    width={300}
+                    height={123.70}
                     alt="hero images"
                 />
             </div>

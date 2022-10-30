@@ -11,22 +11,22 @@ export default function CountdownElement() {
         } else {
           // Render a countdown
           return (
-            <div className="text-center flex justify-center text-[92px] sm:text-[96px] text-[#189BA5] mt-[60px]">
-                <div className="flex flex-col">
-                    <div className="h-[210px] sm:h-[220px] w-[210px] sm:w-[220px] flex items-center justify-center border-[2px] border-[#189BA5] rounded-lg mr-[16.5px] sm:mx-[49px]">{days}</div>
-                    <span className="text-[28px] sm:text-[20px] font-semibold sm:font-medium mt-[6px]">Days</span>
+            <div className="text-center flex justify-center text-3xl sm:text-[96px] text-[#189BA5] mt-12 sm:mt-[60px] font-bold">
+                <div className="flex flex-col sm:mx-[49px]">
+                    <div className="h-16 sm:h-[220px] w-16 sm:w-[220px] flex items-center justify-center border-[2px] border-[#189BA5] rounded-lg mr-2">{days}</div>
+                    <span className="text-xs sm:text-[20px] font-semibold sm:font-medium mt-[6px]">Days</span>
                 </div>
-                <div className="flex flex-col">
-                    <div className="h-[210px] sm:h-[220px] w-[210px] sm:w-[220px] flex items-center justify-center border-[2px] border-[#189BA5] rounded-lg mx-[16.5px] sm:mx-[49px]">{hours}</div>
-                    <span className="text-[28px] sm:text-[20px] font-semibold sm:font-medium mt-[6px]">Hours</span>
+                <div className="flex flex-col mx-2 sm:mx-[49px]">
+                    <div className="h-16 sm:h-[220px] w-16 sm:w-[220px] flex items-center justify-center border-[2px] border-[#189BA5] rounded-lg ">{hours}</div>
+                    <span className="text-xs sm:text-[20px] font-semibold sm:font-medium mt-[6px]">Hours</span>
                 </div>
-                <div className="flex flex-col">
-                    <div className="h-[210px] sm:h-[220px] w-[210px] sm:w-[220px] flex items-center justify-center border-[2px] border-[#189BA5] rounded-lg mx-[16.5px] sm:mx-[49px]">{minutes}</div>
-                    <span className="text-[28px] sm:text-[20px] font-semibold sm:font-medium mt-[6px]">Minutes</span>
+                <div className="flex flex-col mx-2 sm:mx-[49px]">
+                    <div className="h-16 sm:h-[220px] w-16 sm:w-[220px] flex items-center justify-center border-[2px] border-[#189BA5] rounded-lg">{minutes}</div>
+                    <span className="text-xs sm:text-[20px] font-semibold sm:font-medium mt-[6px]">Minutes</span>
                 </div>
-                <div className="flex flex-col">
-                    <div className="h-[210px] sm:h-[220px] w-[210px] sm:w-[220px] flex items-center justify-center border-[2px] border-[#189BA5] rounded-lg ml-[16.5px] sm:mx-[49px]">{seconds}</div>
-                    <span className="text-[28px] sm:text-[20px] font-semibold sm:font-medium mt-[6px]">Seconds</span>
+                <div className="flex flex-col ml-2 sm:mx-[49px]">
+                    <div className="h-16 sm:h-[220px] w-16 sm:w-[220px] flex items-center justify-center border-[2px] border-[#189BA5] rounded-lg">{seconds}</div>
+                    <span className="text-xs sm:text-[20px] font-semibold sm:font-medium mt-[6px]">Seconds</span>
                 </div>
             </div>
           );
