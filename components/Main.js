@@ -108,9 +108,9 @@ export default function Main(){
                     })}
                 </div>
                 <div className="sm:hidden mt-8 flex justify-center">
-                    <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-4"><Image src="/images/sponsor-1.png" width={107.59} height={41.98} /></div>
-                    <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-[20px]"><Image src="/images/sponsor-2.png" width={107.59} height={30.485} /></div>
-                    <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-4"><Image src="/images/sponsor-3.png" width={107.59} height={34.055} /></div>
+                    <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-4"><Image src="/images/sponsor-1.png" width={107.59} height={41.98} alt="sponsors"/></div>
+                    <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-[20px]"><Image src="/images/sponsor-2.png" width={107.59} height={30.485} alt="sponsors"/></div>
+                    <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-4"><Image src="/images/sponsor-3.png" width={107.59} height={34.055} alt="sponsors"/></div>
                 </div>
             </div>
         </div>
