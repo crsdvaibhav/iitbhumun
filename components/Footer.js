@@ -60,8 +60,58 @@ export default function Footer(){
                 </div>
             </div>
 
-            <div className="bg-[#1A1E21] mt-12 text-center text-white font-custom p-4 text-xs sm:hidden">
-                Footer-Mobile
+            <div className="bg-[#1A1E21] mt-12 text-white px-4 sm:hidden flex flex-col items-center font-custom">
+                <div className="w-full flex items-start mt-8">
+                    <div className="w-1/4 mr-2 flex justify-center items-center"><Image src="/images/footer-logo.svg" width={60} height={60} alt="footerlogo"/></div>
+                    <div className="w-1/2 ml-2 flex flex-col">
+                        <div>
+                            <p className="font-bold"> Explore</p>
+                            <div className="flex flex-wrap text-xs mt-2">
+                                <div className="w-20 mb-[2px]">Home</div>
+                                <div className="w-20 my-[2px]">Gallery</div>
+                                <div className="w-20 my-[2px]">Committees</div>
+                                <div className="w-20 my-[2px]">FAQs</div>
+                                <div className="w-20 mt-[2px]">Secretariat</div>
+                            </div>
+                        </div>
+                        <div className="mt-4">
+                            <p className="font-bold">Contact us</p>
+                            <div className="flex flex-col text-xs mt-2">
+                                <div className="flex items-center my-[2px]">
+                                    <Image src="/images/location.svg" width={10} height={13} alt="icons"/>
+                                    <span className="ml-2 text-[10px]">IIT (BHU), Varanasi, India.</span>
+                                </div>
+                                <div className="flex items-center my-[2px]">
+                                    <Image src="/images/mail.svg" width={10} height={13} alt="icons"/>
+                                    <span className="ml-2 text-[10px]">secretariat@iitbhumun.com</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="w-1/4 ml-4">
+                        <div className="flex flex-col">
+                            <p className="font-bold">Participation</p>
+                            <button className="bg-[#189BA5] w-20 py-2 rounded-lg mt-2 text-xs font-semibold">Register</button>
+                        </div>
+                        <div className="mt-[44px]">
+                            <p className="font-bold">Follow us</p>
+                            <div className="flex flex-col mt-2">
+                                <div className="flex">    
+                                    <div className="mr-2"><Image src="/images/ig.svg" width={18} height={18} alt="icons" /></div>
+                                    <div className="ml-2"><Image src="/images/linkedin.svg" width={18} height={18} alt="icons" /></div>
+                                </div>
+                                <div className="flex">
+                                    <div className="mr-2"><Image src="/images/twitter.svg" width={18} height={18} alt="icons" /></div>
+                                    <div className="ml-2"><Image src="/images/medium.svg" width={18} height={18} alt="icons" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-4 mb-2 text-[10px]">
+                    © 2023 All Rights Reserved
+                </div>
             </div>
         </div>
     )
