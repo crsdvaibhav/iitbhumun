@@ -3,15 +3,15 @@ import Image from "next/image"
 export default function Footer(){
     return(
         <div>
-            <div className="w-full hidden flex-col bg-[#1A1E21] mt-[140px] text-white sm:flex">
-                <div className="flex mt-[60px]">
-                    <div className="ml-[70px] mr-[75.5px]">
+            <div className="w-full hidden flex-col bg-[#1A1E21] mt-[8.75rem] text-white sm:flex">
+                <div className="flex mt-[3.75rem]">
+                    <div className="ml-[4.375rem] mr-[4.719rem]">
                         <Image src="/images/footer-logo.svg" width={152} height={159.46} alt="logo"/>
                     </div>
-                    <div className="mr-[216px] ml-[75.5px]">
+                    <div className="mr-[13.5rem] ml-[4.719rem]">
                         <div className="flex flex-col">
-                            <div className="font-custom text-[24px] font-bold">Explore</div>
-                            <div className="mt-[20px] flex justify-between font-custom text-[20px] font-medium">
+                            <div className="font-custom text-[1.5rem] font-bold">Explore</div>
+                            <div className="mt-[1.25rem] flex justify-between font-custom text-[1.25rem] font-medium">
                                 <div className="pr-6">Home</div>
                                 <div className="px-6">Committees</div>
                                 <div className="px-6">Secretariat</div>
@@ -19,43 +19,43 @@ export default function Footer(){
                                 <div className="pl-6">FAQs</div>
                             </div>
                             <div>
-                                <div className="font-custom text-[24px] font-bold mt-[60px]">Contact us</div>
-                                <div className="mt-[20px] flex flex-col font-custom text-[20px] font-medium">
+                                <div className="font-custom text-[1.5rem] font-bold mt-[3.75rem]">Contact us</div>
+                                <div className="mt-[1.25rem] flex flex-col font-custom text-[1.25rem] font-medium">
                                     <div>
                                         <a className="flex">
                                             <Image src="/images/location.svg" width={24} height={28.8} alt="location"/>
-                                            <p className="pl-[33px]">IIT (BHU), Varanasi, India.</p>
+                                            <p className="pl-[2.063rem]">IIT (BHU), Varanasi, India.</p>
                                         </a>
                                     </div>
-                                    <div className="mt-[23.7px]">
+                                    <div className="mt-[1.481rem]">
                                         <a className="flex">
                                             <Image src="/images/mail.svg" width={24} height={19.2} alt="mail"/>
-                                            <p className="pl-[33px]">IIT secretariat@iitbhumun.com</p>
+                                            <p className="pl-[2.063rem]">IIT secretariat@iitbhumun.com</p>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="ml-[216px] mr-[196.42]">
+                    <div className="ml-[13.5rem] mr-[12.276rem]">
                         <div>
-                            <div className="font-custom text-[24px] font-bold">Participation</div>
+                            <div className="font-custom text-[1.5rem] font-bold">Participation</div>
                             <div>
-                                <button className="w-[160px] h-[46px] bg-[#189BA5] text-[18px] font-custom font-medium mt-[20px] text-black rounded-lg">Register</button>
+                                <button className="w-[10rem] h-[2.875rem] bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg">Register</button>
                             </div>
                         </div>
-                        <div className="mt-[60px]">
-                            <div className="font-custom text-[24px] font-bold mt-[60px]">Follow us</div>
-                            <div className="mt-[20px] flex">
-                                <a className="mr-[29px]"><Image src="/images/ig.svg" width={24.08} height={24.08}  alt="icons" /></a>
-                                <a className="mx-[29px]"><Image src="/images/linkedin.svg" width={24} height={21} alt="icons" /></a>
-                                <a className="mx-[29px]"><Image src="/images/twitter.svg" width={28} height={22} alt="icons" /></a>
-                                <a className="ml-[29px]"><Image src="/images/medium.svg" width={38.5} height={22} alt="icons" /></a>
+                        <div className="mt-[3.75rem]">
+                            <div className="font-custom text-[1.5rem] font-bold mt-[3.75rem]">Follow us</div>
+                            <div className="mt-[1.25rem] flex">
+                                <a className="mr-[1.813rem]"><Image src="/images/ig.svg" width={24.08} height={24.08}  alt="icons" /></a>
+                                <a className="mx-[1.813rem]"><Image src="/images/linkedin.svg" width={24} height={21} alt="icons" /></a>
+                                <a className="mx-[1.813rem]"><Image src="/images/twitter.svg" width={28} height={22} alt="icons" /></a>
+                                <a className="ml-[1.813rem]"><Image src="/images/medium.svg" width={38.5} height={22} alt="icons" /></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="text-center my-[14px] font-custom font-normal text-[16px]">
+                <div className="text-center my-[0.875rem] font-custom font-normal text-[1rem]">
                     © 2023 All Rights Reserved
                 </div>
             </div>

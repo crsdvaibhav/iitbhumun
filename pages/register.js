@@ -2,10 +2,6 @@ import { useState, useEffect } from "react"
 export default function Register() {
     const [user, setUser] = useState();
 
-
-
-
-
     return (
 
         <div className="  h-[100vh] w-full bg-[url(../public/images/BG-1.svg)]   ">
