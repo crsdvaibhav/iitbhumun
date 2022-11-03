@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function ActiveNavbar() {
   return (
-    <div className="sticky top-0 z-40 w-full bg-[#F1F1F1] sm:h-[90px] shadow-xl shadow-[#F1F1F1]/50">
+    <div className="sticky top-0 z-40 w-full bg-[#F1F1F1] sm:h-[5.625rem] shadow-xl shadow-[#F1F1F1]/50">
       <div className="sm:flex justify-between hidden">
-        <div className="pl-[70px] py-[11px]">
+        <div className="pl-[4.375rem] py-[0.688rem]">
           <Image
             src="/images/active-nav-log.svg"
             width={64.82}
@@ -12,13 +12,13 @@ export default function ActiveNavbar() {
             alt="active-nav-logo"
           />
         </div>
-        <div className="flex justify-end py-[22px] pr-[69.5px]">
-          <button className="w-[160px] h-[46px] text-black text-[20px] hover:text-[#189BA5]"><a>Home</a></button>
-          <button className="w-[160px] h-[46px] text-black text-[20px] hover:text-[#189BA5]"><a>Committees</a></button>
-          <button className="w-[160px] h-[46px] text-black text-[20px] hover:text-[#189BA5]"><a>Secretariat</a></button>
-          <button className="w-[160px] h-[46px] text-black text-[20px] hover:text-[#189BA5]"><a>Gallery</a></button>
-          <button className="w-[160px] h-[46px] text-black text-[20px] hover:text-[#189BA5]"><a>FAQ</a></button>
-          <button className="w-[160px] h-[46px] text-white bg-[#1A1E21] rounded-md text-[18px] font-semibold"><a>Register</a></button>
+        <div className="flex justify-end py-[1.375rem] pr-[4.344rem]">
+          <button className="w-[10rem] h-[2.875rem] text-black text-[1.25rem] hover:text-[#189BA5]"><a>Home</a></button>
+          <button className="w-[10rem] h-[2.875rem] text-black text-[1.25rem] hover:text-[#189BA5]"><a>Committees</a></button>
+          <button className="w-[10rem] h-[2.875rem] text-black text-[1.25rem] hover:text-[#189BA5]"><a>Secretariat</a></button>
+          <button className="w-[10rem] h-[2.875rem] text-black text-[1.25rem] hover:text-[#189BA5]"><a>Gallery</a></button>
+          <button className="w-[10rem] h-[2.875rem] text-black text-[1.25rem] hover:text-[#189BA5]"><a>FAQ</a></button>
+          <button className="w-[10rem] h-[2.875rem] text-white bg-[#1A1E21] rounded-md text-[18px] font-semibold"><a>Register</a></button>
         </div>
       </div>
 
@@ -31,7 +31,7 @@ export default function ActiveNavbar() {
           </div>
           <div>
             <a>
-              <button className="py-2 px-[24px] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">Register</button>
+              <button className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">Register</button>
             </a>
           </div>
       </div>
