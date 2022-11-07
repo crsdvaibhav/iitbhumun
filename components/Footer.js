@@ -4,10 +4,7 @@ export default function Footer(){
     return(
         <div>
             <div className="w-full hidden flex-col bg-[#1A1E21] mt-[8.75rem] text-white sm:flex">
-                <div className="flex mt-[3.75rem]">
-                    <div className="ml-[4.375rem] mr-[4.719rem]">
-                        <Image src="/images/footer-logo.svg" width={152} height={159.46} alt="logo"/>
-                    </div>
+                <div className="flex mt-[3.75rem] justify-center">
                     <div className="mr-[13.5rem] ml-[4.719rem]">
                         <div className="flex flex-col">
                             <div className="font-custom text-[1.5rem] font-bold">Explore</div>
