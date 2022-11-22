@@ -23,7 +23,7 @@ export default function Register() {
   return (
     <div className="pb-12 w-full bg-[url(../public/images/BG-1.svg)]">
       <div className={check ? 'hidden' : 'block'}>
-        <div className="place-items-center flex justify-center font-semibold text-center  pt-12 mb-12 ">
+        <div className="place-items-center flex justify-center font-semibold text-center py-12">
           <div className="text-3xl text-[#FFFFFF] justify-center bg-[#1A1E21] w-10 h-10   border-2 border-[#1A1E21] rounded-full ">
             1
           </div>
@@ -37,7 +37,7 @@ export default function Register() {
           </div>
         </div>
 
-        <div className=" bg-[url(../public/images/Group-242.svg)] bg-no-repeat bg-center bg-auto bg-origin-padding grid grid-cols-1 place-items-center px-10  lg:grid lg:grid-cols-2">
+        <div className=" bg-[url(../public/images/Group-242.svg)] gap-8 bg-no-repeat bg-center bg-auto bg-origin-padding grid grid-cols-1 place-items-center px-10  lg:grid lg:grid-cols-2">
           <div className="flex flex-col space-y-8">
             <Input size="lg" label="Name" color="cyan" />
             <Input size="lg" color="cyan" label="Age" type="number" />
@@ -63,7 +63,7 @@ export default function Register() {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-3">
               <Input size="lg" label="City" />
               <Input size="lg" label="Country" />
             </div>
