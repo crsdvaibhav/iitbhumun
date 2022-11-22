@@ -1,18 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       backgroundImage: {
-        "image": "url('/assets/bg-image-delegates.jpg')"
+        image: "url('/assets/bg-image-delegates.jpg')",
       },
-      fontFamily:{
-        'custom':['"Inter"'],
-        'heading':['"Montserrat"']
-      }
+      fontFamily: {
+        custom: ['"Inter"'],
+        heading: ['"Montserrat"'],
+      },
     },
   },
-}
+};
