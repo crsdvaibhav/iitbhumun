@@ -1,10 +1,26 @@
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import Link from 'next/link';
-import { Input, Radio, Textarea } from '@material-tailwind/react';
+import { Button, Input, Radio, Textarea } from '@material-tailwind/react';
 
 export default function Register() {
   const [user, setUser] = useState();
+  const [formInput, setFormInput] = useState({ name: '', age: 0 });
+
+  console.log(formInput);
+
+  const handleSubmit = () => {
+    SheetDB.write(process.env.NEXT_PUBLIC_SHEETDB_API, {
+      sheet: 'Sheet1',
+      data: formInput,
+    })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => console.log(err));
+
+    setFormInput({ name: '', age: 0 });
+  };
 
   const [check, setCheck] = useState(false);
 
@@ -39,8 +55,23 @@ export default function Register() {
 
         <div className=" bg-[url(../public/images/Group-242.svg)] gap-8 bg-no-repeat bg-center bg-auto bg-origin-padding grid grid-cols-1 place-items-center px-10  lg:grid lg:grid-cols-2">
           <div className="flex flex-col space-y-8">
-            <Input size="lg" label="Name" color="cyan" />
-            <Input size="lg" color="cyan" label="Age" type="number" />
+            <Input
+              size="lg"
+              label="Name"
+              color="cyan"
+              onChange={(e) =>
+                setFormInput({ ...formInput, name: e.target.value })
+              }
+            />
+            <Input
+              size="lg"
+              color="cyan"
+              label="Age"
+              type="number"
+              onChange={(e) =>
+                setFormInput({ ...formInput, age: e.target.value })
+              }
+            />
             <div className="mb-8">
               <label className="text-[#189BA5] font-normal flex text-base mb-2">
                 Gender
@@ -91,6 +122,7 @@ export default function Register() {
               </span>
             </div>
             <div>
+              <Button onClick={handleSubmit}>Submit</Button>
               <button className="border border-[#1A1E21] rounded-lg w-36 h-11 mr-4">
                 <span className="font-semibold text-lg ">Cancel</span>
               </button>

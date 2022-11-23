@@ -1,9 +1,8 @@
-import Home from './home'
+import Home from './home';
+import SheetDB from 'sheetdb-js';
 
 export default function App() {
-  return (
-    <div>
-      <Home />
-    </div>
-  )
+  <div>
+    <Home />
+  </div>;
 }
