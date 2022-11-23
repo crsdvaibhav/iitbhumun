@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import SheetDB from 'sheetdb-js';
 import Select from 'react-select';
 import Link from 'next/link';
 import { Button, Input, Radio, Textarea } from '@material-tailwind/react';
@@ -10,7 +11,7 @@ export default function Register() {
   console.log(formInput);
 
   const handleSubmit = () => {
-    SheetDB.write(process.env.NEXT_PUBLIC_SHEETDB_API, {
+    SheetDB.write('https://sheetdb.io/api/v1/yz9189tqxczi6', {
       sheet: 'Sheet1',
       data: formInput,
     })
