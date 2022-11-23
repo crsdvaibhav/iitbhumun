@@ -17,22 +17,22 @@ export default function NavBar({ navbar }) {
           height={50}
           alt="active-nav-logo"
         />
-        <div className="justify-end hidden items-center sm:flex space-x-12 2xl:space-x-24 font-bold">
+        <div className="justify-end hidden items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
-            <button className=" h-[2.875rem] 2xl:text-xl hover:text-[#189BA5] duration-100">
+            <button className=" 2xl:text-xl hover:text-[#189BA5] duration-100">
               Home
             </button>
           </Link>
-          <button className=" h-[2.875rem] 2xl:text-xl text-lg hover:text-[#189BA5] duration-100">
+          <button className="2xl:text-xl text-lg hover:text-[#189BA5] duration-100">
             Committees
           </button>
-          <button className=" h-[2.875rem] 2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+          <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
             Secretariat
           </button>
-          <button className=" h-[2.875rem] 2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+          <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
             Gallery
           </button>
-          <button className=" h-[2.875rem] 2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+          <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
             FAQ
           </button>
           <Link href="/register">

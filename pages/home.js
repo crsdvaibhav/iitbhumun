@@ -15,6 +15,7 @@ export default function Home() {
   };
   useEffect(() => {
     window.addEventListener('scroll', changeNavbar);
+    return () => window.removeEventListener('scroll', changeNavbar);
   }, []);
 
   return (

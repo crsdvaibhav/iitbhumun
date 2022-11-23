@@ -13,12 +13,12 @@ export default function Main() {
         </p>
         <CountdownElement />
       </div>
-      <div className="w-full mt-16 flex flex-col space-y-10">
+      <div className="mt-16 flex flex-col space-y-10 w-[58.75rem] sm:w-[73.375rem] mx-auto">
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
           Legacy
         </p>
-        <div className="hidden sm:flex justify-center">
-          <div className="mx-[7.563rem] flex flex-col items-center">
+        <div className="hidden sm:flex justify-between">
+          <div className="flex flex-col items-center">
             <Image
               src="/images/legacy-circles.svg"
               width={230}
@@ -29,7 +29,7 @@ export default function Main() {
               Delegates
             </span>
           </div>
-          <div className="mx-[7.563rem] flex flex-col items-center">
+          <div className="flex flex-col items-center">
             <Image
               src="/images/legacy-circles.svg"
               width={230}
@@ -40,7 +40,7 @@ export default function Main() {
               Countries
             </span>
           </div>
-          <div className="mx-[7.563rem] flex flex-col items-center">
+          <div className="flex flex-col items-center">
             <Image
               src="/images/legacy-circles.svg"
               width={230}
@@ -90,7 +90,7 @@ export default function Main() {
         </div>
 
         <div className="flex justify-center">
-          <p className="mt-8 sm:mt-[3.75rem] w-[58.75rem] sm:w-[73.375rem] text-[#03001E] px-8 sm:text-[1.25rem] font-medium font-custom text-justify">
+          <p className="text-[#03001E] px-8 sm:text-lg font-light font-custom text-justify">
             {data.legacyText}
           </p>
         </div>
@@ -100,7 +100,7 @@ export default function Main() {
           About us
         </p>
         <div className="flex justify-center mt-8 sm:mt-[3.75rem]">
-          <p className="px-8 w-[58.75rem] sm:w-[73.375rem] text-[#03001E] sm:text-[1.25rem] font-medium font-custom text-justify">
+          <p className="px-8 w-[58.75rem] sm:w-[73.375rem] text-[#03001E] sm:text-lg font-light font-custom text-justify">
             {data.legacyText}
             <br />
             <span className="text-[#189BA5] underline mt-2">
