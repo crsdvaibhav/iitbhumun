@@ -2,18 +2,18 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <div className="bg-[#1A1E21]">
-      <div className="hidden flex-col mt-[8.75rem] text-white sm:flex  w-[90%] 2xl:w-[80%] mx-auto ">
+    <div className="bg-[#1A1E21] w-full">
+      <div className="hidden flex-col mt-[8.75rem] text-white sm:flex  max-w-[90%] 2xl:max-w-[80%] mx-auto ">
         <div className="flex flex-row justify-between mt-[3.75rem]">
-          <div className="basis-1/3">
+          <div className="max-w-1/4">
             <div className="flex flex-col">
               <div className="font-custom text-[1.5rem] font-bold">Explore</div>
-              <div className="mt-[1.25rem] flex justify-between font-custom text-[1.25rem] font-medium">
-                <div className="pr-6">Home</div>
-                <div className="px-6">Committees</div>
-                <div className="px-6">Secretariat</div>
-                <div className="px-6">Gallery</div>
-                <div className="pl-6">FAQs</div>
+              <div className="mt-[1.25rem] flex-wrap space-y-3 space-x-0 md:flex justify-between md:space-x-3 font-custom text-[1rem] sm:text-[1.125rem] 2xl:text-[1.25rem] font-medium">
+                <div className="">Home</div>
+                <div className="">Committees</div>
+                <div className="">Secretariat</div>
+                <div className="">Gallery</div>
+                <div className="">FAQs</div>
               </div>
               <div>
                 <div className="font-custom text-[1.5rem] font-bold mt-[3.75rem]">
@@ -56,7 +56,7 @@ export default function Footer() {
                 Participation
               </div>
               <div>
-                <button className="w-[10rem] h-[2.875rem] bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg">
+                <button className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
                   Register
                 </button>
               </div>

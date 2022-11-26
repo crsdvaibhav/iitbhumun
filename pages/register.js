@@ -8,8 +8,6 @@ export default function Register() {
   const [user, setUser] = useState();
   const [formInput, setFormInput] = useState({ name: '', age: 0 });
 
-  console.log(formInput);
-
   const handleSubmit = () => {
     SheetDB.write('https://sheetdb.io/api/v1/yz9189tqxczi6', {
       sheet: 'Sheet1',

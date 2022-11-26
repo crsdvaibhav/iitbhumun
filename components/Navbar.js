@@ -46,8 +46,14 @@ export default function NavBar({ navbar }) {
           </Link>
         </div>
       </div>
-      <div className="sm:hidden flex items-center justify-between px-2 py-2">
-        <div>
+      <div
+        className={`sm:hidden w-full flex ${
+          navbar
+            ? 'items-center justify-between p-2'
+            : 'flex-row-reverse w-full p-6'
+        }`}
+      >
+        <div className={`${!navbar ? 'hidden' : ''}`}>
           <Image
             src="/images/mobile-actinav.svg"
             width={52}
@@ -55,7 +61,7 @@ export default function NavBar({ navbar }) {
             alt="mobile-actinav"
           />
         </div>
-        <div className="ml-12">
+        <div className={`${!navbar ? 'hidden' : ''}`}>
           <Image
             src="/images/mobile-activenav-logo.svg"
             width={52}
@@ -63,13 +69,11 @@ export default function NavBar({ navbar }) {
             alt="mobile-activenav-logo"
           />
         </div>
-        <div>
-          <Link href="register">
-            <button className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
-              <a>Register</a>
-            </button>
-          </Link>
-        </div>
+        <Link href="register">
+          <button className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
+            <a>Register</a>
+          </button>
+        </Link>
       </div>
     </div>
   );

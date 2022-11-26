@@ -13,7 +13,7 @@ export default function Main() {
         </p>
         <CountdownElement />
       </div>
-      <div className="mt-16 flex flex-col space-y-10 w-[58.75rem] sm:w-[73.375rem] mx-auto">
+      <div className="mt-16 flex flex-col space-y-10 max-w-[58.75rem] sm:max-w-[73.375rem] mx-auto">
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
           Legacy
         </p>
