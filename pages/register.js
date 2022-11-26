@@ -2,23 +2,32 @@ import { useState, useEffect } from 'react';
 import SheetDB from 'sheetdb-js';
 import Select from 'react-select';
 import Link from 'next/link';
-import { Button, Input, Radio, Textarea } from '@material-tailwind/react';
+import { Button, input, Input, Radio, Textarea } from '@material-tailwind/react';
+
 
 export default function Register() {
   const [user, setUser] = useState();
-  const [formInput, setFormInput] = useState({ name: '', age: 0 });
+  const [formInput, setFormInput] = useState({ name: '', age: 0, city: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
 
-  const handleSubmit = () => {
+  console.log(formInput);
+
+
+
+  const handleSubmit = (event) => {
     SheetDB.write('https://sheetdb.io/api/v1/yz9189tqxczi6', {
       sheet: 'Sheet1',
       data: formInput,
     })
       .then((result) => {
+        event.preventDefault();
         console.log(result);
+        event.target.reset();
       })
       .catch((err) => console.log(err));
 
-    setFormInput({ name: '', age: 0 });
+    setFormInput({ name: '', age: 0, city: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
+
+
   };
 
   const [check, setCheck] = useState(false);
@@ -76,16 +85,14 @@ export default function Register() {
                 Gender
               </label>
               <div className="flex gap-10">
-                <Radio id="html" name="type" label="Female" color="cyan" />
+                <Radio name="type" label="Female" color="cyan" />
                 <Radio
-                  id="react"
                   name="type"
                   label="Male"
                   defaultChecked
                   color="cyan"
                 />
                 <Radio
-                  id="react"
                   name="type"
                   label="Prefer not to say"
                   defaultChecked
@@ -94,24 +101,43 @@ export default function Register() {
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-3">
-              <Input size="lg" label="City" />
-              <Input size="lg" label="Country" />
+              <Input size="lg" label="City" onChange={(e) =>
+                setFormInput({ ...formInput, city: e.target.value })
+              } />
+              <Input size="lg" label="Country" onChange={(e) =>
+                setFormInput({ ...formInput, country: e.target.value })
+              } />
             </div>
-            <Input size="lg" label="Name of Institution" color="cyan" />
-            <Input size="lg" label="Mobile No." type="tel" color="cyan" />
-            <Input size="lg" label="E-mail" type="email" color="cyan" />
+            <Input size="lg" label="Name of Institution" color="cyan" onChange={(e) =>
+              setFormInput({ ...formInput, name_of_Institution: e.target.value })
+            } />
+            <Input size="lg" label="Mobile No." type="tel" color="cyan" onChange={(e) =>
+              setFormInput({ ...formInput, mobile: e.target.value })
+            } />
+            <Input size="lg" label="E-mail" type="email" color="cyan" onChange={(e) =>
+              setFormInput({ ...formInput, email: e.target.value })
+            } />
           </div>
           <div className="flex flex-col space-y-8">
-            <Input label="Refferal Code (if any)" size="lg" color="cyan" />
+            <Input label="Refferal Code (if any)" size="lg" color="cyan" onChange={(e) =>
+              setFormInput({ ...formInput, referral: e.target.value })
+            } />
             <div className="text-lg text-[#189BA5] font-semibold">
               Details of previous MUNs
             </div>
-            <Input size="lg" label="No. of MUNs" color="cyan" />
-            <Input size="lg" label="List of Previous MUNs" color="cyan" />
+            <Input size="lg" label="No. of MUNs" color="cyan" onChange={(e) =>
+              setFormInput({ ...formInput, no_of_MUNs: e.target.value })
+            } />
+            <Input size="lg" label="List of Previous MUNs" color="cyan" onChange={(e) =>
+              setFormInput({ ...formInput, previous_MUNs: e.target.value })
+            } />
             <Textarea
-              label="Awards in Previoius MUNs (if any)"
+              label="Awards in Previous MUNs (if any)"
               size="lg"
               color="cyan"
+              onChange={(e) =>
+                setFormInput({ ...formInput, awards: e.target.value })
+              }
             />
             <div className="mb-8 flex items-center space-x-2">
               <span className="font-bold text-sm">NOTE:</span>
@@ -121,7 +147,6 @@ export default function Register() {
               </span>
             </div>
             <div>
-              <Button onClick={handleSubmit}>Submit</Button>
               <button className="border border-[#1A1E21] rounded-lg w-36 h-11 mr-4">
                 <span className="font-semibold text-lg ">Cancel</span>
               </button>
@@ -159,14 +184,23 @@ export default function Register() {
             <p className="font-medium text-[#189BA5] flex py-2">
               Select a committee
             </p>
-            <Select options={committees} />
+
+            <Select options={committees} value={committees.value}
+              onChange={(e) =>
+                setFormInput({ ...formInput, committees: e.value })
+              }
+            />
+
           </div>
           <div>
             <div className="w-72 pb-4">
               <p className="font-medium text-[#189BA5] flex py-2">
                 Select a country
               </p>
-              <Select options={countries} />
+              <Select options={countries} value={countries.value}
+                onChange={(e) =>
+                  setFormInput({ ...formInput, countries: e.value })
+                } />
             </div>
           </div>
           <div>
@@ -179,9 +213,10 @@ export default function Register() {
               Back
             </button>
             <Link href="thankyou">
-              <button className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2">
-                <a>Register!</a>
-              </button>
+              {/* <button className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2">
+                <a onClick={handleSubmit}>Register!</a>
+              </button> */}
+              <Button onClick={handleSubmit}>Submit</Button>
             </Link>
           </div>
         </div>
