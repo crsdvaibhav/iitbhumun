@@ -26,7 +26,7 @@ export default function CountdownElement() {
 
   return (
     <div className="w-full">
-      <Countdown date="2022-12-3" renderer={renderer} />
+      <Countdown date="2023-02-3" renderer={renderer} />
     </div>
   );
 }
