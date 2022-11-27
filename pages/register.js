@@ -25,9 +25,7 @@ export default function Register() {
       })
       .catch((err) => console.log(err));
 
-    setFormInput({ name: '', age: 0, city: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
-
-
+    setFormInput({ name: '', age: 0, city: '', gender: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
   };
 
   const [check, setCheck] = useState(false);
@@ -85,18 +83,33 @@ export default function Register() {
                 Gender
               </label>
               <div className="flex gap-10">
-                <Radio name="type" label="Female" color="cyan" />
+                <Radio
+                  name="type"
+                  value="Female"
+                  label="Female"
+                  color="cyan"
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, gender: e.target.value })
+                  } />
                 <Radio
                   name="type"
                   label="Male"
                   defaultChecked
                   color="cyan"
+                  value="Male"
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, gender: e.target.value })
+                  }
                 />
                 <Radio
                   name="type"
                   label="Prefer not to say"
                   defaultChecked
                   color="cyan"
+                  value="Prefer not to say"
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, gender: e.target.value })
+                  }
                 />
               </div>
             </div>
