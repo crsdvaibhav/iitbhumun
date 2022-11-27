@@ -7,7 +7,32 @@ import { Button, input, Input, Radio, Textarea } from '@material-tailwind/react'
 
 export default function Register() {
   const [user, setUser] = useState();
-  const [formInput, setFormInput] = useState({ name: '', age: 0, gender: '', city: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
+  const [formInput, setFormInput] = useState({
+    name: '',
+    age: 0,
+    gender: '',
+    city: '',
+    country: '',
+    name_of_Institution: '',
+    mobile: '',
+    email: '',
+    referral: '',
+    no_of_MUNs: '',
+    previous_MUNs: '',
+    awards: '',
+    committees1: '',
+    committees2: '',
+    committees3: '',
+    countries1_1: '',
+    countries1_2: '',
+    countries1_3: '',
+    countries2_1: '',
+    countries2_2: '',
+    countries2_3: '',
+    countries3_1: '',
+    countries3_2: '',
+    countries3_3: ''
+  });
 
   console.log(formInput);
 
@@ -25,7 +50,32 @@ export default function Register() {
       })
       .catch((err) => console.log(err));
 
-    setFormInput({ name: '', age: 0, gender: '', city: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
+    setFormInput({
+      name: '',
+      age: 0,
+      gender: '',
+      city: '',
+      country: '',
+      name_of_Institution: '',
+      mobile: '',
+      email: '',
+      referral: '',
+      no_of_MUNs: '',
+      previous_MUNs: '',
+      awards: '',
+      committees1: '',
+      committees2: '',
+      committees3: '',
+      countries1_1: '',
+      countries1_2: '',
+      countries1_3: '',
+      countries2_1: '',
+      countries2_2: '',
+      countries2_3: '',
+      countries3_1: '',
+      countries3_2: '',
+      countries3_3: ''
+    });
   };
 
   const [check, setCheck] = useState(false);
@@ -198,7 +248,7 @@ export default function Register() {
 
               <Select options={committees} value={committees.value}
                 onChange={(e) =>
-                  setFormInput({ ...formInput, committees: e.value })
+                  setFormInput({ ...formInput, committees1: e.value })
                 }
               />
 
@@ -210,7 +260,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries1_1: e.value })
                   } />
               </div>
             </div>
@@ -221,7 +271,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries1_2: e.value })
                   } />
               </div>
             </div>
@@ -232,7 +282,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries1_3: e.value })
                   } />
               </div>
             </div>
@@ -245,7 +295,7 @@ export default function Register() {
 
               <Select options={committees} value={committees.value}
                 onChange={(e) =>
-                  setFormInput({ ...formInput, committees: e.value })
+                  setFormInput({ ...formInput, committees2: e.value })
                 }
               />
 
@@ -257,7 +307,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries2_1: e.value })
                   } />
               </div>
             </div> <div>
@@ -267,7 +317,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries2_2: e.value })
                   } />
               </div>
             </div>
@@ -278,7 +328,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries2_3: e.value })
                   } />
               </div>
             </div>
@@ -292,7 +342,7 @@ export default function Register() {
 
               <Select options={committees} value={committees.value}
                 onChange={(e) =>
-                  setFormInput({ ...formInput, committees: e.value })
+                  setFormInput({ ...formInput, committees3: e.value })
                 }
               />
 
@@ -304,7 +354,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries3_1: e.value })
                   } />
               </div>
             </div>
@@ -315,7 +365,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries3_2: e.value })
                   } />
               </div>
             </div>
@@ -326,7 +376,7 @@ export default function Register() {
                 </p>
                 <Select options={countries} value={countries.value}
                   onChange={(e) =>
-                    setFormInput({ ...formInput, countries: e.value })
+                    setFormInput({ ...formInput, countries3_3: e.value })
                   } />
               </div>
             </div>

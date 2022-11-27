@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -9,11 +10,23 @@ export default function Footer() {
             <div className="flex flex-col">
               <div className="font-custom text-[1.5rem] font-bold">Explore</div>
               <div className="mt-[1.25rem] flex-wrap space-y-3 space-x-0 md:flex justify-between md:space-x-3 font-custom text-[1rem] sm:text-[1.125rem] 2xl:text-[1.25rem] font-medium">
-                <div className="">Home</div>
-                <div className="">Committees</div>
-                <div className="">Secretariat</div>
-                <div className="">Gallery</div>
-                <div className="">FAQs</div>
+                <div className='flex ' >
+                  <Link href="/home">
+                    <button className="p-1">Home</button>
+                  </Link>
+                  <Link href="">
+                    <button className="p-1" >Committees</button>
+                  </Link>
+                  <Link href="">
+                    <button className="p-1">Secretariat</button>
+                  </Link>
+                  <Link href="">
+                    <button className="p-1">Gallery</button>
+                  </Link>
+                  <Link href="">
+                    <button className="p-1">FAQs</button>
+                  </Link>
+                </div>
               </div>
               <div>
                 <div className="font-custom text-[1.5rem] font-bold mt-[3.75rem]">
@@ -42,7 +55,7 @@ export default function Footer() {
                         alt="mail"
                       />
                       <p className="pl-[2.063rem]">
-                        IIT secretariat@iitbhumun.com
+                        secretariat@iitbhumun.com
                       </p>
                     </a>
                   </div>
@@ -56,9 +69,13 @@ export default function Footer() {
                 Participation
               </div>
               <div>
-                <button className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
-                  Register
-                </button>
+                <Link
+                  href="/register"
+                >
+                  <button className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                    Register
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="mt-[3.75rem]">
@@ -67,36 +84,53 @@ export default function Footer() {
               </div>
               <div className="mt-[1.25rem] flex flex-row space-x-5">
                 <div>
-                  <Image
-                    src="/images/ig.svg"
-                    width={24.08}
-                    height={24.08}
-                    alt="icons"
-                  />
+                  <Link href="https://www.instagram.com/iitbhu_mun/?hl=en">
+                    <button>
+                      <Image
+                        src="/images/ig.svg"
+                        width={24.08}
+                        height={24.08}
+                        alt="icons"
+                      />
+                    </button>
+                  </Link>
                 </div>
                 <div>
-                  <Image
-                    src="/images/linkedin.svg"
-                    width={24}
-                    height={21}
-                    alt="icons"
-                  />
+                  <Link href="https://www.linkedin.com/company/iitbhumun/?originalSubdomain=in " >
+                    <button>
+                      <Image
+                        src="/images/linkedin.svg"
+                        width={24}
+                        height={21}
+                        alt="icons"
+                      />
+                    </button>
+                  </Link>
                 </div>
                 <div>
-                  <Image
-                    src="/images/twitter.svg"
-                    width={28}
-                    height={22}
-                    alt="icons"
-                  />
+                  <Link href="https://twitter.com/iitbhu_mun">
+                    <button>
+                      <Image
+                        src="/images/twitter.svg"
+                        width={28}
+                        height={22}
+                        alt="icons"
+                      />
+                    </button></Link>
+
                 </div>
                 <div>
-                  <Image
-                    src="/images/medium.svg"
-                    width={38.5}
-                    height={22}
-                    alt="icons"
-                  />
+                  <Link href="https://medium.com/@iitbhumun">
+                    <button>
+                      <Image
+                        src="/images/medium.svg"
+                        width={38.5}
+                        height={22}
+                        alt="icons"
+                      />
+                    </button>
+                  </Link>
+
                 </div>
               </div>
             </div>
@@ -159,47 +193,65 @@ export default function Footer() {
           <div className="w-1/4 ml-4">
             <div className="flex flex-col">
               <p className="font-bold">Participation</p>
-              <button className="bg-[#189BA5] w-20 py-2 rounded-lg mt-2 text-xs font-semibold">
-                Register
-              </button>
+              <Link
+                href="/register"
+              >
+                <button className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                  Register
+                </button>
+              </Link>
             </div>
             <div className="mt-[44px]">
               <p className="font-bold">Follow us</p>
               <div className="flex flex-col mt-2">
                 <div className="flex">
                   <div className="mr-2">
-                    <Image
-                      src="/images/ig.svg"
-                      width={18}
-                      height={18}
-                      alt="icons"
-                    />
+                    <Link href="https://www.instagram.com/iitbhu_mun/?hl=en">
+                      <button>
+                        <Image
+                          src="/images/ig.svg"
+                          width={18}
+                          height={18}
+                          alt="icons"
+                        />
+                      </button></Link>
                   </div>
                   <div className="ml-2">
-                    <Image
-                      src="/images/linkedin.svg"
-                      width={18}
-                      height={18}
-                      alt="icons"
-                    />
+                    <Link href="https://www.linkedin.com/company/iitbhumun/?originalSubdomain=in " >
+                      <button>
+                        <Image
+                          src="/images/linkedin.svg"
+                          width={24}
+                          height={21}
+                          alt="icons"
+                        />
+                      </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex">
                   <div className="mr-2">
-                    <Image
-                      src="/images/twitter.svg"
-                      width={18}
-                      height={18}
-                      alt="icons"
-                    />
+                    <Link href="https://twitter.com/iitbhu_mun">
+                      <button>
+                        <Image
+                          src="/images/twitter.svg"
+                          width={28}
+                          height={22}
+                          alt="icons"
+                        />
+                      </button></Link>
                   </div>
                   <div className="ml-2">
-                    <Image
-                      src="/images/medium.svg"
-                      width={18}
-                      height={18}
-                      alt="icons"
-                    />
+                    <Link href="https://medium.com/@iitbhumun">
+                      <button>
+                        <Image
+                          src="/images/medium.svg"
+                          width={38.5}
+                          height={22}
+                          alt="icons"
+                        />
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -208,6 +260,6 @@ export default function Footer() {
         </div>
         <div className="mt-4 mb-2 text-[10px]">© 2023 All Rights Reserved</div>
       </div>
-    </div>
+    </div >
   );
 }
