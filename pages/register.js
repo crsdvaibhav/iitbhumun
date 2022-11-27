@@ -188,46 +188,166 @@ export default function Register() {
             3
           </div>
         </div>
-        <div className="flex flex-col items-center py-12">
-          <div className="w-72 pb-4">
-            <p className="font-medium text-[#189BA5] flex py-2">
-              Select a committee
-            </p>
 
-            <Select options={committees} value={committees.value}
-              onChange={(e) =>
-                setFormInput({ ...formInput, committees: e.value })
-              }
-            />
+        <div className="grid grid-flow-col grid-cols-3 items-center py-12 m-auto justify-items-center">
+          <div>
+            <div className="w-72 pb-4">
+              <p className="font-medium text-[#189BA5] flex py-2">
+                Select a committee
+              </p>
 
+              <Select options={committees} value={committees.value}
+                onChange={(e) =>
+                  setFormInput({ ...formInput, committees: e.value })
+                }
+              />
+
+            </div>
+            <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
+            </div>
+            <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
+            </div>
+            <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
+            </div>
           </div>
           <div>
             <div className="w-72 pb-4">
               <p className="font-medium text-[#189BA5] flex py-2">
-                Select a country
+                Select a committee
               </p>
-              <Select options={countries} value={countries.value}
+
+              <Select options={committees} value={committees.value}
                 onChange={(e) =>
-                  setFormInput({ ...formInput, countries: e.value })
-                } />
+                  setFormInput({ ...formInput, committees: e.value })
+                }
+              />
+
+            </div>
+            <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
+            </div> <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
+            </div>
+            <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
             </div>
           </div>
           <div>
-            <button
-              onClick={() => {
-                setCheck(false);
-              }}
-              className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2"
-            >
-              Back
-            </button>
-            <Link href="thankyou">
-              {/* <button className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2">
+
+            <div className="w-72 pb-4">
+              <p className="font-medium text-[#189BA5] flex py-2">
+                Select a committee
+              </p>
+
+              <Select options={committees} value={committees.value}
+                onChange={(e) =>
+                  setFormInput({ ...formInput, committees: e.value })
+                }
+              />
+
+            </div>
+            <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
+            </div>
+            <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
+            </div>
+            <div>
+              <div className="w-72 pb-4">
+                <p className="font-medium text-[#189BA5] flex py-2">
+                  Select a country
+                </p>
+                <Select options={countries} value={countries.value}
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, countries: e.value })
+                  } />
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div className='flex justify-center m-auto'>
+          <button
+            onClick={() => {
+              setCheck(false);
+            }}
+            className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2"
+          >
+            Back
+          </button>
+          <Link href="thankyou">
+            {/* <button className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2">
                 <a onClick={handleSubmit}>Register!</a>
               </button> */}
-              <Button onClick={handleSubmit}>Submit</Button>
-            </Link>
-          </div>
+            <Button onClick={handleSubmit}>Submit</Button>
+          </Link>
         </div>
       </div>
     </div>
