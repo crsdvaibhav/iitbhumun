@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        {/* Seo needs to be done */}
         <title>IITBHU MUN</title>
         <meta
           name="keywords"
