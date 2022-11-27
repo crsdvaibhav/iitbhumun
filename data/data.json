@@ -1,66 +1,108 @@
 {
-    "title" : "IIT BHU MUN",
-    "legacyText" : "Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit. \n Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit. \n Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit.",
-    "testimonials" : [
+    "title": "IIT BHU MUN",
+    "legacyText": "Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit. \n Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit. \n Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit.",
+    "testimonials": [
         {
-            "id":1,
-            "name" : "Random name",
+            "id": 1,
+            "name": "Random name",
             "designation": "India",
             "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
         },
         {
-            "id":2,
-            "name" : "Random name",
+            "id": 2,
+            "name": "Random name",
             "designation": "India",
             "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
         },
         {
-            "id":3,
-            "name" : "Random name",
+            "id": 3,
+            "name": "Random name",
             "designation": "India",
             "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
         }
     ],
-    "sponsors" : [
+    "sponsors": [
         {
-            "id":1,
-            "src":"/images/sponsor-1.png",
-            "height" : 78.88
+            "id": 1,
+            "src": "/images/sponsor-1.png",
+            "height": 78.88
         },
         {
-            "id":2,
-            "src":"/images/sponsor-2.png",
-            "height" : 57.28
+            "id": 2,
+            "src": "/images/sponsor-2.png",
+            "height": 57.28
         },
         {
-            "id":3,
-            "src":"/images/sponsor-3.png",
-            "height" : 63.98
+            "id": 3,
+            "src": "/images/sponsor-3.png",
+            "height": 63.98
         },
         {
-            "id":4,
-            "src":"/images/sponsor-4.png",
-            "height" : 67.47
+            "id": 4,
+            "src": "/images/sponsor-4.png",
+            "height": 67.47
         },
         {
-            "id":5,
-            "src":"/images/sponsor-5.png",
-            "height" : 97.11
+            "id": 5,
+            "src": "/images/sponsor-5.png",
+            "height": 97.11
+        },
+        {
+            "id": 6,
+            "src": "/images/sponsor-6.svg",
+            "height": 43.06
+        },
+        {
+            "id": 7,
+            "src": "/images/sponsor-7.png",
+            "height": 39
+        },
+        {
+            "id": 8,
+            "src": "/images/sponsor-8.png",
+            "height": 69.48
+        }
+    ],
+    "questions": [
+        {
+            "id": 1,
+            "question": "How many team members can I invite?",
+            "ans": "You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan."
+        },
+        {
+            "id": 2,
+            "question": "What is the maximum file upload size?",
+            "ans": "No more than 2GB. All files in your account must fit your allotted storage space."
+        },
+        {
+            "id": 3,
+            "question": "How do I reset my password?",
+            "ans": "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you."
+        },
+        {
+            "id": 4,
+            "question": "Can I cancel my subscription?",
+            "ans": "Yes! Send us a message and we’ll process your request no questions asked. "
+        },
+        {
+            "id": 5,
+            "question": "Do you provide addtional support?",
+            "ans": "Chat and email support is available 24/7. Phone lines are open during normal business hours. "
         },
         {
             "id":6,
-            "src":"/images/sponsor-6.svg",
-            "height" : 43.06
+            "question": "Do you provide addtional support?",
+            "ans": "Chat and email support is available 24/7. Phone lines are open during normal business hours. "
         },
         {
-            "id":7,
-            "src":"/images/sponsor-7.png",
-            "height" : 39
+            "id": 7,
+            "question": "How do I reset my password?",
+            "ans": "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you."
         },
         {
-            "id":8,
-            "src":"/images/sponsor-8.png",
-            "height" : 69.48
+            "id": 8,
+            "question": "How do I reset my password?",
+            "ans": "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you."
         }
     ]
 }

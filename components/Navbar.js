@@ -32,9 +32,11 @@ export default function NavBar({ navbar }) {
           <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
             Gallery
           </button>
-          <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
-            FAQ
-          </button>
+          <Link href="/faq">
+            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+              FAQ
+            </button>
+          </Link>
           <Link href="/register">
             <button
               className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold ${
