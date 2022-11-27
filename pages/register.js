@@ -7,7 +7,7 @@ import { Button, input, Input, Radio, Textarea } from '@material-tailwind/react'
 
 export default function Register() {
   const [user, setUser] = useState();
-  const [formInput, setFormInput] = useState({ name: '', age: 0, city: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
+  const [formInput, setFormInput] = useState({ name: '', age: 0, gender: '', city: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
 
   console.log(formInput);
 
@@ -25,7 +25,7 @@ export default function Register() {
       })
       .catch((err) => console.log(err));
 
-    setFormInput({ name: '', age: 0, city: '', gender: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
+    setFormInput({ name: '', age: 0, gender: '', city: '', country: '', name_of_Institution: '', mobile: '', email: '', referral: '', no_of_MUNs: '', previous_MUNs: '', awards: '', committees: '', countries: '' });
   };
 
   const [check, setCheck] = useState(false);
@@ -82,34 +82,30 @@ export default function Register() {
               <label className="text-[#189BA5] font-normal flex text-base mb-2">
                 Gender
               </label>
-              <div className="flex gap-10">
+              <div className="flex gap-10" onChange={(e) =>
+                setFormInput({ ...formInput, gender: e.target.value })
+              }>
                 <Radio
                   name="type"
                   value="Female"
                   label="Female"
                   color="cyan"
-                  onChange={(e) =>
-                    setFormInput({ ...formInput, gender: e.target.value })
-                  } />
+                />
                 <Radio
                   name="type"
                   label="Male"
                   defaultChecked
                   color="cyan"
                   value="Male"
-                  onChange={(e) =>
-                    setFormInput({ ...formInput, gender: e.target.value })
-                  }
+
                 />
                 <Radio
                   name="type"
+                  value="Prefer_not_to_say"
                   label="Prefer not to say"
                   defaultChecked
                   color="cyan"
-                  value="Prefer not to say"
-                  onChange={(e) =>
-                    setFormInput({ ...formInput, gender: e.target.value })
-                  }
+
                 />
               </div>
             </div>
