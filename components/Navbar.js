@@ -4,11 +4,10 @@ import Link from 'next/link';
 export default function NavBar({ navbar }) {
   return (
     <div
-      className={`fixed w-full z-30 font-medium text-white sm:py-2 ${
-        navbar
-          ? 'bg-[#F1F1F1] shadow-lg border-b 2xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black'
-          : ''
-      }`}
+      className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
+        ? 'bg-[#F1F1F1] shadow-lg border-b 2xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black'
+        : ''
+        }`}
     >
       <div className="hidden sm:flex flex-row items-center justify-between mx-16">
         <Image
@@ -26,9 +25,11 @@ export default function NavBar({ navbar }) {
           <button className="2xl:text-xl text-lg hover:text-[#189BA5] duration-100">
             Committees
           </button>
-          <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
-            Secretariat
-          </button>
+          <Link href="/secretariat">
+            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+              Secretariat
+            </button>
+          </Link>
           <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
             Gallery
           </button>
@@ -39,9 +40,8 @@ export default function NavBar({ navbar }) {
           </Link>
           <Link href="/register">
             <button
-              className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold ${
-                navbar ? 'bg-[#1A1E21] text-white' : 'text-black bg-[#F5CE3F]'
-              }`}
+              className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold ${navbar ? 'bg-[#1A1E21] text-white' : 'text-black bg-[#F5CE3F]'
+                }`}
             >
               Register
             </button>
@@ -49,11 +49,10 @@ export default function NavBar({ navbar }) {
         </div>
       </div>
       <div
-        className={`sm:hidden w-full flex ${
-          navbar
-            ? 'items-center justify-between p-2'
-            : 'flex-row-reverse w-full p-6'
-        }`}
+        className={`sm:hidden w-full flex ${navbar
+          ? 'items-center justify-between p-2'
+          : 'flex-row-reverse w-full p-6'
+          }`}
       >
         <div className={`${!navbar ? 'hidden' : ''}`}>
           <Image

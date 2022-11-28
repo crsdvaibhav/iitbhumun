@@ -17,13 +17,13 @@ export default function Footer() {
                   <Link href="">
                     <button className="p-1" >Committees</button>
                   </Link>
-                  <Link href="">
+                  <Link href="/secretariat">
                     <button className="p-1">Secretariat</button>
                   </Link>
                   <Link href="">
                     <button className="p-1">Gallery</button>
                   </Link>
-                  <Link href="">
+                  <Link href="/faq">
                     <button className="p-1">FAQs</button>
                   </Link>
                 </div>
@@ -155,11 +155,21 @@ export default function Footer() {
             <div>
               <p className="font-bold"> Explore</p>
               <div className="flex flex-wrap text-xs mt-2">
-                <div className="w-20 mb-[2px]">Home</div>
-                <div className="w-20 my-[2px]">Gallery</div>
-                <div className="w-20 my-[2px]">Committees</div>
-                <div className="w-20 my-[2px]">FAQs</div>
-                <div className="w-20 mt-[2px]">Secretariat</div>
+                <Link href="/home">
+                  <button className="p-1">Home</button>
+                </Link>
+                <Link href="">
+                  <button className="p-1" >Committees</button>
+                </Link>
+                <Link href="/secretariat">
+                  <button className="p-1">Secretariat</button>
+                </Link>
+                <Link href="">
+                  <button className="p-1">Gallery</button>
+                </Link>
+                <Link href="/faq">
+                  <button className="p-1">FAQs</button>
+                </Link>
               </div>
             </div>
             <div className="mt-4">
