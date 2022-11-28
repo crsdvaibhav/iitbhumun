@@ -23,9 +23,11 @@ export default function NavBar({ navbar }) {
               Home
             </button>
           </Link>
-          <button className="2xl:text-xl text-lg hover:text-[#189BA5] duration-100">
-            Committees
-          </button>
+		  <Link href="/committees">
+			<button className="2xl:text-xl text-lg hover:text-[#189BA5] duration-100">
+				Committees
+			</button>
+		  </Link>
           <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
             Secretariat
           </button>
