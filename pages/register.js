@@ -174,15 +174,16 @@ export default function Register() {
                   setFormInput({ ...formInput, country: e.target.value })
                 } />
               </div>
-              <Input size="lg" label="Name of Institution" color="cyan" onChange={(e) =>
+              <Input size="lg" label="Name of Institution" color="cyan" type="text" onChange={(e) =>
                 setFormInput({ ...formInput, name_of_Institution: e.target.value })
               } />
-              <Input size="lg" label="Mobile No." type="tel" color="cyan" onChange={(e) =>
+              <Input size="lg" label="Mobile No." type="" color="cyan" onChange={(e) =>
                 setFormInput({ ...formInput, mobile: e.target.value })
               } />
-              <Input size="lg" label="E-mail" type="email" color="cyan" onChange={(e) =>
-                setFormInput({ ...formInput, email: e.target.value })
-              } />
+              <Input
+                size="lg" label="E-mail" type="email" color="cyan" onChange={(e) =>
+                  setFormInput({ ...formInput, email: e.target.value })
+                } />
             </div>
             <div className="flex flex-col space-y-8">
               <Input label="Refferal Code (if any)" size="lg" color="cyan" onChange={(e) =>
@@ -213,9 +214,11 @@ export default function Register() {
                 </span>
               </div>
               <div>
-                <button className="border border-[#1A1E21] rounded-lg w-36 h-11 mr-4">
-                  <span className="font-semibold text-lg ">Cancel</span>
-                </button>
+                <Link href="/home">
+                  <button className="border border-[#1A1E21] rounded-lg w-36 h-11 mr-4">
+                    <span className="font-semibold text-lg ">Cancel</span>
+                  </button>
+                </Link>
                 <button
                   className="border bg-[#1A1E21] border-[#1A1E21] rounded-lg w-32 h-11 ml-4"
                   onClick={() => {

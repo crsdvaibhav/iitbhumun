@@ -1,28 +1,27 @@
 import React from 'react'
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    Typography,
-} from "@material-tailwind/react";
-import Image from 'next/image';
+import Image from 'next/image'
 
 
 export default function SecretariatCard(props) {
 
     return (
-        <div className="bg-gray-100 flex flex-wrap flex-direction-row  min-h-screen justify-center items-center h-[253px] w-full rounded-xl ">
+        <div className="   ">
+            <div className="p-2   w-[350px] ">
 
-
-            <div className="p-2 justify-center m-auto text-center rounded-xl w-[370px]  ">
-                <div className=' bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[170px]'>
-
+                <div className=' relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[140px] rounded-t-xl'>
+                    <Image className='absolute '
+                        src="/images/image-14.svg"
+                        width={850}
+                        height={380}
+                        alt="char images"
+                    />
                 </div>
-                <div className='bg-white h-[200px] justify-center m-auto'>
-                    <h2 className="text-lg mb-2 pt-8">{props.name}</h2>
-                    <h4 className=" text-sm mb-2 pt-2">{props.position}</h4>
 
-                    <p className="text-lg ">{props.description}</p>
+                <div className='bg-white h-[180px] justify-center m-auto rounded-b-xl text-center'>
+                    <h2 className="text-2xl mb-2 pt-6">{props.name}</h2>
+                    <h4 className=" text-sm mb-2 ">{props.position}</h4>
+
+                    <p className="text-lg  pt-4">{props.description}</p>
 
                 </div>
 
