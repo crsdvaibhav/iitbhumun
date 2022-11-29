@@ -20,7 +20,7 @@ export default function Footer() {
                   <Link href="/secretariat">
                     <button className="p-1">Secretariat</button>
                   </Link>
-                  <Link href="">
+                  <Link href="/gallery">
                     <button className="p-1">Gallery</button>
                   </Link>
                   <Link href="/faq">
@@ -164,7 +164,7 @@ export default function Footer() {
                 <Link href="/secretariat">
                   <button className="p-1">Secretariat</button>
                 </Link>
-                <Link href="">
+                <Link href="/gallery">
                   <button className="p-1">Gallery</button>
                 </Link>
                 <Link href="/faq">
