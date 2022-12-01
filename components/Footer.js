@@ -142,16 +142,8 @@ export default function Footer() {
       </div>
 
       <div className="bg-[#1A1E21] mt-12 text-white px-4 sm:hidden flex flex-col items-center font-custom">
-        <div className="w-full flex items-start mt-8">
-          <div className="w-1/4 mr-2 flex justify-center items-center">
-            <Image
-              src="/images/footer-logo.svg"
-              width={60}
-              height={60}
-              alt="footerlogo"
-            />
-          </div>
-          <div className="w-1/2 ml-2 flex flex-col">
+        <div className="w-full flex items-start justify-between mt-8">
+          <div className="ml-2 flex flex-col">
             <div>
               <p className="font-bold"> Explore</p>
               <div className="flex flex-wrap text-xs mt-2">
@@ -200,7 +192,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="w-1/4 ml-4">
+          <div className="ml-4">
             <div className="flex flex-col">
               <p className="font-bold">Participation</p>
               <Link
