@@ -1,24 +1,43 @@
 {
   "title": "IIT BHU MUN",
-  "legacyText": "Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit. \n Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit. \n Reprehenderit duis ut deserunt labore ut culpa Lorem reprehenderit aute occaecat aute cupidatat proident duis. Nisi eiusmod deserunt ex dolore ea adipisicing proident enim ad sit.",
+  "about":"IITBHU Model United Nations (MUN) is the pioneering Model UN conference of the spiritual capital of India, Varanasi. The conference has undergone stellar growth over its incredible journey of 11 years, attracting participation from 17 countries for its last edition. The 2022 edition of the Conference was organized in collaboration with UNIC, New Delhi, under the patronage of UNESCO-INCCU. The Honorable Prime Minister of India had also endorsed IIT BHU MUN with an inspiring message. Being in the middle of the Cultural Capital of the country with its spiritual diversity, amidst Asia’s largest residential university, IIT BHU MUN has been an ideal location for the conglomeration of passionate debaters and leaders from all over the world. The Secretariat extends you a cordial invitation to participate in the 2022 edition of the IITBHU Model United Nations Conference which will be organized between __ Feb 2023 to __ Feb 2023. With eminent guests, stellar Executive Boards, ignited young minds, and exhilarating debates, the upcoming edition promises to be the best one yet. The Secretariat is committed to providing you with the best MUN experience possible in the holy city of Varanasi.",
+  "legacyText": "IITBHU Model United Nations has quite well journey since its inception in 2012. The conference has hosted about 4000 delegates over 11 incredible editions. It has collaborated with premier institutions such as UNIC, New Delhi and has been supported by the UNESCO-INCCU via patronage. The 2021 edition of the conference marked yet another milestone when IITBHU MUN went international and hosted participants from 9 countries, this conference is also  endorsed by the Prime Minister of India, Shri Narendra Modi. In the last year edition of the conference four Indian ambassadors to four different countries took part as guest speakers and delegates from 17 countries participated in the conference.",
   "testimonials": [
     {
       "id": 1,
-      "name": "Random name",
+      "name": "Yuvraj Singh",
       "designation": "India",
-      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
+      "review": "As it was my first MUN I was quite nervous at first about the preparation and procedure of a MUN. But with a amazing pool of EB members and a outstanding Vice-Chair Mohil Mehra. I had a fruitful experience. "
     },
     {
       "id": 2,
-      "name": "Random name",
+      "name": "Purvi Agarwal",
       "designation": "India",
-      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
+      "review": "It was an amazing experience being a fresher. Hat's off to the EB's for their patience and support and kudos to the secreteriat!!"
     },
     {
       "id": 3,
-      "name": "Random name",
+      "name": "Seth Christopher B Mendenilla",
+      "designation": "The Philippines",
+      "review": "Salute to IITBHU MUN Secretariat, BOD, delegates around the globe and to everyone behind the success of this MUN."
+    },
+    {
+      "id": 4,
+      "name": "Habiba Rasooli",
+      "designation": "Afghanistan",
+      "review": "The sessions were well organised and managed. IITBHU MUN was very productive for me."
+    },
+    {
+      "id": 5,
+      "name": "Kevin Maina",
+      "designation": "Kenya",
+      "review": "Have you been in a place that felt like a fresh breath of air, filled with excitement and an aura of positivity from the committee heads to the delegates in attendance? This was IITBHU MUN for me!"
+    },
+    {
+      "id": 6,
+      "name": "Susmit Shivashish Pandey,",
       "designation": "India",
-      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque."
+      "review": "My experience at IITBHU MUN was really great, the EB members were extremely supportive. I learned a lot from the committee and I would like to thank everyone for helping out whenever necessary."
     }
   ],
   "sponsors": [
@@ -66,44 +85,55 @@
   "questions": [
     {
       "id": 1,
-      "question": "How many team members can I invite?",
-      "ans": "You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan."
+      "question": "Who can register?",
+      "ans": "Anyone undergoing formal education is eligible."
     },
     {
       "id": 2,
-      "question": "What is the maximum file upload size?",
-      "ans": "No more than 2GB. All files in your account must fit your allotted storage space."
+      "question": " Is there an age restriction for a delegate?",
+      "ans": "Yes, you should be 15 years or older."
     },
     {
       "id": 3,
-      "question": "How do I reset my password?",
-      "ans": "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you."
+      "question": "Do I need prior experience to register?",
+      "ans": "No prior experience is necessary to register for the conference."
     },
     {
       "id": 4,
-      "question": "Can I cancel my subscription?",
-      "ans": "Yes! Send us a message and we’ll process your request no questions asked. "
+      "question": "What committees are being simulated?",
+      "ans": "AIPPM, DISEC, ECOSOC, SPECPOL, UNCSW, UNHRC and a Crisis Committee alongside the International Press."
     },
     {
       "id": 5,
-      "question": "Do you provide addtional support?",
-      "ans": "Chat and email support is available 24/7. Phone lines are open during normal business hours. "
+      "question": "Is prior experience needed for any of the committees?",
+      "ans": "Delegates with prior MUN experience will be given preference for the Crisis Committee. No prior experience is required for the other 6 committees."
     },
     {
       "id": 6,
-      "question": "Do you provide addtional support?",
-      "ans": "Chat and email support is available 24/7. Phone lines are open during normal business hours. "
+      "question": "For how many committees can one apply?",
+      "ans": " Can apply for any number of committees, but only one will be allotted."
     },
     {
       "id": 7,
-      "question": "How do I reset my password?",
-      "ans": "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you."
+      "question": "When is the conference?",
+      "ans": "The Conference will be held between 3-5 February 2023. Save the date!"
     },
     {
       "id": 8,
-      "question": "How do I reset my password?",
-      "ans": "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you."
+      "question": "How will the conference be conducted?",
+      "ans": "IITBHU MUN 2023 will be conducted offline at the IIT(BHU) Varanasi campus."
+    },
+    {
+      "id": 9,
+      "question": " What will be the accommodation arrangements for delegates?",
+      "ans": ""
+    },
+    {
+      "id": 10,
+      "question": " What is the dress code for the conference?",
+      "ans": "Formal attire is strongly recommended but not required."
     }
+    
   ],
   "secretariat": [
     {
@@ -219,6 +249,96 @@
       "src": "/images/Rectangle 470.png",
       "title": "GHAT 9",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    }
+  ],
+  "committees":[
+    {
+      "id":1,
+      "title":"ECOSOC",
+      "data":"The Economic and Social Council (ECOSOC) is one of the six principal organs of the United Nations dedicated to advance the three dimensions of sustainable development – economic, social and environmental by providing overall guidance and coordination to academic and political institutions for achieving higher standards of living, full employment, better healthcare and welfare systems, among many more",
+      "chair":"",
+      "vicechair":"",
+      "agenda":"",
+      "logosrc":"/images/ecosoc.svg",
+      "chairsrc":"",
+      "vicechairsrc":""
+    },
+    {
+      "id":2,
+      "title":"UNODC",
+      "data":"The United Nations Office on Drugs and Crime (UNODC) is a global leader in the fight against illicit drugs and international crime. UNODC is mandated to assist Member States in their struggles against interrelated issues of illicit trafficking and abuse of drugs, crime prevention and criminal justice, international terrorism, and political corruption. ",
+      "chair":"",
+      "vicechair":"",
+      "agenda":"",
+      "logosrc":"/images/unodc.svg",
+      "chairsrc":"",
+      "vicechairsrc":""
+    },
+    {
+      "id":3,
+      "title":"AIPPM",
+      "data":"All India Political Party Meet is a non-technical but powerful committee without any legislative provisions. It is a meeting between all the political parties of the nation. AIPPM is regarded as ground zero for discussing the critical issues that concern the delegates’ minds and is where realistic solutions begin.The purpose of the meetings is to be a forum for unbounded political debate which may not be allowed in the Parliament due to time constraints and provide a better insight into national issues. They help provide a diverse viewpoint before the actual legislative process.",
+      "chair":"",
+      "vicechair":"",
+      "agenda":"",
+      "logosrc":"/images/aippm.svg",
+      "chairsrc":"",
+      "vicechairsrc":""
+    },
+    {
+      "id":4,
+      "title":"CCC",
+      "data":"A crisis committee is a decision making body that has more power than a traditional committee. In the Continuous Crisis Committees, there is no set agenda. The Committee is expected to respond to the multitude of issues raised throughout the conference as corollaries of its actions and other simulated events.",
+      "chair":"",
+      "vicechair":"",
+      "agenda":"",
+      "logosrc":"/images/cc.svg",
+      "chairsrc":"",
+      "vicechairsrc":""
+    },
+    {
+      "id":5,
+      "title":"DISEC",
+      "data":"Disarmament and International Security, also known as DISEC,is the committee that deals with disarmament, global challenges and threats to peace that affect the international community and seeks out solutions to the challenges in the international security regime .It considers all disarmament and international security matters within the scope of the Charter or relating to the powers and functions of any other organ of the United Nations; ",
+      "chair":"",
+      "vicechair":"",
+      "agenda":"",
+      "logosrc":"/images/disec.svg",
+      "chairsrc":"",
+      "vicechairsrc":""
+    },
+    {
+      "id":6,
+      "title":"UNCSW",
+      "data":"The United Nations Commission on the Status of Women (UNCSW) is the global intergovernmental body dedicated to the promotion of gender equality and the empowerment of women. The CSW is instrumental in promoting women’s rights, documenting the reality of women’s lives throughout the world, and shaping global standards on gender equality.",
+      "chair":"",
+      "vicechair":"",
+      "agenda":"",
+      "logosrc":"/images/uncsw.svg",
+      "chairsrc":"",
+      "vicechairsrc":""
+    },
+    {
+      "id":7,
+      "title":"WTO",
+      "data":"The World Trade Organization (WTO) is the only global international organization dealing with the rules of trade between nations. At its heart are the WTO agreements, negotiated and signed by the bulk of the world’s trading nations and ratified in their parliaments. The goal is to ensure that trade flows as smoothly, predictably and freely as possible.",
+      "chair":"",
+      "vicechair":"",
+      "agenda":"",
+      "logosrc":"/images/wto.svg",
+      "chairsrc":"",
+      "vicechairsrc":""
+    },
+    {
+      "id":8,
+      "title":"Lok Sabha",
+      "data":"The Lok Sabha (House of the People) is the Lower house of India's bicameral Parliament( the supreme legislative body of the Republic of India.) Lok Sabha is composed of representatives of the people chosen by direct election on the basis of the adult suffrage by first past the post system. The government has to prove its majority in the lok sabha to form government.The primary function of Parliament is to make law on behalf of people of India. It can pass bills concerning all those subjects which have been included in the Union and Concurrent list.",
+      "chair":"",
+      "vicechair":"",
+      "agenda":"",
+      "logosrc":"/images/ls.svg",
+      "chairsrc":"",
+      "vicechairsrc":""
     }
   ]
 }

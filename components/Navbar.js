@@ -1,7 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
 
 export default function NavBar({ navbar }) {
+
   return (
     <div
       className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
@@ -55,16 +63,27 @@ export default function NavBar({ navbar }) {
       <div
         className={`sm:hidden w-full flex ${navbar
           ? 'items-center justify-between p-2'
-          : 'flex-row-reverse w-full p-6'
+          : 'flex justify-between w-full p-6'
           }`}
       >
-        <div className={`${!navbar ? 'hidden' : ''}`}>
-          <Image
-            src="/images/mobile-actinav.svg"
-            width={52}
-            height={20}
-            alt="mobile-actinav"
-          />
+        <div>
+          <Menu>
+            <MenuHandler className={`${!navbar ? 'hidden' : ''}`}>
+              <Image
+                src="/images/mobile-actinav.svg"
+                width={52}
+                height={20}
+                alt="mobile-actinav"
+              />
+            </MenuHandler>
+            <MenuList className="sm:hidden absolute z-30 top-0 h-full w-[100vw] rounded-none flex flex-col items-center justify-center bg-[#189BA5] bg-opacity-50 text-white text-3xl font-heading font-bold text-center backdrop-blur-lg">
+              <MenuItem className='text-center'><Link href="/">Home</Link></MenuItem>
+              <MenuItem className='text-center'><Link href="/committees">Committee</Link></MenuItem>
+              <MenuItem className='text-center'><Link href="/secretariat">Secretariat</Link></MenuItem>
+              <MenuItem className='text-center'><Link href="/gallery">Gallery</Link></MenuItem>
+              <MenuItem className='text-center'><Link href="/faq">FAQs</Link></MenuItem>
+            </MenuList>
+          </Menu>
         </div>
         <div className={`${!navbar ? 'hidden' : ''}`}>
           <Image
