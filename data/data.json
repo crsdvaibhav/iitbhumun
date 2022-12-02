@@ -198,56 +198,86 @@
   "gallery": [
     {
       "id": 1,
-      "src": "/images/Rectangle 469.png",
-      "title": "ASSi GHAT",
+      "src": "/images/assi_ghat.jpg",
+      "title": "Assi Ghat",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 2,
-      "src": "/images/Rectangle 469.png",
-      "title": "GHAT 2",
+      "src": "/images/manikarnika_ghat.jpg",
+      "title": "Manikarnika Ghat",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 3,
-      "src": "/images/Rectangle 470.png",
-      "title": "GHAT 3",
+      "src": "/images/Panchganga-Ghat.jpg",
+      "title": "Panch Ganga Ghat",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 4,
-      "src": "/images/Rectangle 470.png",
-      "title": "GHAT 4",
+      "src": "/images/dashashwamedh_ghat.jpg",
+      "title": "Dashashwamedh Ghat",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 5,
-      "src": "/images/Rectangle 470.png",
-      "title": "GHAT 5",
+      "src": "/images/kvt.webp",
+      "title": "Kashi Vishwanath Temple",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 6,
-      "src": "/images/Rectangle 470.png",
-      "title": "GHAT 6",
+      "src": "/images/darbhanga-ghat.jpg",
+      "title": "Darbhanga Ghat",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 7,
-      "src": "/images/Rectangle 470.png",
-      "title": "GHAT 7",
+      "src": "/images/sarnath.jpg",
+      "title": "Sarnath Stupa",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 8,
-      "src": "/images/Rectangle 470.png",
-      "title": "GHAT 8",
+      "src": "/images/mun1.jpg",
+      "title": "Previous conferences",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 9,
-      "src": "/images/Rectangle 470.png",
-      "title": "GHAT 9",
+      "src": "/images/mun2.jpg",
+      "title": "Previous conferences",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 10,
+      "src": "/images/mun3.jpg",
+      "title": "Previous conferences",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 11,
+      "src": "/images/mun4.jpg",
+      "title": "Previous conferences",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 12,
+      "src": "/images/mun5.jpg",
+      "title": "Previous conferences",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 13,
+      "src": "/images/mun6.jpg",
+      "title": "Previous conferences",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 14,
+      "src": "/images/mun4.jpg",
+      "title": "Previous conferences",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     }
   ],

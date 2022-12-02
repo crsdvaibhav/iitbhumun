@@ -22,7 +22,8 @@ export default function Card(props) {
     }
 
     return (
-        <div className={state ? "absolute top-0 block" : "absolute top-0 hidden"}>
+        
+            <div className={(state && props.open) ? "absolute top-11 left-12 block z-999 opacity-700" : "hidden"}>
             <div className="max-w-sm rounded shadow-lg" id="card">
                 <img
                     className="w-full"
@@ -42,6 +43,7 @@ export default function Card(props) {
                 </div>
             </div>
         </div>
+
     );
 }
 
