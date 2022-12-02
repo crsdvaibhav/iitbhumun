@@ -28,7 +28,7 @@ export default function CommitteeCircle(props) {
                     </div>
                 </div>
             </button>
-            <DialogBox open={open} handleOpen={handleChange} title={props.title} data={props.data}/>
+            <DialogBox open={open} handleOpen={handleChange} title={props.title} data={props.data} chair={props.chair} vicechair={props.vicechair} agenda={props.agenda} />
         </Fragment>
     );
 }
