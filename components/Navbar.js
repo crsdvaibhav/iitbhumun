@@ -5,7 +5,6 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-  Button,
 } from "@material-tailwind/react";
 
 export default function NavBar({ navbar }) {
@@ -77,11 +76,12 @@ export default function NavBar({ navbar }) {
               />
             </MenuHandler>
             <MenuList className="sm:hidden absolute z-30 top-0 h-full w-[100vw] rounded-none flex flex-col items-center justify-center bg-[#189BA5] bg-opacity-50 text-white text-3xl font-heading font-bold text-center backdrop-blur-lg">
-              <MenuItem className='text-center'><Link href="/">Home</Link></MenuItem>
-              <MenuItem className='text-center'><Link href="/committees">Committee</Link></MenuItem>
-              <MenuItem className='text-center'><Link href="/secretariat">Secretariat</Link></MenuItem>
-              <MenuItem className='text-center'><Link href="/gallery">Gallery</Link></MenuItem>
-              <MenuItem className='text-center'><Link href="/faq">FAQs</Link></MenuItem>
+              <MenuItem className='text-center hover:text-yellow-400'><Link href="/">Home</Link></MenuItem>
+              <MenuItem className='text-center hover:text-yellow-400'><Link href="/committees">Committee</Link></MenuItem>
+              <MenuItem className='text-center hover:text-yellow-400'><Link href="/secretariat">Secretariat</Link></MenuItem>
+              <MenuItem className='text-center hover:text-yellow-400'><Link href="/gallery">Gallery</Link></MenuItem>
+              <MenuItem className='text-center hover:text-yellow-400'><Link href="/faq">FAQs</Link></MenuItem>
+              <MenuItem className='text-center text-xl pt-12'><button className='text-black bg-white px-4 rounded-lg'>Close</button></MenuItem>
             </MenuList>
           </Menu>
         </div>
