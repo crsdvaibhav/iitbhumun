@@ -22,7 +22,7 @@ export default function ImageCard(props) {
                             height={200}
                             width={320}
                             src={props.src}
-                            alt="image h"
+                            alt="This is an image."
                         />
                         <p className="relative top-0 font-bold text-lg">{props.title}</p>
                     </div>
