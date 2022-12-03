@@ -34,7 +34,7 @@ export default function Footer() {
                 </div>
                 <div className="mt-[1.25rem] flex flex-col font-custom text-[1.25rem] font-medium">
                   <div>
-                    <a className="flex" href='https://www.google.com/maps/place/Indian+Institute+of+Technology+(BHU)+Varanasi/@25.2623125,82.9893125,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x7555db6d623dc140!8m2!3d25.2623125!4d82.9893125' target="_blank">
+                    <a className="flex" href='https://www.google.com/maps/place/Indian+Institute+of+Technology+(BHU)+Varanasi/@25.2623125,82.9893125,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x7555db6d623dc140!8m2!3d25.2623125!4d82.9893125'>
                       <Image
                         src="/images/location.svg"
                         width={24}
@@ -47,7 +47,7 @@ export default function Footer() {
                     </a>
                   </div>
                   <div className="mt-[1.481rem]">
-                    <a className="flex" href='mailto:secretariat@iitbhumun.com' target="_blank">
+                    <a className="flex" href='mailto:secretariat@iitbhumun.com'>
                       <Image
                         src="/images/mail.svg"
                         width={24}
