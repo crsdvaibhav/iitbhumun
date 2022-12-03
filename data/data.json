@@ -290,8 +290,8 @@
       "vicechair":"Nishant Padhy",
       "agenda":"Deliberation on economic inclusion of refugees, with a focus on internally displaced people",
       "logosrc":"/images/ecosoc.svg",
-      "chairsrc":"",
-      "vicechairsrc":""
+      "chairsrc":"/images/ecosoc-c.jpg",
+      "vicechairsrc":"/images/ecosoc-vc.jpg"
     },
     {
       "id":2,
@@ -301,8 +301,8 @@
       "vicechair":"Jackelyn Carreon",
       "agenda":"Revisiting the issue of cross border illicit drugs, arms and human trafficking",
       "logosrc":"/images/unodc.svg",
-      "chairsrc":"",
-      "vicechairsrc":""
+      "chairsrc":"/images/unodc-c.jpg",
+      "vicechairsrc":"/images/unodc-vc.jpg"
     },
     {
       "id":3,
@@ -312,8 +312,8 @@
       "vicechair":"Naman Jain",
       "agenda":"Discussion on ways to mitigate corruption in India with special emphasis on administrative bodies",
       "logosrc":"/images/aippm.svg",
-      "chairsrc":"",
-      "vicechairsrc":""
+      "chairsrc":"/images/aippm-c.jpg",
+      "vicechairsrc":"/images/aippm-vc.jpg"
     },
     {
       "id":4,
@@ -323,8 +323,8 @@
       "vicechair":"Abhinav Mukherjee",
       "agenda":"Crisis in Kosovo, 1999",
       "logosrc":"/images/cc.svg",
-      "chairsrc":"",
-      "vicechairsrc":""
+      "chairsrc":"/images/cc-c.jpg",
+      "vicechairsrc":"/images/cc-vc.jpg"
     },
     {
       "id":5,
@@ -334,8 +334,8 @@
       "vicechair":"Archit Malhotra",
       "agenda":"The situation in the temporarily occupied territories of Ukraine",
       "logosrc":"/images/disec.svg",
-      "chairsrc":"",
-      "vicechairsrc":""
+      "chairsrc":"/images/disec-c.jpg",
+      "vicechairsrc":"/images/disec-vc.jpg"
     },
     {
       "id":6,
@@ -345,8 +345,8 @@
       "vicechair":"Manisha Sengupta",
       "agenda":"Women as the drivers of Economic Recovery and resilience with special emphasis on SDG 5 and 8",
       "logosrc":"/images/uncsw.svg",
-      "chairsrc":"",
-      "vicechairsrc":""
+      "chairsrc":"/images/uncsw-c.jpg",
+      "vicechairsrc":"/images/uncsw-vc.jpg"
     },
     {
       "id":7,
@@ -356,8 +356,8 @@
       "vicechair":"Hidaya Tlemçani",
       "agenda":"Barriers Aplenty - An emphasis on tariff competitions and the disruption in supply chains",
       "logosrc":"/images/wto.svg",
-      "chairsrc":"",
-      "vicechairsrc":""
+      "chairsrc":"/images/wto-c.jpg",
+      "vicechairsrc":"/images/wto-vc.jpg"
     },
     {
       "id":8,
@@ -367,8 +367,8 @@
       "vicechair":"Vignesh Ramanathan",
       "agenda":"Discussing the state of rights and privileges of marginalized communities in India",
       "logosrc":"/images/ls.svg",
-      "chairsrc":"",
-      "vicechairsrc":""
+      "chairsrc":"/images/ls-c.jpg",
+      "vicechairsrc":"/images/ls-vc.jpg"
     }
   ]
 }

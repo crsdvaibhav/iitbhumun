@@ -5,6 +5,7 @@ import {
     DialogFooter,
     DialogHeader,
 } from "@material-tailwind/react";
+import Image from "next/image";
 
 const DialogBox = (props) => {
     return (
@@ -22,7 +23,7 @@ const DialogBox = (props) => {
                     </div>
                     <div className="flex justify-around py-2">
                         <div className="font-custom flex flex-col items-center">
-                            <div className="h-32 w-32 sm:h-40 sm:w-40 rounded-full border-2 border-black"></div>
+                            <div className="h-32 w-32 sm:h-40 sm:w-40 rounded-full border-2 border-black overflow-hidden relative"><Image src={props.csrc} layout="fill"></Image></div>
                             <div className="font-bold sm:text-[1.5rem]">
                                 {props.chair}
                             </div>
@@ -31,7 +32,7 @@ const DialogBox = (props) => {
                             </div>
                         </div>
                         <div className="font-custom flex flex-col items-center">
-                            <div className="h-32 w-32 sm:h-40 sm:w-40 rounded-full border-2 border-black"></div>
+                            <div className="h-32 w-32 sm:h-40 sm:w-40 rounded-full border-2 border-black overflow-hidden relative"><Image src={props.vcsrc} layout="fill"></Image></div>
                             <div className="font-bold sm:text-[1.5rem]">
                                 {props.vicechair}
                             </div>
