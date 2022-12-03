@@ -1,5 +1,6 @@
 import { useState } from "react";
 import data from "../data/data.json";
+import Image from 'next/image';
 
 export default function Card(props) {
 
@@ -24,9 +25,10 @@ export default function Card(props) {
     return (
         
             <div className={(state && props.open) ? "absolute top-11 left-12 block z-999 opacity-700" : "hidden"}>
-            <div className="max-w-sm rounded shadow-lg" id="card">
-                <img
-                    className="w-full"
+            <div className="max-w-sm rounded shadow-lg wrap" id="card">
+                <Image
+                    width={336}
+                    height={251.67}
                     src={element.src}
                     alt="Sunset in the mountains"
                 />
@@ -34,12 +36,12 @@ export default function Card(props) {
                     <div className="flex flex-wrap justify-between">
                         <div className="font-bold text-xl mb-2">{element.title}</div>
                         <button id="close" onClick={handleClick}>
-                            <strong className="text-xl align-end cursor-pointer alert-del">
+                            <strong className="text-3xl align-end cursor-pointer alert-del">
                                 &times;
                             </strong>
                         </button>
                     </div>
-                    <p className="text-gray-700 text-base">{element.text}</p>
+                    <p className="text-gray-700 text-base font-bold">{element.text}</p>
                 </div>
             </div>
         </div>

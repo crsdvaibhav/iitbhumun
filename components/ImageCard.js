@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card";
-import Link from "next/link";
+import Image from 'next/image'
 
 export default function ImageCard(props) {
     const [data, setData] = useState({ id: 0 });
@@ -17,8 +17,10 @@ export default function ImageCard(props) {
             <div>
                 <button id="myBtn" onClick={handleClick}>
                     <div className="mr-0 ml-20 mt-20">
-                        <img
-                            className="h-[12.5rem] w-[20rem] hover:border-4 border-violet-700"
+                        <Image
+                            // className="h-[12.5rem] w-[20rem] hover:border-4 border-violet-700"
+                            height={200}
+                            width={320}
                             src={props.src}
                             alt="image h"
                         />
