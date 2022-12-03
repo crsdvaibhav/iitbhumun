@@ -39,18 +39,18 @@ export default function Main() {
         <div className="hidden sm:flex justify-between">
           <div className="flex flex-col items-center">
             <Image
-              src="/images/legacy-circles.svg"
+              src="/images/legacy-circle1.svg"
               width={230}
               height={230}
               alt="legacy"
             />
             <span className="mt-[0.25rem] text-[1.25rem] font-custom text-[#189BA5] font-medium">
-              Delegates
+              Conferences
             </span>
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/images/legacy-circles.svg"
+              src="/images/legacy-circle2.svg"
               width={230}
               height={230}
               alt="legacy"
@@ -61,13 +61,13 @@ export default function Main() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/images/legacy-circles.svg"
+              src="/images/legacy-circle3.svg"
               width={230}
               height={230}
               alt="legacy"
             />
             <span className="mt-[0.25rem] text-[1.25rem] font-custom text-[#189BA5] font-medium">
-              Conferences
+              Delegates
             </span>
           </div>
         </div>
@@ -75,18 +75,18 @@ export default function Main() {
         <div className="flex justify-center mt-8 sm:hidden">
           <div className="mr-2 flex flex-col items-center">
             <Image
-              src="/images/legacy-circles.svg"
+              src="/images/legacy-circle1.svg"
               width={100}
               height={100}
               alt="legacy"
             />
             <span className="mt-[0.25rem] text-xs font-custom text-[#189BA5] font-semibold">
-              Delegates
+              Conferences
             </span>
           </div>
           <div className="mx-2 flex flex-col items-center">
             <Image
-              src="/images/legacy-circles.svg"
+              src="/images/legacy-circle2.svg"
               width={100}
               height={100}
               alt="legacy"
@@ -97,13 +97,13 @@ export default function Main() {
           </div>
           <div className="ml-2 flex flex-col items-center">
             <Image
-              src="/images/legacy-circles.svg"
+              src="/images/legacy-circle3.svg"
               width={100}
               height={100}
               alt="legacy"
             />
             <span className="mt-[0.25rem] text-xs font-custom text-[#189BA5] font-semibold">
-              Conferences
+              Delegates
             </span>
           </div>
         </div>

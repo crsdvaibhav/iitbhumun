@@ -19,7 +19,7 @@ export default function CountdownElement() {
                 className="p-5 md:py-8 lg:py-10 text-4xl sm:text-5xl md:text-7xl rounded-md text-cyan-600 text-center border-cyan-600 border-2"
               >
                 {count}
-                <div className='pt-2 text-heading font-bold text-xl text-cyan-600'>{arr[index]}</div>
+                <div className='pt-2 text-heading font-bold text-xs sm:text-xl text-cyan-600'>{arr[index]}</div>
               </div>
           ))}
         </div>
