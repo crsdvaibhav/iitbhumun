@@ -14,7 +14,7 @@ export default function Secretariat() {
             <NavBar navbar={true} />
 
             <div className='   text-5xl pt-24 text-center'>
-                Senior Secretariat
+                 Secretariat
             </div>
 
             <div>
@@ -32,9 +32,26 @@ export default function Secretariat() {
 
                     })}
                 </div>
-            </div>\
+            </div>
             <div className='  text-5xl pt-24 text-center'>
-                Meet Our Team
+                Heads
+            </div>
+
+            <div>
+                <div className='flex mt-24 w-[1500px] m-auto gap-20 flex-wrap justify-center p-2'>
+                    {data.heads.map((i) => {
+                        return (
+                            <SecretariatCard
+                                key={i.id}
+                                id={i.id}
+                                name={i.name}
+                                position={i.position}
+                                description={i.description}
+                            />
+                        )
+
+                    })}
+                </div>
             </div>
             <div>
                 <div className='flex bg-white mt-24 w-[1500px] m-auto gap-32 flex-wrap justify-center p-10'>
@@ -44,7 +61,11 @@ export default function Secretariat() {
                                 key={i.id}
                                 id={i.id}
                                 vertical={i.vertical}
-                                member={i.member}
+                                member1={i.member1}
+                                member2={i.member2}
+                                member3={i.member3}
+                                member4={i.member4}
+                                member5={i.member5}
                             />
                         )
 

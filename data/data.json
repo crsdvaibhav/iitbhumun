@@ -138,61 +138,136 @@
   "secretariat": [
     {
       "id": 1,
-      "name": "Random name",
-      "position": "Random position",
+      "name": "Moulik Ketkar",
+      "position": "Secretary-General ",
       "description": "Random description"
     },
     {
       "id": 2,
-      "name": "Random name",
-      "position": "Random position",
+      "name": "Aryan Poddar",
+      "position": "Director-General",
       "description": "Random description"
     },
     {
       "id": 3,
-      "name": "Random name",
-      "position": "Random position",
+      "name": "Ayush Kandoi",
+      "position": "Deputy Secretary-General",
       "description": "Random description"
     },
     {
       "id": 4,
-      "name": "Random name",
-      "position": "Random position",
+      "name": "Aryavardhan Pateriya",
+      "position": "Deputy Director-General",
       "description": "Random description"
     },
     {
       "id": 5,
-      "name": "Random name",
-      "position": "Random position",
+      "name": "Preeti Kumari",
+      "position": "Head of Operations",
       "description": "Random description"
     },
     {
       "id": 6,
-      "name": "Random name",
-      "position": "Random position",
+      "name": "Deepa Choudhary",
+      "position": "Head of Creative Affairs",
       "description": "Random description"
+    }
+  ],
+  "heads": [
+    {
+      "id": 1,
+      "name": "Mohamed Rafee",
+      "position": "Director d'Design"
+    },
+    {
+      "id": 2,
+      "name": "Naman Agrawal",
+      "position": "Technical Director"
+    },
+    {
+      "id": 3,
+      "name": "Aditya Anil Kapdi",
+      "position": "IP Head"
+    },
+    {
+      "id": 4,
+      "name": "Pranav S",
+      "position": "Marketing Director"
+    },
+    {
+      "id": 5,
+      "name": "Satveer Barodia",
+      "position": "Publicity Director"
     }
   ],
   "vertical": [
     {
       "id": 1,
-      "vertical": "Random vertical",
-      "member": "Random member"
+      "vertical": "Delegate Affairs",
+      "member1": "Swastik Mishra",
+      "member2": "Shubhdarshini Dwivedi",
+      "member3": "Aastha Ojha",
+      "member4": "Shlok Dhanawde"
     },
     {
       "id": 1,
-      "vertical": "Random vertical",
-      "member": "Random member"
+      "vertical": "Design",
+      "member1": "Amit Meena",
+      "member2": "Manas Gupta",
+      "member3": "Siddharth prakash"
     },
     {
       "id": 1,
-      "vertical": "Random vertical",
-      "member": "Random member"
+      "vertical": "Content",
+      "member1": "Swaralee Nagwanshi",
+      "member2": "Rishav Parashar"
     },
     {
       "id": 1,
-      "vertical": "Random vertical",
-      "member": "Random member"
+      "vertical": "Public Relations",
+      "member1": "Anish Kumar Gupta",
+      "member2": "Anushka Sharma ",
+      "member3": "Chetan Chavan",
+      "member4": "Atul Birla "
+    },
+    {
+      "id": 1,
+      "vertical": "Marketing",
+      "member1": "Shreeyam Saklecha",
+      "member2": "JISHNU.P.N ",
+      "member3": "Abhinav Patel",
+      "member4": "Kashish Agrawal"
+    },
+    {
+      "id": 1,
+      "vertical": "Publicity",
+      "member1": "Arpit Sahu",
+      "member2": "Poojitha Paltasingi",
+      "member3": "Abhishek Dwivedi",
+      "member4": "Swastik",
+      "member5": "Satwik Trivedi"
+    },
+    {
+      "id": 1,
+      "vertical": "Hospitality & Logistics",
+      "member1": "Vishnu Gopakumar",
+      "member2": "Architha Mekala",
+      "member3": "Adrija Banerjee"
+    },
+    {
+      "id": 1,
+      "vertical": "Tech",
+      "member1": "Vaibhav Kumar Pandey",
+      "member2": "Devansh Choudhary",
+      "member3": "Utkarsh Sharma"
+    },
+    {
+      "id": 1,
+      "vertical": "Executive Board Affairs",
+      "member1": "Kundurthy Yamini Jaya Meghana ",
+      "member2": "Shiv Prabhakar",
+      "member3": "Anushka Singh Jaiswal",
+      "member4": "VIVEK KUMAR BHARATHI B R"
     }
   ],
   "gallery": [
