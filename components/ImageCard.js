@@ -13,14 +13,13 @@ export default function ImageCard(props) {
 
     return (
         <>
-            <Card id={data.id} open = {state}/>
+            {/* <Card id={data.id} open = {state}/> */}
             <div>
-                <button id="myBtn" onClick={handleClick}>
-                    <div className="mr-0 ml-20 mt-20">
+                <button id="myBtn" onClick={handleClick} className="mt-20 mb-10">
+                    <div className="">
                         <Image
-                            // className="h-[12.5rem] w-[20rem] hover:border-4 border-violet-700"
-                            height={200}
-                            width={320}
+                            height={190}
+                            width={305}
                             src={props.src}
                             alt="This is an image."
                         />

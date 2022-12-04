@@ -241,43 +241,55 @@
     {
       "id": 8,
       "src": "/images/mun1.jpg",
-      "title": "Previous conferences",
+      "title": "Country's Representatives",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 9,
       "src": "/images/mun2.jpg",
-      "title": "Previous conferences",
+      "title": "Committee Proceedings",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 10,
-      "src": "/images/mun3.jpg",
-      "title": "Previous conferences",
+      "src": "/images/MUN-260.jpg",
+      "title": "Interactive Participation",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 11,
       "src": "/images/mun4.jpg",
-      "title": "Previous conferences",
+      "title": "Delegate Speech",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 12,
-      "src": "/images/mun5.jpg",
-      "title": "Previous conferences",
+      "src": "/images/MUN-261.jpg",
+      "title": "Presentation",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 13,
       "src": "/images/mun6.jpg",
-      "title": "Previous conferences",
+      "title": "Tensed Environment",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     },
     {
       "id": 14,
-      "src": "/images/mun4.jpg",
-      "title": "Previous conferences",
+      "src": "/images/MUN-192.jpg",
+      "title": "Preparation to speech",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 15,
+      "src": "/images/MUN-30.jpg",
+      "title": "General Meetings",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 16,
+      "src": "/images/MUN-250.jpg",
+      "title": "Group Discussion",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     }
   ],
