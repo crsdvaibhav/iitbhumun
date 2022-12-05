@@ -26,9 +26,9 @@ export default function Main() {
             <p>Leading such a prestigious conference is a tremendous undertaking; however, with the wisdom imparted by the previous Secretary Generals and with such a dynamic and hardworking Secretariat, I am more than hopeful about this edition’s enthralling experience it promises to deliver. </p>
             <p className='mt-2'>Therefore, to everyone reading this, I invite you all to be part of this grand edition. Bring on the fiery debates, the urge to change the world, and of course, fruitful deliberations with resolutions concentrated on innovative ideas.</p>
             <p className='mt-2'>See you all at IITBHU Model United Nations’23!</p>
-            <p className='mt-2'>Yours sincerely,</p>
-            <p className='mt-2'>Moulik Ketkar</p>
-            <p>Secretary-General, IITBHU MUN’23</p>
+            <p className='mt-2 font-bold'>Regards,</p>
+            <p className='mt-2 font-bold'>Moulik Ketkar</p>
+            <p className='font-bold'>Secretary-General, IITBHU MUN’23</p>
           </p>
         </div>
       </div>

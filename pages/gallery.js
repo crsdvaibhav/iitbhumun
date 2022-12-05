@@ -12,11 +12,11 @@ export default function NavBar() {
                 <Image
                 width={1688}
                 height={660}
-                src="/images/Rectangle 468.png" 
+                src="/images/Mun.webp" 
                 alt="image h" />
             </div>
 
-            <div className="flex flex-wrap overflow-y-auto">
+            <div className="flex flex-wrap overflow-y-auto justify-around">
                 {data.gallery.map((item) => {
                     return (
                         <ImageCard
