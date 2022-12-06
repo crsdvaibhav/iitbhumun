@@ -17,10 +17,8 @@ export default function Thankyou() {
           3
         </div>
       </div>
-      <div className="flex justify-center items-center h-[100vh] w-full text-6xl">
-        Thankyou!
-        You have successfully registered !!
-        The secretariat will get back to you in 5 days, if not then contact on given email ids.
+      <div className="flex justify-center items-center h-[50vh] w-full text-3xl px-12">
+      Thank you. You have successfully registered. The secretariat will review your preferences and send you a mail with tentative allotment and payment link within 5 days. If you do not receive a mail from us within 5 days time, kindly write to us at secretariat@iitbhumun.com 
       </div>
       <Footer />
     </div>

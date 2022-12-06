@@ -70,7 +70,7 @@ export default function Committees() {
                             height={253}
                         />
                         <div className="font-heading text-[2rem] font-bold pt-4">
-                            Rise. Speak . Resolve.
+                            Rise. Speak. Resolve.
                         </div>
                     </div>
                 </div>

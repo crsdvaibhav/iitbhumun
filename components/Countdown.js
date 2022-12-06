@@ -1,7 +1,7 @@
 import Countdown from 'react-countdown';
 
 export default function CountdownElement() {
-  const arr = ["Days", "Hours", "Minutes", "Seconds"]
+  const arr = ["D", "H", "M", "S"]
 
   const Completionist = () => <span>You are good to go!</span>;
 
