@@ -6,7 +6,12 @@ import { Button, Input, Radio, Textarea } from '@material-tailwind/react';
 
 
 export default function Register() {
-  const [user, setUser] = useState();
+
+
+  const [team, setTeam] = useState(false);
+
+
+
   const [formInput, setFormInput] = useState({
     name: '',
     age: 0,
@@ -105,9 +110,7 @@ export default function Register() {
               1
             </div>
             <div className="w-40 mx-2 border h-0 justify-center border-[#1A1E21] my-6"></div>
-            <div onClick={() => {
-              setCheck(true);
-            }} className="text-3xl hover:text-[#FFFFFF] justify-center hover:bg-[#1A1E21] bg-[#FFFFFF] w-10 h-10   border-2 border-[#1A1E21] rounded-full  ">
+            <div className="text-3xl hover:text-[#FFFFFF] justify-center hover:bg-[#1A1E21] bg-[#FFFFFF] w-10 h-10   border-2 border-[#1A1E21] rounded-full  ">
               2
             </div>
             <div className="w-40 mx-2 border h-0 justify-center border-[#1A1E21] my-6"></div>
@@ -115,7 +118,6 @@ export default function Register() {
               3
             </div>
           </div>
-
           <div className=" bg-[url(../public/images/Group-242.svg)] gap-8 bg-no-repeat bg-center bg-auto bg-origin-padding grid grid-cols-1 place-items-center px-10  lg:grid lg:grid-cols-2">
             <div className="flex flex-col space-y-8">
               <Input
@@ -209,8 +211,7 @@ export default function Register() {
               <div className="mb-8 flex items-center space-x-2">
                 <span className="font-bold text-sm">NOTE:</span>
                 <span className="font-xs text-red-600">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Consequatur, dolores.
+                  If you wish to participate in a team of 2  <span onClick={handleSubmit} className='text-[#189BA5] cursor-pointer'>Click Here</span>
                 </span>
               </div>
               <div>
