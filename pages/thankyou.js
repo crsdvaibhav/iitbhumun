@@ -1,4 +1,3 @@
-
 import Footer from '../components/Footer';
 
 export default function Thankyou() {
@@ -17,8 +16,15 @@ export default function Thankyou() {
           3
         </div>
       </div>
-      <div className="flex justify-center items-center h-[50vh] w-full text-3xl px-12">
-      Thank you. You have successfully registered. The secretariat will review your preferences and send you a mail with tentative allotment and payment link within 5 days. If you do not receive a mail from us within 5 days time, kindly write to us at secretariat@iitbhumun.com 
+      <div className="flex space-y-5 flex-col justify-between items-center sm:w-3/4 w-5/6 lg:w-1/2 mx-auto text-lg lg:text-3xl text-justify p-12">
+        <span>Thank you. You have successfully registered.</span>
+        <br />
+        The secretariat will review your preferences and send you a mail with
+        tentative allotment and payment link within 5 days. If you do not
+        receive a mail from us within 5 days time, kindly write to us at{' '}
+        <a href="mailto:secretariat@iitbhumun.com" className="text-indigo-700">
+          secretariat@iitbhumun.com
+        </a>
       </div>
       <Footer />
     </div>
