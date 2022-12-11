@@ -15,7 +15,7 @@ export default function Register() {
   const [error, setError] = useState(false);
   const [check, setCheck] = useState(false);
   const [member, setMember] = useState(false);
-  const [solo, setSolo] = useState(false);
+  const [solo, setSolo] = useState(true);
 
   const [formInput, setFormInput] = useState({
     name: '',
@@ -82,7 +82,7 @@ export default function Register() {
       .catch((err) => console.log(err));
 
     SheetDB.write('https://sheetdb.io/api/v1/yz9189tqxczi6', {
-      sheet: 'Sheet1',
+      sheet: 'Sheet2',
       data: formInput2,
     })
       .then((result) => {
@@ -154,8 +154,17 @@ export default function Register() {
       setCheck(false);
     }
   };
+  const handleCheck2 = (e) => {
+    console.log(formInput2);
+    console.log(error);
+    if (!error) {
+      setCheck(true);
+    } else {
+      setCheck(false);
+    }
+  };
 
-  const handleMember = (e) => {};
+  const handleMember = (e) => { };
 
   useEffect(() => {
     if (
@@ -206,6 +215,7 @@ export default function Register() {
     { value: 'usa', label: 'USA' },
   ];
 
+  console.log(solo);
   return (
     <div className="bg-[url(../public/images/BG-1.svg)] h-full">
       <div className="pb-12">
@@ -364,7 +374,7 @@ export default function Register() {
                     setFormInput({ ...formInput, awards: e.target.value })
                   }
                 />
-                {error && (
+                {error && solo == true && (
                   <Alert
                     color="red"
                     variant="outlined"
@@ -389,51 +399,73 @@ export default function Register() {
                   </Alert>
                 )}
                 <div className="flex flex-col items-center w-full">
-                  <div
-                    className={`flex flex-row justify-between items-center space-x-5 w-full ${
-                      solo ? 'block' : 'hidden'
-                    }`}
-                  >
-                    <Link href="/home">
-                      <Button color="red" className="w-full" variant="outlined">
-                        Cancel
+                  {solo == true &&
+                    (
+                      <div
+                        className={`flex flex-row justify-between items-center space-x-5 w-full ${solo ? 'block' : 'hidden'
+                          }`}
+                      >
+                        <Link href="/home">
+                          <Button color="red" className="w-full" variant="outlined">
+                            Cancel
+                          </Button>
+                        </Link>
+
+                        <Button
+                          color="cyan"
+                          className="w-full"
+                          variant="outlined"
+                          onClick={handleCheck}
+                        >
+                          Next
+                        </Button>
+                      </div>
+                    )
+                  }
+                  {
+                    solo == false && (
+                      <div
+                        className={`flex flex-row justify-between items-center space-x-5 w-full ${solo ? 'hidden' : 'block'
+                          }`}
+                      >
+                        <Button
+                          className="w-full"
+                          variant="outlined"
+                          color="cyan"
+                          onClick={() => {
+                            setSolo(true)
+                            setMember(true)
+                          }
+                          }
+                        >
+                          Solo
+                        </Button>
+                      </div>
+                    )
+                  }
+                  {solo == true && (
+                    <div
+                      className={`flex flex-row justify-between items-center space-x-5 w-full ${solo ? 'block' : 'hidden'
+                        }`}
+                    >
+                      <Button
+                        className="w-full"
+                        variant="outlined"
+                        color="cyan"
+                        onClick={() => {
+                          setSolo(false)
+                          setMember(true);
+                        }
+                        }
+                      >
+                        Team
                       </Button>
-                    </Link>
-                    <Button
-                      color="cyan"
-                      className="w-full"
-                      variant="outlined"
-                      onClick={handleCheck}
-                    >
-                      Next
-                    </Button>
-                  </div>
-                  <div
-                    className={`flex flex-row justify-between items-center space-x-5 w-full ${
-                      solo ? 'hidden' : 'block'
-                    }`}
-                  >
-                    <Button
-                      className="w-full"
-                      color="cyan"
-                      variant="outlined"
-                      onClick={() => setSolo(true)}
-                    >
-                      Solo
-                    </Button>
-                    <Button
-                      className="w-full"
-                      variant="outlined"
-                      color="cyan"
-                      onClick={() => setMember(true)}
-                    >
-                      Team
-                    </Button>
-                  </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
-            <div className={`${member ? 'block' : 'hidden'}`}>
+            <div className={`${member && solo == false ? 'block' : 'hidden'}`}>
               <h1 className="text-2xl font-semibold">Team Member</h1>
               <div className=" bg-[url(../public/images/Group-242.svg)] bg-no-repeat bg-center bg-auto bg-origin-padding grid grid-cols-1 place-items-center gap-20 lg:grid lg:grid-cols-2">
                 <div className="flex flex-col space-y-8 w-full">
@@ -442,7 +474,7 @@ export default function Register() {
                     label="Name *"
                     color="cyan"
                     onChange={(e) =>
-                      setFormInput({ ...formInput, name: e.target.value })
+                      setFormInput({ ...formInput2, name: e.target.value })
                     }
                   />
                   <Input
@@ -451,7 +483,7 @@ export default function Register() {
                     label="Age *"
                     type="number"
                     onChange={(e) =>
-                      setFormInput({ ...formInput, age: e.target.value })
+                      setFormInput({ ...formInput2, age: e.target.value })
                     }
                   />
                   <div className="mb-8">
@@ -461,7 +493,7 @@ export default function Register() {
                     <div
                       className="flex gap-10"
                       onChange={(e) =>
-                        setFormInput({ ...formInput, gender: e.target.value })
+                        setFormInput({ ...formInput2, gender: e.target.value })
                       }
                     >
                       <Radio
@@ -490,14 +522,14 @@ export default function Register() {
                       size="lg"
                       label="City *"
                       onChange={(e) =>
-                        setFormInput({ ...formInput, city: e.target.value })
+                        setFormInput({ ...formInput2, city: e.target.value })
                       }
                     />
                     <Input
                       size="lg"
                       label="Country *"
                       onChange={(e) =>
-                        setFormInput({ ...formInput, country: e.target.value })
+                        setFormInput({ ...formInput2, country: e.target.value })
                       }
                     />
                   </div>
@@ -508,7 +540,7 @@ export default function Register() {
                     type="text"
                     onChange={(e) =>
                       setFormInput({
-                        ...formInput,
+                        ...formInput2,
                         name_of_Institution: e.target.value,
                       })
                     }
@@ -519,7 +551,7 @@ export default function Register() {
                     type=""
                     color="cyan"
                     onChange={(e) =>
-                      setFormInput({ ...formInput, mobile: e.target.value })
+                      setFormInput({ ...formInput2, mobile: e.target.value })
                     }
                   />
                   <Input
@@ -528,7 +560,7 @@ export default function Register() {
                     type="email"
                     color="cyan"
                     onChange={(e) =>
-                      setFormInput({ ...formInput, email: e.target.value })
+                      setFormInput({ ...formInput2, email: e.target.value })
                     }
                   />
                 </div>
@@ -538,7 +570,7 @@ export default function Register() {
                     size="lg"
                     color="cyan"
                     onChange={(e) =>
-                      setFormInput({ ...formInput, referral: e.target.value })
+                      setFormInput({ ...formInput2, referral: e.target.value })
                     }
                   />
                   <div className="text-lg text-[#189BA5] font-semibold">
@@ -549,7 +581,7 @@ export default function Register() {
                     label="No. of MUNs *"
                     color="cyan"
                     onChange={(e) =>
-                      setFormInput({ ...formInput, no_of_MUNs: e.target.value })
+                      setFormInput({ ...formInput2, no_of_MUNs: e.target.value })
                     }
                   />
                   <Input
@@ -558,7 +590,7 @@ export default function Register() {
                     color="cyan"
                     onChange={(e) =>
                       setFormInput({
-                        ...formInput,
+                        ...formInput2,
                         previous_MUNs: e.target.value,
                       })
                     }
@@ -568,7 +600,7 @@ export default function Register() {
                     size="lg"
                     color="cyan"
                     onChange={(e) =>
-                      setFormInput({ ...formInput, awards: e.target.value })
+                      setFormInput({ ...formInput2, awards: e.target.value })
                     }
                   />
                   {error && (
@@ -597,7 +629,9 @@ export default function Register() {
                   )}
                   <div className="flex flex-row justify-between items-center space-x-5">
                     <Link href="/home">
-                      <Button color="red" className="w-full" variant="outlined">
+                      <Button color="red" className="`w-full" variant="outlined ${
+                      solo ?'hidden' : 'block'  
+                    }`">
                         Cancel
                       </Button>
                     </Link>
@@ -605,7 +639,7 @@ export default function Register() {
                       color="cyan"
                       className="w-full"
                       variant="outlined"
-                      onClick={handleCheck}
+                      onClick={handleCheck2}
                     >
                       Next
                     </Button>
@@ -843,6 +877,6 @@ export default function Register() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
