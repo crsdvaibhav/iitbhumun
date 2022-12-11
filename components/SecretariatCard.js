@@ -5,10 +5,10 @@ import Image from 'next/image'
 export default function SecretariatCard(props) {
 
     return (
-        <div className="   ">
+        <div className="">
             <div className="p-2   w-[350px] ">
 
-                <div className=' relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[140px] rounded-t-xl'>
+                <div className=' relative bg-[#F5CE3F] h-[140px] rounded-t-xl'>
                     <Image className='absolute '
                         src="/images/image-14.svg"
                         width={850}
@@ -26,7 +26,6 @@ export default function SecretariatCard(props) {
                 </div>
 
             </div>
-
         </div>
     )
 }
