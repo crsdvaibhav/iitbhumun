@@ -37,68 +37,68 @@ export default function Register() {
   };
 
   const [formInput, setFormInput] = useState({
-    unique: id,
-    name: "",
-    age: 0,
-    gender: "",
-    city: "",
-    country: "",
-    name_of_Institution: "",
-    mobile: "",
-    email: "",
-    referral: "",
-    no_of_MUNs: "",
-    previous_MUNs: "",
-    awards: "",
-    committees1: "",
-    committees2: "",
-    committees3: "",
-    countries1_1: "",
-    countries1_2: "",
-    countries1_3: "",
-    countries2_1: "",
-    countries2_2: "",
-    countries2_3: "",
-    countries3_1: "",
-    countries3_2: "",
-    countries3_3: "",
+    Event_ID: id,
+    Name: "",
+    Age: 0,
+    Gender: "",
+    City: "",
+    Country: "",
+    Institute_Name: "",
+    Mobile_Number: "",
+    Email_ID: "",
+    Referral_Code: "",
+    No_of_MUNs: "",
+    List_of_previous_MUNs: "",
+    Awards_in_previous_MUNs: "",
+    Committee_Preference_1: "",
+    Committee_Preference_2: "",
+    Committee_Preference_3: "",
+    Committee_1_Country_Preference_1: "",
+    Committee_1_Country_Preference_2: "",
+    Committee_1_Country_Preference_3: "",
+    Committee_2_Country_Preference_1: "",
+    Committee_2_Country_Preference_2: "",
+    Committee_2_Country_Preference_3: "",
+    Committee_3_Country_Preference_1: "",
+    Committee_3_Country_Preference_2: "",
+    Committee_3_Country_Preference_3: "",
   });
   const [formInput2, setFormInput2] = useState({
-    unique: id,
-    name: "",
-    age: 0,
-    gender: "",
-    city: "",
-    country: "",
-    name_of_Institution: "",
-    mobile: "",
-    email: "",
-    referral: "",
-    no_of_MUNs: "",
-    previous_MUNs: "",
-    awards: "",
-    committees1: "",
-    committees2: "",
-    committees3: "",
-    countries1_1: "",
-    countries1_2: "",
-    countries1_3: "",
-    countries2_1: "",
-    countries2_2: "",
-    countries2_3: "",
-    countries3_1: "",
-    countries3_2: "",
-    countries3_3: "",
+    Event_ID: id,
+    Name: "",
+    Age: 0,
+    Gender: "",
+    City: "",
+    Country: "",
+    Institute_Name: "",
+    Mobile_Number: "",
+    Email_ID: "",
+    Referral_Code: "",
+    No_of_MUNs: "",
+    List_of_previous_MUNs: "",
+    Awards_in_previous_MUNs: "",
+    Committee_Preference_1: "",
+    Committee_Preference_2: "",
+    Committee_Preference_3: "",
+    Committee_1_Country_Preference_1: "",
+    Committee_1_Country_Preference_2: "",
+    Committee_1_Country_Preference_3: "",
+    Committee_2_Country_Preference_1: "",
+    Committee_2_Country_Preference_2: "",
+    Committee_2_Country_Preference_3: "",
+    Committee_3_Country_Preference_1: "",
+    Committee_3_Country_Preference_2: "",
+    Committee_3_Country_Preference_3: "",
   });
 
 
-  const isEmailValid1 = useEmailValidation(formInput.email);
-  const isEmailValid2 = useEmailValidation(formInput2.email);
+  const isEmailValid1 = useEmailValidation(formInput.Email_ID);
+  const isEmailValid2 = useEmailValidation(formInput2.Email_ID);
 
 
   const handleSubmit = (event) => {
     if (member == true) {
-      SheetDB.write("process.env.API_KEY", {
+      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
         sheet: "Sheet1",
         data: formInput,
       })
@@ -108,7 +108,7 @@ export default function Register() {
         })
         .catch((err) => console.log(err));
 
-      SheetDB.write("process.env.API_KEY", {
+      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
         sheet: "Sheet1",
         data: formInput2,
       })
@@ -119,46 +119,46 @@ export default function Register() {
         .catch((err) => console.log(err));
 
       setFormInput({
-        unique: id,
-        name: "",
-        age: 0,
-        gender: "",
-        city: "",
-        country: "",
-        name_of_Institution: "",
-        mobile: "",
-        email: "",
-        referral: "",
-        no_of_MUNs: "",
-        previous_MUNs: "",
-        awards: "",
-        committees1: "",
-        committees2: "",
-        committees3: "",
-        countries1_1: "",
-        countries1_2: "",
-        countries1_3: "",
-        countries2_1: "",
-        countries2_2: "",
-        countries2_3: "",
-        countries3_1: "",
-        countries3_2: "",
-        countries3_3: "",
+        Event_ID: id,
+        Name: "",
+        Age: 0,
+        Gender: "",
+        City: "",
+        Country: "",
+        Institute_Name: "",
+        Mobile_Number: "",
+        Email_ID: "",
+        Referral_Code: "",
+        No_of_MUNs: "",
+        List_of_previous_MUNs: "",
+        Awards_in_previous_MUNs: "",
+        Committee_Preference_1: "",
+        Committee_Preference_2: "",
+        Committee_Preference_3: "",
+        Committee_1_Country_Preference_1: "",
+        Committee_1_Country_Preference_2: "",
+        Committee_1_Country_Preference_3: "",
+        Committee_2_Country_Preference_1: "",
+        Committee_2_Country_Preference_2: "",
+        Committee_2_Country_Preference_3: "",
+        Committee_3_Country_Preference_1: "",
+        Committee_3_Country_Preference_2: "",
+        Committee_3_Country_Preference_3: "",
       });
       setFormInput2({
-        unique: id,
-        name: "",
-        age: 0,
-        gender: "",
-        city: "",
-        country: "",
-        name_of_Institution: "",
-        mobile: "",
-        email: "",
-        referral: "",
-        no_of_MUNs: "",
-        previous_MUNs: "",
-        awards: ""
+        Event_ID: id,
+        Name: "",
+        Age: 0,
+        Gender: "",
+        City: "",
+        Country: "",
+        Institute_Name: "",
+        Mobile_Number: "",
+        Email_ID: "",
+        Referral_Code: "",
+        No_of_MUNs: "",
+        List_of_previous_MUNs: "",
+        Awards_in_previous_MUNs: ""
       });
     } else if (member == false) {
       SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
@@ -172,31 +172,31 @@ export default function Register() {
         .catch((err) => console.log(err));
 
       setFormInput({
-        unique: id,
-        name: "",
-        age: 0,
-        gender: "",
-        city: "",
-        country: "",
-        name_of_Institution: "",
-        mobile: "",
-        email: "",
-        referral: "",
-        no_of_MUNs: "",
-        previous_MUNs: "",
-        awards: "",
-        committees1: "",
-        committees2: "",
-        committees3: "",
-        countries1_1: "",
-        countries1_2: "",
-        countries1_3: "",
-        countries2_1: "",
-        countries2_2: "",
-        countries2_3: "",
-        countries3_1: "",
-        countries3_2: "",
-        countries3_3: "",
+        Event_ID: id,
+        Name: "",
+        Age: 0,
+        Gender: "",
+        City: "",
+        Country: "",
+        Institute_Name: "",
+        Mobile_Number: "",
+        Email_ID: "",
+        Referral_Code: "",
+        No_of_MUNs: "",
+        List_of_previous_MUNs: "",
+        Awards_in_previous_MUNs: "",
+        Committee_Preference_1: "",
+        Committee_Preference_2: "",
+        Committee_Preference_3: "",
+        Committee_1_Country_Preference_1: "",
+        Committee_1_Country_Preference_2: "",
+        Committee_1_Country_Preference_3: "",
+        Committee_2_Country_Preference_1: "",
+        Committee_2_Country_Preference_2: "",
+        Committee_2_Country_Preference_3: "",
+        Committee_3_Country_Preference_1: "",
+        Committee_3_Country_Preference_2: "",
+        Committee_3_Country_Preference_3: "",
       });
 
     }
@@ -217,26 +217,24 @@ export default function Register() {
   useEffect(() => {
     if (member == true) {
       if (
-        formInput.no_of_MUNs === "" ||
-        formInput2.name === "" ||
-        formInput2.age === "0" ||
-        formInput2.gender === "" ||
-        formInput2.city === "" ||
-        formInput2.country === "" ||
-        formInput2.name_of_Institution === "" ||
-        formInput2.mobile === "" ||
-        formInput2.email === "" ||
-        formInput2.mobile === "" ||
-        formInput2.no_of_MUNs === "" ||
-        formInput.name === "" ||
-        formInput.age === "0" ||
-        formInput.gender === "" ||
-        formInput.city === "" ||
-        formInput.country === "" ||
-        formInput.name_of_Institution === "" ||
-        formInput.mobile === "" ||
-        formInput.email === "" ||
-        formInput.mobile === "" ||
+        formInput.No_of_MUNs === "" ||
+        formInput2.Name === "" ||
+        formInput2.Age === "0" ||
+        formInput2.Gender === "" ||
+        formInput2.City === "" ||
+        formInput2.Country === "" ||
+        formInput2.Institute_Name === "" ||
+        formInput2.Mobile_Number === "" ||
+        formInput2.Email_ID === "" ||
+        formInput2.No_of_MUNs === "" ||
+        formInput.Name === "" ||
+        formInput.Age === "0" ||
+        formInput.Gender === "" ||
+        formInput.City === "" ||
+        formInput.Country === "" ||
+        formInput.Institute_Name === "" ||
+        formInput.Mobile_Number === "" ||
+        formInput.Email_ID === "" ||
         isEmailValid1 == false ||
         isEmailValid2 == false
       ) {
@@ -249,16 +247,15 @@ export default function Register() {
   useEffect(() => {
     if (member == false) {
       if (
-        formInput.name === "" ||
-        formInput.age === "0" ||
-        formInput.gender === "" ||
-        formInput.city === "" ||
-        formInput.country === "" ||
-        formInput.name_of_Institution === "" ||
-        formInput.mobile === "" ||
-        formInput.email === "" ||
-        formInput.mobile === "" ||
-        formInput.no_of_MUNs === "" ||
+        formInput.Name === "" ||
+        formInput.Age === "0" ||
+        formInput.Gender === "" ||
+        formInput.City === "" ||
+        formInput.Country === "" ||
+        formInput.Institute_Name === "" ||
+        formInput.Mobile_Number === "" ||
+        formInput.Email_ID === "" ||
+        formInput.No_of_MUNs === "" ||
         isEmailValid1 == false
       ) {
         setError(true);
@@ -268,9 +265,8 @@ export default function Register() {
     }
   }, [formInput, member]);
 
-
-
   const committees = [];
+
   data.registerCommittees.map((i) => {
     committees.push(i);
   });
@@ -280,7 +276,7 @@ export default function Register() {
   const handleChange1 = (e) => {
     setFormInput({
       ...formInput,
-      committees1: e.target.value,
+      Committee_Preference_1: e.target.value,
     })
     setSelected1(e.target.value)
   }
@@ -317,7 +313,7 @@ export default function Register() {
   const handleChange2 = (e) => {
     setFormInput({
       ...formInput,
-      committees2: e.target.value,
+      Committee_Preference_2: e.target.value,
     })
     setSelected2(e.target.value)
   }
@@ -354,7 +350,7 @@ export default function Register() {
   const handleChange3 = (e) => {
     setFormInput({
       ...formInput,
-      committees3: e.target.value,
+      Committee_Preference_3: e.target.value,
     })
     setSelected3(e.target.value)
   }
@@ -386,6 +382,24 @@ export default function Register() {
     options3 = type3.map((el) => <option key={el}>{el}</option>);
   }
 
+  const handleChange4 = (e) => {
+    setFormInput({
+      ...formInput,
+      Committee_1_Country_Preference_1: e.target.value,
+    })
+  }
+  const handleChange5 = (e) => {
+    setFormInput({
+      ...formInput,
+      Committee_1_Country_Preference_2: e.target.value,
+    })
+  }
+  const handleChange6 = (e) => {
+    setFormInput({
+      ...formInput,
+      Committee_1_Country_Preference_3: e.target.value,
+    })
+  }
 
   return (
     <div className="bg-[url(../public/images/BG-1.svg)] h-full">
@@ -423,7 +437,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      name: e.target.value,
+                      Name: e.target.value,
                     })
                   }
                 />
@@ -435,7 +449,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      age: e.target.value,
+                      Age: e.target.value,
                     })
                   }
                 />
@@ -448,7 +462,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput({
                         ...formInput,
-                        gender: e.target.value,
+                        Gender: e.target.value,
                       })
                     }
                   >
@@ -480,7 +494,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput({
                         ...formInput,
-                        city: e.target.value,
+                        City: e.target.value,
                       })
                     }
                   />
@@ -490,7 +504,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput({
                         ...formInput,
-                        country: e.target.value,
+                        Country: e.target.value,
                       })
                     }
                   />
@@ -503,7 +517,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      name_of_Institution: e.target.value,
+                      Institute_Name: e.target.value,
                     })
                   }
                 />
@@ -516,7 +530,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      mobile: e.target.value,
+                      Mobile_Number: e.target.value,
                     })
                   }
                 />
@@ -528,7 +542,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      email: e.target.value,
+                      Email_ID: e.target.value,
                     })
                   }
                 />
@@ -541,7 +555,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      referral: e.target.value,
+                      Referral_Code: e.target.value,
                     })
                   }
                 />
@@ -556,7 +570,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      no_of_MUNs: e.target.value,
+                      No_of_MUNs: e.target.value,
                     })
                   }
                 />
@@ -567,7 +581,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      previous_MUNs: e.target.value,
+                      List_of_previous_MUNs: e.target.value,
                     })
                   }
                 />
@@ -578,7 +592,7 @@ export default function Register() {
                   onChange={(e) =>
                     setFormInput({
                       ...formInput,
-                      awards: e.target.value,
+                      Awards_in_previous_MUNs: e.target.value,
                     })
                   }
                 />
@@ -603,7 +617,7 @@ export default function Register() {
                       </svg>
                     }
                   >
-                    Please fill all the required fields
+                    Please fill all the required fields.Put all details in valid format.
                   </Alert>
                 )}
                 <div className="flex flex-col items-center w-full">
@@ -688,7 +702,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        name: e.target.value,
+                        Name: e.target.value,
                       })
                     }
                   />
@@ -700,7 +714,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        age: e.target.value,
+                        Age: e.target.value,
                       })
                     }
                   />
@@ -713,7 +727,7 @@ export default function Register() {
                       onChange={(e) =>
                         setFormInput2({
                           ...formInput2,
-                          gender: e.target.value,
+                          Gender: e.target.value,
                         })
                       }
                     >
@@ -745,7 +759,7 @@ export default function Register() {
                       onChange={(e) =>
                         setFormInput2({
                           ...formInput2,
-                          city: e.target.value,
+                          City: e.target.value,
                         })
                       }
                     />
@@ -755,7 +769,7 @@ export default function Register() {
                       onChange={(e) =>
                         setFormInput2({
                           ...formInput2,
-                          country: e.target.value,
+                          Country: e.target.value,
                         })
                       }
                     />
@@ -768,7 +782,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        name_of_Institution:
+                        Institute_Name:
                           e.target.value,
                       })
                     }
@@ -782,7 +796,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        mobile: e.target.value,
+                        Mobile_Number: e.target.value,
                       })
                     }
                   />
@@ -794,7 +808,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        email: e.target.value,
+                        Email_ID: e.target.value,
                       })
                     }
                   />
@@ -807,7 +821,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        referral: e.target.value,
+                        Referral_Code: e.target.value,
                       })
                     }
                   />
@@ -822,7 +836,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        no_of_MUNs: e.target.value,
+                        No_of_MUNs: e.target.value,
                       })
                     }
                   />
@@ -833,7 +847,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        previous_MUNs: e.target.value,
+                        List_of_previous_MUNs: e.target.value,
                       })
                     }
                   />
@@ -844,7 +858,7 @@ export default function Register() {
                     onChange={(e) =>
                       setFormInput2({
                         ...formInput2,
-                        awards: e.target.value,
+                        Awards_in_previous_MUNs: e.target.value,
                       })
                     }
                   />
@@ -869,7 +883,7 @@ export default function Register() {
                         </svg>
                       }
                     >
-                      Please fill all the required fields
+                      Please fill all the required fields. Put all details in valid format.
                     </Alert>
                   )}
                   <div className="flex flex-row justify-between items-center space-x-5">
@@ -955,7 +969,10 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 1
                   </p>
-                  <select name="Option 1" className="w-72 p-2 rounded-lg">
+                  <select name="Option 1" className="w-72 p-2 rounded-lg"
+                    onChange={(e) => {
+                      handleChange4(e)
+                    }}>
                     {
                       options1
                     }
@@ -967,7 +984,10 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 2
                   </p>
-                  <select name="Option 2" className="w-72 p-2 rounded-lg">
+                  <select name="Option 2" className="w-72 p-2 rounded-lg"
+                    onChange={(e) => {
+                      handleChange5(e)
+                    }}>
                     {
                       options1
                     }
@@ -979,7 +999,10 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 3
                   </p>
-                  <select name="Option 3" className="w-72 p-2 rounded-lg">
+                  <select name="Option 3" className="w-72 p-2 rounded-lg"
+                    onChange={(e) => {
+                      handleChange6(e)
+                    }}>
                     {
                       options1
                     }
@@ -1018,7 +1041,8 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 1
                   </p>
-                  <select name="Option 1" className="w-72 p-2 rounded-lg">
+                  <select name="Option 1" className="w-72 p-2 rounded-lg"
+                  >
                     {
                       options2
                     }
@@ -1115,6 +1139,7 @@ export default function Register() {
             </div>
           </div>
           <div className="flex justify-center m-auto">
+
             <button
               onClick={() => {
                 setCheck(false);
@@ -1123,6 +1148,7 @@ export default function Register() {
             >
               Back
             </button>
+
             <Link href="thankyou">
               {/* <button className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2">
                 <a onClick={handleSubmit}>Register!</a>
