@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import SheetDB from "sheetdb-js";
-import Select from "react-select";
 import Link from "next/link";
 import {
   Alert,
@@ -21,12 +20,12 @@ const wto = data.wto
 const unodc = data.unodc
 const ip = data.ip
 
-
 const id = Math.floor(100000 + Math.random() * 900000);
 
 export default function Register() {
   const [error, setError] = useState(true);
-  const [check, setCheck] = useState(false);
+  const [error1, setError1] = useState(true);
+  const [check, setCheck] = useState(true);
   const [member, setMember] = useState(false);
   const [solo, setSolo] = useState(true);
 
@@ -35,7 +34,7 @@ export default function Register() {
     const isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     return isEmailValid;
   };
-
+  console.log(error)
   const [formInput, setFormInput] = useState({
     Event_ID: id,
     Name: "",
@@ -97,7 +96,7 @@ export default function Register() {
 
 
   const handleSubmit = (event) => {
-    if (member == true) {
+    if (member == true && error1 == false) {
       SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
         sheet: "Sheet1",
         data: formInput,
@@ -160,7 +159,7 @@ export default function Register() {
         List_of_previous_MUNs: "",
         Awards_in_previous_MUNs: ""
       });
-    } else if (member == false) {
+    } else if (member == false && error1 == false) {
       SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
         sheet: "Sheet1",
         data: formInput,
@@ -199,25 +198,22 @@ export default function Register() {
         Committee_3_Country_Preference_3: "",
       });
 
+    } else {
+      alert("Form not submitted .Please follow instructions in the red alert box");
     }
   };
 
 
   const handleCheck = (e) => {
-    console.log(formInput);
-    console.log(error);
     if (error == false) {
       setCheck(true);
     } else {
       setCheck(false);
     }
   };
-  const handleMember = (e) => { };
-
   useEffect(() => {
     if (member == true) {
       if (
-        formInput.No_of_MUNs === "" ||
         formInput2.Name === "" ||
         formInput2.Age === "0" ||
         formInput2.Gender === "" ||
@@ -235,6 +231,7 @@ export default function Register() {
         formInput.Institute_Name === "" ||
         formInput.Mobile_Number === "" ||
         formInput.Email_ID === "" ||
+        formInput.No_of_MUNs === "" ||
         isEmailValid1 == false ||
         isEmailValid2 == false
       ) {
@@ -264,6 +261,26 @@ export default function Register() {
       }
     }
   }, [formInput, member]);
+  useEffect(() => {
+    if (
+      formInput.Committee_Preference_1 === "" ||
+      formInput.Committee_Preference_2 === "" ||
+      formInput.Committee_Preference_3 === "" ||
+      formInput.Committee_1_Country_Preference_1 === "" ||
+      formInput.Committee_1_Country_Preference_2 === "" ||
+      formInput.Committee_1_Country_Preference_3 === "" ||
+      formInput.Committee_2_Country_Preference_1 === "" ||
+      formInput.Committee_2_Country_Preference_2 === "" ||
+      formInput.Committee_2_Country_Preference_3 === "" ||
+      formInput.Committee_3_Country_Preference_1 === "" ||
+      formInput.Committee_3_Country_Preference_2 === "" ||
+      formInput.Committee_3_Country_Preference_3 === ""
+    ) {
+      setError1(true);
+    } else {
+      setError1(false);
+    }
+  }, [formInput]);
 
   const committees = [];
 
@@ -382,24 +399,6 @@ export default function Register() {
     options3 = type3.map((el) => <option key={el}>{el}</option>);
   }
 
-  const handleChange4 = (e) => {
-    setFormInput({
-      ...formInput,
-      Committee_1_Country_Preference_1: e.target.value,
-    })
-  }
-  const handleChange5 = (e) => {
-    setFormInput({
-      ...formInput,
-      Committee_1_Country_Preference_2: e.target.value,
-    })
-  }
-  const handleChange6 = (e) => {
-    setFormInput({
-      ...formInput,
-      Committee_1_Country_Preference_3: e.target.value,
-    })
-  }
 
   return (
     <div className="bg-[url(../public/images/BG-1.svg)] h-full">
@@ -940,6 +939,7 @@ export default function Register() {
 
           <div className="flex flex-col sm:grid sm:grid-flow-col sm:grid-cols-3 items-center py-12 m-auto justify-items-center">
             <div>
+
               <p className=" text-center font-bold text-3xl mb-5">
                 PORTFOLIO I
               </p>
@@ -971,7 +971,10 @@ export default function Register() {
                   </p>
                   <select name="Option 1" className="w-72 p-2 rounded-lg"
                     onChange={(e) => {
-                      handleChange4(e)
+                      setFormInput({
+                        ...formInput,
+                        Committee_1_Country_Preference_1: e.target.value,
+                      })
                     }}>
                     {
                       options1
@@ -986,7 +989,10 @@ export default function Register() {
                   </p>
                   <select name="Option 2" className="w-72 p-2 rounded-lg"
                     onChange={(e) => {
-                      handleChange5(e)
+                      setFormInput({
+                        ...formInput,
+                        Committee_1_Country_Preference_2: e.target.value,
+                      })
                     }}>
                     {
                       options1
@@ -1001,7 +1007,10 @@ export default function Register() {
                   </p>
                   <select name="Option 3" className="w-72 p-2 rounded-lg"
                     onChange={(e) => {
-                      handleChange6(e)
+                      setFormInput({
+                        ...formInput,
+                        Committee_1_Country_Preference_3: e.target.value,
+                      })
                     }}>
                     {
                       options1
@@ -1041,7 +1050,12 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 1
                   </p>
-                  <select name="Option 1" className="w-72 p-2 rounded-lg"
+                  <select name="Option 1" className="w-72 p-2 rounded-lg" onChange={(e) => {
+                    setFormInput({
+                      ...formInput,
+                      Committee_2_Country_Preference_1: e.target.value,
+                    })
+                  }}
                   >
                     {
                       options2
@@ -1054,7 +1068,13 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 2
                   </p>
-                  <select name="Option 2" className="w-72 p-2 rounded-lg">
+                  <select name="Option 2" className="w-72 p-2 rounded-lg"
+                    onChange={(e) => {
+                      setFormInput({
+                        ...formInput,
+                        Committee_2_Country_Preference_2: e.target.value,
+                      })
+                    }}>
                     {
                       options2
                     }
@@ -1066,7 +1086,13 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 3
                   </p>
-                  <select name="Option 3" className="w-72 p-2 rounded-lg">
+                  <select name="Option 3" className="w-72 p-2 rounded-lg"
+                    onChange={(e) => {
+                      setFormInput({
+                        ...formInput,
+                        Committee_2_Country_Preference_3: e.target.value,
+                      })
+                    }}>
                     {
                       options2
                     }
@@ -1105,7 +1131,13 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 1
                   </p>
-                  <select name="Option 1" className="w-72 p-2 rounded-lg">
+                  <select name="Option 1" className="w-72 p-2 rounded-lg"
+                    onChange={(e) => {
+                      setFormInput({
+                        ...formInput,
+                        Committee_3_Country_Preference_1: e.target.value,
+                      })
+                    }}>
                     {
                       options3
                     }
@@ -1117,7 +1149,13 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 2
                   </p>
-                  <select name="Option 2" className="w-72 p-2 rounded-lg">
+                  <select name="Option 2" className="w-72 p-2 rounded-lg"
+                    onChange={(e) => {
+                      setFormInput({
+                        ...formInput,
+                        Committee_3_Country_Preference_2: e.target.value,
+                      })
+                    }}>
                     {
                       options3
                     }
@@ -1129,7 +1167,13 @@ export default function Register() {
                   <p className="font-medium text-[#189BA5] flex py-2">
                     Option 3
                   </p>
-                  <select name="Option 3" className="w-72 p-2 rounded-lg">
+                  <select name="Option 3" className="w-72 p-2 rounded-lg"
+                    onChange={(e) => {
+                      setFormInput({
+                        ...formInput,
+                        Committee_3_Country_Preference_3: e.target.value,
+                      })
+                    }}>
                     {
                       options3
                     }
@@ -1138,26 +1182,50 @@ export default function Register() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center m-auto">
-
+          {error1 && (
+            <Alert className=" m-auto justify-around w-max"
+              color="red"
+              variant="outlined"
+              icon={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="h-6 w-6 m-auto justify-center"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              }
+            >
+              Please fill all the required fields to be able to submit your form.
+            </Alert>
+          )}
+          <div className="flex justify-center m-auto mt-3">
             <button
               onClick={() => {
+                setCheck(false);
                 setCheck(false);
               }}
               className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2"
             >
               Back
             </button>
-
-            <Link href="thankyou">
-              {/* <button className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2">
-                <a onClick={handleSubmit}>Register!</a>
-              </button> */}
-              <Button onClick={handleSubmit} className="px-10">
-                Submit
-              </Button>
-            </Link>
+            {
+              error1 == false &&
+              <Link href="thankyou">
+                <Button onClick={handleSubmit} className="px-10">
+                  Submit
+                </Button>
+              </Link>
+            }
           </div>
+
         </div>
       </div>
     </div >
