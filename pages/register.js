@@ -11,20 +11,26 @@ import {
 } from "@material-tailwind/react";
 import data from "../data/data.json";
 
+
+const id = Math.floor(100000 + Math.random() * 900000);
+
 export default function Register() {
   const [error, setError] = useState(true);
   const [check, setCheck] = useState(false);
   const [member, setMember] = useState(false);
   const [solo, setSolo] = useState(true);
 
-  console.log(error);
-  console.log("break");
-  console.log(member);
-  console.log("break");
-  console.log(check);
+
+  const useEmailValidation = (email) => {
+    const isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+    return isEmailValid;
+  };
+
+
 
 
   const [formInput, setFormInput] = useState({
+    unique: id,
     name: "",
     age: 0,
     gender: "",
@@ -51,6 +57,7 @@ export default function Register() {
     countries3_3: "",
   });
   const [formInput2, setFormInput2] = useState({
+    unique: id,
     name: "",
     age: 0,
     gender: "",
@@ -77,79 +84,115 @@ export default function Register() {
     countries3_3: "",
   });
 
+
+  const isEmailValid1 = useEmailValidation(formInput.email);
+  const isEmailValid2 = useEmailValidation(formInput2.email);
+
+
   const handleSubmit = (event) => {
-    SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
-      sheet: "Sheet1",
-      data: formInput,
-    })
-      .then((result) => {
-        event.preventDefault();
-        event.target.reset();
+    if (member == true) {
+      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
+        sheet: "Sheet1",
+        data: formInput,
       })
-      .catch((err) => console.log(err));
+        .then((result) => {
+          event.preventDefault();
+          event.target.reset();
+        })
+        .catch((err) => console.log(err));
 
-    SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
-      sheet: "Sheet1",
-      data: formInput2,
-    })
-      .then((result) => {
-        event.preventDefault();
-        event.target.reset();
+      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
+        sheet: "Sheet1",
+        data: formInput2,
       })
-      .catch((err) => console.log(err));
+        .then((result) => {
+          event.preventDefault();
+          event.target.reset();
+        })
+        .catch((err) => console.log(err));
 
-    setFormInput({
-      name: "",
-      age: 0,
-      gender: "",
-      city: "",
-      country: "",
-      name_of_Institution: "",
-      mobile: "",
-      email: "",
-      referral: "",
-      no_of_MUNs: "",
-      previous_MUNs: "",
-      awards: "",
-      committees1: "",
-      committees2: "",
-      committees3: "",
-      countries1_1: "",
-      countries1_2: "",
-      countries1_3: "",
-      countries2_1: "",
-      countries2_2: "",
-      countries2_3: "",
-      countries3_1: "",
-      countries3_2: "",
-      countries3_3: "",
-    });
-    setFormInput2({
-      name: "",
-      age: 0,
-      gender: "",
-      city: "",
-      country: "",
-      name_of_Institution: "",
-      mobile: "",
-      email: "",
-      referral: "",
-      no_of_MUNs: "",
-      previous_MUNs: "",
-      awards: "",
-      committees1: "",
-      committees2: "",
-      committees3: "",
-      countries1_1: "",
-      countries1_2: "",
-      countries1_3: "",
-      countries2_1: "",
-      countries2_2: "",
-      countries2_3: "",
-      countries3_1: "",
-      countries3_2: "",
-      countries3_3: "",
-    });
+      setFormInput({
+        unique: id,
+        name: "",
+        age: 0,
+        gender: "",
+        city: "",
+        country: "",
+        name_of_Institution: "",
+        mobile: "",
+        email: "",
+        referral: "",
+        no_of_MUNs: "",
+        previous_MUNs: "",
+        awards: "",
+        committees1: "",
+        committees2: "",
+        committees3: "",
+        countries1_1: "",
+        countries1_2: "",
+        countries1_3: "",
+        countries2_1: "",
+        countries2_2: "",
+        countries2_3: "",
+        countries3_1: "",
+        countries3_2: "",
+        countries3_3: "",
+      });
+      setFormInput2({
+        unique: id,
+        name: "",
+        age: 0,
+        gender: "",
+        city: "",
+        country: "",
+        name_of_Institution: "",
+        mobile: "",
+        email: "",
+        referral: "",
+        no_of_MUNs: "",
+        previous_MUNs: "",
+        awards: ""
+      });
+    } else if (member == false) {
+      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
+        sheet: "Sheet1",
+        data: formInput,
+      })
+        .then((result) => {
+          event.preventDefault();
+          event.target.reset();
+        })
+        .catch((err) => console.log(err));
+
+      setFormInput({
+        unique: id,
+        name: "",
+        age: 0,
+        gender: "",
+        city: "",
+        country: "",
+        name_of_Institution: "",
+        mobile: "",
+        email: "",
+        referral: "",
+        no_of_MUNs: "",
+        previous_MUNs: "",
+        awards: "",
+        committees1: "",
+        committees2: "",
+        committees3: "",
+        countries1_1: "",
+        countries1_2: "",
+        countries1_3: "",
+        countries2_1: "",
+        countries2_2: "",
+        countries2_3: "",
+        countries3_1: "",
+        countries3_2: "",
+        countries3_3: "",
+      });
+
+    }
   };
 
 
@@ -186,7 +229,9 @@ export default function Register() {
         formInput.name_of_Institution === "" ||
         formInput.mobile === "" ||
         formInput.email === "" ||
-        formInput.mobile === ""
+        formInput.mobile === "" ||
+        isEmailValid1 == false ||
+        isEmailValid2 == false
       ) {
         setError(true);
       } else {
@@ -206,7 +251,8 @@ export default function Register() {
         formInput.mobile === "" ||
         formInput.email === "" ||
         formInput.mobile === "" ||
-        formInput.no_of_MUNs === ""
+        formInput.no_of_MUNs === "" ||
+        isEmailValid1 == false
       ) {
         setError(true);
       } else {
@@ -346,10 +392,11 @@ export default function Register() {
                     })
                   }
                 />
+
                 <Input
                   size="lg"
                   label="Mobile No. *"
-                  type=""
+                  type="number"
                   color="cyan"
                   onChange={(e) =>
                     setFormInput({
@@ -611,9 +658,10 @@ export default function Register() {
                     }
                   />
                   <Input
+                    maxLength={10}
                     size="lg"
                     label="Mobile No. *"
-                    type=""
+                    type="number"
                     color="cyan"
                     onChange={(e) =>
                       setFormInput2({
@@ -987,9 +1035,6 @@ export default function Register() {
               Back
             </button>
             <Link href="thankyou">
-              {/* <button className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2">
-                <a onClick={handleSubmit}>Register!</a>
-              </button> */}
               <Button onClick={handleSubmit} className="px-10">
                 Submit
               </Button>
