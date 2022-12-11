@@ -11,6 +11,16 @@ import {
 } from "@material-tailwind/react";
 import data from "../data/data.json";
 
+const aippm = data.aippm
+const ls = data.ls
+const ccc = data.ccc
+const uncsw = data.uncsw
+const ecosoc = data.ecosoc
+const disec = data.disec
+const wto = data.wto
+const unodc = data.unodc
+const ip = data.ip
+
 
 const id = Math.floor(100000 + Math.random() * 900000);
 
@@ -25,9 +35,6 @@ export default function Register() {
     const isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     return isEmailValid;
   };
-
-
-
 
   const [formInput, setFormInput] = useState({
     unique: id,
@@ -263,40 +270,148 @@ export default function Register() {
 
 
 
-  const committees = [];
-  data.registerCommittees.map((i) => {
-    committees.push({ value: i, label: i });
-  });
+    const committees = [];
+    data.registerCommittees.map((i) => {
+        committees.push(i);
+    });
 
-  const countries = useState([
-    { value: 1, label: "1" }
-  ])
+    const [selected1, setSelected1] = useState('')
 
-  return (
-    <div className="bg-[url(../public/images/BG-1.svg)] h-full">
-      <div className="pb-12">
-        <div className={check ? "hidden" : "block"}>
-          <div className="place-items-center flex justify-center font-semibold text-center py-12">
-            <div
-              onClick={() => {
-                setCheck(false);
-              }}
-              className="text-3xl text-[#FFFFFF] justify-center bg-[#1A1E21] w-10 h-10   border-2 border-[#1A1E21] rounded-full "
-            >
-              1
-            </div>
-            <div className="w-40 mx-2 border h-0 justify-center border-[#1A1E21] my-6"></div>
-            <div
-              onClick={handleCheck}
-              className="text-3xl hover:text-[#FFFFFF] justify-center hover:bg-[#1A1E21] bg-[#FFFFFF] w-10 h-10   border-2 border-[#1A1E21] rounded-full  "
-            >
-              2
-            </div>
-            <div className="w-40 mx-2 border h-0 justify-center border-[#1A1E21] my-6"></div>
-            <div className="  text-3xl hover:text-[#FFFFFF] justify-center hover:bg-[#1A1E21] bg-[#FFFFFF] w-10 h-10   border-2 border-[#1A1E21] rounded-full  ">
-              3
-            </div>
-          </div>
+    const handleChange1 = (e) => {
+        setFormInput({
+            ...formInput,
+            committees1: e.target.value,
+        })
+        setSelected1(e.target.value)
+    }
+
+    let type1 = null;
+    let options1 = null;
+
+    if (selected1 === "AIPPM") {
+        type1 = aippm
+      } else if (selected1 === "Lok Sabha") {
+        type1 = ls
+      } else if (selected1 === "CCC") {
+        type1 = ccc
+      } else if(selected1 === "UNCSW"){
+        type1 = uncsw 
+      } else if(selected1 === "ECOSOC"){
+        type1 = ecosoc
+      } else if(selected1 === "DISEC"){
+        type1 = disec
+      } else if(selected1 === "WTO"){
+        type1 = wto
+      } else if(selected1 === "UNODC"){
+        type1 = unodc
+      } else if(selected1 === "International Press"){
+        type1 = ip
+      }
+
+      if (type1) {
+        options1 = type1.map((el) => <option key={el}>{el}</option>);
+      }
+
+      const [selected2, setSelected2] = useState('')
+
+      const handleChange2 = (e) => {
+          setFormInput({
+              ...formInput,
+              committees2: e.target.value,
+          })
+          setSelected2(e.target.value)
+      }
+  
+      let type2 = null;
+      let options2 = null;
+  
+      if (selected2 === "AIPPM") {
+          type2 = aippm
+        } else if (selected2 === "Lok Sabha") {
+          type2 = ls
+        } else if (selected2 === "CCC") {
+          type2 = ccc
+        } else if(selected2 === "UNCSW"){
+          type2 = uncsw 
+        } else if(selected2 === "ECOSOC"){
+          type2 = ecosoc
+        } else if(selected2 === "DISEC"){
+          type2 = disec
+        } else if(selected2 === "WTO"){
+          type2 = wto
+        } else if(selected2 === "UNODC"){
+          type2 = unodc
+        } else if(selected2 === "International Press"){
+          type2 = ip
+        }
+  
+        if (type2) {
+          options2 = type2.map((el) => <option key={el}>{el}</option>);
+        }
+
+        const [selected3, setSelected3] = useState('')
+
+      const handleChange3 = (e) => {
+          setFormInput({
+              ...formInput,
+              committees3: e.target.value,
+          })
+          setSelected3(e.target.value)
+      }
+  
+      let type3 = null;
+      let options3 = null;
+  
+      if (selected3 === "AIPPM") {
+          type3 = aippm
+        } else if (selected3 === "Lok Sabha") {
+          type3 = ls
+        } else if (selected3 === "CCC") {
+          type3 = ccc
+        } else if(selected3 === "UNCSW"){
+          type3 = uncsw 
+        } else if(selected3 === "ECOSOC"){
+          type3 = ecosoc
+        } else if(selected3 === "DISEC"){
+          type3 = disec
+        } else if(selected3 === "WTO"){
+          type3 = wto
+        } else if(selected3 === "UNODC"){
+          type3 = unodc
+        } else if(selected3 === "International Press"){
+          type3 = ip
+        }
+  
+        if (type3) {
+          options3 = type3.map((el) => <option key={el}>{el}</option>);
+        }
+
+    
+    return (
+        <div className="bg-[url(../public/images/BG-1.svg)] h-full">
+            <div className="pb-12">
+                <div className={check ? "hidden" : "block"}>
+                    <div className="place-items-center flex justify-center font-semibold text-center py-12">
+                        <div
+                            onClick={() => {
+                                setCheck(false);
+                            }}
+                            className="text-3xl text-[#FFFFFF] justify-center bg-[#1A1E21] w-10 h-10   border-2 border-[#1A1E21] rounded-full "
+                        >
+                            1
+                        </div>
+                        <div className="w-40 mx-2 border h-0 justify-center border-[#1A1E21] my-6"></div>
+                        <div
+                            onClick={handleCheck}
+                            className="text-3xl hover:text-[#FFFFFF] justify-center hover:bg-[#1A1E21] bg-[#FFFFFF] w-10 h-10   border-2 border-[#1A1E21] rounded-full  "
+                        >
+                            2
+                        </div>
+                        <div className="w-40 mx-2 border h-0 justify-center border-[#1A1E21] my-6"></div>
+                        <div className="  text-3xl hover:text-[#FFFFFF] justify-center hover:bg-[#1A1E21] bg-[#FFFFFF] w-10 h-10   border-2 border-[#1A1E21] rounded-full  ">
+                            3
+                        </div>
+                    </div>
 
           <div className="lg:w-3/4 mx-auto w-5/6 flex flex-col items-center justify-between space-y-10">
             <div className=" bg-[url(../public/images/Group-242.svg)] bg-no-repeat bg-center bg-auto bg-origin-padding grid grid-cols-1 place-items-center gap-20 lg:grid lg:grid-cols-2">
@@ -807,234 +922,209 @@ export default function Register() {
             </div>
           </div>
 
-          <div className="grid grid-flow-col grid-cols-3 items-center py-12 m-auto justify-items-center">
-            <div>
-              <p className=" text-center font-bold text-3xl mb-5">
-                PORTFOLIO I
-              </p>
-              <div className="w-72 pb-4">
-                <p className="font-medium text-[#189BA5] flex py-2">
-                  Select a committee
-                </p>
+                    <div className="flex flex-col sm:grid sm:grid-flow-col sm:grid-cols-3 items-center py-12 m-auto justify-items-center">
+                        <div>
+                            <p className=" text-center font-bold text-3xl mb-5">
+                                PORTFOLIO I
+                            </p>
+                            <div className="w-72 pb-4">
+                                <p className="font-medium text-[#189BA5] flex py-2">
+                                    Select a committee
+                                </p>
+                                <select 
+                                        name="Committee1" 
+                                        className="w-72 p-2 rounded-lg"
+                                        onChange={(e) => {
+                                            handleChange1(e)
+                                        }
+                                    }
+                                >
+                                        {
+                                            committees.map((i)=>{
+                                                return(
+                                                    <option value={i} key={i}>{i}</option>
+                                                )
+                                            })
+                                        }
+                                </select>
+                            </div>
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 1
+                                    </p>
+                                    <select name="Option 1" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options1
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 2
+                                    </p>
+                                    <select name="Option 2" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options1
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 3
+                                    </p>
+                                    <select name="Option 3" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options1
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p className="mt-4 sm:mt-0 text-center font-bold text-3xl mb-5">
+                                PORTFOLIO II
+                            </p>
+                            <div className="w-72 pb-4">
+                                <p className="font-medium text-[#189BA5] flex py-2">
+                                    Select a committee
+                                </p>
 
-                <Select
-                  options={committees}
-                  value={committees.value}
-                  onChange={(e) =>
-                    setFormInput({
-                      ...formInput,
-                      committees1: e.value,
-                    })
-                  }
-                />
-              </div>
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 1
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries1_1: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 2
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries1_2: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 3
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries1_3: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className=" text-center font-bold text-3xl mb-5">
-                PORTFOLIO II
-              </p>
-              <div className="w-72 pb-4">
-                <p className="font-medium text-[#189BA5] flex py-2">
-                  Select a committee
-                </p>
+                                <select 
+                                        name="Committee1" 
+                                        className="w-72 p-2 rounded-lg"
+                                        onChange={(e) => {
+                                            handleChange2(e)
+                                        }
+                                    }
+                                >
+                                        {
+                                            committees.map((i)=>{
+                                                return(
+                                                    <option value={i} key={i}>{i}</option>
+                                                )
+                                            })
+                                        }
+                                </select>
+                            </div>
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 1
+                                    </p>
+                                    <select name="Option 1" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options2
+                                        }
+                                    </select>
+                                </div>
+                            </div>{" "}
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 2
+                                    </p>
+                                    <select name="Option 2" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options2
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 3
+                                    </p>
+                                    <select name="Option 3" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options2
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p className="mt-4 sm:mt-0 text-center font-bold text-3xl mb-5">
+                                PORTFOLIO III
+                            </p>
+                            <div className="w-72 pb-4">
+                                <p className="font-medium text-[#189BA5] flex py-2">
+                                    Select a committee
+                                </p>
 
-                <Select
-                  options={committees}
-                  value={committees.value}
-                  onChange={(e) =>
-                    setFormInput({
-                      ...formInput,
-                      committees2: e.value,
-                    })
-                  }
-                />
-              </div>
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 1
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries2_1: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>{" "}
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 2
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries2_2: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 3
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries2_3: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className=" text-center font-bold text-3xl mb-5">
-                PORTFOLIO III
-              </p>
-              <div className="w-72 pb-4">
-                <p className="font-medium text-[#189BA5] flex py-2">
-                  Select a committee
-                </p>
-
-                <Select
-                  options={committees}
-                  value={committees.value}
-                  onChange={(e) =>
-                    setFormInput({
-                      ...formInput,
-                      committees3: e.value,
-                    })
-                  }
-                />
-              </div>
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 1
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries3_1: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 2
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries3_2: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="w-72 pb-4">
-                  <p className="font-medium text-[#189BA5] flex py-2">
-                    Option 3
-                  </p>
-                  <Select
-                    options={countries}
-                    value={countries.value}
-                    onChange={(e) =>
-                      setFormInput({
-                        ...formInput,
-                        countries3_3: e.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center m-auto">
-            <button
-              onClick={() => {
-                setCheck(false);
-              }}
-              className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2"
-            >
-              Back
-            </button>
-            <Link href="thankyou">
+                                <select 
+                                        name="Committee1" 
+                                        className="w-72 p-2 rounded-lg"
+                                        onChange={(e) => {
+                                            handleChange3(e)
+                                        }
+                                    }
+                                >
+                                        {
+                                            committees.map((i)=>{
+                                                return(
+                                                    <option value={i} key={i}>{i}</option>
+                                                )
+                                            })
+                                        }
+                                </select>
+                            </div>
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 1
+                                    </p>
+                                    <select name="Option 1" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options3
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 2
+                                    </p>
+                                    <select name="Option 2" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options3
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="w-72 pb-4">
+                                    <p className="font-medium text-[#189BA5] flex py-2">
+                                        Option 3
+                                    </p>
+                                    <select name="Option 3" className="w-72 p-2 rounded-lg">
+                                        {
+                                            options3
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex justify-center m-auto">
+                        <button
+                            onClick={() => {
+                                setCheck(false);
+                            }}
+                            className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2"
+                        >
+                            Back
+                        </button>
+                        <Link href="thankyou">
+                            {/* <button className="py-2 px-4 bg-black text-white rounded-lg w-32 mx-2">
+                <a onClick={handleSubmit}>Register!</a>
+              </button> */}
               <Button onClick={handleSubmit} className="px-10">
                 Submit
               </Button>
