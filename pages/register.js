@@ -10,6 +10,7 @@ import {
 } from "@material-tailwind/react";
 import data from "../data/data.json";
 
+
 const aippm = data.aippm
 const ls = data.ls
 const ccc = data.ccc
@@ -22,10 +23,11 @@ const ip = data.ip
 
 const id = Math.floor(100000 + Math.random() * 900000);
 
+
 export default function Register() {
   const [error, setError] = useState(true);
   const [error1, setError1] = useState(true);
-  const [check, setCheck] = useState(true);
+  const [check, setCheck] = useState(false);
   const [member, setMember] = useState(false);
   const [solo, setSolo] = useState(true);
 
@@ -34,7 +36,6 @@ export default function Register() {
     const isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     return isEmailValid;
   };
-  console.log(error)
   const [formInput, setFormInput] = useState({
     Event_ID: id,
     Name: "",
@@ -97,8 +98,8 @@ export default function Register() {
 
   const handleSubmit = (event) => {
     if (member == true && error1 == false) {
-      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
-        sheet: "Sheet1",
+      SheetDB.write("https://sheetdb.io/api/v1/q9a7m13uukkcu", {
+        sheet: "MASTERSHEET'23",
         data: formInput,
       })
         .then((result) => {
@@ -107,8 +108,8 @@ export default function Register() {
         })
         .catch((err) => console.log(err));
 
-      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
-        sheet: "Sheet1",
+      SheetDB.write("https://sheetdb.io/api/v1/q9a7m13uukkcu", {
+        sheet: "MASTERSHEET'23",
         data: formInput2,
       })
         .then((result) => {
@@ -159,9 +160,10 @@ export default function Register() {
         List_of_previous_MUNs: "",
         Awards_in_previous_MUNs: ""
       });
+
     } else if (member == false && error1 == false) {
-      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
-        sheet: "Sheet1",
+      SheetDB.write("https://sheetdb.io/api/v1/q9a7m13uukkcu", {
+        sheet: "MASTERSHEET'23",
         data: formInput,
       })
         .then((result) => {
@@ -889,10 +891,10 @@ export default function Register() {
                     <Link href="/home">
                       <Button
                         color="red"
-                        className="`w-full"
-                        variant="outlined ${
-                      solo ?'hidden' : 'block'  
-                    }`"
+                        className={`w-full ${solo ? 'hidden' : 'block'}`}
+                        variant="outlined"
+
+
                       >
                         Cancel
                       </Button>
