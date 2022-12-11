@@ -36,6 +36,11 @@ export default function Register() {
     const isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     return isEmailValid;
   };
+
+  const usePhoneValidation = (phone) => {
+    const isPhoneValid = /^\d{10}$/.test(phone);
+    return isPhoneValid;
+  };
   const [formInput, setFormInput] = useState({
     Event_ID: id,
     Name: "",
@@ -94,6 +99,8 @@ export default function Register() {
 
   const isEmailValid1 = useEmailValidation(formInput.Email_ID);
   const isEmailValid2 = useEmailValidation(formInput2.Email_ID);
+  const isPhoneValid1 = usePhoneValidation(formInput.Mobile_Number);
+  const isPhoneValid2 = usePhoneValidation(formInput2.Mobile_Number);
 
 
   const handleSubmit = (event) => {
@@ -235,7 +242,9 @@ export default function Register() {
         formInput.Email_ID === "" ||
         formInput.No_of_MUNs === "" ||
         isEmailValid1 == false ||
-        isEmailValid2 == false
+        isEmailValid2 == false ||
+        isPhoneValid1 == false ||
+        isPhoneValid2 == false
       ) {
         setError(true);
       } else {
@@ -255,7 +264,8 @@ export default function Register() {
         formInput.Mobile_Number === "" ||
         formInput.Email_ID === "" ||
         formInput.No_of_MUNs === "" ||
-        isEmailValid1 == false
+        isEmailValid1 == false ||
+        isPhoneValid1 == false
       ) {
         setError(true);
       } else {
