@@ -897,7 +897,7 @@ export default function Register() {
                                         {
                                             committees.map((i)=>{
                                                 return(
-                                                    <option value={i}>{i}</option>
+                                                    <option value={i} key={i}>{i}</option>
                                                 )
                                             })
                                         }
@@ -960,7 +960,7 @@ export default function Register() {
                                         {
                                             committees.map((i)=>{
                                                 return(
-                                                    <option value={i}>{i}</option>
+                                                    <option value={i} key={i}>{i}</option>
                                                 )
                                             })
                                         }
@@ -1023,7 +1023,7 @@ export default function Register() {
                                         {
                                             committees.map((i)=>{
                                                 return(
-                                                    <option value={i}>{i}</option>
+                                                    <option value={i} key={i}>{i}</option>
                                                 )
                                             })
                                         }
