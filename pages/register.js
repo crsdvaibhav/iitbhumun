@@ -98,7 +98,7 @@ export default function Register() {
 
   const handleSubmit = (event) => {
     if (member == true) {
-      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
+      SheetDB.write("process.env.API_KEY", {
         sheet: "Sheet1",
         data: formInput,
       })
@@ -108,7 +108,7 @@ export default function Register() {
         })
         .catch((err) => console.log(err));
 
-      SheetDB.write("https://sheetdb.io/api/v1/yz9189tqxczi6", {
+      SheetDB.write("process.env.API_KEY", {
         sheet: "Sheet1",
         data: formInput2,
       })
