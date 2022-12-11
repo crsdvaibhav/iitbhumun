@@ -10,9 +10,9 @@ export default function SecretariatCard(props) {
 
                 <div className=' relative bg-[#F5CE3F] h-[140px] rounded-t-xl'>
                     <Image className='absolute '
-                        src="/images/image-14.svg"
-                        width={850}
-                        height={380}
+                        src={props.src}
+                        width={650}
+                        height={270}
                         alt="char images"
                     />
                 </div>

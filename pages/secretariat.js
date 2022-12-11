@@ -14,7 +14,7 @@ export default function Secretariat() {
             <NavBar navbar={true} />
 
             <div className='   text-5xl pt-24 text-center'>
-                 Secretariat
+                Secretariat
             </div>
 
             <div>
@@ -27,6 +27,7 @@ export default function Secretariat() {
                                 name={i.name}
                                 position={i.position}
                                 description={i.description}
+                                src={i.img}
                             />
                         )
 
@@ -47,6 +48,7 @@ export default function Secretariat() {
                                 name={i.name}
                                 position={i.position}
                                 description={i.description}
+                                src={i.img}
                             />
                         )
 

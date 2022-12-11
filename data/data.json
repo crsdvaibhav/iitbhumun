@@ -139,7 +139,8 @@
       "id": 1,
       "name": "Moulik Ketkar",
       "position": "Secretary-General ",
-      "description": "Random description"
+      "description": "Random description",
+      "img": "/images/Moulik.png"
     },
     {
       "id": 2,
@@ -151,7 +152,8 @@
       "id": 3,
       "name": "Ayush Kandoi",
       "position": "Deputy Secretary-General",
-      "description": "Random description"
+      "description": "Random description",
+      "img": "/images/Ayush.png"
     },
     {
       "id": 4,
@@ -163,13 +165,15 @@
       "id": 5,
       "name": "Preeti Kumari",
       "position": "Head of Operations",
-      "description": "Random description"
+      "description": "Random description",
+      "img": "/images/Preeti_Kumari.png"
     },
     {
       "id": 6,
       "name": "Deepa Choudhary",
       "position": "Head of Creative Affairs",
-      "description": "Random description"
+      "description": "Random description",
+      "img": "/images/Deepa_Choudhary.png"
     }
   ],
   "heads": [
@@ -186,12 +190,14 @@
     {
       "id": 3,
       "name": "Aditya Anil Kapdi",
-      "position": "IP Head"
+      "position": "IP Head",
+      "img": "/images/Aditya.png"
     },
     {
       "id": 4,
       "name": "Pranav S",
-      "position": "Marketing Director"
+      "position": "Marketing Director",
+      "img": "/images/Pranav.png"
     },
     {
       "id": 5,
