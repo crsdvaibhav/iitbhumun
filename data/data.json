@@ -457,5 +457,17 @@
       "chairsrc":"/images/ls-c.jpg",
       "vicechairsrc":"/images/ls-vc.jpg"
     }
-  ]
+  ],
+  "registerCommittees":["AIPPM", "Lok Sabha", "CCC", "UNCSW", "ECOSOC", "DISEC", "WTO", "UNODC", "International Press"],
+  "options":
+    [
+      {
+        "committee":"AIPPM",
+        "data":["1","2","3"]
+      },
+      {
+        "committee":"Lok Sabha",
+        "data":["4","5","6"]
+      }
+    ]
 }
