@@ -105,7 +105,7 @@ export default function Register() {
 
   const handleSubmit = (event) => {
     if (member == true && error1 == false) {
-      SheetDB.write("https://sheetdb.io/api/v1/q9a7m13uukkcu", {
+      SheetDB.write("https://sheetdb.io/api/v1/5zuibpea3tlr7", {
         sheet: "MASTERSHEET'23",
         data: formInput,
       })
@@ -115,7 +115,7 @@ export default function Register() {
         })
         .catch((err) => console.log(err));
 
-      SheetDB.write("https://sheetdb.io/api/v1/q9a7m13uukkcu", {
+      SheetDB.write("https://sheetdb.io/api/v1/5zuibpea3tlr7", {
         sheet: "MASTERSHEET'23",
         data: formInput2,
       })
@@ -169,7 +169,7 @@ export default function Register() {
       });
 
     } else if (member == false && error1 == false) {
-      SheetDB.write("https://sheetdb.io/api/v1/q9a7m13uukkcu", {
+      SheetDB.write("https://sheetdb.io/api/v1/5zuibpea3tlr7", {
         sheet: "MASTERSHEET'23",
         data: formInput,
       })
