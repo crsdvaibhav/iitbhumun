@@ -10,7 +10,7 @@ export default function Secretariat() {
 
 
     return (
-        <div className='bg-gray-100' >
+        <div className='bg-gray-100 w-[100%] sm:w-[100%] ' >
             <NavBar navbar={true} />
 
             <div className='   text-5xl pt-24 text-center'>
@@ -18,7 +18,7 @@ export default function Secretariat() {
             </div>
 
             <div>
-                <div className='flex mt-24 w-[1500px] m-auto gap-20 flex-wrap justify-center p-2'>
+                <div className='flex mt-24 w-[350px] sm:w-[1500px] m-auto gap-20 flex-wrap justify-center p-2 '>
                     {data.secretariat.map((i) => {
                         return (
                             <SecretariatCard
@@ -39,7 +39,7 @@ export default function Secretariat() {
             </div>
 
             <div>
-                <div className='flex mt-24 w-[1500px] m-auto gap-20 flex-wrap justify-center p-2'>
+                <div className='flex mt-24 w-[350px] sm:w-[1500px] m-auto gap-20 flex-wrap justify-center p-2'>
                     {data.heads.map((i) => {
                         return (
                             <SecretariatCard
@@ -56,7 +56,7 @@ export default function Secretariat() {
                 </div>
             </div>
             <div>
-                <div className='flex bg-white mt-24 w-[1500px] m-auto gap-32 flex-wrap justify-center p-10'>
+                <div className='flex bg-white mt-24 w-[350px] sm:w-[1500px]  m-auto gap-32 flex-wrap justify-center p-10'>
                     {data.vertical.map((i) => {
                         return (
                             <TeamCard
