@@ -147,7 +147,7 @@ export default function Main() {
       </div>
       <div className="mt-12 sm:mt-[8.75rem]">
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
-          Previous collaborators
+          United Nations Patronage in Previous Editions
         </p>
         <div className="mt-[3.75rem] sm:flex justify-center hidden">
           <div className="flex flex-col items-center mx-[5.188rem]">
@@ -210,7 +210,7 @@ export default function Main() {
       </div>
       <div className="mt-12 sm:mt-[8.75rem]">
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
-          Previous sponsors
+          Our Collaborators
         </p>
         <div className="sm:flex flex-wrap relative justify-center mt-[2.738rem] hidden">
           {data.sponsors.map((item) => {
