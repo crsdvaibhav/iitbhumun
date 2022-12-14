@@ -557,7 +557,7 @@ export default function Register() {
               </div>
               <div className="flex flex-col space-y-8 w-full">
                 <Input
-                  label="Refferal Code (if any)"
+                  label="CA Code (if any)"
                   size="lg"
                   color="cyan"
                   onChange={(e) =>
