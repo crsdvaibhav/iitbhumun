@@ -1,9 +1,9 @@
 import Image from 'next/image';
-
+import Link from 'next/link';
 export default function Hero() {
   return (
     <div className="">
-      <div className="sm:grid hidden">
+      <div className="sm:grid hidden relative">
         <div className="row-span-full col-span-full">
           <Image
             src="/images/hero-bg.png"
@@ -22,7 +22,8 @@ export default function Hero() {
             alt="hero images"
           />
         </div>
-        <div className="row-span-full col-span-full self-center text-center">
+
+        <div className="row-span-full col-span-full self-center text-center ">
           <Image
             src="/images/hero-logo.svg"
             width={600}
@@ -30,7 +31,16 @@ export default function Hero() {
             alt="hero images"
           />
         </div>
-        <div className="row-span-full col-span-full self-end text-center pb-4">
+        <div className=" row-span-full col-span-full self-center text-center mt-96 mr-56">
+          <Link href="/register">
+            <button
+              className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold "
+            >
+              REGISTER
+            </button>
+          </Link>
+        </div>
+        <div className="row-span-full col-span-full self-end text-center pb-4 mr-12">
           <Image
             src="/images/hero-scroll.svg"
             width={33.95}
@@ -58,7 +68,7 @@ export default function Hero() {
             alt="hero images"
           />
         </div>
-        <div className="row-span-full col-span-full self-center text-center">
+        <div className="row-span-full col-span-full self-center text-center ">
           <Image
             src="/images/hero-logo.svg"
             width={300}
@@ -66,7 +76,16 @@ export default function Hero() {
             alt="hero images"
           />
         </div>
-        <div className="row-span-full col-span-full self-end text-center pb-4">
+        <div className=" row-span-full col-span-full self-center text-center mt-96 mr-44">
+          <Link href="/register">
+            <button
+              className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold"
+            >
+              REGISTER
+            </button>
+          </Link>
+        </div>
+        <div className="row-span-full col-span-full self-end text-center pb-4 ">
           <Image
             src="/images/hero-scroll.svg"
             width={33.95}
