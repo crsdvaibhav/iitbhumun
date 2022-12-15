@@ -42,7 +42,7 @@ export default function Footer() {
                         alt="location"
                       />
                       <p className="pl-[2.063rem]">
-                        IIT (BHU), Varanasi, India.
+                        IIT (BHU) Varanasi, India.
                       </p>
                     </a>
                   </div>
