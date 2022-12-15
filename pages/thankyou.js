@@ -21,8 +21,8 @@ export default function Thankyou() {
       <div className="flex m-auto justify-center" >
         <Image
           src="/images/Payment.png"
-          width={1000}
-          height={1000}
+          width={800}
+          height={600}
           alt="icons"
         />
       </div>
