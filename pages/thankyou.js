@@ -1,4 +1,6 @@
 import Footer from '../components/Footer';
+import Image from 'next/image';
+
 
 export default function Thankyou() {
   return (
@@ -15,6 +17,14 @@ export default function Thankyou() {
         <div className="text-3xl text-[#FFFFFF] justify-center bg-[#1A1E21] w-10 h-10   border-2 border-[#1A1E21] rounded-full   ">
           3
         </div>
+      </div>
+      <div className="flex m-auto justify-center" >
+        <Image
+          src="/images/Payment.png"
+          width={1000}
+          height={1000}
+          alt="icons"
+        />
       </div>
       <div className="flex space-y-5 flex-col justify-between items-center sm:w-3/4 w-5/6 lg:w-1/2 mx-auto text-lg lg:text-3xl text-justify p-12">
         <span>Thank you. You have successfully registered.</span>
