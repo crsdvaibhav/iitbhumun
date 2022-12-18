@@ -8,11 +8,11 @@ export default function SecretariatCard(props) {
         <div className="">
             <div className="p-2   w-[350px] ">
 
-                <div className=' relative bg-gradient-to-r from-[#F5CE3F] via-[#ffec9f] to-[#fff5d3] h-[140px] rounded-t-xl'>
+                <div className=' relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[240px] rounded-t-xl'>
                     <Image className='absolute '
                         src={props.src}
                         width={650}
-                        height={270}
+                        height={465}
                         alt="char images"
                     />
                 </div>

@@ -175,7 +175,7 @@ export default function Footer() {
                     alt="icons"
                   />
                   <span className="ml-2 text-[10px]">
-                    IIT (BHU), Varanasi, India.
+                    IIT (BHU) Varanasi, India.
                   </span>
                 </div>
                 <div className="flex items-center my-[2px]">
