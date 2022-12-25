@@ -83,7 +83,7 @@
     {
       "id": 5,
       "question": "Is prior experience needed for any of the committees?",
-      "ans": "Delegates with prior MUN experience will be given preference for the Crisis Committee. No prior experience is required for the other 6 committees."
+      "ans": "Delegates with prior MUN experience will be given preference for the Crisis Committee. No prior experience is required for the other committees."
     },
     {
       "id": 6,
@@ -136,7 +136,8 @@
       "id": 4,
       "name": "Aryavardhan Pateriya",
       "position": "Deputy Director-General",
-      "description": "Random description"
+      "description": "Random description",
+      "img": "/images/Aryavardhan.png"
     },
     {
       "id": 5,
@@ -390,7 +391,7 @@
       "data": "A crisis committee is a decision making body that has more power than a traditional committee. In the Continuous Crisis Committees, there is no set agenda. The Committee is expected to respond to the multitude of issues raised throughout the conference as corollaries of its actions and other simulated events.",
       "chair": "Rahul Singh Kajla",
       "vicechair": "Abhinav Mukherjee",
-      "agenda": "Crisis in Kosovo, 1999",
+      "agenda": " AUPSC : Rise of Insurgent groups as a detriment to peace and security in the continent of Africa.",
       "logosrc": "/images/cc.svg",
       "chairsrc": "/images/cc-c.jpg",
       "vicechairsrc": "/images/cc-vc.jpg"
@@ -448,9 +449,9 @@
     "UNCSW",
     "ECOSOC",
     "DISEC",
-    "WTO",
-    "UNODC",
-    "International Press"
+    "WTO(Online)",
+    "UNODC(Online)",
+    "International Press(Hybrid)"
   ],
   "aippm": [
     "Select an option",

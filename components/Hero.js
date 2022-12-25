@@ -35,7 +35,7 @@ export default function Hero() {
         <div className=" row-span-full col-span-full self-center text-center mt-96 mr-56 ">
           <Link href="/register">
             <button
-              className="text-black bg-[#F5CE3F] absolute px-12 4xl:px-12 h-[50px] w-[300px] rounded-md text-[1.125rem] font-semibold "
+              className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold "
             >
               REGISTER
             </button>
@@ -77,10 +77,10 @@ export default function Hero() {
             alt="hero images"
           />
         </div>
-        <div className=" row-span-full col-span-full self-center text-center">
+        <div className=" row-span-full col-span-full self-center text-center mt-96 mr-48">
           <Link href="/register">
             <button
-              className="text-black bg-[#F5CE3F]  px-12 2xl:px-12 h-10 w-[500px]rounded-md text-[2rem] font-bold"
+              className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold"
             >
               REGISTER
             </button>
