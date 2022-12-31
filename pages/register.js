@@ -318,11 +318,11 @@ export default function Register() {
     type1 = ecosoc;
   } else if (selected1 === 'DISEC') {
     type1 = disec;
-  } else if (selected1 === 'WTO') {
+  } else if (selected1 === 'WTO(Online)') {
     type1 = wto;
-  } else if (selected1 === 'UNODC') {
+  } else if (selected1 === 'UNODC(Online)') {
     type1 = unodc;
-  } else if (selected1 === 'International Press') {
+  } else if (selected1 === 'International Press(Hybrid)') {
     type1 = ip;
   }
 
@@ -355,11 +355,11 @@ export default function Register() {
     type2 = ecosoc;
   } else if (selected2 === 'DISEC') {
     type2 = disec;
-  } else if (selected2 === 'WTO') {
+  } else if (selected2 === 'WTO(Online)') {
     type2 = wto;
-  } else if (selected2 === 'UNODC') {
+  } else if (selected2 === 'UNODC(Online)') {
     type2 = unodc;
-  } else if (selected2 === 'International Press') {
+  } else if (selected2 === 'International Press(Hybrid)') {
     type2 = ip;
   }
 
@@ -392,11 +392,11 @@ export default function Register() {
     type3 = ecosoc;
   } else if (selected3 === 'DISEC') {
     type3 = disec;
-  } else if (selected3 === 'WTO') {
+  } else if (selected3 === 'WTO(Online)') {
     type3 = wto;
-  } else if (selected3 === 'UNODC') {
+  } else if (selected3 === 'UNODC(Online)') {
     type3 = unodc;
-  } else if (selected3 === 'International Press') {
+  } else if (selected3 === 'International Press(Hybrid)') {
     type3 = ip;
   }
 
@@ -622,9 +622,8 @@ export default function Register() {
                 <div className="flex flex-col items-center w-full">
                   {solo == true && (
                     <div
-                      className={`flex flex-row justify-between items-center space-x-5 w-full ${
-                        solo ? 'block' : 'hidden'
-                      }`}
+                      className={`flex flex-row justify-between items-center space-x-5 w-full ${solo ? 'block' : 'hidden'
+                        }`}
                     >
                       <Link href="/home">
                         <Button
@@ -648,9 +647,8 @@ export default function Register() {
                   )}
                   {solo == false && (
                     <div
-                      className={`flex flex-row justify-between items-center space-x-5 w-full ${
-                        solo ? 'hidden' : 'block'
-                      }`}
+                      className={`flex flex-row justify-between items-center space-x-5 w-full ${solo ? 'hidden' : 'block'
+                        }`}
                     >
                       <Button
                         className="w-full"
@@ -667,9 +665,8 @@ export default function Register() {
                   )}
                   {solo == true && (
                     <div
-                      className={`flex flex-row justify-between items-center space-x-5 w-full ${
-                        solo ? 'block' : 'hidden'
-                      }`}
+                      className={`flex flex-row justify-between items-center space-x-5 w-full ${solo ? 'block' : 'hidden'
+                        }`}
                     >
                       <Button
                         className="w-full mt-3"
