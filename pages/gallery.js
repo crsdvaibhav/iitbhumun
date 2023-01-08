@@ -16,8 +16,10 @@ export default function NavBar() {
                 alt="image h" />
             </div>
 
-            <div className="flex flex-wrap overflow-y-auto justify-around">
-                {data.gallery.map((item) => {
+            <div >
+                <div className="bold text-center font-extrabold text-4xl mt-10">PAST EXPERIENCE</div>
+                <div className="flex flex-wrap overflow-y-auto justify-around">
+                {data.pastExperiences.map((item) => {
                     return (
                         <ImageCard
                             key={item.id}
@@ -27,6 +29,23 @@ export default function NavBar() {
                         />
                     )
                 })}
+            </div>
+            </div>
+
+            <div >
+                <div className="bold text-center font-extrabold text-4xl mt-10">PLACES TO VISIT IN VARANASI.</div>
+                <div className="flex flex-wrap overflow-y-auto justify-around">
+                {data.placesToVisit.map((item) => {
+                    return (
+                        <ImageCard
+                            key={item.id}
+                            id={item.id}
+                            src={item.src}
+                            title={item.title}
+                        />
+                    )
+                })}
+            </div>
             </div>
         </>
     );
