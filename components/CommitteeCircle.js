@@ -23,7 +23,7 @@ export default function CommitteeCircle(props) {
                             height={95}
                         />
                     </div>
-                    <div className="font-bold font-sans text-[1.2rem] text-[#189BA5]">
+                    <div className="font-bold font-sans text-[1.2rem] pb-2 text-[#189BA5]">
                         {props.title}
                     </div>
                 </div>

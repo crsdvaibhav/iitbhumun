@@ -162,7 +162,8 @@
     {
       "id": 2,
       "name": "Naman Agrawal",
-      "position": "Technical Director"
+      "position": "Technical Director",
+      "img": "/images/naman.jpeg"
     },
     {
       "id": 3,
@@ -253,7 +254,63 @@
       "member4": "Vivek Kumar Bharathi B R"
     }
   ],
-  "gallery": [
+  "pastExperiences":[
+    {
+      "id": 1,
+      "src": "/images/mun1.jpg",
+      "title": "Country's Representatives",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 2,
+      "src": "/images/mun2.jpg",
+      "title": "Committee Proceedings",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 3,
+      "src": "/images/MUN-260.jpg",
+      "title": "Interactive Participation",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 4,
+      "src": "/images/mun4.jpg",
+      "title": "Delegate Speech",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 5,
+      "src": "/images/MUN-261.jpg",
+      "title": "Presentation",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 6,
+      "src": "/images/mun6.jpg",
+      "title": "Tensed Environment",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 7,
+      "src": "/images/MUN-192.jpg",
+      "title": "Preparation to speech",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 8,
+      "src": "/images/MUN-30.jpg",
+      "title": "General Meetings",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    },
+    {
+      "id": 9,
+      "src": "/images/MUN-250.jpg",
+      "title": "Group Discussion",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    }
+  ],
+  "placesToVisit": [
     {
       "id": 1,
       "src": "/images/assi_ghat.jpg",
@@ -286,68 +343,8 @@
     },
     {
       "id": 6,
-      "src": "/images/darbhanga-ghat.jpg",
-      "title": "Darbhanga Ghat",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 7,
       "src": "/images/sarnath.jpg",
       "title": "Sarnath Stupa",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 8,
-      "src": "/images/mun1.jpg",
-      "title": "Country's Representatives",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 9,
-      "src": "/images/mun2.jpg",
-      "title": "Committee Proceedings",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 10,
-      "src": "/images/MUN-260.jpg",
-      "title": "Interactive Participation",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 11,
-      "src": "/images/mun4.jpg",
-      "title": "Delegate Speech",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 12,
-      "src": "/images/MUN-261.jpg",
-      "title": "Presentation",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 13,
-      "src": "/images/mun6.jpg",
-      "title": "Tensed Environment",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 14,
-      "src": "/images/MUN-192.jpg",
-      "title": "Preparation to speech",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 15,
-      "src": "/images/MUN-30.jpg",
-      "title": "General Meetings",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-    },
-    {
-      "id": 16,
-      "src": "/images/MUN-250.jpg",
-      "title": "Group Discussion",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
     }
   ],
