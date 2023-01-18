@@ -59,6 +59,11 @@
       "src": "/images/sponsor-4.png",
       "height": 500,
       "href": "https://www.meraevents.com/event/iitbhu-mun-2023-for-online-international-delegates"
+    },
+    {
+      "id": 3,
+      "src": "/images/L1.png",
+      "height": 600
     }
   ],
   "questions": [

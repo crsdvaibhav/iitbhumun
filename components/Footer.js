@@ -55,7 +55,7 @@ export default function Footer() {
                         alt="mail"
                       />
                       <p className="pl-[2.063rem]">
-                        secretariat@iitbhumun.com
+                        information@iitbhumun.com
                       </p>
                     </a>
                   </div>
@@ -186,7 +186,7 @@ export default function Footer() {
                     alt="icons"
                   />
                   <span className="ml-2 text-[10px]">
-                    secretariat@iitbhumun.com
+                    information@iitbhumun.com
                   </span>
                 </div>
               </div>

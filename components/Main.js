@@ -15,6 +15,63 @@ export default function Main() {
       </div>
       <div className="mt-12 sm:mt-[8.75rem]">
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
+          United Nations Collaboration in This Edition
+        </p>
+        <div className="mt-[3.75rem] sm:flex justify-center hidden">
+          <div className="flex flex-col items-center mx-[5.188rem]">
+            <Image
+              src="/images/colab-1.svg"
+              width={469.48}
+              height={166}
+              alt="collaborators"
+            />
+            <span className="font-custom text-[1.25rem] text-[#189BA5] font-medium mt-4">
+              UNESCO (INCCU)
+            </span>
+          </div>
+          <div className="flex flex-col items-center mx-[5.188rem]">
+            <Image
+              src="/images/inccu.jpeg"
+              width={469.48}
+              height={166}
+              alt="collaborators"
+            />
+          </div>
+
+          <div className="flex flex-col items-center mx-[5.188rem]">
+            <Image
+              src="/images/colab-3.svg"
+              width={469.4}
+              height={166}
+              alt="collaborators"
+            />
+          </div>
+        </div>
+        <div className="sm:hidden mt-4">
+          <Image
+            src="/images/mobile-collaborators.svg"
+            width={1080}
+            height={100}
+            alt="mobile-collaborators"
+          />
+          <div className="flex px-8">
+            <div className="font-custom font-semibold text-[0.625rem] text-[#189BA5] text-center">
+              UNESCO (INCCU)
+            </div>
+            <div className="font-custom font-semibold text-[0.625rem] text-[#189BA5] text-center ml-[1.375rem]">
+              UN information Centre <br />
+              for India and Bhutan
+            </div>
+            <div className="font-custom font-semibold text-[0.625rem] text-[#189BA5] text-center ml-[1.25rem]">
+              MUN Refugee <br />
+              Challenge
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-12 sm:mt-[8.75rem]">
+        <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
           Letter from Secretary-General
         </p>
         <div className="flex justify-center mt-8 sm:mt-[3.75rem]">
@@ -144,58 +201,6 @@ export default function Main() {
           })}
         </div>
       </div>
-      <div className="mt-12 sm:mt-[8.75rem]">
-        <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
-          United Nations Collaboration in This Edition
-        </p>
-        <div className="mt-[3.75rem] sm:flex justify-center hidden">
-          <div className="flex flex-col items-center mx-[5.188rem]">
-            <Image
-              src="/images/colab-1.svg"
-              width={469.48}
-              height={166}
-              alt="collaborators"
-            />
-            <span className="font-custom text-[1.25rem] text-[#189BA5] font-medium mt-4">
-              UNESCO (INCCU)
-            </span>
-          </div>
-         
-          <div className="flex flex-col items-center mx-[5.188rem]">
-            <Image
-              src="/images/colab-3.svg"
-              width={469.4}
-              height={166}
-              alt="collaborators"
-            />
-            <span className="font-custom text-[1.25rem] text-[#189BA5] font-medium mt-4">
-              MUN Refugee Challenge
-            </span>
-          </div>
-        </div>
-        <div className="sm:hidden mt-4">
-          <Image
-            src="/images/mobile-collaborators.svg"
-            width={1080}
-            height={100}
-            alt="mobile-collaborators"
-          />
-          <div className="flex px-8">
-            <div className="font-custom font-semibold text-[0.625rem] text-[#189BA5] text-center">
-              UNESCO (INCCU
-            </div>
-            <div className="font-custom font-semibold text-[0.625rem] text-[#189BA5] text-center ml-[1.375rem]">
-              UN information Centre <br />
-              for India and Bhutan
-            </div>
-            <div className="font-custom font-semibold text-[0.625rem] text-[#189BA5] text-center ml-[1.25rem]">
-              MUN Refugee <br />
-              Challenge
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   );
 }
