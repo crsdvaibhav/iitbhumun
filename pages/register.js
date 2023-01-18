@@ -681,7 +681,7 @@ export default function Register() {
                           setError(true);
                         }}
                       >
-                        Team
+                        DOUBLE DELEGATIONS
                       </Button>
                     </div>
                   )}
