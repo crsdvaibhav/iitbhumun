@@ -15,7 +15,7 @@ module.exports = withMT({
         heading: ['Montserrat'],
       },
       boxShadow: {
-        'xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+        'xl': '0 35px 60px -15px rgba(24, 155, 165, 1)',
       }
     },
   },
