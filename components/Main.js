@@ -77,7 +77,7 @@ export default function Main() {
         <div className="flex justify-center mt-8 sm:mt-[3.75rem]">
           <p className="px-8 w-[58.75rem] sm:w-[73.375rem] text-[#03001E] sm:text-lg font-light font-custom text-justify">
             <p>Dear Delegates, respected Faculty Advisors, and the Secretariat, </p>
-            <p className='mt-2'>It gives me immense pleasure to announce the beginning of the 11th edition of the IITBHU Model United Nations. Over its rich legacy of ten years, IITBHU MUN, being one of the pioneering Model United Nations conferences, has garnered a notable position in the northern circuit. The endorsement of our conference by Hon’ PM Shri. Narendra Modi is a mark of its national importance. Even during the COVID years, IITBHU MUN witnessed participation from over sixteen countries, graced by eminent foreign ambassadors and keynote speakers.</p>
+            <p className='mt-2'>It gives me immense pleasure to announce the beginning of the 11th edition of the IITBHU Model United Nations. Over its rich legacy of ten years, IITBHU MUN, being one of the pioneering Model United Nations conferences, has garnered a notable position in the northern circuit. The endorsement of our conference by Hon’ PM Shri. Narendra Modi is a mark of its national importance. Even during the COVID years, IITBHU MUN witnessed participation from over twenty-two nationalities, graced by eminent foreign ambassadors and keynote speakers.</p>
             <p className='mt-2'>The thrill and excitement of participating in Model United Nations like those years ago indeed faded during the COVID years, and the transition from online platforms to offline dais is quite challenging. With the upcoming conference, let us together repaint and restore, once again, the lost picture in this holy city of Benares. </p>
             <p>Leading such a prestigious conference is a tremendous undertaking; however, with the wisdom imparted by the previous Secretary Generals and with such a dynamic and hardworking Secretariat, I am more than hopeful about this edition’s enthralling experience it promises to deliver. </p>
             <p className='mt-2'>Therefore, to everyone reading this, I invite you all to be part of this grand edition. Bring on the fiery debates, the urge to change the world, and of course, fruitful deliberations with resolutions concentrated on innovative ideas.</p>
@@ -95,7 +95,7 @@ export default function Main() {
         <div className="hidden sm:flex justify-between">
           <div className="flex flex-col items-center">
             <Image
-              src="/images/conferences.png"
+              src="/images/conferences.svg"
               width={230}
               height={230}
               alt="legacy"
@@ -112,7 +112,7 @@ export default function Main() {
               alt="legacy"
             />
             <span className="mt-[0.25rem] text-[1.25rem] font-custom text-[#189BA5] font-medium">
-              Countries
+              Nationalities
             </span>
           </div>
           <div className="flex flex-col items-center">

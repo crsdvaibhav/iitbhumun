@@ -1,6 +1,6 @@
 {
   "title": "IIT BHU MUN",
-  "about": "IITBHU Model United Nations (MUN) is the pioneering Model UN conference of the spiritual capital of India, Varanasi. The conference has undergone stellar growth over its incredible journey of 11 years, attracting participation from 17 countries for its last edition. The 2022 edition of the Conference was organized in collaboration with UNIC, New Delhi, under the patronage of UNESCO-INCCU. The Honorable Prime Minister of India had also endorsed IIT BHU MUN with an inspiring message. Being in the middle of the Cultural Capital of the country with its spiritual diversity, amidst Asia’s largest residential university, IIT BHU MUN has been an ideal location for the conglomeration of passionate debaters and leaders from all over the world. The Secretariat extends you a cordial invitation to participate in the 2022 edition of the IITBHU Model United Nations Conference which will be organized between 3rd Feb 2023 to 5th Feb 2023. With eminent guests, stellar Executive Boards, ignited young minds, and exhilarating debates, the upcoming edition promises to be the best one yet. The Secretariat is committed to providing you with the best MUN experience possible in the holy city of Varanasi.",
+  "about": "IITBHU Model United Nations (MUN) is the pioneering Model UN conference of the spiritual capital of India, Varanasi. The conference has undergone stellar growth over its incredible journey of 11 years, attracting participation from 17 countries for its last edition. The 2022 edition of the Conference was organized in collaboration with UNIC, New Delhi, under the patronage of UNESCO-INCCU. The Honorable Prime Minister of India had also endorsed IITBHU MUN with an inspiring message. Being in the middle of the Cultural Capital of the country with its spiritual diversity, amidst Asia’s largest residential university, IITBHU MUN has been an ideal location for the conglomeration of passionate debaters and leaders from all over the world. The Secretariat extends you a cordial invitation to participate in the 2022 edition of the IITBHU Model United Nations Conference which will be organized between 3rd Feb 2023 to 5th Feb 2023. With eminent guests, stellar Executive Boards, ignited young minds, and exhilarating debates, the upcoming edition promises to be the best one yet. The Secretariat is committed to providing you with the best MUN experience possible in the holy city of Varanasi.",
   "legacyText": "IITBHU Model United Nations has quite well journey since its inception in 2012. The conference has hosted about 4000 delegates over 11 incredible editions. It has collaborated with premier institutions such as UNIC for India and Bhutan, New Delhi and has been supported by the UNESCO-INCCU via patronage. The 2021 edition of the conference marked yet another milestone when IITBHU MUN went international and hosted participants from 17 countries, this conference is also  endorsed by the Prime Minister of India, Shri Narendra Modi. In the last year edition of the conference four Indian ambassadors to four different countries took part as guest speakers and delegates from 17 countries participated in the conference.",
   "testimonials": [
     {
@@ -367,7 +367,8 @@
       "agenda": "Deliberation on economic inclusion of refugees, with a focus on internally displaced people",
       "logosrc": "/images/ecosoc.svg",
       "chairsrc": "/images/ecosoc-c.jpg",
-      "vicechairsrc": "/images/ecosoc-vc.jpg"
+      "vicechairsrc": "/images/ecosoc-vc.jpg",
+      "href": "https://drive.google.com/file/d/1XgVz5HymuetvGC2nzs5qh94LHHYo4Hpx/view?usp=sharing"
     },
     {
       "id": 2,
@@ -378,7 +379,8 @@
       "agenda": "Revisiting the issue of cross border illicit drugs, arms and human trafficking",
       "logosrc": "/images/unodc.svg",
       "chairsrc": "/images/unodc-c.jpg",
-      "vicechairsrc": "/images/unodc-vc.jpg"
+      "vicechairsrc": "/images/unodc-vc.jpg",
+      "href": "https://drive.google.com/file/d/1--HOVJr5RZL80oXTxgzERVoe-Zulxr3z/view?usp=sharing"
     },
     {
       "id": 3,
@@ -389,7 +391,8 @@
       "agenda": "Discussion on ways to mitigate corruption in India with special emphasis on administrative bodies",
       "logosrc": "/images/aippm.svg",
       "chairsrc": "/images/aippm-c.jpg",
-      "vicechairsrc": "/images/aippm-vc.jpg"
+      "vicechairsrc": "/images/aippm-vc.jpg",
+      "href": "https://drive.google.com/file/d/1yIX18FW7rnzR0dVX6MkD0EgLf2_xaFae/view?usp=sharing"
     },
     {
       "id": 4,
@@ -411,7 +414,8 @@
       "agenda": "The situation in the temporarily occupied territories of Ukraine",
       "logosrc": "/images/disec.svg",
       "chairsrc": "/images/disec-c.jpg",
-      "vicechairsrc": "/images/disec-vc.jpg"
+      "vicechairsrc": "/images/disec-vc.jpg",
+      "href": "https://drive.google.com/file/d/1cIztilAo8i9sM_67UliuZ7fo2CxRN8Q2/view?usp=sharing"
     },
     {
       "id": 6,
@@ -422,7 +426,8 @@
       "agenda": "Women as the drivers of Economic Recovery and resilience with special emphasis on SDG 5 and 8",
       "logosrc": "/images/uncsw.svg",
       "chairsrc": "/images/uncsw-c.jpg",
-      "vicechairsrc": "/images/uncsw-vc.jpg"
+      "vicechairsrc": "/images/uncsw-vc.jpg",
+      "href": "https://drive.google.com/file/d/1xOwgGbsxF9n7lIYRTk0YWOC_68INRWOx/view?usp=sharing"
     },
     {
       "id": 7,
@@ -433,7 +438,8 @@
       "agenda": "Barriers Aplenty - An emphasis on tariff competitions and the disruption in supply chains",
       "logosrc": "/images/wto.svg",
       "chairsrc": "/images/wto-c.jpg",
-      "vicechairsrc": "/images/wto-vc.jpg"
+      "vicechairsrc": "/images/wto-vc.jpg",
+      "href": "https://drive.google.com/file/d/1--HOVJr5RZL80oXTxgzERVoe-Zulxr3z/view?usp=sharing"
     },
     {
       "id": 8,
@@ -444,7 +450,8 @@
       "agenda": "Discussing the state of rights and privileges of marginalized communities in India",
       "logosrc": "/images/ls.svg",
       "chairsrc": "/images/ls-c.jpg",
-      "vicechairsrc": "/images/ls-vc.jpg"
+      "vicechairsrc": "/images/ls-vc.jpg",
+      "href": "https://drive.google.com/file/d/1K_jrKa8SINRmtXpBIlkhZsut7PajWDyI/view?usp=sharing"
     }
   ],
   "registerCommittees": [

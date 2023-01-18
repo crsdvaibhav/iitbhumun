@@ -10,8 +10,8 @@ export default function Committees() {
     return (
         <div className="bg-[#F5F5F5]">
             <NavBar navbar={true} />
-            <div className="h-[100vh] sm:justify-center sm:flex hidden">
-                <div className="w-1/3 h-[100vh] flex flex-col items-end justify-center">
+            <div className="h-[70vh] sm:justify-center sm:flex hidden">
+                <div className="w-1/3 h-[80vh] flex flex-col items-end justify-center">
                     <div className="flex pb-4">
                         <CommitteeCircle
                             key={arr[0].id}
@@ -23,6 +23,7 @@ export default function Committees() {
                             agenda={arr[0].agenda}
                             chairsrc={arr[0].chairsrc}
                             vicechairsrc={arr[0].vicechairsrc}
+                            href={arr[0].href}
                         />
                         <CommitteeCircle
                             key={arr[1].id}
@@ -34,6 +35,8 @@ export default function Committees() {
                             agenda={arr[1].agenda}
                             chairsrc={arr[1].chairsrc}
                             vicechairsrc={arr[1].vicechairsrc}
+                            href={arr[1].href}
+
                         />
                     </div>
                     <div className="flex pt-4">
@@ -47,6 +50,8 @@ export default function Committees() {
                             agenda={arr[2].agenda}
                             chairsrc={arr[2].chairsrc}
                             vicechairsrc={arr[2].vicechairsrc}
+                            href={arr[2].href}
+
                         />
                         <CommitteeCircle
                             key={arr[3].id}
@@ -58,11 +63,13 @@ export default function Committees() {
                             agenda={arr[3].agenda}
                             chairsrc={arr[3].chairsrc}
                             vicechairsrc={arr[3].vicechairsrc}
+                            href={arr[3].href}
+
                         />
                     </div>
                 </div>
 
-                <div className="w-1/3 h-[100vh] flex items-center justify-center">
+                <div className="w-1/3 h-[80vh] flex items-center justify-center">
                     <div className="text-center">
                         <Image
                             src="/images/c-logo.svg"
@@ -75,7 +82,7 @@ export default function Committees() {
                     </div>
                 </div>
 
-                <div className="w-1/3 h-[100vh] flex flex-col items-start justify-center">
+                <div className="w-1/3 h-[80vh] flex flex-col items-start justify-center">
                     <div className="flex pb-4">
                         <CommitteeCircle
                             key={arr[4].id}
@@ -87,6 +94,8 @@ export default function Committees() {
                             agenda={arr[4].agenda}
                             chairsrc={arr[4].chairsrc}
                             vicechairsrc={arr[4].vicechairsrc}
+                            href={arr[4].href}
+
                         />
                         <CommitteeCircle
                             key={arr[5].id}
@@ -98,30 +107,36 @@ export default function Committees() {
                             agenda={arr[5].agenda}
                             chairsrc={arr[5].chairsrc}
                             vicechairsrc={arr[5].vicechairsrc}
+                            href={arr[5].href}
+
                         />
                     </div>
                     <div className="flex pt-4">
                         <CommitteeCircle
-                           key={arr[6].id}
-                           src={arr[6].logosrc}
-                           title={arr[6].title}
-                           data={arr[6].data}
-                           chair={arr[6].chair}
-                           vicechair={arr[6].vicechair}
-                           agenda={arr[6].agenda}
-                           chairsrc={arr[6].chairsrc}
+                            key={arr[6].id}
+                            src={arr[6].logosrc}
+                            title={arr[6].title}
+                            data={arr[6].data}
+                            chair={arr[6].chair}
+                            vicechair={arr[6].vicechair}
+                            agenda={arr[6].agenda}
+                            chairsrc={arr[6].chairsrc}
                             vicechairsrc={arr[6].vicechairsrc}
+                            href={arr[6].href}
+
                         />
                         <CommitteeCircle
-                           key={arr[7].id}
-                           src={arr[7].logosrc}
-                           title={arr[7].title}
-                           data={arr[7].data}
-                           chair={arr[7].chair}
+                            key={arr[7].id}
+                            src={arr[7].logosrc}
+                            title={arr[7].title}
+                            data={arr[7].data}
+                            chair={arr[7].chair}
                             vicechair={arr[7].vicechair}
                             agenda={arr[7].agenda}
                             chairsrc={arr[7].chairsrc}
                             vicechairsrc={arr[7].vicechairsrc}
+                            href={arr[7].href}
+
                         />
                     </div>
                 </div>
@@ -151,6 +166,8 @@ export default function Committees() {
                             agenda={arr[0].agenda}
                             chairsrc={arr[0].chairsrc}
                             vicechairsrc={arr[0].vicechairsrc}
+                            href={arr[0].href}
+
                         />
                         <CommitteeCircle
                             key={arr[1].id}
@@ -162,6 +179,8 @@ export default function Committees() {
                             agenda={arr[1].agenda}
                             chairsrc={arr[1].chairsrc}
                             vicechairsrc={arr[1].vicechairsrc}
+                            href={arr[1].href}
+
                         />
                     </div>
                     <div className="flex justify-around w-full pt-4">
@@ -175,17 +194,21 @@ export default function Committees() {
                             agenda={arr[2].agenda}
                             chairsrc={arr[2].chairsrc}
                             vicechairsrc={arr[2].vicechairsrc}
+                            href={arr[2].href}
+
                         />
                         <CommitteeCircle
-                             key={arr[3].id}
-                             src={arr[3].logosrc}
-                             title={arr[3].title}
-                             data={arr[3].data}
-                             chair={arr[3].chair}
-                             vicechair={arr[3].vicechair}
-                             agenda={arr[3].agenda}
-                             chairsrc={arr[3].chairsrc}
+                            key={arr[3].id}
+                            src={arr[3].logosrc}
+                            title={arr[3].title}
+                            data={arr[3].data}
+                            chair={arr[3].chair}
+                            vicechair={arr[3].vicechair}
+                            agenda={arr[3].agenda}
+                            chairsrc={arr[3].chairsrc}
                             vicechairsrc={arr[3].vicechairsrc}
+                            href={arr[3].href}
+
                         />
                     </div>
                     <div className="flex justify-around w-full pt-4">
@@ -199,6 +222,8 @@ export default function Committees() {
                             agenda={arr[4].agenda}
                             chairsrc={arr[4].chairsrc}
                             vicechairsrc={arr[4].vicechairsrc}
+                            href={arr[4].href}
+
                         />
                         <CommitteeCircle
                             key={arr[5].id}
@@ -210,6 +235,8 @@ export default function Committees() {
                             agenda={arr[5].agenda}
                             chairsrc={arr[5].chairsrc}
                             vicechairsrc={arr[5].vicechairsrc}
+                            href={arr[5].href}
+
                         />
                     </div>
                     <div className="flex justify-around w-full pt-4">
@@ -223,6 +250,8 @@ export default function Committees() {
                             agenda={arr[6].agenda}
                             chairsrc={arr[6].chairsrc}
                             vicechairsrc={arr[6].vicechairsrc}
+                            href={arr[6].href}
+
                         />
                         <CommitteeCircle
                             key={arr[7].id}
@@ -234,6 +263,8 @@ export default function Committees() {
                             agenda={arr[7].agenda}
                             chairsrc={arr[7].chairsrc}
                             vicechairsrc={arr[7].vicechairsrc}
+                            href={arr[7].href}
+
                         />
                     </div>
                 </div>

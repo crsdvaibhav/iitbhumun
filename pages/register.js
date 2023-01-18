@@ -408,7 +408,7 @@ export default function Register() {
     <div className="bg-[url(../public/images/BG-1.svg)] h-full">
       <div className="pb-12">
         <div className={check ? 'hidden' : 'block'}>
-          <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[4.5rem] pt-12">
+          <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[3.5rem] pt-14">
             Delegate Application Form
           </p>
           <div className="place-items-center flex justify-center font-semibold text-center py-16">

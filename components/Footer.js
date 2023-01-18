@@ -12,19 +12,19 @@ export default function Footer() {
               <div className="mt-[1.25rem] flex-wrap space-y-3 space-x-0 md:flex justify-between md:space-x-3 font-custom text-[1rem] sm:text-[1.125rem] 2xl:text-[1.25rem] font-medium">
                 <div className='flex ' >
                   <Link href="/home">
-                    <button className="p-1">Home</button>
+                    <button className="p-1 hover:text-[#189BA5]">Home</button>
                   </Link>
                   <Link href="">
-                    <button className="p-1" >Committees</button>
+                    <button className="p-1 hover:text-[#189BA5]" >Committees</button>
                   </Link>
                   <Link href="/secretariat">
-                    <button className="p-1">Secretariat</button>
+                    <button className="p-1 hover:text-[#189BA5]">Secretariat</button>
                   </Link>
                   <Link href="/gallery">
-                    <button className="p-1">Gallery</button>
+                    <button className="p-1 hover:text-[#189BA5]">Gallery</button>
                   </Link>
                   <Link href="/faq">
-                    <button className="p-1">FAQs</button>
+                    <button className="p-1 hover:text-[#189BA5]">FAQs</button>
                   </Link>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function Footer() {
                 <Link
                   href="/register"
                 >
-                  <button className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                  <button className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
                     Register
                   </button>
                 </Link>
@@ -148,19 +148,19 @@ export default function Footer() {
               <p className="font-bold"> Explore</p>
               <div className="flex flex-wrap text-xs mt-2">
                 <Link href="/home">
-                  <button className="p-1">Home</button>
+                  <button className="p-1 hover:text-[#189BA5]">Home</button>
                 </Link>
                 <Link href="">
-                  <button className="p-1" >Committees</button>
+                  <button className="p-1 hover:text-[#189BA5]" >Committees</button>
                 </Link>
                 <Link href="/secretariat">
-                  <button className="p-1">Secretariat</button>
+                  <button className="p-1 hover:text-[#189BA5]">Secretariat</button>
                 </Link>
                 <Link href="/gallery">
-                  <button className="p-1">Gallery</button>
+                  <button className="p-1 hover:text-[#189BA5]">Gallery</button>
                 </Link>
                 <Link href="/faq">
-                  <button className="p-1">FAQs</button>
+                  <button className="p-1 hover:text-[#189BA5]">FAQs</button>
                 </Link>
               </div>
             </div>

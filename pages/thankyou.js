@@ -33,13 +33,12 @@ export default function Thankyou() {
           alt="icons"
         />
       </div>
-      <div className="flex space-y-5 flex-col justify-between items-center sm:w-3/4 w-5/6 lg:w-1/2 mx-auto text-lg lg:text-3xl text-justify p-12">
+      <div className="flex space-y-5 flex-col justify-between items-center sm:w-3/4 w-5/6 lg:w-1/2 mx-auto text-sm lg:text-2xl text-justify p-12">
 
-        <br />
         The secretariat will review your preferences and send you a mail with
         tentative allotment and payment link within 5 days. If you do not
         receive a mail from us within 5 days time, kindly write to us at{' '}
-        <a href="mailto:secretariat@iitbhumun.com" className="text-indigo-700">
+        <a href="mailto:secretariat@iitbhumun.com" className="text-indigo-700 mt-8  ">
           secretariat@iitbhumun.com
         </a>
       </div>

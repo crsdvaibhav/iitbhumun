@@ -10,7 +10,10 @@ const partners = () => {
         <div>
             <NavBar navbar={true} />
             <div className="mt-12 sm:mt-[0rem] pt-48 m-auto justify-center">
-                <div className="sm:flex flex-wrap relative justify-center mt-[2.738rem] pt-4  ">
+                <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[3.5rem]">
+                    Our Collaborators
+                </p>
+                <div className="sm:grid sm:grid-cols-2 sm:gap-y-[4.5rem] m-auto w-[70%] relative justify-center mt-[2.738rem] pt-4  ">
                     <div className="flex flex-col items-center m-auto">
                         <Image
                             src="/images/colab-2.svg"
