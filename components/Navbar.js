@@ -39,6 +39,11 @@ export default function NavBar({ navbar }) {
               Secretariat
             </button>
           </Link>
+          <Link href="/partners">
+            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+              Partners
+            </button>
+          </Link>
           <Link href="/gallery">
             <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
               Gallery
@@ -79,6 +84,7 @@ export default function NavBar({ navbar }) {
               <MenuItem className='text-center hover:text-yellow-400'><Link href="/">Home</Link></MenuItem>
               <MenuItem className='text-center hover:text-yellow-400'><Link href="/committees">Committee</Link></MenuItem>
               <MenuItem className='text-center hover:text-yellow-400'><Link href="/secretariat">Secretariat</Link></MenuItem>
+              <MenuItem className='text-center hover:text-yellow-400'><Link href="/partners">Partners</Link></MenuItem>
               <MenuItem className='text-center hover:text-yellow-400'><Link href="/gallery">Gallery</Link></MenuItem>
               <MenuItem className='text-center hover:text-yellow-400'><Link href="/faq">FAQs</Link></MenuItem>
               <MenuItem className='text-center text-xl pt-12'><button className='text-black bg-white px-4 rounded-lg'>Close</button></MenuItem>

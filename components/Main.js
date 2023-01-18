@@ -2,7 +2,6 @@ import Image from 'next/image';
 import CountdownElement from './Countdown';
 import data from '../data/data.json';
 import Card from '../components/TestimonialCard';
-import SponsorCard from '../components/SponsorCard';
 import Link from 'next/link';
 
 export default function Main() {
@@ -147,7 +146,7 @@ export default function Main() {
       </div>
       <div className="mt-12 sm:mt-[8.75rem]">
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
-          United Nations Patronage in Previous Editions
+          United Nations Collaboration in This Edition
         </p>
         <div className="mt-[3.75rem] sm:flex justify-center hidden">
           <div className="flex flex-col items-center mx-[5.188rem]">
@@ -161,19 +160,7 @@ export default function Main() {
               UNESCO (INCCU)
             </span>
           </div>
-          <div className="flex flex-col items-center mx-[5.188rem]">
-            <Image
-              src="/images/colab-2.svg"
-              width={199.06}
-              height={166}
-              alt="collaborators"
-            />
-            <span className="font-custom text-[1.25rem] text-[#189BA5] font-medium mt-4 text-center">
-              UN information Centre for
-              <br />
-              India and Bhutan
-            </span>
-          </div>
+         
           <div className="flex flex-col items-center mx-[5.188rem]">
             <Image
               src="/images/colab-3.svg"
@@ -208,44 +195,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="mt-12 sm:mt-[8.75rem]">
-        <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
-          Our Collaborators
-        </p>
-        <div className="sm:flex flex-wrap relative justify-center mt-[2.738rem] hidden">
-          {data.sponsors.map((item) => {
-            return (
-              <SponsorCard key={item.id} src={item.src} height={item.height} />
-            );
-          })}
-        </div>
-        <div className="sm:hidden mt-8 flex justify-center">
-          <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-4">
-            <Image
-              src="/images/sponsor-1.png"
-              width={107.59}
-              height={41.98}
-              alt="sponsors"
-            />
-          </div>
-          <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-[1.25rem]">
-            <Image
-              src="/images/sponsor-2.png"
-              width={107.59}
-              height={30.485}
-              alt="sponsors"
-            />
-          </div>
-          <div className="w-1/3 bg-white mx-2 px-4 pb-2 pt-4">
-            <Image
-              src="/images/sponsor-3.png"
-              width={107.59}
-              height={34.055}
-              alt="sponsors"
-            />
-          </div>
-        </div>
-      </div>
+
     </div>
   );
 }
