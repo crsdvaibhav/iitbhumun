@@ -13,9 +13,6 @@ module.exports = withMT({
       fontFamily: {
         custom: ['Inter'],
         heading: ['Montserrat'],
-      },
-      boxShadow: {
-        'xl': '0 35px 60px -15px rgba(24, 155, 165, 1)',
       }
     },
   },
