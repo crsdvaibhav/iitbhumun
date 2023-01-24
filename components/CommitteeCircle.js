@@ -21,6 +21,7 @@ export default function CommitteeCircle(props) {
                             src={props.src}
                             width={114}
                             height={95}
+                            alt=""
                         />
                     </div>
                     <div className="font-bold font-sans text-[1.2rem] pb-2 text-[#189BA5]">

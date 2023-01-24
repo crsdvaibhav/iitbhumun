@@ -39,6 +39,7 @@ export default function NavBar() {
         <Image width={3000} height={660} src="/images/Mun.webp" alt="image h" />
       </div>
 
+
       {/* <div >
                 
                 <div className="flex flex-wrap overflow-y-auto justify-around">
@@ -60,7 +61,7 @@ export default function NavBar() {
           PAST EXPERIENCE
         </div>
         <div className="flex flex-wrap justify-around w-full">
-          <div className="w-[900px] h-[300px] sm:h-[500px] mt-[40px] ">
+          <div className="w-[900px] h-[300px] sm:h-[500px] mt-[1.5rem] ">
             <ImageSlider slides={slides} />
           </div>
         </div>

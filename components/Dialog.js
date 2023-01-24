@@ -12,7 +12,7 @@ const DialogBox = (props) => {
         <Dialog open={props.open} size={"xl"} handler={props.handleOpen}>
             <DialogHeader className="font-bold font-sans text-[2rem]   text-[#189BA5]">
                 <span className=" p-4 mt-[1rem]"> {props.title}</span>
-                <a href={`${props.href}`} target="_blank">
+                <a href={`${props.href}`}>
                     <Button
                         color="[#189BA5]"
                         className="mr-1"
