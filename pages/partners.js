@@ -13,8 +13,8 @@ const partners = () => {
                 <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[3.5rem]">
                     Our Collaborators
                 </p>
-                <div className="sm:grid sm:grid-cols-2 sm:gap-y-[4.5rem] m-auto w-[70%] relative justify-center mt-[2.738rem] pt-4  ">
-                    <div className="flex flex-col items-center m-auto">
+                <div className="flex flex-row flex-wrap justify-evenly m-[4rem]">
+                    <div className="flex flex-col items-center m-[2.5rem]">
                         <Image
                             src="/images/colab-2.svg"
                             width={199.06}
@@ -27,7 +27,7 @@ const partners = () => {
                             India and Bhutan
                         </span>
                     </div>
-                    <div className="flex flex-col items-center m-auto   ">
+                    <div className="flex flex-col items-center m-[2.5rem]   ">
                         <Image
                             src="/images/colab-3.svg"
                             width={469.4}
@@ -36,7 +36,7 @@ const partners = () => {
                         />
 
                     </div>
-                    <div className="flex flex-col items-center m-auto   ">
+                    <div className="flex flex-col items-center m-[2.5rem]   ">
                         <Image
                             src="/images/inccu.jpeg"
                             width={469.4}
@@ -45,6 +45,9 @@ const partners = () => {
                         />
 
                     </div>
+                    
+                </div>
+                <div className='flex justify-center'>
                     {data.collaborators.map((item) => {
                         return (
                             <SponsorCard key={item.id} src={item.src} height={item.height} width={item.height} href={item.href} />
@@ -55,13 +58,25 @@ const partners = () => {
                 <p className="font-bold font-heading text-center mt-16 text-[#1A1E21] text-xl sm:text-[3.5rem]">
                     Our Sponsors
                 </p>
-                <div className="sm:flex flex-wrap relative justify-center mt-[2.738rem] ">
+                {/* <div className="sm:flex flex-wrap relative justify-around ">
                     {data.sponsors.map((item) => {
                         return (
-                            <SponsorCard key={item.id} src={item.src} height={item.height} href={item.href} />
+                            <SponsorCard key={item.id} src={item.src} height={item.height} href={item.href} /> 
                         );
                     })}
-                </div>
+                </div> */}
+
+            <div className='flex flex-row flex-wrap justify-evenly mt-[2.5rem]'>
+            {data.sponsors.map((item)=>{
+
+                    return(
+                        <>   
+                            <SponsorCard key={item.id} src= {item.src} height = {item.height} href={item.href}/>
+                        </>
+                    )
+                })}
+            </div>
+               
 
             </div>
 

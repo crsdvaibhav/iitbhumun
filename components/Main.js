@@ -19,24 +19,27 @@ export default function Main() {
         </p>
         <div className="mt-[3.75rem] sm:flex justify-center hidden">
           <div className="flex flex-col items-center mx-[5.188rem]">
-            <Image
-              src="/images/colab-1.svg"
-              width={469.48}
-              height={166}
+          <Image
+              src="/images/inccu.jpeg"
+              width={400}
+              height={180}
               alt="collaborators"
             />
             <span className="font-custom text-[1.25rem] text-[#189BA5] font-medium mt-4">
               UNESCO (INCCU)
             </span>
           </div>
-          <div className="flex flex-col items-center mx-[5.188rem]">
-            <Image
-              src="/images/inccu.jpeg"
-              width={469.48}
-              height={166}
-              alt="collaborators"
-            />
-          </div>
+          <div className="flex flex-col items-center m-auto">
+                        <Image
+                            src="/images/colab-2.svg"
+                            width={200}
+                            height={150}
+                            alt="collaborators"
+                        />
+                        <span className="font-custom text-[1.25rem] text-[#189BA5] font-medium mt-4 text-center">
+                            UN information Centre for India and Bhutan
+                        </span>
+                    </div>
 
           <div className="flex flex-col items-center mx-[5.188rem]">
             <Image
