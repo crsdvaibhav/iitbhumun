@@ -45,7 +45,6 @@ const partners = () => {
                         />
 
                     </div>
-                    
                 </div>
                 <div className='flex justify-center'>
                     {data.collaborators.map((item) => {
