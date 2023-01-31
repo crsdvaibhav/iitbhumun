@@ -89,8 +89,22 @@
       "id": 8,
       "src": "/images/sponsor_12.png",
       "height": 600
+    },
+    {
+      "id": 9,
+      "src": "/images/kewal.jpeg",
+      "height": 600
+    },
+    {
+      "id": 10,
+      "src": "/images/vskill.jpeg",
+      "height": 600
+    },
+    {
+      "id": 11,
+      "src": "/images/topcon.jpeg",
+      "height": 600
     }
-    
   ],
   "questions": [
     {

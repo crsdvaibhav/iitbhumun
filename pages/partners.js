@@ -65,17 +65,17 @@ const partners = () => {
                     })}
                 </div> */}
 
-            <div className='flex flex-row flex-wrap justify-evenly mt-[2.5rem]'>
-            {data.sponsors.map((item)=>{
+                <div className='flex flex-row flex-wrap justify-evenly mt-[2.5rem]'>
+                    {data.sponsors.map((item) => {
 
-                    return(
-                        <>   
-                            <SponsorCard key={item.id} src= {item.src} height = {item.height} href={item.href}/>
-                        </>
-                    )
-                })}
-            </div>
-               
+                        return (
+                            <>
+                                <SponsorCard key={item.id} src={item.src} height={item.height} href={item.href} />
+                            </>
+                        )
+                    })}
+                </div>
+
 
             </div>
 
