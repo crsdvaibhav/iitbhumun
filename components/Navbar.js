@@ -6,9 +6,16 @@ import {
   MenuList,
   MenuItem,
 } from "@material-tailwind/react";
+import { useState } from 'react';
+import CloseReg from './CloseReg';
+
 
 export default function NavBar({ navbar }) {
 
+  const [closeReg, setCloseReg] = useState(true);
+  const handleChange = () => {
+    setCloseReg(false);
+  }
   return (
     <div
       className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
@@ -54,14 +61,15 @@ export default function NavBar({ navbar }) {
               FAQ
             </button>
           </Link>
-          <Link href="/register">
-            <button
-              className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold ${navbar ? 'bg-[#1A1E21] text-white' : 'text-black bg-[#F5CE3F]'
-                }`}
-            >
-              Register
-            </button>
-          </Link>
+
+          {!closeReg ? (
+            <CloseReg />
+          ) : <button onClick={handleChange}
+            className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold ${navbar ? 'bg-[#1A1E21] text-white' : 'text-black bg-[#F5CE3F]'
+              }`}
+          >
+            Register
+          </button>}
         </div>
       </div>
       <div
