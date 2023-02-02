@@ -198,13 +198,13 @@ export default function Footer() {
           <div className="ml-4">
             <div className="flex flex-col">
               <p className="font-bold">Participation</p>
-              <Link
-                href="/register"
-              >
-                <button className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+              {!closeReg ? (
+                <CloseReg />
+              ) :
+                <button onClick={handleChange} className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
                   Register
                 </button>
-              </Link>
+              }
             </div>
             <div className="mt-[44px]">
               <p className="font-bold">Follow us</p>
