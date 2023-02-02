@@ -15,6 +15,9 @@ export default function NavBar({ navbar }) {
   const [closeReg, setCloseReg] = useState(true);
   const handleChange = () => {
     setCloseReg(false);
+    setTimeout(() => {
+      setCloseReg(true);
+    }, 1000);
   }
   return (
     <div

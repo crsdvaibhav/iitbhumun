@@ -7,6 +7,9 @@ export default function Footer() {
   const [closeReg, setCloseReg] = useState(true);
   const handleChange = () => {
     setCloseReg(false);
+    setTimeout(() => {
+      setCloseReg(true);
+    }, 1000);
   }
   return (
     <div className="bg-[#1A1E21] w-full">
