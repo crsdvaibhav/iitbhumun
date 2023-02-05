@@ -1,7 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { useState } from 'react';
+import CloseReg from './CloseReg';
 export default function Hero() {
+  const [closeReg, setCloseReg] = useState(true);
+  const handleChange = () => {
+    setCloseReg(false);
+    setTimeout(() => {
+      setCloseReg(true);
+    }, 1000);
+  }
   return (
     <div className="">
       <div className="sm:grid hidden relative">
@@ -33,13 +41,15 @@ export default function Hero() {
           />
         </div>
         <div className=" row-span-full col-span-full self-center text-center mt-96 mr-56 ">
-          <Link href="/register">
-            <button
-              className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold "
-            >
-              REGISTER
-            </button>
-          </Link>
+
+          {!closeReg ? (
+            <CloseReg />
+          ) : <button onClick={handleChange}
+            className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold "
+          >
+            REGISTER
+          </button>
+          }
         </div>
         <div className="row-span-full col-span-full self-end text-center pb-4 mr-12">
           <Image
@@ -78,13 +88,14 @@ export default function Hero() {
           />
         </div>
         <div className=" row-span-full col-span-full self-center text-center mt-96 mr-48">
-          <Link href="/register">
-            <button
-              className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold"
-            >
-              REGISTER
-            </button>
-          </Link>
+          {!closeReg ? (
+            <CloseReg />
+          ) : <button onClick={handleChange}
+            className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold"
+          >
+            REGISTER
+          </button>
+          }
         </div>
         <div className="row-span-full col-span-full self-end text-center pb-4 ">
           <Image
