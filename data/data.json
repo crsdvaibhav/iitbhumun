@@ -104,6 +104,21 @@
       "id": 11,
       "src": "/images/topcon.jpeg",
       "height": 600
+    },
+    {
+      "id": 12,
+      "src": "/images/shree.png",
+      "height": 600
+    },
+    {
+      "id": 13,
+      "src": "/images/universal.png",
+      "height": 600
+    },
+    {
+      "id": 14,
+      "src": "/images/unionbank.png",
+      "height": 600
     }
   ],
   "questions": [
@@ -493,6 +508,25 @@
       "vicechairsrc": "/images/ls-vc.jpg",
       "href": "https://drive.google.com/file/d/1K_jrKa8SINRmtXpBIlkhZsut7PajWDyI/view?usp=sharing"
     }
+  ],
+  "eventsCarousel": [
+    { "source": "/images/mun1.jpg", "title": "kvt" },
+    { "source": "/images/mun2.jpg", "title": "kvt" },
+    { "source": "/images/MUN-260.jpg", "title": "kvt" },
+    { "source": "/images/mun4.jpg", "title": "kvt" },
+    { "source": "/images/MUN-261.jpg", "title": "kvt" },
+    { "source": "/images/mun6.jpg", "title": "kvt" },
+    { "source": "/images/MUN-192.jpg", "title": "kvt" },
+    { "source": "/images/MUN-30.jpg", "title": "kvt" },
+    { "source": "/images/MUN-250.jpg", "title": "kvt" }
+  ],
+  "placesCarousel": [
+    { "source": "/images/kvt.webp", "title": "kvt" },
+    { "source": "/images/dashashwamedh_ghat.jpg", "title": "kvt" },
+    { "source": "/images/assi_ghat.jpg", "title": "kvt" },
+    { "source": "/images/manikarnika_ghat.jpg", "title": "kvt" },
+    { "source": "/images/Panchganga-Ghat.jpg", "title": "kvt" },
+    { "source": "/images/sarnath.jpg", "title": "kvt" }
   ],
   "registerCommittees": [
     "None",
