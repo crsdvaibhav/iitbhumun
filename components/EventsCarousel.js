@@ -5,7 +5,7 @@ import { RxDotFilled } from 'react-icons/rx'
 import data from '../data/data.json';
 
 
-const eventsCarousel = () => {
+const EventsCarousel = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -54,4 +54,4 @@ const eventsCarousel = () => {
     );
 }
 
-export default eventsCarousel
+export default EventsCarousel

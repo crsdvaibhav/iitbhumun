@@ -5,7 +5,7 @@ import { RxDotFilled } from 'react-icons/rx'
 import data from '../data/data.json';
 
 
-const placesCarousel = () => {
+const PlacesCarousel = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -54,4 +54,4 @@ const placesCarousel = () => {
     );
 }
 
-export default placesCarousel
+export default PlacesCarousel

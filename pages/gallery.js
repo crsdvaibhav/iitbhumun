@@ -1,8 +1,8 @@
 import Navbar from "../components/Navbar";
 import Image from "next/image";
 
-import EventsCarousel from "../components/eventsCarousel";
-import PlacesCarousel from "../components/placesCarousel";
+import EventsCarousel from "../components/EventsCarousel";
+import PlacesCarousel from "../components/PlacesCarousel";
 export default function NavBar() {
 
 
