@@ -23,11 +23,12 @@ const [solo, setSolo] = useState(true);
     <>
       <Head>
       
-        <Script src="/registermyversion.js"/>
+        
+        <title>MUN Registration Form</title>
+      </Head>
+      <Script src="/registermyversion.js"/>
         <Script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js" />
     <Script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js" />
-        <title>My Next.js Page</title>
-      </Head>
       <style global></style>
       <div className={check?'hidden':'block'}>
     <div className="container mx-auto my-auto mb-auto  px-4 py-8" >

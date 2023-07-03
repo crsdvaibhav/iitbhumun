@@ -108,13 +108,11 @@ export default function NavBar({ navbar }) {
             alt="mobile-activenav-logo"
           />
         </div>
-        {!closeReg ? (
-          <CloseReg />
-        ) :
+       
           <button onClick={handleChange} className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
             <a>Register</a>
           </button>
-        }
+        
       </div>
     </div>
   );
