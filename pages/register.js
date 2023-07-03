@@ -909,10 +909,10 @@ export default function Register() {
         </div>
 
         <div className={check ? 'block' : 'hidden'}>
-          <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[4.5rem] pt-8">
+          <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[4.5rem] pt-8 my-5 ">
             Delegate Application Form
           </p>
-          <div className="place-items-center flex justify-center font-semibold text-center  pt-12 mb-12 ">
+          <div className="place-items-center flex justify-center font-semibold text-center  pt-12 mb-12 mt-60px ">
             <div
               onClick={() => {
                 setCheck(false);
