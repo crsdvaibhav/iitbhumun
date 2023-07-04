@@ -1,20 +1,18 @@
-import Navbar from "../components/Navbar";
-import Image from "next/image";
 
+import Image from "next/image";
+import NavBar from '../components/Navbar';
 import EventsCarousel from "../components/EventsCarousel";
 import PlacesCarousel from "../components/PlacesCarousel";
-export default function NavBar() {
+import Footer from "../components/Footer";
+export default function gallery() {
 
 
   return (
-    <>
-      <NavBar navbar={true} backgroundColor="white" qt='' />
-      <div>
-        <Image width={3000} height={1024} src="/images/Mun.webp" alt="image h" />
-      </div>
+    <div className='bg-gray-100 w-[100%] sm:w-[100%] ' >
+       <NavBar navbar={true} backgroundColor="white" qt='' />
 
 
-      <div className="mt-[40px]">
+      <div className="">
         <div className="bold text-center font-extrabold text-4xl">
           PAST EXPERIENCE
         </div>
@@ -28,11 +26,11 @@ export default function NavBar() {
           PLACES TO VISIT IN VARANASI
         </div>
         <div className=' w-full'>
-          <PlacesCarousel />
+         <PlacesCarousel></PlacesCarousel>
         </div>
       </div>
 
-
-    </>
+<Footer></Footer>
+    </div>
   );
 }
