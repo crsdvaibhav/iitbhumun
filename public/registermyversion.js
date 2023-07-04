@@ -28,11 +28,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const generateUniqueId = () => {
-  const prefix = 'ID'; // Unique prefix for your IDs
-  const timestamp = new Date().getTime(); // Current timestamp in milliseconds
-  const random = Math.floor(Math.random() * 10000); // Random number between 0 and 9999
+  const prefix = 'ID'; 
+  const timestamp = new Date().getTime(); 
+  const random = Math.floor(Math.random() * 10000); 
   
-  // Concatenate the prefix, timestamp, and random number to create the unique ID
+  
   const uniqueId = `${prefix}_${timestamp}_${random}`;
   
   return uniqueId;
@@ -51,11 +51,16 @@ function validateForm() {
   const region = document.getElementById('region').value.trim();
   const email = document.getElementById('email_field').value.trim();
   const password = document.getElementById('password').value.trim();
-
+const muncount=document.getElementById('muncount').value.trim();
   if (name === '') {
     alert('Please enter your name.');
     return false;
   }
+  if (count === '') {
+    alert('Please enter the number of MUN you participated before!.');
+    return false;
+  }
+
 
   if (age === '') {
     alert('Please enter your age.');
@@ -185,11 +190,7 @@ function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,reff
      
     })
     .then(() => { 
-      
-      document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>";
-      
      
-     setTimeout(()=>{window.location.replace("/thankyou")},2000)
     })
     .catch((error) => {
       
@@ -253,7 +254,7 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
     document.getElementById("registrationForm").reset();
     document.getElementById("form2").reset();
     
-    setTimeout(()=>{window.location.replace("/thankyou")},3000)
+    
   })
   .catch((error) => {
     
@@ -290,13 +291,23 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
       const user1 = auth.currentUser; 
        user1.delete().then(() => {
            console.log("userdeleted!")
-       }).catch((error) => {
+       },
+        
+      document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
+      
+     
+      setTimeout(()=>{window.location.replace("/thankyou")},2000)
+       
+       
+       
+       
+       ).catch((error) => {
            // An error occurred
            // ...
        });
      
     
-})
+  })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -316,7 +327,21 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
        ;const user1 = auth.currentUser; 
        user1.delete().then(() => {
            console.log("userdeleted!")
-       }).catch((error) => {
+       },
+       
+       document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
+      
+     
+       setTimeout(()=>{window.location.replace("/thankyou")},2000)
+        
+       
+       
+       
+       
+       
+       
+       
+       ).catch((error) => {
            
        });
      
