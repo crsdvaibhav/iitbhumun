@@ -27,7 +27,7 @@ export default function NavBar() {
         <div className="bold text-center font-extrabold text-4xl">
           PLACES TO VISIT IN VARANASI
         </div>
-        <div className=' w-full '>
+        <div className=' w-full'>
           <PlacesCarousel />
         </div>
       </div>
