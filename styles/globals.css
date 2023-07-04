@@ -22,3 +22,20 @@ a {
 * {
   box-sizing: border-box;
 }
+.qtp{
+  font-weight: bolder;
+  font-size: larger;
+  display: block;
+  margin:0 auto;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  
+  background: #189BA5;
+  color:black;
+  padding: 4px 18px;
+  
+}
+.qtp:hover{
+  color: rgb(231, 226, 226);
+}
+.new{background: black;}

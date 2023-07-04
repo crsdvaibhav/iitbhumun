@@ -110,8 +110,8 @@ const muncount=document.getElementById('muncount').value.trim();
 
 function getInput(id) {
     let abc= document.getElementById(id).value;
-    if (id==pastaward||id==refferalcode){return " "}
-    else{return abc}
+   
+    return abc
 }
 
 function submitForm1(e) {
@@ -207,7 +207,6 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
   set(newRec, {
     name:name,
     email:email,
-    
     Committee_Preference_1: Committee1,
     Committee_Preference_2: Committee2,
     Committee_Preference_3: Committee3,
@@ -293,11 +292,7 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
            console.log("userdeleted!")
        },
         
-      document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
       
-     
-      setTimeout(()=>{window.location.replace("/thankyou")},2000)
-       
        
        
        
@@ -306,7 +301,15 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
            // ...
        });
      
-    
+       document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
+      
+     
+       setTimeout(()=>{window.location.replace("/thankyou")
+      auth.signOut();
+   
+     
+     },2000)
+        
   })
     .catch((error) => {
       const errorCode = error.code;
@@ -329,10 +332,7 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
            console.log("userdeleted!")
        },
        
-       document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
       
-     
-       setTimeout(()=>{window.location.replace("/thankyou")},2000)
         
        
        
@@ -345,9 +345,11 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
            
        });
      
+       document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
       
-       
-        
+     
+       setTimeout(()=>{window.location.replace("/thankyou")},2000)
+       auth.signOut();
       
   })
       .catch((error) => {

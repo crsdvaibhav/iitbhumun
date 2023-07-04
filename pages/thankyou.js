@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+
 
 
 export default function Thankyou() {
@@ -22,9 +24,15 @@ export default function Thankyou() {
       <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[4.5rem] pt-2" >
         Thank you
       </p>
+     
       <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[1.5rem] mt-2 pt-8">
-        <span> You have successfully registered.</span>
+        <span> You have successfully registered for 12th edition of IIT BHU MUN.</span>
       </p>
+      <button className=' qtp mx-2 rounded-md '><Link href={'/loginpage'}>Login</Link></button>
+      <div className="font-bold text-2xl text-[#189BA5] flex m-auto justify-center pt-4" >
+ <div>Login using your email and password to confirm your portfolio and complete payment.</div>
+
+      </div>
       <div className="flex m-auto justify-center pt-4" >
         <Image
           src="/images/Payment.png"
@@ -33,11 +41,11 @@ export default function Thankyou() {
           alt="icons"
         />
       </div>
-      <div className="flex space-y-5 flex-col justify-between items-center sm:w-3/4 w-5/6 lg:w-1/2 mx-auto text-sm lg:text-2xl text-justify p-12">
+      <div className=" font-bold flex space-y-5 flex-col justify-between items-center sm:w-3/4 w-5/6 lg:w-1/2 mx-auto text-sm lg:text-2xl text-justify p-12">
 
-        The secretariat will review your preferences and send you a mail with
-        tentative allotment and payment link within 5 days. If you do not
-        receive a mail from us within 5 days time, kindly write to us at{' '}
+
+     For any issues with Login and Payment
+        ,Kindly write to us at{' '}
         <a href="mailto:secretariat@iitbhumun.com" className="text-indigo-700 mt-8  ">
           secretariat@iitbhumun.com
         </a>

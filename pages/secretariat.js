@@ -11,7 +11,7 @@ export default function Secretariat() {
 
     return (
         <div className='bg-gray-100 w-[100%] sm:w-[100%] ' >
-            <NavBar navbar={true} />
+            <NavBar navbar={true} backgroundColor="white" qt='' />
 
             <div className='   text-5xl pt-24 text-center'>
                 Secretariat

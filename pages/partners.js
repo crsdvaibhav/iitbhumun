@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 const partners = () => {
     return (
         <div>
-            <NavBar navbar={true} />
+            <NavBar navbar={true} backgroundColor="white" qt='' />
             <div className="mt-12 sm:mt-[0rem] pt-48 m-auto justify-center">
                 <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[3.5rem]">
                     Our Collaborators

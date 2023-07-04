@@ -9,7 +9,7 @@ const arr = data.committees;
 export default function Committees() {
     return (
         <div className="bg-[#F5F5F5]">
-            <NavBar navbar={true} />
+            <NavBar navbar={true} backgroundColor="white" qt='' />
             <div className="h-[70vh] sm:justify-center sm:flex hidden">
                 <div className="w-1/3 h-[80vh] flex flex-col items-end justify-center">
                     <div className="flex pb-4">

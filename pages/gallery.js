@@ -8,7 +8,7 @@ export default function NavBar() {
 
   return (
     <>
-      <Navbar navbar={true} />
+      <NavBar navbar={true} backgroundColor="white" qt='' />
       <div>
         <Image width={3000} height={1024} src="/images/Mun.webp" alt="image h" />
       </div>

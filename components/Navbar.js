@@ -10,20 +10,22 @@ import { useState } from 'react';
 import Register from './CloseReg';
 
 
-export default function NavBar({ navbar }) {
+export default function NavBar({ navbar ,backgroundColor,qt}) {
 
   const [closeReg, setCloseReg] = useState(true);
+  const [display, buttonhide] = useState(false);
   const handleChange = () => {
     setCloseReg(false);
     setTimeout(() => {
       setCloseReg(true);
     }, 1000);
+    buttonhide(true)
   }
   return (
     <div
       className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
-        ? 'bg-[#F1F1F1] shadow-lg border-b 1xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black'
-        : ''
+        ? `bg-${backgroundColor} shadow-lg border-b 1xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black`
+        : `bg-${backgroundColor} `
         }`}
     >
       <div className="hidden sm:flex flex-row items-center justify-between mx-16">
@@ -63,14 +65,22 @@ export default function NavBar({ navbar }) {
             <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
               FAQ
             </button>
-          </Link>
+          </Link><div>
 <Link href="/registerpage">
+  
          <button 
-            className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold  'bg-[#1A1E21] text-white' : 'text-black bg-[#F5CE3F]'
-              }`}
+            className={'px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-2 text-black bg-[#F5CE3F] hover:text-[#189BA5]'
+              }
           >
             Register
+          </button ></Link>
+          <Link href="/loginpage">
+         <button onClick={handleChange}
+            className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-4  text-black bg-[#F5CE3F] hover:text-[#189BA5] ${qt} ${display ? 'hidden' : ''}`}
+          >
+            Login
           </button></Link>
+         </div>
         </div>
       </div>
       <div
@@ -110,9 +120,11 @@ export default function NavBar({ navbar }) {
         </div>
        
           <button onClick={handleChange} className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
-            <a>Register</a>
+            <Link href={'/registerpage'}>Register</Link>
           </button>
-        
+          <button  className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
+                 <Link href={'/loginpage'}>    Login</Link> 
+                </button>
       </div>
     </div>
   );

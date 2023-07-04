@@ -78,9 +78,12 @@ export default function Footer() {
                 Participation
               </div>
               <div>
-                {!closeReg ? (<CloseReg />) : <button onClick={handleChange} className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
-                  Register
-                </button>}
+                 <button  className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                 <Link href={'/registerpage'}>    Register</Link> 
+                </button>
+                <button  className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] mx-6 font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                 <Link href={'/loginpage'}>    Login</Link> 
+                </button>
 
               </div>
             </div>
@@ -201,13 +204,14 @@ export default function Footer() {
           <div className="ml-4">
             <div className="flex flex-col">
               <p className="font-bold">Participation</p>
-              {!closeReg ? (
-                <CloseReg />
-              ) :
-                <button onClick={handleChange} className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
-                  Register
+              <button  className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] mx-6 font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                 <Link href={'/loginpage'}>    Login</Link> 
                 </button>
-              }
+                <button  className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                 <Link href={'/registerpage'}> Register</Link>
+                </button>
+                
+              
             </div>
             <div className="mt-[44px]">
               <p className="font-bold">Follow us</p>
