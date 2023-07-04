@@ -2,9 +2,9 @@
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 import { getDatabase,ref,push,set } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
-
+const provider = new GoogleAuthProvider();
 // Import the functions you need from the SDKs you need
 
 
@@ -130,7 +130,7 @@ function submitForm2(e) {
   document.getElementById('form2').addEventListener("submit",function(e){e.preventDefault()})
  if( validateForm()){
   e.preventDefault();
-  signup2();
+  
   saveRec2(getInput('name_field'), getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
  
 }
@@ -145,7 +145,7 @@ function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,reff
     
     set(newRec, {
       name:name,
-      email:email,
+      email:auth.email,
       
       Committee_Preference_1: Committee1,
       Committee_Preference_2: Committee2,
@@ -186,7 +186,22 @@ function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,reff
     .then(() => {
       
 
-      return signup1(); 
+      auth.onAuthStateChanged(function(user) {
+        if (user) {
+          document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
+      
+     
+          setTimeout(()=>{window.location.replace("/thankyou")
+         auth.signOut();
+      
+        
+        },2000)
+        } else {
+         
+          return signup1(); 
+        }
+      });
+      
      
     })
     .then(() => { 
@@ -244,8 +259,21 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
     ]);
 } })
   .then(() => {
-   
-    return signup2(); 
+  auth.onAuthStateChanged(function(user) {
+      if (user) {document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
+      
+     
+      setTimeout(()=>{window.location.replace("/thankyou")
+     auth.signOut();
+  
+    
+    },2000)
+       
+      } else {
+        return signup2(); 
+      }
+    });
+    
     
   })
   .then(() => {
@@ -266,10 +294,8 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
 
 
 
-
   
   
-
 
 
 
@@ -285,7 +311,7 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
     var password1=document.getElementById("password").value;
   createUserWithEmailAndPassword(auth,email1,password1)
     .then((userCredential) => {
-      // Signed in 
+      console.log(email1)
       const user = userCredential.user;
       const user1 = auth.currentUser; 
        user1.delete().then(() => {
@@ -359,3 +385,30 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
         alert(errorMessage);
         // ..
       });}
+
+      document.getElementById("google").addEventListener("click", function(){ signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+      document.getElementById("or").innerHTML=`<div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      Signup with google succesful!
+    </div>`;
+        document.getElementById("google").innerHTML=`<h1>Hello ${auth.currentUser.displayName}, Fill the registration form now</h1>`
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      })
+    })
+      

@@ -4,6 +4,8 @@ import Link from 'next/link';
 import data from '../data/data.json';
 import { Alert } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
+import { getAuth } from 'firebase/auth';
+import GoogleButton from 'react-google-button'
 const HomePage = () => {
   
 var ab=false;
@@ -19,7 +21,7 @@ const ip = data.ip;
 
 const id = Math.floor(100000 + Math.random() * 900000);
 
-
+const[abcd,setbool]=useState(true);
   var [error, setError] = useState(true);
   const [error1, setError1] = useState(true);
   const [check, setCheck] = useState(false);
@@ -94,7 +96,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
   // const isPhoneValid2 = usePhoneValidation(formInput2.Mobile_Number);
 
   
-    
+
 
   const handleCheck = (e) => {
     if (error == false) {
@@ -336,6 +338,13 @@ const id = Math.floor(100000 + Math.random() * 900000);
             </div>
           </div>
       <form id="registrationForm"  className=" bg-white rounded-lg shadow-md p-6">
+       
+       
+    <div id='google'className="m-auto"> <GoogleButton className="m-auto" id='google'
+  onClick={() => { }}
+/>
+</div>
+<h1 className="text-2xl m-auto 'block' justify-center text-center my-3" id='or' >OR</h1>
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:*</label>
           <input type="text" id="name_field" placeholder="Enter your name" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
@@ -363,7 +372,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
         </div>
         <div className="mb-4">
           <label htmlFor="email" required className="block text-gray-700 font-bold mb-2">Email:*</label>
-          <input type="email" placeholder="abc264@gmail.com" id="email_field" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+          <input type="email" placeholder="Use same email if signed up with google" id="email_field" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
           <label htmlFor="Password" required className="block text-gray-700 font-bold mb-2">Password:*</label>
