@@ -4,6 +4,7 @@ import { getDatabase,ref,push,set } from "https://www.gstatic.com/firebasejs/9.2
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
+
 // Import the functions you need from the SDKs you need
 
 
@@ -178,17 +179,20 @@ function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,reff
       ]);
  } })
     .then(() => {
-      // Record and preferences saved successfully
-      return signup1(); // Call the signup1 function after the record is saved
+      
+
+      return signup1(); 
+     
     })
-    .then(() => {
-      // Registration and signup successful
-      document.getElementById("registrationForm").reset();
-      document.getElementById("form2").reset();
-      alert("Registration and Signup successful");
+    .then(() => { 
+      
+      document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>";
+      
+     
+     setTimeout(()=>{window.location.replace("/thankyou")},2000)
     })
     .catch((error) => {
-      // Error handling
+      
       alert("Registration failed: " + error.message);
     });
 
@@ -240,17 +244,19 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
     ]);
 } })
   .then(() => {
-    // Record and preferences saved successfully
-    return signup2(); // Call the signup1 function after the record is saved
+   
+    return signup2(); 
+    
   })
   .then(() => {
     // Registration and signup successful
     document.getElementById("registrationForm").reset();
     document.getElementById("form2").reset();
-    alert("Registration and Signup successful");
+    
+    setTimeout(()=>{window.location.replace("/thankyou")},3000)
   })
   .catch((error) => {
-    // Error handling
+    
     alert("Registration failed: " + error.message);
   });
 }
@@ -281,14 +287,23 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      
+      const user1 = auth.currentUser; 
+       user1.delete().then(() => {
+           console.log("userdeleted!")
+       }).catch((error) => {
+           // An error occurred
+           // ...
+       });
+     
     
 })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      
+        
       alert(errorMessage);
+      
+      
       // ..
     });}
     function signup2(){
@@ -298,7 +313,12 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-       ;
+       ;const user1 = auth.currentUser; 
+       user1.delete().then(() => {
+           console.log("userdeleted!")
+       }).catch((error) => {
+           
+       });
      
       
        

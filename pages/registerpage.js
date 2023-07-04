@@ -301,7 +301,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
   }
 
   return (
-    <>
+    <div id='qt'>
       <Head>
       
         
@@ -404,7 +404,8 @@ const id = Math.floor(100000 + Math.random() * 900000);
                 
   
                   {error=false}
-        <div className={check ? 'block' : 'hidden'}>
+                 
+        <div className={check ? 'block' : 'hidden' }>
           <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[4.5rem] pt-8 my-5 ">
             Delegate Application Form
           </p>
@@ -715,7 +716,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
 <Script src="https://smtpjs.com/v3/smtp.js"/>
 
 
-    </>
+    </div>
   );
 };
 
