@@ -397,7 +397,7 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       Signup with google succesful!
     </div>`;
-        document.getElementById("google").innerHTML=`<h1>Hello ${auth.currentUser.displayName}, Fill the registration form now</h1>`
+        document.getElementById("google1").innerHTML=`<h1>Hello ${auth.currentUser.displayName}, Fill the registration form now</h1>`
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       }).catch((error) => {
