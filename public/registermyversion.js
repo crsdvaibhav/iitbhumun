@@ -56,7 +56,7 @@ const muncount=document.getElementById('muncount').value.trim();
     alert('Please enter your name.');
     return false;
   }
-  if (count === '') {
+  if (muncount === '') {
     alert('Please enter the number of MUN you participated before!.');
     return false;
   }
