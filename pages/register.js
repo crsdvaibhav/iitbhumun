@@ -296,11 +296,12 @@ export default function Register() {
   const [selected1, setSelected1] = useState('');
 
   const handleChange1 = (e) => {
+    setSelected1(e.target.value);
     setFormInput({
       ...formInput,
       Committee_Preference_1: e.target.value,
     });
-    setSelected1(e.target.value);
+   
   };
 
   let type1 = null;
@@ -908,7 +909,7 @@ export default function Register() {
           </div>
         </div>
 
-        <div className={check ? 'block' : 'hidden'}>
+        <div className={ 'block'}>
           <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[4.5rem] pt-8 my-5 ">
             Delegate Application Form
           </p>
@@ -1186,6 +1187,11 @@ export default function Register() {
               </div>
             </div>
           </div>
+
+
+
+
+
           {error1 && (
             <Alert
               className=" m-auto justify-around w-max"

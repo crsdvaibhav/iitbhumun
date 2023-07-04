@@ -22,7 +22,7 @@ export default function NavBar({ navbar }) {
   return (
     <div
       className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
-        ? 'bg-[#F1F1F1] shadow-lg border-b 2xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black'
+        ? 'bg-[#F1F1F1] shadow-lg border-b 1xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black'
         : ''
         }`}
     >

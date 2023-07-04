@@ -3,6 +3,7 @@ import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase
 import { getDatabase,ref,push,set } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
 // Import the functions you need from the SDKs you need
 
 
@@ -99,8 +100,7 @@ function validateForm() {
     document.getElementById('register3').addEventListener("click", submitForm2);
 
 
-var db_ref1 = ref(database, "records of single delegates")
-var db_ref2 = ref(database, "records of Conference ambassadors")
+
 
 function getInput(id) {
     let abc= document.getElementById(id).value;
@@ -109,36 +109,42 @@ function getInput(id) {
 }
 
 function submitForm1(e) {
-  validateForm();
+document.getElementById('form2').addEventListener("submit",function(e){e.preventDefault()})
+  let abcd=validateForm()
+if(abcd){
     e.preventDefault();
+    signup1();
+    saveRec1(getInput('name_field'), getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
     
-    signup1()
-
+  }
     
    
 }
 function submitForm2(e) {
-  validateForm();
+  document.getElementById('form2').addEventListener("submit",function(e){e.preventDefault()})
+ if( validateForm()){
   e.preventDefault();
-  signup2()
-  
+  signup2();
+  saveRec2(getInput('name_field'), getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
  
 }
-function saveRec1(name,email,password,age,gender,Institute,region,muncount,pastaward,refferalcode,uid) {
-    const dbRef1 = ref(database, "records of single delegates/");
+ 
+}
+function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
+    const uuid=generateUniqueId()
+    console.log(uuid)
+  const dbRef1 = ref(database, "records of single delegates/"+uuid);
    
     const newRec = push(dbRef1);
-    const uuid=generateUniqueId();
+    
     set(newRec, {
       name:name,
       email:email,
-      Password:password,
-      delegatecountry: '',
-      preference1:'',
-      preference2:'',
-      preference3:'',
+      
+      Committee_Preference_1: Committee1,
+      Committee_Preference_2: Committee2,
+      Committee_Preference_3: Committee3,
       Age:age,
-      UniqueId:uid,
       Gender:gender,
       Institute:Institute,
       Region:region,
@@ -147,35 +153,45 @@ function saveRec1(name,email,password,age,gender,Institute,region,muncount,pasta
       Referralcode:refferalcode
 
     }).then(() => {
-      // Registration successful
-      
-      alert("Registration successful! Check your Email!");
-     
-    }).catch((error) => {
+      {const dbRef3 = ref(database, "records of single delegates/"+uuid+"/"+Committee1);
+      const dbRef4 = ref(database, "records of single delegates/"+uuid+"/"+Committee2);
+      const dbRef5 = ref(database, "records of single delegates/"+uuid+"/"+Committee3);
+      const newRec1 = push(dbRef3);
+      const newRec2 = push(dbRef4);
+      const newRec3 = push(dbRef5);
+      set(newRec1, {Committee_1_Country_Preference_1: pref1option1,
+      Committee_1_Country_Preference_2: pref1option2,
+      Committee_1_Country_Preference_3: pref1option3,})
+      set(newRec2, { Committee_2_Country_Preference_1: pref2option1,
+      Committee_2_Country_Preference_2: pref2option2,
+      Committee_2_Country_Preference_3: pref2option3,})
+      set(newRec3, {Committee_3_Country_Preference_1: pref3option1,
+      Committee_3_Country_Preference_2: pref3option2,
+      Committee_3_Country_Preference_3: pref3option3,})}
+    }).then(()=>{ }).catch((error) => {
       // Error handling
       alert("Registration failed: " + error.message);
-
+     
+      
     });
     document.getElementById("registrationForm").reset();
-
+    document.getElementById("form2").reset();
 
 }
 
-function saveRec2(name,email,password,age,gender,Institute,region,muncount,pastaward,refferalcode,uid) {
-  
-  const dbRef2 = ref(database, "records of Conference ambassadors/"+uid);
+function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
+  const uuid=generateUniqueId()
+  const dbRef2 = ref(database, "records of Conference ambassadors/"+uuid);
   
   const newRec = push(dbRef2);
   set(newRec, {
     name:name,
     email:email,
-    Password:password,
-   delegatecountry:'',
-    preference1:'',
-    preference2:'',
-    preference3:'',
+    
+    Committee_Preference_1: Committee1,
+    Committee_Preference_2: Committee2,
+    Committee_Preference_3: Committee3,
     Age:age,
-    UniqueId:uid,
     Gender:gender,
     Institute:Institute,
     Region:region,
@@ -184,15 +200,34 @@ function saveRec2(name,email,password,age,gender,Institute,region,muncount,pasta
     Referralcode:refferalcode
 
   }).then(() => {
-    // Registration successful
-    
-    alert("Registration successful! Check your Email!");
+    {const dbRef3 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee1);
+    const dbRef4 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee2);
+    const dbRef5 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee3);
+    const newRec1 = push(dbRef3);
+    const newRec2 = push(dbRef4);
+    const newRec3 = push(dbRef5);
+    set(newRec1, {Committee_1_Country_Preference_1: pref1option1,
+    Committee_1_Country_Preference_2: pref1option2,
+    Committee_1_Country_Preference_3: pref1option3,})
+    set(newRec2, { Committee_2_Country_Preference_1: pref2option1,
+    Committee_2_Country_Preference_2: pref2option2,
+    Committee_2_Country_Preference_3: pref2option3,})
+    set(newRec3, {Committee_3_Country_Preference_1: pref3option1,
+    Committee_3_Country_Preference_2: pref3option2,
+    Committee_3_Country_Preference_3: pref3option3,})}
+  }).then(()=>{
+  
    
-  }).catch((error) => {
-    // Error handling
+}
+  ).catch((error) => {
+    
     alert("Registration failed: " + error.message);
+    
+   
+
   });
   document.getElementById("registrationForm").reset();
+  document.getElementById("form2").reset();
 }
 
 
@@ -211,20 +246,19 @@ function saveRec2(name,email,password,age,gender,Institute,region,muncount,pasta
 
 
 
-var ab=false;
-  function signup1(){
-    var email = document.getElementById("email_field").value;
 
-    console.log(email)
-    var password=document.getElementById("password").value;
-  createUserWithEmailAndPassword(auth,email,password)
+  function signup1(){
+    var email1 = document.getElementById("email_field").value;
+
+    console.log(email1)
+    var password1=document.getElementById("password").value;
+  createUserWithEmailAndPassword(auth,email1,password1)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      const uid = auth.currentUser.uid;
- console.log(uid)
-      saveRec1(getInput('name_field'), getInput('email_field'),getInput('password'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),uid);
-    })
+      
+     alert("Registration and Signup succesful")
+})
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -233,20 +267,21 @@ var ab=false;
       // ..
     });}
     function signup2(){
-      var email = document.getElementById("email_field").value;
-  
-      console.log(email)
-      var password=document.getElementById("password").value;
-    createUserWithEmailAndPassword(auth,email,password)
+      var email2 = document.getElementById("email_field").value;
+      var password2=document.getElementById("password").value;
+    createUserWithEmailAndPassword(auth,email2,password2)
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        const uid = auth.currentUser.uid;
-  
-        saveRec2(getInput('name_field'), getInput('email_field'),getInput('password'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'), uid);
-      })
+       ;
+      alert("Registration and Signup succesful")
+      
+       
+        
+      
+  })
       .catch((error) => {
-        const errorCode = error.code;
+        
         const errorMessage = error.message;
         
         alert(errorMessage);
