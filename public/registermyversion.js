@@ -113,7 +113,7 @@ document.getElementById('form2').addEventListener("submit",function(e){e.prevent
   let abcd=validateForm()
 if(abcd){
     e.preventDefault();
-    signup1();
+    
     saveRec1(getInput('name_field'), getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
     
   }
@@ -159,23 +159,38 @@ function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,reff
       const newRec1 = push(dbRef3);
       const newRec2 = push(dbRef4);
       const newRec3 = push(dbRef5);
-      set(newRec1, {Committee_1_Country_Preference_1: pref1option1,
-      Committee_1_Country_Preference_2: pref1option2,
-      Committee_1_Country_Preference_3: pref1option3,})
-      set(newRec2, { Committee_2_Country_Preference_1: pref2option1,
-      Committee_2_Country_Preference_2: pref2option2,
-      Committee_2_Country_Preference_3: pref2option3,})
-      set(newRec3, {Committee_3_Country_Preference_1: pref3option1,
-      Committee_3_Country_Preference_2: pref3option2,
-      Committee_3_Country_Preference_3: pref3option3,})}
-    }).then(()=>{ }).catch((error) => {
+      return Promise.all([
+        set(newRec1, {
+          Committee_1_Country_Preference_1: pref1option1,
+          Committee_1_Country_Preference_2: pref1option2,
+          Committee_1_Country_Preference_3: pref1option3,
+        }),
+        set(newRec2, {
+          Committee_2_Country_Preference_1: pref2option1,
+          Committee_2_Country_Preference_2: pref2option2,
+          Committee_2_Country_Preference_3: pref2option3,
+        }),
+        set(newRec3, {
+          Committee_3_Country_Preference_1: pref3option1,
+          Committee_3_Country_Preference_2: pref3option2,
+          Committee_3_Country_Preference_3: pref3option3,
+        })
+      ]);
+ } })
+    .then(() => {
+      // Record and preferences saved successfully
+      return signup1(); // Call the signup1 function after the record is saved
+    })
+    .then(() => {
+      // Registration and signup successful
+      document.getElementById("registrationForm").reset();
+      document.getElementById("form2").reset();
+      alert("Registration and Signup successful");
+    })
+    .catch((error) => {
       // Error handling
       alert("Registration failed: " + error.message);
-     
-      
     });
-    document.getElementById("registrationForm").reset();
-    document.getElementById("form2").reset();
 
 }
 
@@ -206,28 +221,38 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
     const newRec1 = push(dbRef3);
     const newRec2 = push(dbRef4);
     const newRec3 = push(dbRef5);
-    set(newRec1, {Committee_1_Country_Preference_1: pref1option1,
-    Committee_1_Country_Preference_2: pref1option2,
-    Committee_1_Country_Preference_3: pref1option3,})
-    set(newRec2, { Committee_2_Country_Preference_1: pref2option1,
-    Committee_2_Country_Preference_2: pref2option2,
-    Committee_2_Country_Preference_3: pref2option3,})
-    set(newRec3, {Committee_3_Country_Preference_1: pref3option1,
-    Committee_3_Country_Preference_2: pref3option2,
-    Committee_3_Country_Preference_3: pref3option3,})}
-  }).then(()=>{
-  
-   
-}
-  ).catch((error) => {
-    
+    return Promise.all([
+      set(newRec1, {
+        Committee_1_Country_Preference_1: pref1option1,
+        Committee_1_Country_Preference_2: pref1option2,
+        Committee_1_Country_Preference_3: pref1option3,
+      }),
+      set(newRec2, {
+        Committee_2_Country_Preference_1: pref2option1,
+        Committee_2_Country_Preference_2: pref2option2,
+        Committee_2_Country_Preference_3: pref2option3,
+      }),
+      set(newRec3, {
+        Committee_3_Country_Preference_1: pref3option1,
+        Committee_3_Country_Preference_2: pref3option2,
+        Committee_3_Country_Preference_3: pref3option3,
+      })
+    ]);
+} })
+  .then(() => {
+    // Record and preferences saved successfully
+    return signup2(); // Call the signup1 function after the record is saved
+  })
+  .then(() => {
+    // Registration and signup successful
+    document.getElementById("registrationForm").reset();
+    document.getElementById("form2").reset();
+    alert("Registration and Signup successful");
+  })
+  .catch((error) => {
+    // Error handling
     alert("Registration failed: " + error.message);
-    
-   
-
   });
-  document.getElementById("registrationForm").reset();
-  document.getElementById("form2").reset();
 }
 
 
@@ -257,7 +282,7 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
       // Signed in 
       const user = userCredential.user;
       
-     alert("Registration and Signup succesful")
+    
 })
     .catch((error) => {
       const errorCode = error.code;
@@ -274,7 +299,7 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
         // Signed in 
         const user = userCredential.user;
        ;
-      alert("Registration and Signup succesful")
+     
       
        
         
