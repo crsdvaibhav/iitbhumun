@@ -13,9 +13,14 @@ const Loggedinhomepage = () => {
     const app=initfirebase;
 const database=getDatabase();
 const auth=getAuth();
+var user = auth.currentUser;
+if(user==null){
+  const userEmail = "shivanshu264@gmail.com";
+}
+else{const userEmail = auth.currentUser.email;}
 
 
-const userEmail = auth.currentUser.email;
+
 const filterDataByUserEmail = (data) => {
   if (data) {
     const filteredData = Object.values(data).filter((item) => {
