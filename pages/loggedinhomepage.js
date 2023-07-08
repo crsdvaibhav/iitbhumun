@@ -79,7 +79,7 @@ const filterDataByUserEmail = (data) => {
   useEffect(() => {
     fetchData();
    console.log(finaldata)
-  }, [finaldata==[]]);
+  }, [finaldata.length==0]);
 
 
 
@@ -93,7 +93,7 @@ return(
         <h2 >Record of this user:</h2>
      
      
-     {finaldata!=[]&&finaldata.map((item) => {
+     {finaldata.length>0&&finaldata.map((item) => {
       const delegateData = Object.values(item);
       const nestedItem = delegateData.find(
         (item) => item.email === userEmail
