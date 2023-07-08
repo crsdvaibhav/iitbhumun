@@ -116,7 +116,7 @@ return(
   <Countdown></Countdown>
   <div>
         <h2>Record of this user:</h2>
-        {finaldata.map((item) => {
+      {setTimeout(function(){finaldata.map((item) => {
           const delegateData = Object.values(item);
           const nestedItem = delegateData.find(
             (item) => item.email === userEmail
@@ -134,7 +134,9 @@ return(
             
           }
           return null;
-        })}
+        })
+      }
+      , 3000)};
       </div>
 
 
