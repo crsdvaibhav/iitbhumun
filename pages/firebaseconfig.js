@@ -20,5 +20,5 @@ const firebaseConfig = {
  const initfirebase = ()=>{
   
     return app;
-}
+};
 export default initfirebase;
