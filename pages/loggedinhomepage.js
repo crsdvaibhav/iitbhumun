@@ -5,6 +5,7 @@ import app from "../public/firebaseconfig";
 import Footer from "../components/Footer";
 import NavBar from '../components/Navbar';
 import Countdown from '../components/Countdown';
+import { AccordionBody } from "@material-tailwind/react";
 
 
 
@@ -37,33 +38,37 @@ const filterDataByUserEmail = (data) => {
 
   const [finaldata, setFinalData] = useState([""]);
   
- useEffect(() => {
-    const fetchData = async () => {
-      try {
-       
-        const Ref1 = ref(database, "records of Conference ambassadors/");
-        const Ref2 = ref(database, "records of single delegates/");
-
-        const [snapshot1, snapshot2] = await Promise.all([get(Ref1), get(Ref2)]);
-        const data1 = snapshot1.val();
-        const data2 = snapshot2.val();
-
-        const filteredData1 = filterDataByUserEmail(data1);
-        const filteredData2 = filterDataByUserEmail(data2);
-
-        if (filterDataByUserEmail(data1).length > 0) {
-                  setFinalData(filteredData1);}
-                  if (filterDataByUserEmail(data2).length > 0) {
-                    setFinalData(filteredData2);}
-              
-      } catch (error) {
-        // Handle error
-        console.error(error);
+  const fetchData = async () => {
+    try {
+      const Ref1 = ref(database, "records of Conference ambassadors/");
+      const Ref2 = ref(database, "records of single delegates/");
+  
+      const [snapshot1, snapshot2] = await Promise.all([get(Ref1), get(Ref2)]);
+      const data1 = snapshot1.val();
+      const data2 = snapshot2.val();
+  
+      const filteredData1 = filterDataByUserEmail(data1);
+      const filteredData2 = filterDataByUserEmail(data2);
+  
+      if (filterDataByUserEmail(data1).length > 0) {
+        setFinalData(filteredData1);
       }
-    };
-
-    fetchData();
-  }, [auth.currentUser, database]);
+      if (filterDataByUserEmail(data2).length > 0) {
+        setFinalData(filteredData2);
+      }
+    } catch (error) {
+      // Handle error
+      console.error(error);
+    }
+    {
+      
+      
+      
+  };}
+  
+  // Call the fetchData function when needed
+  
+  
 
 // useEffect(() => {
 //   const fetchData = async () => {
@@ -104,7 +109,7 @@ const filterDataByUserEmail = (data) => {
 
 
 
-
+{fetchData()}
 
 
 
@@ -116,33 +121,35 @@ return(
   <Countdown></Countdown>
   <div>
         <h2>Record of this user:</h2>
-      {setTimeout(function(){finaldata.map((item) => {
-          const delegateData = Object.values(item);
-          const nestedItem = delegateData.find(
-            (item) => item.email === userEmail
-          );
-          if (nestedItem) {
-            return (
-              <div key={nestedItem.email}>
-                <p>Name: {nestedItem.name}</p>
-                <p>Age: {nestedItem.Age}</p>
-                <p>Gender: {nestedItem.Gender}</p>
-                <p>Email: {nestedItem.email}</p>
-                {/* Render other properties as needed */}
-              </div>
-            );
-            
-          }
-          return null;
-        })
-      }
-      , 3000)};
+     
+     
+     {
+  finaldata.map((item) => {
+   const delegateData = Object.values(item);
+   const nestedItem = delegateData.find(
+     (item) => item.email === userEmail
+   )
+   if (nestedItem) {
+     return (
+       <div key={nestedItem.email}>
+         <p>Name: {nestedItem.name}</p>
+         <p>Age: {nestedItem.Age}</p>
+         <p>Gender: {nestedItem.Gender}</p>
+         <p>Email: {nestedItem.email}</p>
+         {/* Render other properties as needed */}
+       </div>
+     )
+     
+   }
+   return null;
+ })}
+    
       </div>
 
 
 <Footer></Footer>
 </div>
 </>
-) 
-};
+)
+ };
 export default Loggedinhomepage;
