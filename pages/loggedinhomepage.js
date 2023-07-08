@@ -1,7 +1,7 @@
 import React,{ useEffect, useState } from "react"
 import { getAuth,signOut } from "firebase/auth"
 import { Database, getDatabase,db,ref,get,child,query,push,orderByChild,equalTo,once,onValue} from "firebase/database"
-
+import app from "./firebaseconfig";
 import Footer from "../components/Footer";
 import NavBar from '../components/Navbar';
 import Countdown from '../components/Countdown';
@@ -13,12 +13,12 @@ const Loggedinhomepage = () => {
     
 const database=getDatabase();
 const auth=getAuth();
-var user = auth.currentUser;
-if(user==null){
-  const userEmail = "shivanshu264@gmail.com";
+let userEmail;
+if (auth.currentUser) {
+  userEmail = auth.currentUser.email;
+} else {
+  userEmail = "shivanshu264@gmail.com";
 }
-else{const userEmail = auth.currentUser.email;}
-
 
 
 const filterDataByUserEmail = (data) => {

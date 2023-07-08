@@ -4,6 +4,7 @@ import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
+import app from './firebaseconfig';
 
 import GoogleButton from 'react-google-button';
 import { getAuth,signInWithPopup,signInWithEmailAndPassword, GoogleAuthProvider } from 'firebase/auth';
