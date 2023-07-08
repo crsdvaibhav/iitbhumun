@@ -78,7 +78,22 @@ const filterDataByUserEmail = (data) => {
 
   useEffect(() => {
     fetchData();
-    newcode(  finaldata.map((item) => {
+   
+  }, [finaldata]);
+
+
+
+
+return(
+  <>
+  <NavBar navbar={true} backgroundColor="white" qt=''/>
+  <div>
+  <Countdown></Countdown>
+  <div>
+        <h2>Record of this user:</h2>
+     
+     
+     {finaldata!=null&&finaldata.map((item) => {
       const delegateData = Object.values(item);
       const nestedItem = delegateData.find(
         (item) => item.email === userEmail
@@ -97,22 +112,6 @@ const filterDataByUserEmail = (data) => {
       }
       return null;
     })
-   )
-  }, [finaldata==""]);
-
-
-
-
-return(
-  <>
-  <NavBar navbar={true} backgroundColor="white" qt=''/>
-  <div>
-  <Countdown></Countdown>
-  <div>
-        <h2>Record of this user:</h2>
-     
-     
-     {code
 }
       </div>
 
@@ -121,5 +120,7 @@ return(
 </div>
 </>
 )
- };
+}
+
+ 
 export default Loggedinhomepage;
