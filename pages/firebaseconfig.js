@@ -19,5 +19,5 @@ const firebaseConfig = {
 export const App=initializeApp(firebaseConfig)
 export const initFirebase = ()=>{
 
-    return app;
+    return App;
 }
