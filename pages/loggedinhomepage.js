@@ -93,7 +93,7 @@ return(
         <h2>Record of this user:</h2>
      
      
-     {finaldata!=null&&finaldata.map((item) => {
+     {finaldata!=""&&finaldata.map((item) => {
       const delegateData = Object.values(item);
       const nestedItem = delegateData.find(
         (item) => item.email === userEmail
