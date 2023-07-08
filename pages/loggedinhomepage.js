@@ -58,6 +58,7 @@ const filterDataByUserEmail = (data) => {
         setFinalData(filteredData2);
       }
       
+      
     } catch (error) {
       // Handle error
       console.error(error);
@@ -76,11 +77,7 @@ const filterDataByUserEmail = (data) => {
 
 
 
-  useEffect(() => {
-    fetchData();
-   console.log(finaldata)
-  }, []);
-
+  
 
 
 
@@ -93,7 +90,9 @@ return(
         <h2 >Record of this user:</h2>
      
      
-     {finaldata.length>0&&finaldata.map((item) => {
+     {
+     fetchData()&&
+     finaldata.length>0&&finaldata.map((item) => {
       const delegateData = Object.values(item);
       const nestedItem = delegateData.find(
         (item) => item.email === userEmail

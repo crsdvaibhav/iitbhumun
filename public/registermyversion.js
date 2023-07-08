@@ -412,4 +412,12 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
         // ...
       })
     })
-      
+       
+
+
+
+
+
+    //loggedin homepage js
+
+    
