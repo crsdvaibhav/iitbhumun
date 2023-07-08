@@ -4,14 +4,14 @@ import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
-import  initfirebase  from './firebaseconfig';
+
 import GoogleButton from 'react-google-button';
 import { getAuth,signInWithPopup,signInWithEmailAndPassword, GoogleAuthProvider } from 'firebase/auth';
 
 
 import { useRouter } from 'next/router';
 const LoginPage = () => {
-  const app=initfirebase;
+  
   const provider=new GoogleAuthProvider();
   const auth=getAuth();
   const [email, setEmail] = useState('');
