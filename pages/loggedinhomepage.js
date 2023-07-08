@@ -86,7 +86,7 @@ useEffect(() => {
   fetchData();
   
 }, []);
-console.log(finaldata)
+
 
 
 
@@ -124,7 +124,7 @@ return(
               </div>
             );
             
-          }console.log("hello",finaldata)
+          }
           return null;
         })}
       </div>
