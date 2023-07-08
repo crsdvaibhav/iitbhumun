@@ -15,6 +15,7 @@ const Loggedinhomepage = () => {
 const database=getDatabase();
 const auth=getAuth();
 let userEmail;
+const [code,newcode]=useState("")
 // if (auth.currentUser) {
 //   userEmail = auth.currentUser.email;
 // } else {
@@ -56,6 +57,7 @@ const filterDataByUserEmail = (data) => {
       if (filterDataByUserEmail(data2).length > 0) {
         setFinalData(filteredData2);
       }
+      
     } catch (error) {
       // Handle error
       console.error(error);
@@ -66,50 +68,37 @@ const filterDataByUserEmail = (data) => {
       
   };}
   
-  // Call the fetchData function when needed
-  
   
 
-// useEffect(() => {
-//   const fetchData = async () => {
-//     try {
-//       const Ref1 = ref(database, "records of Conference ambassadors/");
-//       const snapshot1 = await get(Ref1);
-//       const data1 = snapshot1.val();
-//       const filteredData1 = filterDataByUserEmail(data1);
-
-//       if (filteredData1.length > 0) {
-//         setData(filteredData1);
-//       }
-
-//       const Ref2 = ref(database, "records of single delegates/");
-//       const snapshot2 = await get(Ref2);
-//       const data2 = snapshot2.val();
-//       const filteredData2 = filterDataByUserEmail(data2);
-
-//       if (filteredData2.length > 0) {
-//         setData(filteredData2);
-//       }
-//     } catch (error) {
-//       // Handle error
-//       console.error(error);
-//     }
-//   };
-
-//   fetchData();
-  
-// }, []);
 
 
 
 
 
 
-
-
-
-
-{fetchData()}
+  useEffect(() => {
+    fetchData();
+    newcode(  finaldata.map((item) => {
+      const delegateData = Object.values(item);
+      const nestedItem = delegateData.find(
+        (item) => item.email === userEmail
+      )
+      if (nestedItem) {
+        return (
+          <div key={nestedItem.email}>
+            <p>Name: {nestedItem.name}</p>
+            <p>Age: {nestedItem.Age}</p>
+            <p>Gender: {nestedItem.Gender}</p>
+            <p>Email: {nestedItem.email}</p>
+            {/* Render other properties as needed */}
+          </div>
+        )
+        
+      }
+      return null;
+    })
+   )
+  }, [finaldata==""]);
 
 
 
@@ -123,30 +112,11 @@ return(
         <h2>Record of this user:</h2>
      
      
-     {
-  finaldata.map((item) => {
-   const delegateData = Object.values(item);
-   const nestedItem = delegateData.find(
-     (item) => item.email === userEmail
-   )
-   if (nestedItem) {
-     return (
-       <div key={nestedItem.email}>
-         <p>Name: {nestedItem.name}</p>
-         <p>Age: {nestedItem.Age}</p>
-         <p>Gender: {nestedItem.Gender}</p>
-         <p>Email: {nestedItem.email}</p>
-         {/* Render other properties as needed */}
-       </div>
-     )
-     
-   }
-   return null;
- })}
-    
+     {code
+}
       </div>
 
-
+     
 <Footer></Footer>
 </div>
 </>
