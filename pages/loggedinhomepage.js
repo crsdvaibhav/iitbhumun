@@ -93,27 +93,7 @@ return(
         <h2 >Record of this user:</h2>
      
      
-     {finaldata.length>0&&finaldata.map((item) => {
-      const delegateData = Object.values(item);
-      const nestedItem = delegateData.find(
-        (item) => item.email === userEmail
-      )
-     
-        return (
-          <div key={nestedItem.email}className="my-32">
-            <p>Name: {nestedItem.name}</p>
-            <p>Age: {nestedItem.Age}</p>
-            <p>Gender: {nestedItem.Gender}</p>
-            <p>Email: {nestedItem.email}</p>
-            
-          </div>
-        )
-        
-      
-      
-    })
-}
-      </div>
+     </div>
 
      
 <Footer></Footer>
