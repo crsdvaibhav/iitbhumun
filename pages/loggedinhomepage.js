@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React,{ useEffect, useState } from "react"
 import { getAuth,signOut } from "firebase/auth"
 import { Database, getDatabase,db,ref,get,child,query,push,orderByChild,equalTo,once,onValue} from "firebase/database"
 import { initFirebase } from './firebaseconfig';
@@ -98,7 +98,6 @@ return(
 <Footer></Footer>
 </div>
 </>
-)
-  
-}
+) 
+};
 export default Loggedinhomepage;
