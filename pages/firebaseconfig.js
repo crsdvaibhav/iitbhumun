@@ -3,7 +3,7 @@
 import {initializeApp} from 'firebase/app';
 import 'firebase/database';
 import  'firebase/auth';
-
+import React from 'react';
 const firebaseConfig = {
   // Paste your Firebase configuration object here
   apiKey: "AIzaSyAYLIn8hGjgVrX3h23aVZPx47Sn8bZBCz4",
