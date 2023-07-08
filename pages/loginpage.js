@@ -11,7 +11,7 @@ import { getAuth,signInWithPopup,signInWithEmailAndPassword, GoogleAuthProvider 
 
 import { useRouter } from 'next/router';
 const LoginPage = () => {
-  const app=initFirebase();
+  const app=InitFirebase();
   const provider=new GoogleAuthProvider();
   const auth=getAuth();
   const [email, setEmail] = useState('');
