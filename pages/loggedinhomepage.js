@@ -14,12 +14,12 @@ const Loggedinhomepage = () => {
 const database=getDatabase();
 const auth=getAuth();
 let userEmail;
-if (auth.currentUser) {
-  userEmail = auth.currentUser.email;
-} else {
-  userEmail = "shivanshu264@gmail.com";
-}
-
+// if (auth.currentUser) {
+//   userEmail = auth.currentUser.email;
+// } else {
+//   userEmail = "shivanshu264@gmail.com";
+// }
+ userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmail.com";
 
 const filterDataByUserEmail = (data) => {
   if (data) {
@@ -34,58 +34,66 @@ const filterDataByUserEmail = (data) => {
   return [];
 };
 
-const [ab,setstate]=useState(true)
-  const [finaldata, setData] = useState([""]);
+
+  const [finaldata, setFinalData] = useState([""]);
   
-  
-// useEffect(()=>
-//  {let Ref1 = ref(database,"records of Conference ambassadors/");
-// onValue(Ref1, snapshot => {
-//  const data1=snapshot.val();
-//  const filteredData1 = filterDataByUserEmail(data1);
-//  if(filterDataByUserEmail(data1).length>0){
-//  setData(filteredData1)}
-// })
+ useEffect(() => {
+    const fetchData = async () => {
+      try {
+       
+        const Ref1 = ref(database, "records of Conference ambassadors/");
+        const Ref2 = ref(database, "records of single delegates/");
 
- 
-//    let Ref2 = ref(database,"records of single delegates/");
-// onValue(Ref2, snapshot => {
-//  const data2=snapshot.val();
-//  const filteredData2 = filterDataByUserEmail(data2);
-//  if(filterDataByUserEmail(data2).length>0){
-//  setData(filteredData2)}
- 
+        const [snapshot1, snapshot2] = await Promise.all([get(Ref1), get(Ref2)]);
+        const data1 = snapshot1.val();
+        const data2 = snapshot2.val();
 
-// })},[])
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const Ref1 = ref(database, "records of Conference ambassadors/");
-      const snapshot1 = await get(Ref1);
-      const data1 = snapshot1.val();
-      const filteredData1 = filterDataByUserEmail(data1);
+        const filteredData1 = filterDataByUserEmail(data1);
+        const filteredData2 = filterDataByUserEmail(data2);
 
-      if (filteredData1.length > 0) {
-        setData(filteredData1);
+        if (filterDataByUserEmail(data1).length > 0) {
+                  setFinalData(filteredData1);}
+                  if (filterDataByUserEmail(data2).length > 0) {
+                    setFinalData(filteredData2);}
+              
+      } catch (error) {
+        // Handle error
+        console.error(error);
       }
+    };
 
-      const Ref2 = ref(database, "records of single delegates/");
-      const snapshot2 = await get(Ref2);
-      const data2 = snapshot2.val();
-      const filteredData2 = filterDataByUserEmail(data2);
+    fetchData();
+  }, [auth.currentUser, database]);
 
-      if (filteredData2.length > 0) {
-        setData(filteredData2);
-      }
-    } catch (error) {
-      // Handle error
-      console.error(error);
-    }
-  };
+// useEffect(() => {
+//   const fetchData = async () => {
+//     try {
+//       const Ref1 = ref(database, "records of Conference ambassadors/");
+//       const snapshot1 = await get(Ref1);
+//       const data1 = snapshot1.val();
+//       const filteredData1 = filterDataByUserEmail(data1);
 
-  fetchData();
+//       if (filteredData1.length > 0) {
+//         setData(filteredData1);
+//       }
+
+//       const Ref2 = ref(database, "records of single delegates/");
+//       const snapshot2 = await get(Ref2);
+//       const data2 = snapshot2.val();
+//       const filteredData2 = filterDataByUserEmail(data2);
+
+//       if (filteredData2.length > 0) {
+//         setData(filteredData2);
+//       }
+//     } catch (error) {
+//       // Handle error
+//       console.error(error);
+//     }
+//   };
+
+//   fetchData();
   
-}, []);
+// }, []);
 
 
 
