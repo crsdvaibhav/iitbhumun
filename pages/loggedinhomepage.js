@@ -10,7 +10,7 @@ import Countdown from '../components/Countdown';
 
 
 const Loggedinhomepage = () => {
-    const app=initFirebase();
+    const App=initFirebase();
 const database=getDatabase();
 const auth=getAuth();
 
