@@ -88,9 +88,9 @@ return(
   <>
   <NavBar navbar={true} backgroundColor="white" qt=''/>
   <div>
-  <Countdown></Countdown>
+  
   <div>
-        <h2>Record of this user:</h2>
+        <h2 >Record of this user:</h2>
      
      
      {finaldata!=[]&&finaldata.map((item) => {
@@ -100,12 +100,12 @@ return(
       )
      
         return (
-          <div key={nestedItem.email}>
+          <div key={nestedItem.email}className="my-32">
             <p>Name: {nestedItem.name}</p>
             <p>Age: {nestedItem.Age}</p>
             <p>Gender: {nestedItem.Gender}</p>
             <p>Email: {nestedItem.email}</p>
-            {/* Render other properties as needed */}
+            
           </div>
         )
         
