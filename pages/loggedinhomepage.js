@@ -33,7 +33,7 @@ const filterDataByUserEmail = (data) => {
     });
     return filteredData;
   }
-  return [];
+  
 };
 
 
@@ -62,11 +62,11 @@ const filterDataByUserEmail = (data) => {
       // Handle error
       console.error(error);
     }
-    {
+    
       
       
       
-  };}
+  ;}
   
   
 
@@ -78,8 +78,8 @@ const filterDataByUserEmail = (data) => {
 
   useEffect(() => {
     fetchData();
-   
-  }, [finaldata]);
+   console.log(finaldata)
+  }, [finaldata==""]);
 
 
 
@@ -98,7 +98,7 @@ return(
       const nestedItem = delegateData.find(
         (item) => item.email === userEmail
       )
-      if (nestedItem) {
+     
         return (
           <div key={nestedItem.email}>
             <p>Name: {nestedItem.name}</p>
@@ -109,8 +109,8 @@ return(
           </div>
         )
         
-      }
-      return null;
+      
+      
     })
 }
       </div>
