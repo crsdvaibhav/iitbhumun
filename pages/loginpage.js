@@ -21,7 +21,7 @@ const LoginPage = () => {
     // Signed in 
     const user = userCredential.user
     console.log("email"),
-    router.push('/home')
+    router.push('/loggedinhomepage')
     // ...
   })
   .catch((err) => {
@@ -35,7 +35,7 @@ const LoginPage = () => {
      
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
-      router.push('/home')
+      router.push('/loggedinhomepage')
    console.log(auth.currentUser.displayName)
      
     }).catch((error) => {

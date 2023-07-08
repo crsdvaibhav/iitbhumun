@@ -145,7 +145,7 @@ function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,reff
     
     set(newRec, {
       name:name,
-      email:auth.email,
+      email:email,
       
       Committee_Preference_1: Committee1,
       Committee_Preference_2: Committee2,
@@ -396,6 +396,7 @@ function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,reff
       document.getElementById("or").innerHTML=`<div class="alert">
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       Signup with google succesful!
+      Kindly fill the same email id that you used for google signup.
     </div>`;
         document.getElementById("google1").innerHTML=`<h1>Hello ${auth.currentUser.displayName}, Fill the registration form now</h1>`
         // IdP data available using getAdditionalUserInfo(result)
