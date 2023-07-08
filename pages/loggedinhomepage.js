@@ -1,7 +1,7 @@
 import React,{ useEffect, useState } from "react"
 import { getAuth,signOut } from "firebase/auth"
 import { Database, getDatabase,db,ref,get,child,query,push,orderByChild,equalTo,once,onValue} from "firebase/database"
-import { InitFirebase } from '../components/firebaseconfig';
+import { InitFirebase } from './firebaseconfig';
 import Footer from "../components/Footer";
 import NavBar from '../components/Navbar';
 import Countdown from '../components/Countdown';
@@ -10,7 +10,7 @@ import Countdown from '../components/Countdown';
 
 
 const Loggedinhomepage = () => {
-    const app=initFirebase();
+    const app=InitFirebase();
 const database=getDatabase();
 const auth=getAuth();
 
