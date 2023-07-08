@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { initFirebase } from './firebaseconfig';
 import GoogleButton from 'react-google-button';
 import { getAuth,signInWithPopup,signInWithEmailAndPassword, GoogleAuthProvider } from 'firebase/auth';
-import { current } from 'daisyui/src/colors';
+
 import { button } from '@material-tailwind/react';
 import { useRouter } from 'next/router';
 const LoginPage = () => {
