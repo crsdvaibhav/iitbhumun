@@ -9,7 +9,7 @@ import Countdown from '../components/Countdown';
 
 
 
-export default function Loggedinhomepage() {
+const Loggedinhomepage = () => {
     const app=initFirebase();
 const database=getDatabase();
 const auth=getAuth();
@@ -101,3 +101,4 @@ return(
 )
   
 }
+export default Loggedinhomepage;
