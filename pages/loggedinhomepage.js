@@ -1,7 +1,7 @@
 import React,{ useEffect, useState } from "react"
 import { getAuth,signOut } from "firebase/auth"
 import { Database, getDatabase,db,ref,get,child,query,push,orderByChild,equalTo,once,onValue} from "firebase/database"
-import app from "./firebaseconfig";
+import app from "../public/firebaseconfig";
 import Footer from "../components/Footer";
 import NavBar from '../components/Navbar';
 import Countdown from '../components/Countdown';
