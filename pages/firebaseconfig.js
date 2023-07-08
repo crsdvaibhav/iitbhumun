@@ -17,7 +17,8 @@ const firebaseConfig = {
 };
 
 export const app=initializeApp(firebaseConfig)
-export const initFirebase = ()=>{
+ const InitFirebase = ()=>{
 
     return app;
-}
+};
+export default InitFirebase;
