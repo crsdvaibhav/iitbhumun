@@ -37,7 +37,7 @@ const filterDataByUserEmail = (data) => {
 };
 
 
-  const [finaldata, setFinalData] = useState([""]);
+  const [finaldata, setFinalData] = useState([]);
   
   const fetchData = async () => {
     try {
@@ -79,7 +79,7 @@ const filterDataByUserEmail = (data) => {
   useEffect(() => {
     fetchData();
    console.log(finaldata)
-  }, [finaldata==""]);
+  }, [finaldata==[]]);
 
 
 
