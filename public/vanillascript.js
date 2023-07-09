@@ -27,7 +27,7 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
       const filteredData = Object.values(data).filter((item) => {
         const delegateData = Object.values(item);
         return delegateData.some((nestedItem) => {
-          return nestedItem.email === userEmail;
+          return nestedItem.email === auth.currentUser.email;
         });
       });
       return filteredData;
@@ -56,16 +56,16 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
           });
         });
       }
-      
+      document.getElementById("content").innerHTML="<div class='loader'></div>",
       fetchData()
         .then((DATA) => {
          
           DATA.map((item) => {
             const delegateData = Object.values(item);
             
-            const nestedItem = delegateData.find((item) => item.email === userEmail);
+            const nestedItem = delegateData.find((item) => item.email === auth.currentUser.email);
             
-           
+           console.log(auth.currentUser.email)
             document.getElementById("content").innerHTML = `
             
             <ul class='datacard' >

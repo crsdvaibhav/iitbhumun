@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#F5F5F5]">
-      <NavBar navbar={navbar} backgroundColor={ab} />
+      <NavBar navbar={navbar} backgroundColor={ab} qt=''  />
       <Hero />
       <Main />
       <Footer />

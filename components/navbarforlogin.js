@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaUserCircle } from "react-icons/fa";
+import app from "../public/firebaseconfig";
 import {
   Menu,
   MenuHandler,
@@ -7,10 +9,14 @@ import {
   MenuItem,
 } from "@material-tailwind/react";
 import { useState } from 'react';
+import { useRouter } from "next/router";
 import Register from './CloseReg';
+import { getAuth,onAuthStateChanged,signOut } from 'firebase/auth';
 
 
-export default function NavBar({ navbar,backgroundColor,qt}) {
+export default function NavBar2({ navbar,backgroundColor}) {
+  const auth = getAuth();
+  
 
   const [closeReg, setCloseReg] = useState(true);
   const [display, buttonhide] = useState(false);
@@ -21,6 +27,41 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
     }, 1000);
     buttonhide(true)
   }
+  
+    
+  const [isOpen, setIsOpen] = useState(false);
+   
+  const router = useRouter();
+      
+    
+  
+    function handleLogout(){
+      // Implement your logout logic here
+     
+      signOut(auth)
+  .then(() => {
+    
+      router.push("/home");
+    
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+      setTimeout(function(){setIsOpen(!isOpen)},100)
+
+    };
+  
+    function handleMyProfile(){
+      // Implement your my profile logic here
+      console.log("My Profile clicked");
+      setTimeout(function(){setIsOpen(!isOpen)},100)
+    };
+  
+    function  handleChangePassword(){
+      // Implement your change password logic here
+      console.log("Change Password clicked");
+      setTimeout(function(){setIsOpen(!isOpen)},100)
+    };
   return (
     <div
       className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
@@ -65,24 +106,23 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
             <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
               FAQ
             </button>
-          </Link><div>
-<Link href="/registerpage">
-  
-         <button 
-            className={'px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-2 text-black bg-[#F5CE3F] hover:text-[#189BA5]'
-              }
-          >
-            Register
-          </button ></Link>
-          <Link href="/loginpage">
-         <button onClick={handleChange}
-            className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-4  text-black bg-[#F5CE3F] hover:text-[#189BA5] ${qt} `}
-          >
-            Login
-          </button></Link>
-         
-         </div>
+          </Link></div>
+          <div className="profile-dropdown">
+          <FaUserCircle className=' cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
+          {isOpen?(
+        <div className='dropdowncontent '>
+          <ul>
+            <li onClick={handleLogout}>Logout</li>
+            <li onClick={handleMyProfile}>My Profile</li>
+            <li onClick={handleChangePassword}>Change Password</li>
+          </ul>
         </div>
+      ):''}
+    </div>
+
+         
+         
+        
       </div>
       <div
         className={`sm:hidden w-full flex ${navbar
