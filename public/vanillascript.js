@@ -62,25 +62,26 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
           console.log(DATA);
           DATA.map((item) => {
             const delegateData = Object.values(item);
+            
             const nestedItem = delegateData.find((item) => item.email === userEmail);
             document.getElementById("content").innerHTML = `
             
-            <ul class='datacard' class=" shadow-md rounded px-20 pt-12 pb-28 mb-4       ">
-           <li>  ${nestedItem.name} <li>
+            <ul class='datacard' >
+           <li>  ${nestedItem.name} </li>
           
-           <li>  ${nestedItem.Age} <li>
-           <li>  ${nestedItem.Gender} <li>
-           <li>  ${nestedItem.Institute} <li>
-           <li>  ${nestedItem.MUNcount} <li>
-           <li>  ${nestedItem.Region} <li>
-           <li>  ${nestedItem.email} <li>
+           <li>  ${nestedItem.Age} </li>
+           <li>  ${nestedItem.Gender} </li>
+           <li>  ${nestedItem.Institute} </li>
+           <li>  ${nestedItem.MUNcount} </li>
+           <li>  ${nestedItem.Region} </li>
+           <li>  ${nestedItem.email} </li>
            
            <li>  ${nestedItem.
-            Committee_Preference_1} <li>
+            Committee_Preference_1} </li>
            <li>  ${nestedItem.
-            Committee_Preference_2} <li>
+            Committee_Preference_2} </li>
            <li>  ${nestedItem.
-            Committee_Preference_3} <li>
+            Committee_Preference_3} </li>
            
            
            
@@ -99,8 +100,20 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
            
            `;
            
+          }),
+        
+          DATA.map((item, index) => {
+            if (index !== 0) {
+             
+            }
           });
+          
+
         })
+       
+
+
+
         .catch((error) => {
           console.error(error);
         });
