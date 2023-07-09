@@ -120,5 +120,11 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
 
 
         .catch((error) => {
-          console.error(error);
+          document.getElementById("content").innerHTML =`<h1>Error Fetching user data...</h1>
+          <ul>Possible Reasons
+          <li> You haven't registered yet.Kindly log out and Register from Homepage in that case</li>
+          <li>Server error in fetching data. Refresh the site in that case.</li>
+          </ul>
+          
+          `
         });
