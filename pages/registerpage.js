@@ -371,6 +371,10 @@ const[abcd,setbool]=useState(true);
           <input type="text" placeholder="City or state" id="region" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
+          <label htmlFor="number" required className="block text-gray-700 font-bold mb-2" id='number'>Phone number:*</label>
+          <input type="tel" placeholder="+919279279289" id="email_field" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+        <div className="mb-4">
           <label htmlFor="email" required className="block text-gray-700 font-bold mb-2">Email:*</label>
           <input type="email" placeholder="Use same email if signed up with google" id="email_field" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>

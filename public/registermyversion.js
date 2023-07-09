@@ -120,7 +120,7 @@ document.getElementById('form2').addEventListener("submit",function(e){e.prevent
 if(abcd){
     e.preventDefault();
     
-    saveRec1(getInput('name_field'), getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
+    saveRec1(getInput('name_field'), getInput('number'),getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
     
   }
     
@@ -131,12 +131,12 @@ function submitForm2(e) {
  if( validateForm()){
   e.preventDefault();
   
-  saveRec2(getInput('name_field'), getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
+  saveRec2(getInput('name_field'),getInput('number'), getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
  
 }
  
 }
-function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
+function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
     const uuid=generateUniqueId()
     console.log(uuid)
   const dbRef1 = ref(database, "records of single delegates/"+uuid);
@@ -146,7 +146,7 @@ function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,reff
     set(newRec, {
       name:name,
       email:email,
-      
+      Phone_number:number,
       Committee_Preference_1: Committee1,
       Committee_Preference_2: Committee2,
       Committee_Preference_3: Committee3,
@@ -214,13 +214,14 @@ function saveRec1(name,email,age,gender,Institute,region,muncount,pastaward,reff
 
 }
 
-function saveRec2(name,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
+function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
   const uuid=generateUniqueId()
   const dbRef2 = ref(database, "records of Conference ambassadors/"+uuid);
   
   const newRec = push(dbRef2);
   set(newRec, {
     name:name,
+    Phone_number:number,
     email:email,
     Committee_Preference_1: Committee1,
     Committee_Preference_2: Committee2,
