@@ -24,7 +24,7 @@ const [code,newcode]=useState("")
  userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmail.com";
 
 const filterDataByUserEmail = (data) => {
-  if (data) {
+  
     const filteredData = Object.values(data).filter((item) => {
       const delegateData = Object.values(item);
       return delegateData.some((nestedItem) => {
@@ -32,44 +32,40 @@ const filterDataByUserEmail = (data) => {
       });
     });
     return filteredData;
-  }
+  
   
 };
 
 
   const [finaldata, setFinalData] = useState([]);
   
-  const fetchData = async () => {
-    try {
+  function fetchData(){
+    
       const Ref1 = ref(database, "records of Conference ambassadors/");
       const Ref2 = ref(database, "records of single delegates/");
   
-      const [snapshot1, snapshot2] = await Promise.all([get(Ref1), get(Ref2)]);
-      const data1 = snapshot1.val();
-      const data2 = snapshot2.val();
-  
-      const filteredData1 = filterDataByUserEmail(data1);
-      const filteredData2 = filterDataByUserEmail(data2);
-  
+      onValue(Ref1, (snapshot) => {const data1 = snapshot.val();
+        const filteredData1 = filterDataByUserEmail(data1);
       if (filterDataByUserEmail(data1).length > 0) {
         setFinalData(filteredData1);
       }
-      if (filterDataByUserEmail(data2).length > 0) {
-        setFinalData(filteredData2);
-      }
       
-      
-    } catch (error) {
-      // Handle error
-      console.error(error);
     }
-    
+      )
+      onValue(Ref2, (snapshot) => {const data2 = snapshot.val();
+        const filteredData2 = filterDataByUserEmail(data2);
+  
+      
+        if (filterDataByUserEmail(data2).length > 0) {
+          setFinalData(filteredData2);
+        }
       
       
+      })   
       
   ;}
   
-  
+   
 
 
 
@@ -79,7 +75,7 @@ const filterDataByUserEmail = (data) => {
 
   
 
-
+useEffect(()=>{fetchData()},[] )
 
 return(
   <>
@@ -91,7 +87,7 @@ return(
      
      
      {
-     fetchData()&&
+     
      finaldata.length>0&&finaldata.map((item) => {
       const delegateData = Object.values(item);
       const nestedItem = delegateData.find(
