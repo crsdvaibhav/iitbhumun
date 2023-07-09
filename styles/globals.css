@@ -82,3 +82,8 @@ a {
   box-shadow: 1px 1px 1px whitesmoke;
   background: #fbfdfa;
 }
+.selectedportfolio{
+  display: flex;
+  justify-content: center;
+  gap:20px;
+}
