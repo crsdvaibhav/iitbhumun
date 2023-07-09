@@ -74,3 +74,11 @@ a {
 .closebtn:hover {
   color: black;
 }
+.datacard li{
+  color: #189BA5;
+}
+.datacard{
+  padding:12px 4px ;
+  box-shadow: 1px 1px 1px whitesmoke;
+  background: #fbfdfa;
+}
