@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import NavBar2 from '../components/navbarforlogin';
 import { getAuth } from 'firebase/auth';
 import { useState } from 'react';
-import React from "react"
+
 const Partners = () => {
     const auth=getAuth();
     const [changebar,setbar]=useState(true);
