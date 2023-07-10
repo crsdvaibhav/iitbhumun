@@ -29,11 +29,11 @@ const Loggedinhomepage = () => {
           <div id="content"className="mt-40 w-100 h-fit-content display:'block' h-min-content m-auto text-center font-bold" ></div>
 
 
-<button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
+<button id="showbutton" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
 
 
 
-<div className={`${hideportfolio?'block':'hidden'} justify-center m-auto`} >
+<div className={`${hideportfolio?'block':'hidden'}  justify-center m-auto`}id={!hideportfolio?"showportfolio":"showportfolio.active"} >
 <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white shadow-black/10 shadow-xl rounded-lg px-4 py-8">
 <h2 className="'block' py-4  text-red-500">Portfolio-1  </h2>
 

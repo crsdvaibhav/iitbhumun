@@ -57,9 +57,10 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
         });
       }
       document.getElementById("content").innerHTML="<div class='loader'></div>",
+      document.getElementById("showbutton").style.display="none"
       fetchData()
         .then((DATA) => {
-       
+             document.getElementById("showbutton").style.display="inline"
           DATA.map((item) => {
            
             const delegateData = Object.values(item);
