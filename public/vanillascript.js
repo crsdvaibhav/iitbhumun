@@ -59,13 +59,65 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
       document.getElementById("content").innerHTML="<div class='loader'></div>",
       fetchData()
         .then((DATA) => {
-         
+       
           DATA.map((item) => {
+           
             const delegateData = Object.values(item);
             
+          
+         const stru1= Object.values(delegateData[1]);
+         const stru2= Object.values(delegateData[2]);
+         const stru3= Object.values(delegateData[3]);
+         var keys = [];
+for (var key in item) {
+    keys.push(key);
+}
+document.getElementById("h1").innerHTML+=`</span>${keys[1]}</span>`
+document.getElementById("h2").innerHTML+=`<span>${keys[2]}</span>`
+document.getElementById("h3").innerHTML+=`<span>${keys[3]}</span>`
+
+         stru1.map((item)=>{
+for( var key in item){
+  document.getElementById("container2ul").innerHTML+=`<li>${key}=>${item[key]}</li>`
+}
+  })
+         stru2.map((item)=>{
+          for( var key in item){
+            document.getElementById("container3ul").innerHTML+=`<li>${key}=>${item[key]}</li>`
+          }
+                   })
+
+                   stru3.map((item)=>{
+                    for( var key in item){
+                      document.getElementById("container4ul").innerHTML+=`<li>${key}=>${item[key]}</li>`
+                    }
+                             })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+         let portfolio1;
+        console.log(delegateData)
+         
             const nestedItem = delegateData.find((item) => item.email === auth.currentUser.email);
-            
+            const nestedItem1 = delegateData.find((item) => item.Committee_1_Country_Preference_1!=null);
+            const nestedItem2 = delegateData.find((item) => item.email === auth.currentUser.email);
+            const nestedItem3 = delegateData.find((item) => item.email === auth.currentUser.email);
            console.log(auth.currentUser.email)
+           console.log(nestedItem1)
             document.getElementById("content").innerHTML = `
             
             <ul class='datacard' >
@@ -76,55 +128,19 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
            <li>  ${nestedItem.MUNcount} </li>
            <li>  ${nestedItem.Region} </li>
            <li>  ${nestedItem.email} </li>
+          
            </ul>
            <div class='selectedportfolio'>
-           <ul> 
-           <h1> ${(nestedItem.
-            Committee_Preference_1)}</h1>
-            
-            
-            
-            
-            </ul>
-           <ul><h1>  ${nestedItem.
-            Committee_Preference_2}</h1> 
-            
-            
-            
-            
-            
-            
-            
-            </ul>
-           <ul> <h1> ${nestedItem.
-            Committee_Preference_3}</h1>
-            
-            
-            
-            
-            
-            
-            
-            
-            </ul>
+          
            </div>
            `;
-           
+          
+          
           })
-        
-        
 
         })
        
 
 
 
-        .catch((error) => {
-          document.getElementById("content").innerHTML =`<h1>Error Fetching user data...</h1>
-          <ul>Possible Reasons
-          <li> You haven't registered yet.Kindly log out and Register from Homepage in that case</li>
-          <li>Server error in fetching data. Refresh the site in that case.</li>
-          </ul>
-          
-          `
-        });
+       
