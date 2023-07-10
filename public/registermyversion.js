@@ -315,18 +315,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
       console.log(email1)
       const user = userCredential.user;
       const user1 = auth.currentUser; 
-       user1.delete().then(() => {
-           console.log("userdeleted!")
-       },
-        
-      
-       
-       
-       
-       ).catch((error) => {
-           // An error occurred
-           // ...
-       });
+     
      
        document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
       
