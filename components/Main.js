@@ -80,14 +80,22 @@ export default function Main() {
         <div className="flex justify-center mt-8 sm:mt-[3.75rem]">
           <p className="px-8 w-[58.75rem] sm:w-[73.375rem] text-[#03001E] sm:text-lg font-light font-custom text-justify">
             <p>Dear Delegates, respected Faculty Advisors, and the Secretariat, </p>
-            <p className='mt-2'>It gives me immense pleasure to announce the beginning of the 11th edition of the IITBHU Model United Nations. Over its rich legacy of ten years, IITBHU MUN, being one of the pioneering Model United Nations conferences, has garnered a notable position in the northern circuit. The endorsement of our conference by Hon’ PM Shri. Narendra Modi is a mark of its national importance. Even during the COVID years, IITBHU MUN witnessed participation from over twenty-two nationalities, graced by eminent foreign ambassadors and keynote speakers.</p>
+            <p className='mt-2'>I am pleased to announce the commencement of the twelfth edition of the IITBHU Model United Nations. Having established a remarkable legacy over the span of its 11-year history, IITBHU Model United Nations holds the distinction of being one of the earliest and most esteemed conferences in India.
+</p>
             <p className='mt-2'>The thrill and excitement of participating in Model United Nations like those years ago indeed faded during the COVID years, and the transition from online platforms to offline dais is quite challenging. With the upcoming conference, let us together repaint and restore, once again, the lost picture in this holy city of Benares. </p>
-            <p>Leading such a prestigious conference is a tremendous undertaking; however, with the wisdom imparted by the previous Secretary Generals and with such a dynamic and hardworking Secretariat, I am more than hopeful about this edition’s enthralling experience it promises to deliver. </p>
-            <p className='mt-2'>Therefore, to everyone reading this, I invite you all to be part of this grand edition. Bring on the fiery debates, the urge to change the world, and of course, fruitful deliberations with resolutions concentrated on innovative ideas.</p>
-            <p className='mt-2'>See you all at IITBHU Model United Nations’23!</p>
-            <p className='mt-2 font-bold'>Regards,</p>
-            <p className='mt-2 font-bold'>Moulik Ketkar</p>
-            <p className='font-bold'>Secretary-General, IITBHU MUN’23</p>
+            <p>The transition from an online platform during the Covid era to an offline dias has proven to be highly successful, as the conference has achieved significant milestones, marking a new chapter in its esteemed history. Dr Ajay Kumar, former Defence Secretary of India, graced the conference in Varanasi, restoring its prominence in the sacred city.
+</p>
+            <p className='mt-2'>Guiding such a prestigious conference is an immense responsibility, yet with the invaluable wisdom passed down by previous Secretary Generals and the exceptional dedication of our dynamic and diligent Secretariat, I am filled with optimism for the enthralling experience this edition promises to deliver.
+</p>
+<p className='mt-2'>I invite you to join us for this monumental edition, where passionate debates, world-changing aspirations, and productive discussions with innovative resolutions await.
+</p>
+            <p className='mt-2'>See you all at yet another marvellous IITBHU Model United Nations conference!
+</p>
+            <p className='mt-2 font-bold'>Yours sincerely,
+</p>
+            <p className='mt-2 font-bold'>Chetan Chavan</p>
+            <p className='font-bold'>Secretary-General, IITBHU MUN’23
+</p>
           </p>
         </div>
       </div>

@@ -243,19 +243,19 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
     const newRec3 = push(dbRef5);
     return Promise.all([
       set(newRec1, {
-        Committee_1_Country_Preference_1: pref1option1,
-        Committee_1_Country_Preference_2: pref1option2,
-        Committee_1_Country_Preference_3: pref1option3,
+        Preference_1: pref1option1,
+        Preference_2: pref1option2,
+        Preference_3: pref1option3,
       }),
       set(newRec2, {
-        Committee_2_Country_Preference_1: pref2option1,
-        Committee_2_Country_Preference_2: pref2option2,
-        Committee_2_Country_Preference_3: pref2option3,
+        Preference_1: pref2option1,
+        Preference_2: pref2option2,
+        Preference_3: pref2option3,
       }),
       set(newRec3, {
-        Committee_3_Country_Preference_1: pref3option1,
-        Committee_3_Country_Preference_2: pref3option2,
-        Committee_3_Country_Preference_3: pref3option3,
+        Preference_1: pref3option1,
+        Preference_2: pref3option2,
+        Preference_3: pref3option3,
       })
     ]);
 } })
@@ -344,22 +344,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
         // Signed in 
         const user = userCredential.user;
        ;const user1 = auth.currentUser; 
-       user1.delete().then(() => {
-           console.log("userdeleted!")
-       },
-       
       
-        
-       
-       
-       
-       
-       
-       
-       
-       ).catch((error) => {
-           
-       });
      
        document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
       

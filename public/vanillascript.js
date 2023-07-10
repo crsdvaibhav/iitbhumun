@@ -72,24 +72,35 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
 for (var key in item) {
     keys.push(key);
 }
-document.getElementById("h1").innerHTML+=`</span>${keys[1]}</span>`
-document.getElementById("h2").innerHTML+=`<span>${keys[2]}</span>`
-document.getElementById("h3").innerHTML+=`<span>${keys[3]}</span>`
+document.getElementById("h1").innerHTML+=`${keys[1]}`
+document.getElementById("h2").innerHTML+=`${keys[2]}`
+document.getElementById("h3").innerHTML+=`${keys[3]}`
 
          stru1.map((item)=>{
 for( var key in item){
-  document.getElementById("container2ul").innerHTML+=`<li>${key}=>${item[key]}</li>`
+  document.getElementById("container2ul-row1").innerHTML+=` 
+  
+    <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${key}</td>`
+}
+for( var key in item){
+  document.getElementById("container2ul-row2").innerHTML+=`<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>`
 }
   })
          stru2.map((item)=>{
           for( var key in item){
-            document.getElementById("container3ul").innerHTML+=`<li>${key}=>${item[key]}</li>`
+            document.getElementById("container3ul-row1").innerHTML+=`<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${key}</td>`
+          }
+          for( var key in item){
+            document.getElementById("container3ul-row2").innerHTML+=`<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>`
           }
                    })
 
                    stru3.map((item)=>{
                     for( var key in item){
-                      document.getElementById("container4ul").innerHTML+=`<li>${key}=>${item[key]}</li>`
+                      document.getElementById("container4ul-row1").innerHTML+=`<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${key}</td>`
+                    }
+                    for( var key in item){
+                      document.getElementById("container4ul-row2").innerHTML+=`<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>`
                     }
                              })
 
@@ -120,15 +131,15 @@ for( var key in item){
            console.log(nestedItem1)
             document.getElementById("content").innerHTML = `
             
-            <ul class='datacard' >
-           <li>  ${nestedItem.name} </li>
-           <li>  ${nestedItem.Age} </li>
-           <li>  ${nestedItem.Gender} </li>
-           <li>  ${nestedItem.Institute} </li>
-           <li>  ${nestedItem.MUNcount} </li>
-           <li>  ${nestedItem.Region} </li>
-           <li>  ${nestedItem.email} </li>
-          
+            <ul class='datacard mb-6' >
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Name:  ${nestedItem.name} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Age: ${nestedItem.Age} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Gender:  ${nestedItem.Gender} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Institute:  ${nestedItem.Institute} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Number of MUN participated before:  ${nestedItem.MUNcount} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Region: ${nestedItem.Region} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"> Email: ${nestedItem.email} </li>
+          <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Phone Number:${nestedItem.Phone_number}
            </ul>
            <div class='selectedportfolio'>
           

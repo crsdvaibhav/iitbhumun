@@ -11,7 +11,7 @@ import {
 import { useState } from 'react';
 import { useRouter } from "next/router";
 import Register from './CloseReg';
-import { getAuth,onAuthStateChanged,signOut } from 'firebase/auth';
+import { getAuth,onAuthStateChanged,signOut,sendPasswordResetEmail } from 'firebase/auth';
 
 
 export default function NavBar2({ navbar,backgroundColor}) {
@@ -60,7 +60,18 @@ export default function NavBar2({ navbar,backgroundColor}) {
   
     function  handleChangePassword(){
       // Implement your change password logic here
-      console.log("Change Password clicked");
+      sendPasswordResetEmail(auth,auth.currentUser.email)
+  .then(() => {
+    // Password reset email sent!
+    alert("Password reset link sent to your email")
+    // ..
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
       setTimeout(function(){setIsOpen(!isOpen)},100)
     };
   return (
