@@ -3,13 +3,19 @@ import Footer from "../components/Footer.js";
 import Image from "next/image.js";
 import CommitteeCircle from "../components/CommitteeCircle.js";
 import data from "../data/data.json"
-
+import { getAuth } from "firebase/auth";
+import NavBar2 from "../components/navbarforlogin.js";
+import { useState } from 'react';
 const arr = data.committees;
 
 export default function Committees() {
+    const auth=getAuth();
+    const [changebar,setbar]=useState(true);
+   function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
+    abc()
     return (
         <div className="bg-[#F5F5F5]">
-            <NavBar navbar={true} backgroundColor="white" qt='' />
+           {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
             <div className="h-[70vh] sm:justify-center sm:flex hidden">
                 <div className="w-1/3 h-[80vh] flex flex-col items-end justify-center">
                     <div className="flex pb-4">

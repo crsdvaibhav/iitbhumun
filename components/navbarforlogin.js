@@ -54,6 +54,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
     function handleMyProfile(){
       // Implement your my profile logic here
       console.log("My Profile clicked");
+      window.location.href = "/loggedinhomepage";
       setTimeout(function(){setIsOpen(!isOpen)},100)
     };
   
@@ -112,9 +113,9 @@ export default function NavBar2({ navbar,backgroundColor}) {
           {isOpen?(
         <div className='dropdowncontent '>
           <ul>
-            <li onClick={handleLogout}>Logout</li>
-            <li onClick={handleMyProfile}>My Profile</li>
+            <li onClick={handleMyProfile}>User dashboard</li>
             <li onClick={handleChangePassword}>Change Password</li>
+            <li onClick={handleLogout}>Logout</li>
           </ul>
         </div>
       ):''}
