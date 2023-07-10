@@ -7,8 +7,8 @@ import Footer from '../components/Footer';
 import NavBar2 from '../components/navbarforlogin';
 import { getAuth } from 'firebase/auth';
 import { useState } from 'react';
-
-const partners = () => {
+import React from "react"
+const Partners = () => {
     const auth=getAuth();
     const [changebar,setbar]=useState(true);
    function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
@@ -93,4 +93,4 @@ const partners = () => {
     )
 }
 
-export default partners
+export default Partners

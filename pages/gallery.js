@@ -6,8 +6,8 @@ import PlacesCarousel from "../components/PlacesCarousel";
 import Footer from "../components/Footer";
 import NavBar2 from "../components/navbarforlogin";
 import { getAuth } from "firebase/auth";
-import { useState } from 'react';
-export default function gallery() {
+import React from "react";import { useState } from 'react';
+export default function Gallery() {
   const auth=getAuth();
   const [changebar,setbar]=useState(true);
  function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
