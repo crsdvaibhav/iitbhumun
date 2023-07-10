@@ -1,7 +1,7 @@
 import Countdown from 'react-countdown';
 
 export default function CountdownElement() {
-  const arr = ["D", "H", "M", "S"]
+  const arr = ["DAYS", "HOURS", "MINUTES", "SECOND"]
 
   
   const renderer = ({ days, hours, minutes, seconds}) => {
