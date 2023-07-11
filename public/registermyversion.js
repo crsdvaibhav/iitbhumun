@@ -216,26 +216,17 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     .then(() => {
       
       signup1(); 
-      auth.onAuthStateChanged(function(user) {
-        if (user) {
-          document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
       
-     
-          setTimeout(()=>{window.location.replace("/thankyou")
-         auth.signOut();
+       
       
-        
-        },2000)
-      }
+      
           
         
-      });
+      
       
      
     })
-    .then(() => { 
-     
-    })
+    
     .catch((error) => {
       
       alert("Registration failed: " + error.message);
@@ -328,20 +319,10 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
 } })
   .then(() => {
     signup2(); 
-    auth.onAuthStateChanged(function(user) {
-      if (user) {
-        document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
-    
-   
-        setTimeout(()=>{window.location.replace("/thankyou")
-       auth.signOut();
-    
       
-      },2000)
-    }
+       
         
-      
-    })
+          
     
     
   })
@@ -375,9 +356,10 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
 
   function signup1(){
     var email1 = document.getElementById("email_field").value;
-    document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
+   
     console.log(email1)
-    var password1=document.getElementById("password").value;
+    var password1=document.getElementById("password").value
+    console.log(password1)
   createUserWithEmailAndPassword(auth,email1,password1)
     .then((userCredential) => {
       console.log(email1)
@@ -389,7 +371,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
       
      
        setTimeout(()=>{window.location.replace("/thankyou")
-      auth.signOut();
+     
    
      
      },2000)
@@ -411,14 +393,14 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-       const user1 = auth.currentUser; 
+       
       
      
        document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
       
      
        setTimeout(()=>{window.location.replace("/thankyou")},2000)
-       auth.signOut();
+       
       
   })
       .catch((error) => {

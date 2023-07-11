@@ -182,7 +182,7 @@ const[abcd,setbool]=useState(true);
     committees.push(i);
   });
 
-  const [selected1, setSelected1] = useState('');
+  const [selected1, setSelected1] = useState('None');
 
   const handleChange1 = (e) => {
     setFormInput({
@@ -219,7 +219,7 @@ const[abcd,setbool]=useState(true);
     options1 = type1.map((el) => <option key={el}>{el}</option>);
   }
 
-  const [selected2, setSelected2] = useState('');
+  const [selected2, setSelected2] = useState('none');
   const [pref1option1, setSelected4] = useState('');
   const [pref1option2, setSelected5] = useState('');
   const [pref1option3, setSelected6] = useState('');
@@ -265,7 +265,7 @@ const[abcd,setbool]=useState(true);
     options2 = type2.map((el) => <option key={el}>{el}</option>);
   }
 
-  const [selected3, setSelected3] = useState('');
+  const [selected3, setSelected3] = useState('none');
 
   const handleChange3 = (e) => {
     setFormInput({

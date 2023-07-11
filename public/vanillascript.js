@@ -54,6 +54,9 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
               resolve(filteredData2);
             }
           });
+          // if (!data1 && !data2) {
+          //   resolve([]);
+          // }
         });
       }
       document.getElementById("content").innerHTML="<div class='loader'></div>",
@@ -64,8 +67,26 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
           DATA.map((item) => {
            
             const delegateData = Object.values(item);
+           
+            const nestedItem = delegateData.find((item) => item.email === auth.currentUser.email);
+           console.log(nestedItem)
+            document.getElementById("content").innerHTML = `
             
+            <ul class='datacard mb-6' >
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Name:  ${nestedItem.name} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Age: ${nestedItem.Age} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Gender:  ${nestedItem.Gender} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Institute:  ${nestedItem.Institute} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Number of MUN participated before:  ${nestedItem.MUNcount} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Region: ${nestedItem.Region} </li>
+           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"> Email: ${nestedItem.email} </li>
+          <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Phone Number:${nestedItem.Phone_number}
+           </ul>
+           <div class='selectedportfolio'>
           
+           </div>
+           `;
+           if(delegateData[1]!=null&&delegateData[2]!=null&&delegateData[3]!=null){
          const stru1= Object.values(delegateData[1]);
          const stru2= Object.values(delegateData[2]);
          const stru3= Object.values(delegateData[3]);
@@ -106,45 +127,11 @@ for( var key in item){
                              })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
          
-         let portfolio1;
+                            }
         
          
-            const nestedItem = delegateData.find((item) => item.email === auth.currentUser.email);
-            const nestedItem1 = delegateData.find((item) => item.Committee_1_Country_Preference_1!=null);
-            const nestedItem2 = delegateData.find((item) => item.email === auth.currentUser.email);
-            const nestedItem3 = delegateData.find((item) => item.email === auth.currentUser.email);
-          
-            document.getElementById("content").innerHTML = `
-            
-            <ul class='datacard mb-6' >
-           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Name:  ${nestedItem.name} </li>
-           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Age: ${nestedItem.Age} </li>
-           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Gender:  ${nestedItem.Gender} </li>
-           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Institute:  ${nestedItem.Institute} </li>
-           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Number of MUN participated before:  ${nestedItem.MUNcount} </li>
-           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Region: ${nestedItem.Region} </li>
-           <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"> Email: ${nestedItem.email} </li>
-          <li class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Phone Number:${nestedItem.Phone_number}
-           </ul>
-           <div class='selectedportfolio'>
-          
-           </div>
-           `;
+         
           
           
           })

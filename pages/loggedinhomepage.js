@@ -39,7 +39,7 @@ const Loggedinhomepage = () => {
       filtered[itemId] = item;
     }
     return filtered;
-  }, [database]);
+  }, []);
 useEffect(()=>{
   Object.entries(filteredData).map(([itemId, item]) => {
     Object.keys(item).map((key) => {
@@ -117,9 +117,7 @@ paymentbuttontoggle(true)
        <th
                 scope="col"
                 class="border-r px-6 py-4 dark:border-neutral-500">Name</th>
-       <th
-                scope="col"
-                class="border-r px-6 py-4 dark:border-neutral-500">Allotment</th>
+       
    
   </thead>
   <tbody>
@@ -129,10 +127,7 @@ paymentbuttontoggle(true)
       <tr id="container3ul-row2">
 
 </tr>
-<tr>
 
-
-</tr>
 
 </tbody>
   
@@ -149,10 +144,7 @@ paymentbuttontoggle(true)
        <th
                 
                 class="border-r px-6 py-4 dark:border-neutral-500">Name</th>
-       <th
-                
-                class="border-r px-6 py-4 dark:border-neutral-500">Allotment</th>
-    
+     
   </thead>
   <tbody>
     <tr id="container4ul-row1">
