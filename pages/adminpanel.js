@@ -25,15 +25,15 @@ const handlePasswordChange = (event) => {
 };
   const [DATA, setDATA] = useState([]);
   const [submitValues, setSubmitValues] = useState({});
-
+  const database = getDatabase();
   useEffect(() => {
-    const database = getDatabase();
+    
     const Ref1 = ref(database, "preferences/");
     onValue(Ref1, (snapshot) => {
       const data = snapshot.val();
       setDATA(data);
     });
-  }, []);
+  }, [database]);
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
@@ -44,7 +44,7 @@ const handlePasswordChange = (event) => {
   };
 
   const handleSubmit = (itemId) => {
-    const database = getDatabase();
+   
     const itemRef = ref(database, `preferences/${itemId}`);
     update(itemRef, { alloted: submitValues[itemId] })
       .then(() =>  setTimeout(() => {
