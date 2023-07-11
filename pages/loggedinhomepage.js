@@ -39,7 +39,7 @@ const Loggedinhomepage = () => {
       filtered[itemId] = item;
     }
     return filtered;
-  }, []);
+  }, [database]);
 useEffect(()=>{
   Object.entries(filteredData).map(([itemId, item]) => {
     Object.keys(item).map((key) => {
