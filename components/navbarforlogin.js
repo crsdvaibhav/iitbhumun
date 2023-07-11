@@ -173,12 +173,16 @@ export default function NavBar2({ navbar,backgroundColor}) {
           />
         </div>
        
-          <button onClick={handleChange} className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
-            <Link href={'/registerpage'}>Register</Link>
-          </button>
-          <button  className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
-                 <Link href={'/loginpage'}>    Login</Link> 
-                </button>
+        <FaUserCircle className=' cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
+          {isOpen?(
+        <div className='dropdowncontent '>
+          <ul>
+            <li onClick={handleMyProfile}>User dashboard</li>
+            <li onClick={handleChangePassword}>Change Password</li>
+            <li onClick={handleLogout}>Logout </li>
+          </ul>
+        </div>
+      ):''}
       </div>
     </div>
   );
