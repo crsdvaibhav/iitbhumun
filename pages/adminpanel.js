@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import app from "../public/firebaseconfig";
 import 'firebase/database';
-import { getDatabase, ref, set, onValue,update } from 'firebase/database';
+import { getDatabase, ref, get,set, onValue,update } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 
 
@@ -36,7 +36,7 @@ const handlePasswordChange = (event) => {
     }
   };
 
-  useEffect(()=>{fetchData},[])
+  useEffect(()=>{fetchData()},[])
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
