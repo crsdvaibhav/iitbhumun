@@ -58,9 +58,9 @@ const Loggedinhomepage = () => {
       <tr id="container2ul-row2">
 
 </tr>
-<tr><td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td>
-<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td>
-<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td></tr>
+<tr><td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending<button className="outline-none mx-2 px-4   pay h-12 bg-orange-600 text-white mb-3 hover:bg-orange-700 rounded-lg w-[fit] cursor-pointer transition-all">Pay to confirm!</button></td>
+<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending<button className="outline-none pay mx-2 px-4  h-12 bg-orange-600 text-white mb-3 hover:bg-orange-700 rounded-lg w-[fit] cursor-pointer transition-all">Pay to confirm!</button></td>
+<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending<button className="outline-none pay mx-2 px-4  h-12 bg-orange-600 text-white mb-3 hover:bg-orange-700 rounded-lg w-[fit] cursor-pointer transition-all">Pay to confirm!</button></td></tr>
 
 </tbody>
 
@@ -89,9 +89,9 @@ const Loggedinhomepage = () => {
 
 </tr>
 <tr>
-<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td>
-<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td>
-<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td>
+<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending!<button className="outline-none pay h-12 bg-orange-600 text-white mb-3 mx-2 px-4  hover:bg-orange-700 rounded-lg w-[fit] cursor-pointer transition-all">Pay to confirm!</button></td>
+<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending!<button className="outline-none pay h-12 bg-orange-600 text-white mb-3 mx-2 px-4  hover:bg-orange-700 rounded-lg w-[fit] cursor-pointer transition-all">Pay to confirm!</button></td>
+<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending!<button className="outline-none pay h-12 bg-orange-600 text-white mb-3 mx-2 px-4  hover:bg-orange-700 rounded-lg w-[fit] cursor-pointer transition-all">Pay to confirm!</button></td>
 
 
 </tr>
@@ -123,12 +123,12 @@ const Loggedinhomepage = () => {
       <tr id="container4ul-row2">
 
 </tr>
-<tr><td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td>
-<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td>
-<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Allotment Pending!</td></tr>
+<tr><td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending<button className="outline-none pay h-12 bg-orange-600 text-white mb-3 hover:bg-orange-700 rounded-lg w-[fit] mx-2 px-4 cursor-pointer transition-all">Pay to confirm!</button></td>
+<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending<button className="outline-none pay h-12 bg-orange-600 text-white mb-3 hover:bg-orange-700 rounded-lg w-[fit] mx-2 px-4  cursor-pointer transition-all">Pay to confirm!</button></td>
+<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Pending<button className="outline-none pay h-12 bg-orange-600 text-white mb-3 hover:bg-orange-700 rounded-lg w-[fit] mx-2 px-4 cursor-pointer transition-all">Pay to confirm!</button></td></tr>
 
 </tbody>
-</table>
+</table>  
 
 </div>
 </div>

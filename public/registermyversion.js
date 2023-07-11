@@ -156,9 +156,39 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
       Region:region,
       MUNcount:muncount,
       PastAwards:pastaward,
-      Referralcode:refferalcode
+      Referralcode:refferalcode,
 
-    }).then(() => {
+    })
+    const option1=Committee1+": "+pref1option1;
+  const option2=Committee1+": "+pref1option2;
+  const option3=Committee1+": "+pref1option3;
+  const option4=Committee2+": "+pref2option1;
+  const option5=Committee2+": "+pref2option2;
+  const option6=Committee2+": "+pref2option3;
+  const option7=Committee3+": "+pref3option1;
+  const option8=Committee3+": "+pref3option2;
+  const option9=Committee3+": "+pref3option3;
+  const hehe=ref(database,"preferences/")
+  const titu=push(hehe);
+  
+  set(titu,{
+    alloted:"NO", email,option1,option2,option3,option4,option5,option6,option7,option8,option9,
+
+
+
+
+
+
+
+
+
+  })
+  
+  
+    
+    
+    
+    .then(() => {
       {const dbRef3 = ref(database, "records of single delegates/"+uuid+"/"+Committee1);
       const dbRef4 = ref(database, "records of single delegates/"+uuid+"/"+Committee2);
       const dbRef5 = ref(database, "records of single delegates/"+uuid+"/"+Committee3);
@@ -232,9 +262,47 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
     Region:region,
     MUNcount:muncount,
     PastAwards:pastaward,
-    Referralcode:refferalcode
+    Referralcode:refferalcode,
+    
 
-  }).then(() => {
+  },)
+  const option1=Committee1+": "+pref1option1;
+  const option2=Committee1+": "+pref1option2;
+  const option3=Committee1+": "+pref1option3;
+  const option4=Committee2+": "+pref2option1;
+  const option5=Committee2+": "+pref2option2;
+  const option6=Committee2+": "+pref2option3;
+  const option7=Committee3+": "+pref3option1;
+  const option8=Committee3+": "+pref3option2;
+  const option9=Committee3+": "+pref3option3;
+  const hehe=ref(database,"preferences/")
+  const titu=push(hehe);
+  
+  set(titu,{
+    alloted:"NO",email,option1,option2,option3,option4,option5,option6,option7,option8,option9,
+
+
+
+
+
+
+
+
+
+  })
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .then(() => {
     {const dbRef3 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee1);
     const dbRef4 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee2);
     const dbRef5 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee3);
@@ -307,7 +375,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
 
   function signup1(){
     var email1 = document.getElementById("email_field").value;
-
+    document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
     console.log(email1)
     var password1=document.getElementById("password").value;
   createUserWithEmailAndPassword(auth,email1,password1)
@@ -317,7 +385,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
       const user1 = auth.currentUser; 
      
      
-       document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
+       
       
      
        setTimeout(()=>{window.location.replace("/thankyou")
@@ -343,7 +411,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-       ;const user1 = auth.currentUser; 
+       const user1 = auth.currentUser; 
       
      
        document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",

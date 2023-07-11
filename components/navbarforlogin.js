@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaUserCircle } from "react-icons/fa";
+import {FaRightFromBracket}from "react-icons/fa"
 import app from "../public/firebaseconfig";
 import {
   Menu,
@@ -126,7 +127,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
           <ul>
             <li onClick={handleMyProfile}>User dashboard</li>
             <li onClick={handleChangePassword}>Change Password</li>
-            <li onClick={handleLogout}>Logout</li>
+            <li onClick={handleLogout}>Logout </li>
           </ul>
         </div>
       ):''}
