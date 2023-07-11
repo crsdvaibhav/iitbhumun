@@ -32,8 +32,9 @@ const handlePasswordChange = (event) => {
     onValue(Ref1, (snapshot) => {
       const data = snapshot.val();
       setDATA(data);
+     
     });
-  }, []);
+  }, [isLoggedIn]);
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
@@ -42,16 +43,16 @@ const handlePasswordChange = (event) => {
       [itemId]: value,
     }));
   };
-useEffect(()=>{
+
   const handleSubmit = (itemId) => {
-   
+    console.log("Inside handleSubmit");
     const itemRef = ref(database, `preferences/${itemId}`);
     update(itemRef, { alloted: submitValues[itemId] })
       .then(() =>  setTimeout(() => {
         alert("Allotted successfully");
       }, 300))
       .catch((error) => alert("Error updating value:", error));
-  };},[])
+  };
 
   const filteredData = Object.entries(DATA).reduce((filtered, [itemId, item]) => {
     if (item.alloted === "NO") {
@@ -59,7 +60,9 @@ useEffect(()=>{
     }
     return filtered;
   }, {});
-if(!isLoggedIn){ return (
+if(!isLoggedIn){ 
+  
+  return (
   <div>
     <h1 className='mb-5 text-center font-bold'>ADMIN PANEL MUN IIT BHU</h1>
     <input type="password" value={password} onChange={handlePasswordChange} placeholder="Enter password" className="text-center font bold mx-auto my-3 block" />
