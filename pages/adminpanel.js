@@ -33,7 +33,7 @@ const handlePasswordChange = (event) => {
       const data = snapshot.val();
       setDATA(data);
     });
-  }, [database]);
+  }, []);
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
@@ -42,7 +42,7 @@ const handlePasswordChange = (event) => {
       [itemId]: value,
     }));
   };
-
+useEffect(()=>{
   const handleSubmit = (itemId) => {
    
     const itemRef = ref(database, `preferences/${itemId}`);
@@ -51,7 +51,7 @@ const handlePasswordChange = (event) => {
         alert("Allotted successfully");
       }, 300))
       .catch((error) => alert("Error updating value:", error));
-  };
+  };},[])
 
   const filteredData = Object.entries(DATA).reduce((filtered, [itemId, item]) => {
     if (item.alloted === "NO") {
