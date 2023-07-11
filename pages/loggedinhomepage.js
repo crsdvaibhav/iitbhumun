@@ -8,13 +8,13 @@ import Script from "next/script";
 import NavBar2 from "../components/navbarforlogin";
 import Footer2 from "../components/footerforlogin";
 import { useEffect, useState } from "react";
-import { getDatabase, onValue, ref } from "firebase/database";
+import { getDatabase, get,onValue, ref } from "firebase/database";
 import { Button } from "@material-tailwind/react";
 const Loggedinhomepage = () => {
   <Script src="/vanillascript.js" typeof='module' type='module'/>
   // const database = getDatabase();
    const auth = getAuth();
-   const [DATA, setDATA] = useState([]);
+  //  const [DATA, setDATA] = useState([]);
    const[paymentbutton,paymentbuttontoggle]=useState(false)
    const [result, setresult] = useState(["Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment."]);
   const [hideportfolio,setportfolio]=useState(false)
@@ -25,42 +25,43 @@ const Loggedinhomepage = () => {
     setportfolio(!hideportfolio)
     
   }
-  const database = getDatabase();
-//   useEffect(() => {
-   
-//     const Ref1 = ref(database, "preferences/");
-//     onValue(Ref1, (snapshot) => {
-//       const data = snapshot.val();
-//       setDATA(data);
-//     });
-//   }, []);
-//   const filteredData = Object.entries(DATA).reduce((filtered, [itemId, item]) => {
-//     if (item.email ==auth.currentUser.email) {
-//       filtered[itemId] = item;
-//     }
-//     return filtered;
-//   }, [database]);
-// useEffect(()=>{
-//   Object.entries(filteredData).map(([itemId, item]) => {
-//     Object.keys(item).map((key) => {
+  const [DATA, setDATA] = useState({});
+// const [result, setResult] = useState("");
+const [showPaymentButton, setShowPaymentButton] = useState(false);
+const database=getDatabase()
+const fetchPreferencesData = async () => {
+  const snapshot = await get(ref(database, "preferences/"));
+  const data = snapshot.val();
+  setDATA(data);
+};
 
-//       if (key == "alloted"){
-//         if(item[key]!="NO"){
-//           console.log(item[key])
-// setresult(`Congratulations! You have been Alloted as a delegate speaker of ${item[key]}`)
-// paymentbuttontoggle(true)
-//         }
-//       }
+const filterDataByUserEmail = (data) => {
+  const filteredData = Object.values(data).reduce((filtered, item) => {
+    if (item.email === auth.currentUser.email) {
+      filtered.push(item);
+    }
+    return filtered;
+  }, []);
+  return filteredData;
+};
 
+const checkAllotment = (filteredData) => {
+  filteredData.forEach((item) => {
+    Object.keys(item).forEach((key) => {
+      if (key === "alloted" && item[key] !== "NO") {
+        setresult(`Congratulations! You have been allotted as a delegate speaker of ${item[key]}`);
+        setShowPaymentButton(true);
+      }
+    });
+  });
+};
+useEffect(()=>{
+fetchPreferencesData();
 
-
-//     })
-
-
-
-
-
-//   })},[filteredData])
+const filteredData = filterDataByUserEmail(DATA);
+checkAllotment(filteredData);
+})
+// Rest of your component code
 
 
 
