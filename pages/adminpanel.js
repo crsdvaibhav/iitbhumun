@@ -26,15 +26,17 @@ const handlePasswordChange = (event) => {
   const [DATA, setDATA] = useState([]);
   const [submitValues, setSubmitValues] = useState({});
   const database = getDatabase();
-  useEffect(() => {
-    
-    const Ref1 = ref(database, "preferences/");
-    onValue(Ref1, (snapshot) => {
+  const fetchData = async () => {
+    try {
+      const snapshot = await get(ref(database, "preferences/"));
       const data = snapshot.val();
       setDATA(data);
-     
-    });
-  }, [isLoggedIn]);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(()=>{fetchData},[])
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
