@@ -16,7 +16,7 @@ const Loggedinhomepage = () => {
    const auth = getAuth();
    const [DATA, setDATA] = useState([]);
    const[paymentbutton,paymentbuttontoggle]=useState(false)
-   const [result, setresult] = useState(["Sit back and relax,you will be notified after allotment of preferences!You can also visit the site regularly to check the allotment."]);
+   const [result, setresult] = useState(["Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment."]);
   const [hideportfolio,setportfolio]=useState(false)
   const [buttonname,rename]=useState("Show Portfolio and alloted preference")
   const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmail.com";
@@ -74,7 +74,7 @@ paymentbuttontoggle(true)
 <div id="content"className="mt-40 w-100 h-fit-content display:'block' h-min-content m-auto text-center font-bold" ></div>
 
 <h1 id="show result" className="my-4">{result}</h1>
-<Button className={paymentbutton?'block':'hidden'}>Pay now!</Button>
+<Button className={`${paymentbutton?'block':'hidden'} mx-auto py-3 my-3 ` }>Pay now!</Button>
 <button id="showbutton" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
 
 

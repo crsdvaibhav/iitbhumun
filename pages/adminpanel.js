@@ -6,7 +6,23 @@ import 'firebase/database';
 import { getDatabase, ref, set, onValue,update } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 
+
+
+
 const AdminPanel = () => {
+  const [password, setPassword] = useState("");
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+const handleLogin = () => {
+  if (password === "SHIVANSHUMUN") {
+    setIsLoggedIn(true);
+  } else {
+    alert("Incorrect password");
+  }
+};
+const handlePasswordChange = (event) => {
+  setPassword(event.target.value);
+};
   const [DATA, setDATA] = useState([]);
   const [submitValues, setSubmitValues] = useState({});
 
@@ -43,7 +59,16 @@ const AdminPanel = () => {
     }
     return filtered;
   }, {});
-
+if(!isLoggedIn){ return (
+  <div>
+    <h1 className='mb-5 text-center font-bold'>ADMIN PANEL MUN IIT BHU</h1>
+    <input type="password" value={password} onChange={handlePasswordChange} placeholder="Enter password" className="text-center font bold mx-auto my-3 block" />
+    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-auto rounded block" onClick={handleLogin}>
+      Login
+    </button>
+  </div>
+);}
+else{
   return (
     <div>
       <h1 className='mb-5 text-center font-bold'>ADMIN PANEL MUN IIT BHU</h1>
@@ -67,6 +92,6 @@ const AdminPanel = () => {
       ))}
     </div>
   );
-};
+};}
 
 export default AdminPanel;

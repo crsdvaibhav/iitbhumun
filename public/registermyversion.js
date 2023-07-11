@@ -2,7 +2,7 @@
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 import { getDatabase,ref,push,set } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
 const provider = new GoogleAuthProvider();
 // Import the functions you need from the SDKs you need
@@ -215,7 +215,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
  } })
     .then(() => {
       
-
+      signup1(); 
       auth.onAuthStateChanged(function(user) {
         if (user) {
           document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
@@ -226,10 +226,9 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
       
         
         },2000)
-        } else {
-         
-          return signup1(); 
-        }
+      }
+          
+        
       });
       
      
@@ -328,20 +327,21 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
     ]);
 } })
   .then(() => {
-  auth.onAuthStateChanged(function(user) {
-      if (user) {document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
-      
-     
-      setTimeout(()=>{window.location.replace("/thankyou")
-     auth.signOut();
-  
+    signup2(); 
+    auth.onAuthStateChanged(function(user) {
+      if (user) {
+        document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
     
-    },2000)
-       
-      } else {
-        return signup2(); 
-      }
-    });
+   
+        setTimeout(()=>{window.location.replace("/thankyou")
+       auth.signOut();
+    
+      
+      },2000)
+    }
+        
+      
+    })
     
     
   })
@@ -441,7 +441,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
       Signup with google succesful!
       Kindly fill the same email id that you used for google signup.
     </div>`;
-        document.getElementById("google1").innerHTML=`<h1>Hello ${auth.currentUser.displayName}, Fill the registration form now</h1>`
+        document.getElementById("google1").innerHTML=`<h1>Hello ${auth.currentUser.displayName}, Complete the registration form now</h1>`
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       }).catch((error) => {
