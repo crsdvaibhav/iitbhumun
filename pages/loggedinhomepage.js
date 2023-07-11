@@ -26,41 +26,41 @@ const Loggedinhomepage = () => {
     
   }
   const database = getDatabase();
-  useEffect(() => {
+//   useEffect(() => {
    
-    const Ref1 = ref(database, "preferences/");
-    onValue(Ref1, (snapshot) => {
-      const data = snapshot.val();
-      setDATA(data);
-    });
-  }, []);
-  const filteredData = Object.entries(DATA).reduce((filtered, [itemId, item]) => {
-    if (item.email ==auth.currentUser.email) {
-      filtered[itemId] = item;
-    }
-    return filtered;
-  }, [database]);
-useEffect(()=>{
-  Object.entries(filteredData).map(([itemId, item]) => {
-    Object.keys(item).map((key) => {
+//     const Ref1 = ref(database, "preferences/");
+//     onValue(Ref1, (snapshot) => {
+//       const data = snapshot.val();
+//       setDATA(data);
+//     });
+//   }, []);
+//   const filteredData = Object.entries(DATA).reduce((filtered, [itemId, item]) => {
+//     if (item.email ==auth.currentUser.email) {
+//       filtered[itemId] = item;
+//     }
+//     return filtered;
+//   }, [database]);
+// useEffect(()=>{
+//   Object.entries(filteredData).map(([itemId, item]) => {
+//     Object.keys(item).map((key) => {
 
-      if (key == "alloted"){
-        if(item[key]!="NO"){
-          console.log(item[key])
-setresult(`Congratulations! You have been Alloted as a delegate speaker of ${item[key]}`)
-paymentbuttontoggle(true)
-        }
-      }
-
-
-
-    })
+//       if (key == "alloted"){
+//         if(item[key]!="NO"){
+//           console.log(item[key])
+// setresult(`Congratulations! You have been Alloted as a delegate speaker of ${item[key]}`)
+// paymentbuttontoggle(true)
+//         }
+//       }
 
 
 
+//     })
 
 
-  })},[filteredData])
+
+
+
+//   })},[filteredData])
 
 
 
