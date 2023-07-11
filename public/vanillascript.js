@@ -122,14 +122,13 @@ for( var key in item){
 
          
          let portfolio1;
-        console.log(delegateData)
+        
          
             const nestedItem = delegateData.find((item) => item.email === auth.currentUser.email);
             const nestedItem1 = delegateData.find((item) => item.Committee_1_Country_Preference_1!=null);
             const nestedItem2 = delegateData.find((item) => item.email === auth.currentUser.email);
             const nestedItem3 = delegateData.find((item) => item.email === auth.currentUser.email);
-           console.log(auth.currentUser.email)
-           console.log(nestedItem1)
+          
             document.getElementById("content").innerHTML = `
             
             <ul class='datacard mb-6' >

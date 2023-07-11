@@ -33,8 +33,8 @@ const AdminPanel = () => {
     update(itemRef, { alloted: submitValues[itemId] })
       .then(() =>  setTimeout(() => {
         alert("Allotted successfully");
-      }, 500))
-      .catch((error) => console.error("Error updating value:", error));
+      }, 300))
+      .catch((error) => alert("Error updating value:", error));
   };
 
   const filteredData = Object.entries(DATA).reduce((filtered, [itemId, item]) => {
