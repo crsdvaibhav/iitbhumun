@@ -36,12 +36,12 @@ const AdminPanel = () => {
         console.log("Error:", error);
       }
     };
-  
+  if(!isLoggedIn){
     fetchPreferencesData()
     .catch((error) => {
       console.log("Error:", error);
-    });
-  }, []);
+    });}
+  }, [isLoggedIn]);
   
 
   const handleOptionChange = (event, itemId) => {
