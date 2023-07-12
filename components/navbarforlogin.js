@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaAddressBook, FaSignInAlt, FaUserCircle } from "react-icons/fa";
-import {FaRightFromBracket,FaSolid}from "react-icons/fa"
+import {  FaSignInAlt, FaUserCircle } from "react-icons/fa";
+
 import app from "../public/firebaseconfig";
 import {
   Menu,
@@ -18,7 +18,7 @@ import Script from 'next/script';
 
 export default function NavBar2({ navbar,backgroundColor}) {
   const auth = getAuth();
-  <Script src="/vanillascript.js" typeof='module' type='module' />
+  
 
   const [closeReg, setCloseReg] = useState(true);
   const [display, buttonhide] = useState(false);
@@ -38,7 +38,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
     
   
     function handleLogout(){
-      // Implement your logout logic here
+     
      
       signOut(auth)
   .then(() => {
@@ -54,7 +54,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
     };
   
     function handleMyProfile(){
-      // Implement your my profile logic here
+      
       console.log("My Profile clicked");
       window.location.href = "/loggedinhomepage";
       setTimeout(function(){setIsOpen(!isOpen)},100)
@@ -121,7 +121,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
               FAQ
             </button>
           </Link></div>
-           <FaSignInAlt className='w-[40px] ml-20' fontSize='30'  color='green' markerHeight="5px" width="20px"></FaSignInAlt><h1 id="nothing"className='font-bold mr-8 px-0 border-1px p-4 border-green-500 border-solid'>Signed In</h1>
+           {/* <FaSignInAlt className='w-[40px] ml-20' fontSize='30'  color='green' markerHeight="5px" width="20px"></FaSignInAlt><h1 id="nothing"className='font-bold mr-8 px-0 border-1px p-4 border-green-500 border-solid'>Signed In</h1> */}
          
           <div className="profile-dropdown">
           

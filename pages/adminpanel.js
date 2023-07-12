@@ -36,7 +36,7 @@ const AdminPanel = () => {
         console.log("Error:", error);
       }
     };
-  if(!isLoggedIn){
+  if(isLoggedIn){
     fetchPreferencesData()
     .catch((error) => {
       console.log("Error:", error);
