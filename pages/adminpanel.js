@@ -38,10 +38,7 @@ const AdminPanel = () => {
     };
   
     fetchPreferencesData().then((data) => {
-      setDATA((prevData) => ({ ...prevData, ...data }));
-    }).catch((error) => {
-      console.log("Error:", error);
-    });
+    
   }, []);
   
 
