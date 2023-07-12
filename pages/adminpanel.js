@@ -36,7 +36,7 @@ const AdminPanel = () => {
     fetchPreferencesData().catch((error) => {
       console.log("huhuhuhu:", error);
     });
-  }, [DATA]);
+  }, []);
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
