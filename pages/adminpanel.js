@@ -66,10 +66,10 @@ const handlePasswordChange = (event) => {
 
   const filteredData = Object.entries(DATA).reduce((filtered, [itemId, item]) => {
     if (item.alloted === "NO") {
-      filtered[itemId] = item;
+      filtered.push({ itemId, ...item });
     }
     return filtered;
-  }, {});
+  }, []);
 if(!isLoggedIn){ 
   
   return (
