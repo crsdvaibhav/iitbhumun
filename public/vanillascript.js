@@ -139,6 +139,43 @@ for( var key in item){
         })
        
 
-
+       
+          function fetchData1(){
+            const snapshot = get(ref(database, "preferences/"))
+              .then((snapshot) => {
+                const data = snapshot.val();
+              
+                const filteredData = [];
+                for (const itemId in data) {
+                  const item = data[itemId];
+                  if (item.email === auth.currentUser.email) {
+                    filteredData.push(item);
+                  }
+                }
+        
+                filteredData.forEach((item) => {
+                  Object.keys(item).forEach((key) => {
+                    if (key === "alloted" && item[key] != "NO") {
+                      console.log(item[key])
+                      document.getElementById("showresults").innerHTML=`Congratulations! You have been allotted as a delegate speaker of ${item[key]}`;
+                      // paymentbuttontoggle(true);
+                      document.getElementById("paynow").style.display='block'
+                    }
+                    else{
+                      document.getElementById("showresults").innerHTML="Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment."
+                    }
+                  });
+                });
+              })
+              .catch((error) => {
+                console.error("Error fetching preferences data:", error);
+              });
+          };
+        
+          fetchData1();
+        
+        
+        // Rest of your component code
+        
 
        

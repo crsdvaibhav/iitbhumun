@@ -149,3 +149,6 @@ table tr td {
   display: table-cell;
   vertical-align: middle;
 }
+#paynow{
+  display: none;
+}

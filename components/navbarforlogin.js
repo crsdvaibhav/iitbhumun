@@ -13,11 +13,12 @@ import { useState } from 'react';
 import { useRouter } from "next/router";
 import Register from './CloseReg';
 import { getAuth,onAuthStateChanged,signOut,sendPasswordResetEmail } from 'firebase/auth';
+import Script from 'next/script';
 
 
 export default function NavBar2({ navbar,backgroundColor}) {
   const auth = getAuth();
-  
+  <Script src="/vanillascript.js" typeof='module' type='module' />
 
   const [closeReg, setCloseReg] = useState(true);
   const [display, buttonhide] = useState(false);
