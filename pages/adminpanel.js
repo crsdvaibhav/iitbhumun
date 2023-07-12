@@ -33,8 +33,23 @@ const AdminPanel = () => {
 //   }, [isLoggedIn]);
   const handleLogin = () => {
     if (password === "SHIVANSHUMUN") {
-      setIsLoggedIn(true);
-      fetchPreferencesData()
+      async function fetchData() {
+        try {
+          await fetchPreferencesData(); // Wait for the first command to complete
+          setIsLoggedIn(true); // Execute the second command after the first one is finished
+          // Any other code that depends on the completion of both commands
+        } catch (error) {
+          // Handle errors if necessary
+        }
+      }
+      
+      
+        
+      
+      // Functional component
+     
+        fetchData();
+    
     } else {
       alert("Incorrect password");
     }
