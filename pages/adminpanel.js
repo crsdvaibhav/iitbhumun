@@ -26,11 +26,11 @@ const AdminPanel = () => {
   };
 
   
-    const fetchPreferencesData = async () => {
+    const fetchPreferencesData =  () => {
       const database = getDatabase();
-      const snapshot = await get(ref(database, "preferences/"));
-      const data = snapshot.val();
-      setDATA(data);
+      const ABC =  ref(database, "preferences/");
+      onValue(ABC,()=>{let  data=snapshot.val();
+      setDATA(data);})
     };
   
    
