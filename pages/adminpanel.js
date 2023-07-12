@@ -13,24 +13,11 @@ const AdminPanel = () => {
   const [DATA, setDATA] = useState({});
   const [submitValues, setSubmitValues] = useState({});
 
-  const handleLogin = () => {
-    if (password === "SHIVANSHUMUN") {
-      setIsLoggedIn(true);
-      fetchPreferencesData()
-    } else {
-      alert("Incorrect password");
-    }
-  };
+  
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
-  useEffect(() => {
-    
- 
-  }, [isLoggedIn]);
-  
   const fetchPreferencesData = async () => {
     try {
       const database = getDatabase();
@@ -41,6 +28,21 @@ const AdminPanel = () => {
       console.log("Error:", error);
     }
   };
+  useEffect(() => {
+    
+    
+ 
+ fetchPreferencesData()
+  }, [isLoggedIn]);
+  const handleLogin = () => {
+    if (password === "SHIVANSHUMUN") {
+      setIsLoggedIn(true);
+      fetchPreferencesData()
+    } else {
+      alert("Incorrect password");
+    }
+  };
+  
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;

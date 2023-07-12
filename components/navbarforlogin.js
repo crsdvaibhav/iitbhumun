@@ -121,7 +121,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
               FAQ
             </button>
           </Link></div>
-           {/* <FaSignInAlt className='w-[40px] ml-20' fontSize='30'  color='green' markerHeight="5px" width="20px"></FaSignInAlt><h1 id="nothing"className='font-bold mr-8 px-0 border-1px p-4 border-green-500 border-solid'>Signed In</h1> */}
+          
          
           <div className="profile-dropdown">
           
