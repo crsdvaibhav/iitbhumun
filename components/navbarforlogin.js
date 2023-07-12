@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 import Register from './CloseReg';
 import { getAuth,onAuthStateChanged,signOut,sendPasswordResetEmail } from 'firebase/auth';
 import Script from 'next/script';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 export default function NavBar2({ navbar,backgroundColor}) {
   const auth = getAuth();
