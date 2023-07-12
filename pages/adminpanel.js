@@ -34,7 +34,7 @@ const AdminPanel = () => {
     };
   
     fetchPreferencesData().catch((error) => {
-      console.log("Error fetching data:", error);
+      console.log("huhuhuhu:", error);
     });
   }, [DATA]);
 
