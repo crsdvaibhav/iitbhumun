@@ -41,8 +41,7 @@ useEffect(() => {
             filtered.push(item);
           }
           return filtered;
-        }, []);
-
+        }, [])
         filteredData.forEach((item) => {
           Object.keys(item).forEach((key) => {
             if (key === "alloted" && item[key] != "NO") {
@@ -56,8 +55,9 @@ useEffect(() => {
         console.error("Error fetching preferences data:", error);
       });
   };
-  console.log("fetch-data rerendered")
   fetchData();
+  console.log("fetch-data rerendered")
+  
   
 },[abdc]);
 
