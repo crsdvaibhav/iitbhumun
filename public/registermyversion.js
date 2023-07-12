@@ -368,7 +368,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
      
      
        
-      
+      document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
      
        setTimeout(()=>{window.location.replace("/thankyou")
      

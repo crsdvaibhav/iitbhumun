@@ -90,9 +90,9 @@ export default function NavBar2({ navbar,backgroundColor}) {
           height={50}
           alt="active-nav-logo"
         />
-        <div className="justify-end hidden items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
+        <div className="justify-end hidden text-black items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
-            <button className=" 2xl:text-xl hover:text-[#189BA5] duration-100">
+            <button className=" 2xl:text-xl  hover:text-[#189BA5] duration-100">
               Home
             </button>
           </Link>
@@ -121,13 +121,13 @@ export default function NavBar2({ navbar,backgroundColor}) {
               FAQ
             </button>
           </Link></div>
-          
+           <FaSignInAlt className='w-[40px] ml-20' fontSize='30'  color='#189BA5' markerHeight="5px" width="20px"></FaSignInAlt> 
          
           <div className="profile-dropdown">
           
-          <FaUserCircle className=' cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
+          <FaUserCircle className='text-black cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
           {isOpen?(
-        <div className='dropdowncontent '>
+        <div className='dropdowncontent'>
           <ul>
             <li onClick={handleMyProfile}>User dashboard</li>
             <li onClick={handleChangePassword}>Change Password</li>
