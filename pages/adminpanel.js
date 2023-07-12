@@ -27,16 +27,23 @@ const AdminPanel = () => {
 
   useEffect(() => {
     const fetchPreferencesData = async () => {
-      const database = getDatabase();
-      const snapshot = await get(ref(database, "preferences/"));
-      const data = snapshot.val();
-      setDATA((prevData) => ({ ...prevData, ...data }));
+      try {
+        const database = getDatabase();
+        const snapshot = await get(ref(database, "preferences/"));
+        const data = snapshot.val();
+        return data; // Return the fetched data
+      } catch (error) {
+        console.log("Error:", error);
+      }
     };
   
-    fetchPreferencesData().catch((error) => {
-      console.log("huhuhuhu:", error);
+    fetchPreferencesData().then((data) => {
+      setDATA((prevData) => ({ ...prevData, ...data }));
+    }).catch((error) => {
+      console.log("Error:", error);
     });
   }, []);
+  
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
