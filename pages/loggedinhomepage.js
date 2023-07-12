@@ -2,67 +2,66 @@
  import { getAuth,sendPasswordResetEmail } from "firebase/auth";
  
 import Footer from "../components/Footer";
-import NavBar from "../components/Navbar";
-import app from "../public/firebaseconfig";
+
+
 import Script from "next/script";
 import NavBar2 from "../components/navbarforlogin";
 import Footer2 from "../components/footerforlogin";
-import { useEffect, useState } from "react";
+import { useEffect, useState,Ref } from "react";
 import { getDatabase, get,onValue, ref } from "firebase/database";
 import { Button } from "@material-tailwind/react";
 const Loggedinhomepage = () => {
   <Script src="/vanillascript.js" typeof='module' type='module'/>
-  // const database = getDatabase();
+  
    const auth = getAuth();
-  //  const [DATA, setDATA] = useState([]);
+
+const   abdc=0;
    const[paymentbutton,paymentbuttontoggle]=useState(false)
    const [result, setresult] = useState(["Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment."]);
   const [hideportfolio,setportfolio]=useState(false)
   const [buttonname,rename]=useState("Show Portfolio and alloted preference")
-  const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmail.com";
-
+ 
   function pfp(){rename(hideportfolio?buttonname="Show Portfolio and alloted preference":buttonname="Hide Portfolio")
     setportfolio(!hideportfolio)
     
   }
   const [DATA, setDATA] = useState({});
 // const [result, setResult] = useState("");
-const [showPaymentButton, setShowPaymentButton] = useState(false);
+// const [showPaymentButton, setShowPaymentButton] = useState(false);
 const database=getDatabase()
-const fetchPreferencesData = async () => {
-  const snapshot = await get(ref(database, "preferences/"));
-  const data = snapshot.val();
-  setDATA(data);
-};
+useEffect(() => {
+  const fetchData = () => {
+    const snapshot = get(ref(database, "preferences/"))
+      .then((snapshot) => {
+        const data = snapshot.val();
+        setDATA(data);
 
-const filterDataByUserEmail = (data) => {
-  const filteredData = Object.values(data).reduce((filtered, item) => {
-    if (item.email === auth.currentUser.email) {
-      filtered.push(item);
-    }
-    return filtered;
-  }, []);
-  return filteredData;
-};
+        const filteredData = Object.values(data).reduce((filtered, item) => {
+          if (item.email === auth.currentUser.email) {
+            filtered.push(item);
+          }
+          return filtered;
+        }, []);
 
-const checkAllotment = (filteredData) => {
-  filteredData.forEach((item) => {
-    Object.keys(item).forEach((key) => {
-      if (key === "alloted" && item[key] !== "NO") {
-        setresult(`Congratulations! You have been allotted as a delegate speaker of ${item[key]}`);
-        setShowPaymentButton(true);
-      }
-    });
-  });
-};
-useEffect(()=>{
-fetchPreferencesData();
+        filteredData.forEach((item) => {
+          Object.keys(item).forEach((key) => {
+            if (key === "alloted" && item[key] != "NO") {
+              setresult(`Congratulations! You have been allotted as a delegate speaker of ${item[key]}`);
+              paymentbuttontoggle(true);
+            }
+          });
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching preferences data:", error);
+      });
+  };
+  console.log("fetch-data rerendered")
+  fetchData();
+  
+},[abdc]);
 
-const filteredData = filterDataByUserEmail(DATA);
-checkAllotment(filteredData);
-})
 // Rest of your component code
-
 
 
 
