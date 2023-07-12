@@ -28,13 +28,13 @@ const AdminPanel = () => {
       console.log("Error:", error);
     }
   };
-  useEffect(() => {
- fetchPreferencesData()
-  }, [isLoggedIn]);
+//   useEffect(() => {
+//  fetchPreferencesData()
+//   }, [isLoggedIn]);
   const handleLogin = () => {
     if (password === "SHIVANSHUMUN") {
       setIsLoggedIn(true);
-      
+      fetchPreferencesData()
     } else {
       alert("Incorrect password");
     }
