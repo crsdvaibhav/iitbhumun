@@ -1,4 +1,6 @@
 // AdminPanel.js
+// AdminPanel.js
+// AdminPanel.js
 import React, { useEffect, useState } from 'react';
 import app from "../public/firebaseconfig";
 import 'firebase/database';
@@ -14,8 +16,6 @@ const AdminPanel = () => {
   const handleLogin = () => {
     if (password === "SHIVANSHUMUN") {
       setIsLoggedIn(true);
-      fetchPreferencesData()
-      console.log("abc")
     } else {
       alert("Incorrect password");
     }
@@ -25,16 +25,18 @@ const AdminPanel = () => {
     setPassword(event.target.value);
   };
 
-  
-    const fetchPreferencesData =  () => {
+  useEffect(() => {
+    const fetchPreferencesData = async () => {
       const database = getDatabase();
-      const ABC =  ref(database, "preferences/");
-      onValue(ABC,()=>{let  data=snapshot.val();
-      setDATA(data);})
+      const snapshot = await get(ref(database, "preferences/"));
+      const data = snapshot.val();
+      setDATA((prevData) => ({ ...prevData, ...data }));
     };
   
-   
-  
+    fetchPreferencesData().catch((error) => {
+      console.log("Error fetching data:", error);
+    });
+  }, [DATA]);
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
