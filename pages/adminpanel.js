@@ -31,16 +31,18 @@ const AdminPanel = () => {
         const database = getDatabase();
         const snapshot = await get(ref(database, "preferences/"));
         const data = snapshot.val();
-        return data; // Return the fetched data
+        setDATA(data); // Return the fetched data
       } catch (error) {
         console.log("Error:", error);
       }
     };
   
-    fetchPreferencesData().then((data) => {
-    
-  }, []);}
-  )
+    fetchPreferencesData()
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+  }, []);
+  
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
