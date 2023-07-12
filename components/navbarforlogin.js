@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaUserCircle } from "react-icons/fa";
-import {FaRightFromBracket}from "react-icons/fa"
+import { FaAddressBook, FaSignInAlt, FaUserCircle } from "react-icons/fa";
+import {FaRightFromBracket,FaSolid}from "react-icons/fa"
 import app from "../public/firebaseconfig";
 import {
   Menu,
@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 import Register from './CloseReg';
 import { getAuth,onAuthStateChanged,signOut,sendPasswordResetEmail } from 'firebase/auth';
 import Script from 'next/script';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function NavBar2({ navbar,backgroundColor}) {
   const auth = getAuth();
@@ -121,7 +121,10 @@ export default function NavBar2({ navbar,backgroundColor}) {
               FAQ
             </button>
           </Link></div>
+           <FaSignInAlt className='w-[40px] ml-20' fontSize='30'  color='green' markerHeight="5px" width="20px"></FaSignInAlt><h1 id="nothing"className='font-bold mr-8 px-0 border-1px p-4 border-green-500 border-solid'>Signed In</h1>
+         
           <div className="profile-dropdown">
+          
           <FaUserCircle className=' cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
           {isOpen?(
         <div className='dropdowncontent '>
