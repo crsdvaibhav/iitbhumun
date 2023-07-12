@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import app from "../public/firebaseconfig";
 import 'firebase/database';
-import { getDatabase, ref, set, onValue,update } from 'firebase/database';
+import { getDatabase, ref, set, onValue,update,off } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 
 
@@ -27,14 +27,24 @@ const handlePasswordChange = (event) => {
   const [submitValues, setSubmitValues] = useState({});
   const database = getDatabase();
   useEffect(() => {
-    
+    const database = getDatabase();
     const Ref1 = ref(database, "preferences/");
-    onValue(Ref1, (snapshot) => {
+
+    const handleSnapshot = (snapshot) => {
       const data = snapshot.val();
-      setDATA(data);
-     
-    });
-  }, [database]);
+      setDATA(data || {});
+    };
+
+    onValue(Ref1, handleSnapshot);
+
+    return () => {
+      // Clean up the event listener
+      off(Ref1, handleSnapshot);
+    };
+  }, []);
+
+  // Rest of your component code
+
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
