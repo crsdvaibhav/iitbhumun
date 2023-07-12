@@ -16,6 +16,7 @@ const AdminPanel = () => {
   const handleLogin = () => {
     if (password === "SHIVANSHUMUN") {
       setIsLoggedIn(true);
+      fetchPreferencesData()
     } else {
       alert("Incorrect password");
     }
@@ -26,22 +27,20 @@ const AdminPanel = () => {
   };
 
   useEffect(() => {
-    const fetchPreferencesData = async () => {
-      try {
-        const database = getDatabase();
-        const snapshot = await get(ref(database, "preferences/"));
-        const data = snapshot.val();
-        setDATA(data); // Return the fetched data
-      } catch (error) {
-        console.log("Error:", error);
-      }
-    };
-    fetchPreferencesData();
     
-
+ 
   }, [isLoggedIn]);
-
   
+  const fetchPreferencesData = async () => {
+    try {
+      const database = getDatabase();
+      const snapshot = await get(ref(database, "preferences/"));
+      const data = snapshot.val();
+      setDATA(data); // Return the fetched data
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  };
 
   const handleOptionChange = (event, itemId) => {
     const { value } = event.target;
