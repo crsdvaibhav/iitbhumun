@@ -28,9 +28,9 @@ const AdminPanel = () => {
       const database = getDatabase();
       const snapshot = await get(ref(database, "preferences/"));
       const data = snapshot.val();
-      setDATA(data);
+      setDATA((prevData) => ({ ...prevData, ...data }));
     };
-
+  
     fetchPreferencesData().catch((error) => {
       console.log("Error fetching data:", error);
     });
