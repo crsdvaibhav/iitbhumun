@@ -14,9 +14,7 @@ const AdminPanel = () => {
   const handleLogin = () => {
     if (password === "SHIVANSHUMUN") {
       setIsLoggedIn(true);
-      fetchPreferencesData().catch((error) => {
-        console.log("Error fetching data:", error);
-      });
+      fetchPreferencesData()
       console.log("abc")
     } else {
       alert("Incorrect password");
