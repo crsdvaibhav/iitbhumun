@@ -4,14 +4,7 @@ import { getDatabase,ref,push,set,onValue,get,runTransaction } from "https://www
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 const provider = new GoogleAuthProvider();
-// Import the functions you need from the SDKs you need
 
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAYLIn8hGjgVrX3h23aVZPx47Sn8bZBCz4",
   authDomain: "mun-2023.firebaseapp.com",

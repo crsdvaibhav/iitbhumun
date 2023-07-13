@@ -1,6 +1,6 @@
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 import { getDatabase,ref,push,set,get,onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
+
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -19,8 +19,6 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
 const database=getDatabase();
-
-
 const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmail.com";
 
     // Function to filter data based on user email
@@ -33,7 +31,7 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
       });
       return filteredData;
     };
-  
+  document.getElementById
     // Function to fetch data from the database
     function fetchData() {
         return new Promise((resolve, reject) => {
