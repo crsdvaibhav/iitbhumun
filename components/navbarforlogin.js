@@ -59,7 +59,11 @@ export default function NavBar2({ navbar,backgroundColor}) {
       window.location.href = "/loggedinhomepage";
       setTimeout(function(){setIsOpen(!isOpen)},100)
     };
-  
+  function handleCA(){
+window.location.href="/thankyouforCA"
+
+
+  }
     function  handleChangePassword(){
       // Implement your change password logic here
       sendPasswordResetEmail(auth,auth.currentUser.email)
@@ -132,6 +136,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
             <li onClick={handleMyProfile}>User dashboard</li>
             <li onClick={handleChangePassword}>Change Password</li>
             <li onClick={handleLogout}>Logout </li>
+            <li onClick={handleCA}>CA Dashboard</li>
           </ul>
         </div>
       ):''}
