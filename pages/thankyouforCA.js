@@ -32,10 +32,11 @@ const  Thankyou=()=> {
      
       const filteredData = Object.keys(DATA).reduce((filtered, itemId) => {
         const item = DATA[itemId];
+        if(auth.currentUser.email!=null){
         if (item.email ==auth.currentUser.email ) {
           filtered.push({ itemId, ...item });
         }
-        return filtered;
+        return filtered;}
       }, []);
     
   return (
