@@ -176,8 +176,9 @@ export default function NavBar2({ navbar,backgroundColor}) {
             alt="mobile-activenav-logo"
           />
         </div>
-       
-        <FaUserCircle className=' cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
+        <FaSignInAlt className='w-[40px] ml-20' fontSize='30'  color='#189BA5' markerHeight="5px" width="20px"></FaSignInAlt> 
+        <div className="profile-dropdown">
+        <FaUserCircle className='text-black cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
           {isOpen?(
         <div className='dropdowncontent '>
           <ul>
@@ -187,6 +188,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
           </ul>
         </div>
       ):''}
+      </div>
       </div>
     </div>
   );

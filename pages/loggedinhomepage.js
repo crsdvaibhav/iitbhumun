@@ -9,7 +9,9 @@ import NavBar2 from "../components/navbarforlogin";
 import Footer2 from "../components/footerforlogin";
 import { useEffect, useState, Ref } from "react";
 import { getDatabase, get, onValue, ref } from "firebase/database";
-import { Button } from "@material-tailwind/react";
+import { Button, alert } from "@material-tailwind/react";
+import Router, {  useRouter } from "next/router";
+import Link from "next/link";
 const Loggedinhomepage = () => {
   <Script src="/vanillascript.js" typeof='module' type='module' />
 
@@ -66,7 +68,9 @@ const Loggedinhomepage = () => {
 
 
 
+  
     return (
+      
       <>
         <NavBar2 navbar={true} backgroundColor="white" />
         <div className="my-50 text-center font-bold">
@@ -74,7 +78,7 @@ const Loggedinhomepage = () => {
 
           <div id="content" className="mt-40 w-100 h-fit-content display:'block' h-min-content m-auto text-center font-bold" ></div>
 
-          <h1 id="showresults" className='my-4 text-red-500 text-xl w-30px text-center '></h1>
+          <h1 id="showresult" className='my-4 text-red-500 text-xl w-30px text-center'></h1>
           <Button className="block mx-auto py-3 my-3 " id="paynow">Pay now!</Button>
           <button id="showbutton" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
 
@@ -166,10 +170,11 @@ const Loggedinhomepage = () => {
         </div>
         <Footer2 />
       </>
-    );
+    );}
+   
+      
+  
 
-
-  }
   ;
 
   export default Loggedinhomepage;
