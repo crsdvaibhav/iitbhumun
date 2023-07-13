@@ -4,14 +4,7 @@ import { getDatabase,ref,push,set,onValue,get,runTransaction } from "https://www
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 const provider = new GoogleAuthProvider();
-// Import the functions you need from the SDKs you need
 
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAYLIn8hGjgVrX3h23aVZPx47Sn8bZBCz4",
   authDomain: "mun-2023.firebaseapp.com",
@@ -63,40 +56,40 @@ function validateForm() {
   const email = document.getElementById('email_field').value.trim();
   const password = document.getElementById('password').value.trim();
 const muncount=document.getElementById('muncount').value.trim();
-  // if (name === '') {
-  //   alert('Please enter your name.');
-  //   return false;
-  // }
-  // if (muncount === '') {
-  //   alert('Please enter the number of MUN you participated before!.');
-  //   return false;
-  // }
+  if (name === '') {
+    alert('Please enter your name.');
+    return false;
+  }
+  if (muncount === '') {
+    alert('Please enter the number of MUN you participated before!.');
+    return false;
+  }
 
 
-  // if (age === '') {
-  //   alert('Please enter your age.');
-  //   return false;
-  // }
+  if (age === '') {
+    alert('Please enter your age.');
+    return false;
+  }
 
-  // if (gender === '') {
-  //   alert('Please select your gender.');
-  //   return false;
-  // }
+  if (gender === '') {
+    alert('Please select your gender.');
+    return false;
+  }
 
-  // if (institute === '') {
-  //   alert('Please enter the name of your institution.');
-  //   return false;
-  // }
+  if (institute === '') {
+    alert('Please enter the name of your institution.');
+    return false;
+  }
 
-  // if (region === '') {
-  //   alert('Please enter your region (city or state).');
-  //   return false;
-  // }
+  if (region === '') {
+    alert('Please enter your region (city or state).');
+    return false;
+  }
 
-  // if (email === '') {
-  //   alert('Please enter your email.');
-  //   return false;
-  // }
+  if (email === '') {
+    alert('Please enter your email.');
+    return false;
+  }
 
   // Email validation using regular expression
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

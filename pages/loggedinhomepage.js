@@ -161,7 +161,7 @@ const Loggedinhomepage = () => {
           </div>
 
 
-          <Script src="/vanillascript.js" typeof='module' type='module' />
+          <Script src="/vanilla.js" type="module" typeof="module"/>
         </div>
         <Footer2 />
       </>
