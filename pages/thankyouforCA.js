@@ -69,7 +69,7 @@ const  Thankyou=()=> {
       {Object.keys(filteredData).map((key) => {
 if(key=="referralCode"){
     
-    return(<h1>{item[filteredData]}</h1>)
+    return(<h1>{item[key]}</h1>)
 }
 
 
