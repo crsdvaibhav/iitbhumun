@@ -2,6 +2,7 @@ import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase
 import { getDatabase,ref,push,set,get,onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { onAuthStateChanged } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAYLIn8hGjgVrX3h23aVZPx47Sn8bZBCz4",
@@ -141,7 +142,7 @@ for( var key in item){
         })
        
 
-       
+      
           function fetchData1(){
             const snapshot = get(ref(database, "preferences/"))
               .then((snapshot) => {
@@ -179,7 +180,7 @@ for( var key in item){
                 alert("Error fetching preferences data:", error);
               });
           };
-        
+       
           fetchData1();
         
         

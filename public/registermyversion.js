@@ -1,9 +1,8 @@
 
-import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
-import { getDatabase,ref,push,set } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
+import { getDatabase,ref,push,set,onValue,get,runTransaction } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
+import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 const provider = new GoogleAuthProvider();
 // Import the functions you need from the SDKs you need
 
@@ -23,6 +22,18 @@ const firebaseConfig = {
   appId: "1:843433332162:web:faa917397b259754461a5b",
   measurementId: "G-L3C80FWLKS"
 };
+function generateReferralCode() {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const codeLength = 8;
+  let referralCode = '';
+
+  for (let i = 0; i < codeLength; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    referralCode += characters.charAt(randomIndex);
+  }
+
+  return referralCode;
+}
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -39,7 +50,7 @@ const generateUniqueId = () => {
 };
 
 
-const analytics = getAnalytics(app);
+
 
 const database=getDatabase(app)
 
@@ -52,40 +63,40 @@ function validateForm() {
   const email = document.getElementById('email_field').value.trim();
   const password = document.getElementById('password').value.trim();
 const muncount=document.getElementById('muncount').value.trim();
-  if (name === '') {
-    alert('Please enter your name.');
-    return false;
-  }
-  if (muncount === '') {
-    alert('Please enter the number of MUN you participated before!.');
-    return false;
-  }
+  // if (name === '') {
+  //   alert('Please enter your name.');
+  //   return false;
+  // }
+  // if (muncount === '') {
+  //   alert('Please enter the number of MUN you participated before!.');
+  //   return false;
+  // }
 
 
-  if (age === '') {
-    alert('Please enter your age.');
-    return false;
-  }
+  // if (age === '') {
+  //   alert('Please enter your age.');
+  //   return false;
+  // }
 
-  if (gender === '') {
-    alert('Please select your gender.');
-    return false;
-  }
+  // if (gender === '') {
+  //   alert('Please select your gender.');
+  //   return false;
+  // }
 
-  if (institute === '') {
-    alert('Please enter the name of your institution.');
-    return false;
-  }
+  // if (institute === '') {
+  //   alert('Please enter the name of your institution.');
+  //   return false;
+  // }
 
-  if (region === '') {
-    alert('Please enter your region (city or state).');
-    return false;
-  }
+  // if (region === '') {
+  //   alert('Please enter your region (city or state).');
+  //   return false;
+  // }
 
-  if (email === '') {
-    alert('Please enter your email.');
-    return false;
-  }
+  // if (email === '') {
+  //   alert('Please enter your email.');
+  //   return false;
+  // }
 
   // Email validation using regular expression
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -105,7 +116,7 @@ const muncount=document.getElementById('muncount').value.trim();
     document.getElementById('register2').addEventListener("click", submitForm1);
     document.getElementById('register3').addEventListener("click", submitForm2);
 
-
+   
 
 
 function getInput(id) {
@@ -139,6 +150,32 @@ function submitForm2(e) {
 function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
     const uuid=generateUniqueId()
     console.log(uuid)
+   
+    if(refferalcode!=null){
+      const snapshot = get(ref(database, "Referral_program/"))
+        .then((snapshot) => {
+          const data = snapshot.val();
+        
+          const filteredData = [];
+          for (const itemId in data) {
+            const item = data[itemId];
+            if (item.referralCode === refferalcode) {
+              const entryId = itemId;
+              const userRegisteredRef = ref(database,"Referral_program/"+entryId+"/"+"UserRegistered");
+    
+              runTransaction(userRegisteredRef, (userRegistered) => {
+                return (userRegistered || 0) + 1; // Increment the count by 1
+              })
+                .then(() => {
+                  console.log('UserRegistered count incremented successfully');
+                })
+                .catch((error) => {
+                  console.error('Error incrementing UserRegistered count:', error);
+                });
+            }
+          }})
+
+  }
   const dbRef1 = ref(database, "records of single delegates/"+uuid);
    
     const newRec = push(dbRef1);
@@ -236,6 +273,47 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
 
 function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
   const uuid=generateUniqueId()
+  const Reff =generateReferralCode();
+  const abcd=ref(database,"Referral_program/")
+  const refrec=push(abcd)
+  set(refrec,{
+email:email,
+referralCode:Reff,
+UserRegistered:0,
+PaymentConfirmed:0
+
+  })
+//To increase referral count
+  if(refferalcode!=null){
+      const snapshot = get(ref(database, "Referral_program/"))
+        .then((snapshot) => {
+          const data = snapshot.val();
+        
+          const filteredData = [];
+          for (const itemId in data) {
+            const item = data[itemId];
+            if (item.referralCode === refferalcode) {
+              const entryId = itemId;
+              const userRegisteredRef = ref(database,"Referral_program/"+entryId+"/"+"UserRegistered");
+    
+              runTransaction(userRegisteredRef, (userRegistered) => {
+                return (userRegistered || 0) + 1; // Increment the count by 1
+              })
+                .then(() => {
+                  console.log('UserRegistered count incremented successfully');
+                })
+                .catch((error) => {
+                  console.error('Error incrementing UserRegistered count:', error);
+                });
+            }
+          }})
+  
+  
+  
+   
+
+
+  }
   const dbRef2 = ref(database, "records of Conference ambassadors/"+uuid);
   
   const newRec = push(dbRef2);
@@ -399,7 +477,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
        document.getElementById("qt").innerHTML="<div class='container1'><div class='loader'></div></div>",
       
      
-       setTimeout(()=>{window.location.replace("/thankyou")},2000)
+       setTimeout(()=>{window.location.replace("/thankyouforCA")},2000)
        
       
   })
