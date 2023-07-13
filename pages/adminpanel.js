@@ -1,7 +1,10 @@
 // AdminPanel.js
 // AdminPanel.js
 // AdminPanel.js
-import React, { useEffect, useState } from 'react';
+// AdminPanel.js
+// AdminPanel.js
+// AdminPanel.js
+import React, { Component, useEffect, useState,} from 'react';
 import app from "../public/firebaseconfig";
 
 import { getDatabase, ref, get, set, onValue, update } from 'firebase/database';
@@ -13,31 +16,31 @@ const AdminPanel = () => {
   const [DATA, setDATA] = useState({});
   const [submitValues, setSubmitValues] = useState({});
 
+
   
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  const fetchPreferencesData = async () => {
+  async function fetchData() {
     try {
-      const database = getDatabase();
-      console.log(database)
-      const snapshot = await get(ref(database, "preferences/"));
-      console.log(snapshot)
-      const data = snapshot.val();
-      setDATA(data); // Return the fetched data
+      const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/preferences.json');
+      const data = await response.json();
+      
+      setDATA(data)
     } catch (error) {
-      console.log("Error:", error);
+      console.error('Error:', error);
     }
-  };
+  }
+  
 //   useEffect(() => {
 //  fetchPreferencesData()
 //   }, [isLoggedIn]);
   const handleLogin = () => {
     if (password === "SHIVANSHUMUN") {
-      async function fetchData() {
+      async function fetchData1() {
         try {
-          await fetchPreferencesData(); // Wait for the first command to complete
+          await fetchData(); // Wait for the first command to complete
           setIsLoggedIn(true); // Execute the second command after the first one is finished
           // Any other code that depends on the completion of both commands
         } catch (error) {
@@ -50,7 +53,7 @@ const AdminPanel = () => {
       
       // Functional component
      
-        fetchData();
+        fetchData1();
     
     } else {
       alert("Incorrect password");
