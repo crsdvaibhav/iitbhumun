@@ -10,10 +10,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 const  Thankyou=()=> {
    
 
-  onAuthStateChanged((user)=>{
-    if(user!=null){console.log("chiku")}
-  })
-
+ 
 
     const auth=getAuth()
     const [DATA,setDATA]=useState([])
