@@ -1,7 +1,8 @@
 
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
-import Footer from "../components/Footer";
+
+
+
 
 
 import Script from "next/script";
@@ -14,12 +15,6 @@ import Router, {  useRouter } from "next/router";
 import Link from "next/link";
 const Loggedinhomepage = () => {
   <Script src="/vanillascript.js" typeof='module' type='module' />
-
-  const auth = getAuth();
-
-  // const   abdc=0;
-  //    const[paymentbutton,paymentbuttontoggle]=useState(false)
-  //    const [result, setresult] = useState(["Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment."]);
    const [hideportfolio,setportfolio]=useState(false)
   const [buttonname, rename] = useState("Show Portfolio and alloted preference")
 
@@ -166,7 +161,7 @@ const Loggedinhomepage = () => {
           </div>
 
 
-          <Script src="vanillascript.js" typeof='module' type='module' />
+          <Script src="/vanillascript.js" typeof='module' type='module' />
         </div>
         <Footer2 />
       </>
