@@ -95,6 +95,7 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
 for (var key in item) {
     keys.push(key);
 }
+
 document.getElementById("h1").innerHTML+=`${keys[1]}`
 document.getElementById("h2").innerHTML+=`${keys[2]}`
 document.getElementById("h3").innerHTML+=`${keys[3]}`
@@ -153,30 +154,36 @@ for( var key in item){
                     filteredData.push(item);
                   }
                 }
-        
+                let i=0;
+               
                 filteredData.forEach((item) => {
                   Object.keys(item).forEach((key) => {
                     if (key === "alloted" && item[key] != "NO") {
                       console.log(item[key])
-                      document.getElementById("showresults").innerHTML=`Congratulations! You have been allotted as a delegate speaker of ${item[key]}`;
-                      // paymentbuttontoggle(true);
-                      document.getElementById("paynow").style.display='block'
+                     i=1;
+                  
+                
+                        document.getElementById("showresult").innerHTML=`Congratulations! You have been allotted as a delegate speaker of ${item[key]}`
+                     
+                        document.getElementById("paynow").style.display='block'
+                        
+                      
+                     
                     }
-                    else{
-                      document.getElementById("showresults").innerHTML="Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment."
-                    }
+                   
                   });
+                  if(i==0){ document.getElementById("showresult").innerHTML=`Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment.`}
                 });
               })
               .catch((error) => {
-                console.error("Error fetching preferences data:", error);
+                alert("Error fetching preferences data:", error);
               });
           };
         
           fetchData1();
         
         
-        // Rest of your component code
+       
         
 
        
