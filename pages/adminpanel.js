@@ -71,8 +71,8 @@ const [inputData,setinputadta]=useState("");
       [itemId]: value,
     }));
   };
-  const handleinputChange = (event, itemId) => {
-    const { value } = event.target.value;
+  const handleinputChange = (event) => {
+    const  value  = event.target.value;
     setInputValues(
        value
     )
