@@ -9,13 +9,16 @@ import app from "../public/firebaseconfig";
 
 import { getDatabase, ref, get, set, onValue, update } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 const AdminPanel = () => {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [DATA, setDATA] = useState({});
   const [submitValues, setSubmitValues] = useState({});
+  const [inputValues, setInputValues] = useState({});
 
+const [inputData,setinputadta]=useState("");
 
   
 
@@ -68,6 +71,30 @@ const AdminPanel = () => {
       [itemId]: value,
     }));
   };
+  const handleinputChange = (event, itemId) => {
+    const { value } = event.target.value;
+    setInputValues(
+       value
+    )
+  };
+  const handleInput = (itemId) => {
+    console.log("Inside handleSubmit");
+    const database = getDatabase();
+    const itemRef = ref(database, `preferences/${itemId}`);
+    update(itemRef, { alloted: inputValues })
+      .then(() => {
+        setTimeout(() => {
+          alert("Allotted successfully");
+        }, 300);
+      })
+      .catch((error) => {
+        console.log("Error updating value:", error);
+      });
+  };
+
+
+
+
 
   const handleSubmit = (itemId) => {
     console.log("Inside handleSubmit");
@@ -118,10 +145,15 @@ const AdminPanel = () => {
                     </option>
                   );
                 }
-                return (<><h1>TITU</h1></>);
+               
               })}
             </select>
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleSubmit(itemId)}>Allot!</button>
+           <input type="text" placeholder='Input the different choice you want to give!' onChange={(event) => handleinputChange(event, itemId)} ></input>
+                         
+            <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
+         
+         
           </div>
         ))}
       </div>
