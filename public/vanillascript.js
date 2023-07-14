@@ -64,6 +64,9 @@ const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmai
       fetchData()
         .then((DATA) => {
              document.getElementById("showbutton").style.display="inline"
+             document.getElementById("showbutton1").style.display="inline"
+             
+            
           DATA.map((item) => {
            
             const delegateData = Object.values(item);

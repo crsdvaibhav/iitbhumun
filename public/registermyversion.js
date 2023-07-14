@@ -142,7 +142,11 @@ function submitForm2(e) {
 function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
     const uuid=generateUniqueId()
     console.log(uuid)
-   
+  
+   set(t1,{
+    email:email,
+    uuid:uuid
+   })
     if(refferalcode!=null){
       const snapshot = get(ref(database, "Referral_program/"))
         .then((snapshot) => {
@@ -272,6 +276,11 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
 function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
   const uuid=generateUniqueId()
   const Reff =generateReferralCode();
+ 
+   set(t1,{
+    email:email,
+    uuid:uuid
+   })
   const abcd=ref(database,"Referral_program/")
   localStorage.setItem("value",Reff)
   const refrec=push(abcd)

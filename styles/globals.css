@@ -22,6 +22,9 @@ a {
 * {
   box-sizing: border-box;
 }
+#showbutton1,#showbutton2{
+  display: none;
+}
 .qtp{
   font-weight: bolder;
   font-size: larger;

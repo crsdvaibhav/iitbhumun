@@ -176,53 +176,56 @@
   "secretariat": [
     {
       "id": 1,
-      "name": "Moulik Ketkar",
+      "name": "Chetan Chavan",
       "position": "Secretary-General ",
       "description": "Random description",
-      "img": "/images/Moulik.png"
+      "img": "/images/chitwan.jpg"
     },
     {
       "id": 2,
-      "name": "Aryan Poddar",
+      "name": "Satwik Trivedi",
       "position": "Director-General",
       "description": "Random description",
-      "img": "/images/aryan.png"
+      "img": "/images/Satwik.jpg"
     },
     {
       "id": 3,
-      "name": "Ayush Kandoi",
-      "position": "Deputy Secretary-General",
+      "name": "Abhishek Dwivedi",
+      "position": "Public Relations Head",
       "description": "Random description",
-      "img": "/images/Ayush.png"
+      "img": "/images/abhishek.jpg"
     },
     {
       "id": 4,
-      "name": "Aryavardhan Pateriya",
-      "position": "Deputy Director-General",
+      "name": "Aastha Ojha",
+      "position": "Head of Committee Affairs",
       "description": "Random description",
-      "img": "/images/Aryavardhan.png"
+      "img": "/images/aastha.jpg"
     },
     {
       "id": 5,
-      "name": "Preeti Kumari",
-      "position": "Head of Operations",
+      "name": "Shreeyam Saklecha",
+      "position": "Head of Social Medial Management",
       "description": "Random description",
-      "img": "/images/Preeti_Kumari.png"
+      "img": "/images/shreeyam.jpg"
     },
     {
       "id": 6,
-      "name": "Deepa Choudhary",
+      "name": "Mayank Gupta",
+      "position": "Technical Team Head",
+      "description": "Random description",
+      "img": "/images/mayank.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Swaralee Nagwanshi",
       "position": "Head of Creative Affairs",
       "description": "Random description",
       "img": "/images/Deepa_Choudhary.png"
     }
   ],
   "heads": [
-    {
-      "id": 1,
-      "name": "Mohamed Rafee",
-      "position": "Director d'Design"
-    },
+   
     {
       "id": 2,
       "name": "Naman Agrawal",
@@ -305,9 +308,9 @@
     {
       "id": 1,
       "vertical": "Tech",
-      "member1": "Vaibhav Kumar Pandey",
-      "member2": "Devansh Choudhary",
-      "member3": "Utkarsh Sharma"
+      "member1": "Shivanshu Ranjan",
+      "member2": "Chaitanya Gambali"
+     
     },
     {
       "id": 1,
@@ -528,6 +531,8 @@
     { "source": "/images/Panchganga-Ghat.jpg", "title": "kvt" },
     { "source": "/images/sarnath.jpg", "title": "kvt" }
   ],
+
+
   "registerCommittees": [
     "None",
     "AIPPM",
@@ -847,6 +852,9 @@
     "Yadav, Shri Shyam Singh",
     "Yepthomi, Shri Tokheho"
   ],
+
+
+
   "ccc": [
     "Select an option",
     "Russian Federation",

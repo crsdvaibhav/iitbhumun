@@ -7,7 +7,7 @@
 import React, { Component, useEffect, useState,} from 'react';
 import app from "../public/firebaseconfig";
 
-import { getDatabase, ref, get, set, onValue, update } from 'firebase/database';
+import { getDatabase, ref, get, set, onValue, update, query, orderByChild, equalTo, child } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 import { text } from '@fortawesome/fontawesome-svg-core';
 
@@ -20,7 +20,9 @@ const AdminPanel = () => {
 
 const [inputData,setinputadta]=useState("");
 
-  
+
+// Create a query to find the relevant data entry based on the user's email
+
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -91,9 +93,9 @@ const [inputData,setinputadta]=useState("");
         console.log("Error updating value:", error);
       });
   };
+  
 
-
-
+let i=0;
 
 
   const handleSubmit = (itemId) => {
@@ -135,8 +137,9 @@ const [inputData,setinputadta]=useState("");
         <h1 className='mb-5 text-center font-bold'>ADMIN PANEL MUN IIT BHU</h1>
         <h2 className="text-red-500 font-bold text-center my-4">Allotment of preferences for delegates</h2>
         {filteredData.map(({ itemId, ...item }) => (
-          <div key={itemId}>
-            <select className="bg-gray-50 border border-gray-300 text-gray-900 font-bold text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={(event) => handleOptionChange(event, itemId)}>
+          
+          <div className="my-6   px-2 shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)] border-red-50"key={itemId}>
+            <select className="bg-gray-50 border  border-gray-300 text-gray-900 font-bold text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={(event) => handleOptionChange(event, itemId)}>
               {Object.keys(item).map((key) => {
                 if (key !== "alloted") {
                   return (
@@ -149,10 +152,11 @@ const [inputData,setinputadta]=useState("");
               })}
             </select>
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleSubmit(itemId)}>Allot!</button>
-           <input type="text" placeholder='Input the different choice you want to give!' onChange={(event) => handleinputChange(event, itemId)} ></input>
+          <div className='flex'>
+           <input type="text"  placeholder='Input the different choice you want to give!' className=' font-bold w-[40] ml-0' onChange={(event) => handleinputChange(event, itemId)} ></input>
                          
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
-         
+         </div>
          
           </div>
         ))}
@@ -162,3 +166,4 @@ const [inputData,setinputadta]=useState("");
 };
 
 export default AdminPanel;
+
