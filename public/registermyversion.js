@@ -143,10 +143,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     const uuid=generateUniqueId()
     console.log(uuid)
   
-   set(t1,{
-    email:email,
-    uuid:uuid
-   })
+  
     if(refferalcode!=null){
       const snapshot = get(ref(database, "Referral_program/"))
         .then((snapshot) => {
