@@ -274,10 +274,7 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
   const uuid=generateUniqueId()
   const Reff =generateReferralCode();
  
-   set(t1,{
-    email:email,
-    uuid:uuid
-   })
+   
   const abcd=ref(database,"Referral_program/")
   localStorage.setItem("value",Reff)
   const refrec=push(abcd)
