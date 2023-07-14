@@ -180,8 +180,9 @@ const ip = data.ip;
   });
 
   const [result,setresult]=useState("")
-function updatedata(){
   const database=getDatabase()
+function updatedata(){
+ 
   const databaseRef = ref(database, "preferences");
   const auth = getAuth();
   // Retrieve the data once
@@ -224,10 +225,10 @@ function updatedata(){
 
           })
             .then(() => {
-              setresult("Portfolio updated Succesfully!")
+              alert("Portfolio updated Succesfully!")
             })
             .catch((error) => {
-              setresult("Error Updating Data!")
+              alert("Error Updating Data!")
             });
         }
       });
@@ -595,7 +596,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
 
 
-<Button onClick={updatedata} className={`${updateportfolio1?'block':'hidden'} mx-auto`}>Update portfolio</Button>
+<Button onClick={updatedata()} className={`${updateportfolio1?'block':'hidden'} mx-auto`}>Update portfolio</Button>
 <div className={`my-4 ${updateportfolio1?'block':'hidden'} text-[#189BA5] text-2xl font-bold text-center`}>{result}</div>
 
 
