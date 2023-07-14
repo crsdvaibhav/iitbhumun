@@ -596,7 +596,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
 
 
-<Button onClick={updatedata()} className={`${updateportfolio1?'block':'hidden'} mx-auto`}>Update portfolio</Button>
+<Button onClick={updatedata} className={`${updateportfolio1?'block':'hidden'} mx-auto`}>Update portfolio</Button>
 <div className={`my-4 ${updateportfolio1?'block':'hidden'} text-[#189BA5] text-2xl font-bold text-center`}>{result}</div>
 
 
