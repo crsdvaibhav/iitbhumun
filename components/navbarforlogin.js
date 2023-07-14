@@ -60,7 +60,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
       setTimeout(function(){setIsOpen(!isOpen)},100)
     };
   function handleCA(){
-window.location.href="/thankyouforCA"
+alert("CA page work in progress currently!")
 
 
   }
