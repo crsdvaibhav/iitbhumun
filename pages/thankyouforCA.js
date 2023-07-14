@@ -29,20 +29,16 @@ const Thankyou = () => {
       </p>
       <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[1.5rem] mt-2 pt-8">
         <span id='titu'>
-          You have successfully registered for the 12th edition of IIT BHU MUN as a conference ambassador!.
+          You have successfully registered for the 12th edition of IIT BHU MUN as a <span className='text-[#189BA9]'>Conference ambassador</span>.
         </span>
       </p>
-      <h1>Your referral code is:<span id='reff'></span></h1>
-      {/* {Object.keys(filteredData).map((key) => {
-        if (key === 'referralCode') {
-          return <h1 className="text-black">{filteredData[key]}</h1>;
-        }
-      })} */}
+      <h1 className='text-center font-bold text-5xl my-6 bg-red'>Your referral code is:<div > <h1 id='reff' className='bg-[#189BA5] text-white px-4 rounded mt-4 py-3 inline-block' ></h1><button className="block my-4 text-xl mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded"id='onclick'>Copy to clipboard</button></div></h1>
+     
       <button className="qtp mx-2 rounded-md">
         <Link href={'/loginpage'}>Login</Link>
       </button>
       <div className="font-bold text-2xl text-[#189BA5] flex m-auto justify-center pt-4">
-        <div>Login using your email and password to confirm your portfolio and complete payment.</div>
+        <div>Login using your email and password to confirm your preference allotment and complete payment.</div>
       </div>
       <div className="flex m-auto justify-center pt-4">
         <Image src="/images/Payment.png" width={800} height={600} alt="icons" />

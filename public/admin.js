@@ -27,6 +27,17 @@ const firebaseConfig = {
 var bc=localStorage.getItem("value")
 console.log(bc)
 document.getElementById("reff").innerHTML=`${bc}`
+const reff=document.getElementById("reff")
+const copyContent = async () => {
+  try {
+    await navigator.clipboard.writeText(bc);
+    alert('Content copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
+document.getElementById("onclick").addEventListener("click",copyContent)
+
 //  async () => {
 //   try {
 //     const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/Referral_program.json');

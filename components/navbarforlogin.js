@@ -134,9 +134,10 @@ window.location.href="/thankyouforCA"
         <div className='dropdowncontent'>
           <ul>
             <li onClick={handleMyProfile}>User dashboard</li>
+           
+            <li onClick={handleCA}>CA Dashboard</li>
             <li onClick={handleChangePassword}>Change Password</li>
             <li onClick={handleLogout}>Logout </li>
-            <li onClick={handleCA}>CA Dashboard</li>
           </ul>
         </div>
       ):''}
