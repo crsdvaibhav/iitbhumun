@@ -55,40 +55,40 @@ function validateForm() {
   const email = document.getElementById('email_field').value.trim();
   const password = document.getElementById('password').value.trim();
 const muncount=document.getElementById('muncount').value.trim();
-  // if (name === '') {
-  //   alert('Please enter your name.');
-  //   return false;
-  // }
-  // if (muncount === '') {
-  //   alert('Please enter the number of MUN you participated before!.');
-  //   return false;
-  // }
+  if (name === '') {
+    alert('Please enter your name.');
+    return false;
+  }
+  if (muncount === '') {
+    alert('Please enter the number of MUN you participated before!.');
+    return false;
+  }
 
 
-  // if (age === '') {
-  //   alert('Please enter your age.');
-  //   return false;
-  // }
+  if (age === '') {
+    alert('Please enter your age.');
+    return false;
+  }
 
-  // if (gender === '') {
-  //   alert('Please select your gender.');
-  //   return false;
-  // }
+  if (gender === '') {
+    alert('Please select your gender.');
+    return false;
+  }
 
-  // if (institute === '') {
-  //   alert('Please enter the name of your institution.');
-  //   return false;
-  // }
+  if (institute === '') {
+    alert('Please enter the name of your institution.');
+    return false;
+  }
 
-  // if (region === '') {
-  //   alert('Please enter your region (city or state).');
-  //   return false;
-  // }
+  if (region === '') {
+    alert('Please enter your region (city or state).');
+    return false;
+  }
 
-  // if (email === '') {
-  //   alert('Please enter your email.');
-  //   return false;
-  // }
+  if (email === '') {
+    alert('Please enter your email.');
+    return false;
+  }
 
   // Email validation using regular expression
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
