@@ -8,6 +8,7 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
+  Button,
 } from "@material-tailwind/react";
 import { useState } from 'react';
 import { useRouter } from "next/router";
@@ -111,9 +112,15 @@ const auth=getAuth();
 
   
 
-
-
-
+  
+if(filteredData.length==0){
+ 
+  return(<div className='block mx-auto my-40'><h1 className='m-auto text-center text-4xl  block font-bold text-red-500'>Sorry,You aren't a conference ambassador.</h1>
+  
+  <Button className='mx-auto my-4 block w-100'><Link href={'/home'}>Home</Link></Button>
+  </div>)
+}
+else{
 
 
 
@@ -148,7 +155,7 @@ const auth=getAuth();
           <ul className='mt-20'>
           <li >
             Email: {item.email}</li>
-          <li>  User Registered: {item.userRegistered}</li>
+          <li>  User Registered: {item.UserRegistered}</li>
           <li>   Payment Confirmed: {item.PaymentConfirmed}</li>
           <li>    Referral Code: {item.referralCode}</li>
           </ul> </>
@@ -158,7 +165,7 @@ const auth=getAuth();
     );
   
     
-    
+        }
     
     
     

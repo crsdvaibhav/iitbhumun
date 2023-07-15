@@ -59,11 +59,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
       window.location.href = "/loggedinhomepage";
       setTimeout(function(){setIsOpen(!isOpen)},100)
     };
-  function handleCA(){
-alert("CA page work in progress currently!")
-
-
-  }
+  
     function  handleChangePassword(){
       // Implement your change password logic here
       sendPasswordResetEmail(auth,auth.currentUser.email)
@@ -135,7 +131,7 @@ alert("CA page work in progress currently!")
           <ul>
             <li onClick={handleMyProfile}>User dashboard</li>
            
-            <li onClick={handleCA}>CA Dashboard</li>
+            <li onClick={()=>{}}><Link href={'/CADB'}>CA Dashboard</Link></li>
             <li onClick={handleChangePassword}>Change Password</li>
             <li onClick={handleLogout}>Logout </li>
           </ul>
@@ -189,7 +185,7 @@ alert("CA page work in progress currently!")
         <div className='dropdowncontent '>
           <ul>
             <li onClick={handleMyProfile}>User dashboard</li>
-            <li onClick={handleCA}>CA Dashboard</li>
+            <li onClick={()=>{}}><Link href={'/CADB'}>CA Dashboard</Link></li>
             <li onClick={handleChangePassword}>Change Password</li>
             <li onClick={handleLogout}>Logout </li>
           </ul>
