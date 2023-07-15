@@ -112,19 +112,23 @@ const auth=getAuth();
 
   
 
-  
-if(filteredData.length==0){
+  if(filteredData.length==0)
+ {
+  if(auth.currentUser!=""){
+ return(<div className='block mx-auto my-40'><h1 className='m-auto text-center text-4xl  block font-bold text-red-500'>Sorry,You aren't a conference ambassador.</h1>
  
-  return(<div className='block mx-auto my-40'><h1 className='m-auto text-center text-4xl  block font-bold text-red-500'>Sorry,You aren't a conference ambassador.</h1>
-  
-  <Button className='mx-auto my-4 block w-100'><Link href={'/home'}>Home</Link></Button>
-  </div>)
+ <Button className='mx-auto my-4 block w-100'><Link href={'/home'}>Home</Link></Button>
+ </div>)}
+ else{
+  return(<div className='loader'></div>)
+ }
 }
+
+
+
+
+
 else{
-
-
-
-
 
 
 
@@ -149,8 +153,8 @@ else{
       <>
        <NavBar2 navbar={true} backgroundColor="white"/>
        <div className="my-50 text-center font-bold">
-       
-        {filteredData.map((item) => (
+       {
+        filteredData.map((item) => (
           <><h2 className="mt-50 text-center font-bold">Record of this user:</h2>
           <ul className='mt-20'>
           <li >
@@ -164,8 +168,8 @@ else{
       </>
     );
   
-    
         }
+        
     
     
     
@@ -189,7 +193,7 @@ else{
 
 
 
+      }
 
 
-}
 export default CADB
