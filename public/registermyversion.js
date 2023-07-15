@@ -190,14 +190,14 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
 
     })
     const option1=Committee1+": "+pref1option1;
-  const option2=Committee1+": "+pref1option2;
-  const option3=Committee1+": "+pref1option3;
-  const option4=Committee2+": "+pref2option1;
-  const option5=Committee2+": "+pref2option2;
-  const option6=Committee2+": "+pref2option3;
-  const option7=Committee3+": "+pref3option1;
-  const option8=Committee3+": "+pref3option2;
-  const option9=Committee3+": "+pref3option3;
+  const option2=Committee1+":  "+pref1option2;
+  const option3=Committee1+":  "+pref1option3;
+  const option4=Committee2+":  "+pref2option1;
+  const option5=Committee2+":  "+pref2option2;
+  const option6=Committee2+":  "+pref2option3;
+  const option7=Committee3+":  "+pref3option1;
+  const option8=Committee3+":  "+pref3option2;
+  const option9=Committee3+":  "+pref3option3;
   const hehe=ref(database,"preferences/")
   const titu=push(hehe);
   
@@ -336,15 +336,15 @@ PaymentConfirmed:0
     
 
   },)
-  const option1=Committee1+": "+pref1option1;
-  const option2=Committee1+": "+pref1option2;
-  const option3=Committee1+": "+pref1option3;
-  const option4=Committee2+": "+pref2option1;
-  const option5=Committee2+": "+pref2option2;
-  const option6=Committee2+": "+pref2option3;
-  const option7=Committee3+": "+pref3option1;
-  const option8=Committee3+": "+pref3option2;
-  const option9=Committee3+": "+pref3option3;
+  const option1=Committee1+":  "+pref1option1;
+  const option2=Committee1+":  "+pref1option2;
+  const option3=Committee1+":  "+pref1option3;
+  const option4=Committee2+":  "+pref2option1;
+  const option5=Committee2+":  "+pref2option2;
+  const option6=Committee2+":  "+pref2option3;
+  const option7=Committee3+":  "+pref3option1;
+  const option8=Committee3+":  "+pref3option2;
+  const option9=Committee3+":  "+pref3option3;
   const hehe=ref(database,"preferences/")
   const titu=push(hehe);
   

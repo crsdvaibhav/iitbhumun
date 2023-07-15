@@ -13,6 +13,7 @@ import { Alert, Button, alert } from "@material-tailwind/react";
 import Router, {  useRouter } from "next/router";
 import Link from "next/link";
 const Loggedinhomepage = () => {
+  
   var ab=false;
 const aippm = data.aippm;
 const ls = data.ls;
@@ -23,7 +24,7 @@ const disec = data.disec;
 const wto = data.wto;
 const unodc = data.unodc;
 const ip = data.ip;
-  <Script src="/vanillascript.js" typeof='module' type='module' />
+  
   const [selected1, setSelected1] = useState('None');
   const [selected2, setSelected2] = useState('none');
   const [selected3, setSelected3] = useState('none');
@@ -36,7 +37,13 @@ const ip = data.ip;
   const [pref3option1, setSelected10] = useState('');
   const [pref3option2, setSelected11] = useState('');
   const [pref3option3, setSelected12] = useState('');
-
+  const handleChange1 = (e) => {
+    setFormInput({
+      ...formInput,
+      Committee_Preference_1: e.target.value,
+    });
+    setSelected1(e.target.value);
+  };
 
 
   let type1 = null;
@@ -64,6 +71,13 @@ const ip = data.ip;
   if (type1) {
     options1 = type1.map((el) => <option key={el}>{el}</option>);
   }
+  const handleChange2 = (e) => {
+    setFormInput({
+      ...formInput,
+      Committee_Preference_2: e.target.value,
+    });
+    setSelected2(e.target.value);
+  };
   let type2 = null;
   let options2 = null;
   if (selected2 === 'AIPPM') {
@@ -89,17 +103,17 @@ const ip = data.ip;
 
 
 
-
-
-
-
-
-
-
-
   if (type2) {
-    options2 = type1.map((el) => <option key={el}>{el}</option>);
+    options2 = type2.map((el) => <option key={el}>{el}</option>);
   }
+  const handleChange3 = (e) => {
+    setFormInput({
+      ...formInput,
+      Committee_Preference_3: e.target.value,
+    });
+    setSelected3(e.target.value);
+  };
+  
   let type3 = null;
   let options3 = null;
   if (selected3 === 'AIPPM') {
@@ -128,27 +142,8 @@ const ip = data.ip;
     options3 = type3.map((el) => <option key={el}>{el}</option>);
   }
 
-  const handleChange3 = (e) => {
-    setFormInput({
-      ...formInput,
-      Committee_Preference_3: e.target.value,
-    });
-    setSelected3(e.target.value);
-  };
-  const handleChange2 = (e) => {
-    setFormInput({
-      ...formInput,
-      Committee_Preference_2: e.target.value,
-    });
-    setSelected2(e.target.value);
-  };
-  const handleChange1 = (e) => {
-    setFormInput({
-      ...formInput,
-      Committee_Preference_1: e.target.value,
-    });
-    setSelected1(e.target.value);
-  };
+ 
+  
   const [formInput, setFormInput] = useState({
     
    
@@ -205,7 +200,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
     rename(hideportfolio ? buttonname = "Show Portfolio and alloted preference" : buttonname = "Hide Portfolio")
     setportfolio(!hideportfolio)}
     function pft() {
-      rename1(updateportfolio1 ? buttonname1 = "Change portfolio" : buttonname1 = "No Change")
+      rename1(updateportfolio1 ? buttonname1 = "Change portfolio" : buttonname1 = "Avoid Change")
       setfolio(!updateportfolio1)}
 
     
@@ -234,16 +229,18 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
                   <th
                     scope="col"
-                    class="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
+                    className="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
                   <th
                     scope="col"
-                    class="border-r px-6 py-4 dark:border-neutral-500">Name</th>
+                    className="border-r px-6 py-4 dark:border-neutral-500">Name</th>
 
 
                 </thead>
                 <tbody>
                   <tr id="container2ul-row1">
-
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_1_Preference_1</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_1_Preference_2</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_1_Preference_3</td>
                   </tr>
                   <tr id="container2ul-row2">
 
@@ -259,7 +256,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
                 <th
                   scope="col"
-                  class="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
+                  className="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
                 <th
                   scope="col"
                   class="border-r px-6 py-4 dark:border-neutral-500">Name</th>
@@ -268,8 +265,13 @@ const[buttonname1,rename1]=useState("Change portfolio")
               </thead>
                 <tbody>
                   <tr id="container3ul-row1">
-
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_2_Preference_1</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_2_Preference_2</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_2_Preference_3</td>
+                  
                   </tr>
+
+
                   <tr id="container3ul-row2">
 
                   </tr>
@@ -288,15 +290,17 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
                   <th
 
-                    class="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
+                    className="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
                   <th
 
-                    class="border-r px-6 py-4 dark:border-neutral-500">Name</th>
+                    className="border-r px-6 py-4 dark:border-neutral-500">Name</th>
 
                 </thead>
                 <tbody>
                   <tr id="container4ul-row1">
-
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_3Preference_1</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_3_Preference_2</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_3_Preference_3</td>
                   </tr>
                   <tr id="container4ul-row2">
 
@@ -347,7 +351,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
                   <select id='pref1option1'
                     name="Option 1" value={pref1option1}
                     className="w-72 p-2 rounded-lg"   
-                    on onChange={(e)=>{setSelected4(e.target.value)}}
+                     onChange={(e)=>{setSelected4(e.target.value)}}
                   >
                     {options1}
                   </select>
@@ -396,6 +400,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
                 <select value={selected2} id='Committee2'
                   name="Committee1"
+                  
                   className="w-72 p-2 rounded-lg"
                   onChange={(e) => {
                     handleChange2(e);
@@ -417,9 +422,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
                   </p>
                   <select value={pref2option1} id='pref2option1'onChange={(e)=>{setSelected7(e.target.value)}}
                     name="Option 1"
-                    className="w-72 p-2 rounded-lg"
-                   
-                  >
+                    className="w-72 p-2 rounded-lg" >
                     {options2}
                   </select>
                 </div>
