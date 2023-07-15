@@ -221,15 +221,15 @@ for( var key in item){
             // Update the value using the reference and the updated data
             update(dataRef, {
   
-              option1:pref1option1,
-              option2:pref1option2,
-              option3:pref1option3,
-               option4:pref2option1,
-               option5:pref2option2,
-               option6:pref2option3,
-               option7:pref3option1,
-               option8:pref3option2,
-               option9:pref3option3,
+              option1:Committee1+":"+pref1option1,
+              option2:Committee1+":"+pref1option2,
+              option3:Committee1+":"+pref1option3,
+               option4:Committee2+":"+pref2option1,
+               option5:Committee2+":"+pref2option2,
+               option6:Committee2+":"+pref2option3,
+               option7:Committee3+":"+pref3option1,
+               option8:Committee3+":"+pref3option2,
+               option9:Committee3+":"+pref3option3,
   
   
   
@@ -244,10 +244,50 @@ for( var key in item){
   
             })
               .then(() => {
-                alert("Portfolio updated Succesfully!")
                 
                
+                
+                document.getElementById("after").innerHTML="Portfolio Successfully Updated!"
+               document.getElementById("showportfolio").style.display="none"
+               document.getElementById("showportfolio1").innerHTML=` <h2 className="'block' py-4  text-red-500">Portfolio-1  </h2>
+               <h1>${Committee1}</h1>
+               
+               
+               
+               
+               
+               
+               `
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
 
 
 
@@ -259,6 +299,7 @@ for( var key in item){
               })
               .catch((error) => {
                 alert("Error Updating Data!")
+                
               });
           }
         });
@@ -268,11 +309,12 @@ for( var key in item){
       });
   
     }
+    
     document.getElementById("updatevalues").addEventListener("click",updatedata)
+    
+    
   
-  
-  
-  
+   
   
   
   

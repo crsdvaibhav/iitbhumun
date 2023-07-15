@@ -224,8 +224,8 @@ const[buttonname1,rename1]=useState("Change portfolio")
           <button id="showbutton" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
 
           <button onClick={pft} id="showbutton1" className="bg-transparent mx-6 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">{`${buttonname1}`}</button>
-
-          <div className={`${hideportfolio ? 'block' : 'hidden'}  justify-center m-auto`} id={!hideportfolio ? "showportfolio" : "showportfolio.active"} >
+          <div className={`${hideportfolio ? 'block' : 'hidden'}  justify-center m-auto`} id= "showportfolio1"  ></div>
+          <div className={`${hideportfolio ? 'block' : 'hidden'}  justify-center m-auto`} id= "showportfolio"  >
             <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white shadow-black/10 shadow-xl rounded-lg px-4 py-8">
               <h2 className="'block' py-4  text-red-500">Portfolio-1  </h2>
 
@@ -531,12 +531,12 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
 
 <Button id="updatevalues" className={`${updateportfolio1?'block':'hidden'} mx-auto`}>Update portfolio</Button>
-<div className={`my-4 ${updateportfolio1?'block':'hidden'} text-[#189BA5] text-2xl font-bold text-center`}id="afteresult"></div>
+<h1 id="after" className={`my-4  text-[#189BA5] text-2xl font-bold text-center`}></h1>
 
 
 
 
-
+<Script src="vanillascript.js" typeof='module' type='module' />
 
         <Footer2 />
       </>
