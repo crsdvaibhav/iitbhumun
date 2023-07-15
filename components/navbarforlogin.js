@@ -189,6 +189,7 @@ alert("CA page work in progress currently!")
         <div className='dropdowncontent '>
           <ul>
             <li onClick={handleMyProfile}>User dashboard</li>
+            <li onClick={handleCA}>CA Dashboard</li>
             <li onClick={handleChangePassword}>Change Password</li>
             <li onClick={handleLogout}>Logout </li>
           </ul>
