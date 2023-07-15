@@ -1,5 +1,5 @@
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
-import { getDatabase,ref,push,set,get,onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
+import { getDatabase,ref,push,set,get,onValue,update } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
@@ -185,8 +185,98 @@ for( var key in item){
         
           fetchData1();
         
-        
+      
        
+ 
+  function updatedata(){
+   
+    let Committee1=document.getElementById("Committee1").value
+    let Committee2=document.getElementById("Committee1").value
+    let Committee3=document.getElementById("Committee1").value
+    let pref1option1= document.getElementById("pref1option1").value
+   let pref1option2= document.getElementById("pref1option2").value
+   let pref1option3= document.getElementById("pref1option3").value
+   let  pref2option1= document.getElementById("pref2option1").value
+    let  pref2option2= document.getElementById("pref2option2").value
+    let   pref2option3= document.getElementById("pref2option3").value
+    let   pref3option1= document.getElementById("pref3option1").value
+    let   pref3option2= document.getElementById("pref3option2").value
+    let   pref3option3= document.getElementById("pref3option3").value
+    const databaseRef = ref(database, "preferences");
+    const auth = getAuth();
+    // Retrieve the data once
+    get(databaseRef)
+      .then((snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+          
+          const data = childSnapshot.val();
+    
+          
+          if (data.email === auth.currentUser.email) {
+           
+           
+            // Get the reference to the specific data using the child snapshot key
+            const dataRef = ref(database, `preferences/${childSnapshot.key}`);
+    
+            // Update the value using the reference and the updated data
+            update(dataRef, {
+  
+              option1:pref1option1,
+              option2:pref1option2,
+              option3:pref1option3,
+               option4:pref2option1,
+               option5:pref2option2,
+               option6:pref2option3,
+               option7:pref3option1,
+               option8:pref3option2,
+               option9:pref3option3,
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+            })
+              .then(() => {
+                alert("Portfolio updated Succesfully!")
+                
+               
+
+
+
+
+
+
+
+
+
+              })
+              .catch((error) => {
+                alert("Error Updating Data!")
+              });
+          }
+        });
+      })
+      .catch((error) => {
+        console.error("Error retrieving data:", error);
+      });
+  
+    }
+    document.getElementById("updatevalues").addEventListener("click",updatedata)
+  
+  
+  
+  
+  
+  
+  
+  
         
 
        

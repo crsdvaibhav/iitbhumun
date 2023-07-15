@@ -179,72 +179,6 @@ const ip = data.ip;
     committees.push(i);
   });
 
-  const [result,setresult]=useState("")
-  const database=getDatabase()
-function updatedata(){
- 
-  const databaseRef = ref(database, "preferences");
-  const auth = getAuth();
-  // Retrieve the data once
-  get(databaseRef)
-    .then((snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-        
-        const data = childSnapshot.val();
-  
-        
-        if (data.email === auth.currentUser.email) {
-         
-         
-          // Get the reference to the specific data using the child snapshot key
-          const dataRef = ref(database, `preferences/${childSnapshot.key}`);
-  
-          // Update the value using the reference and the updated data
-          update(dataRef, {
-
-            option1:pref1option1,
-            option2:pref1option2,
-            option3:pref1option3,
-             option4:pref2option1,
-             option5:pref2option2,
-             option6:pref2option3,
-             option7:pref3option1,
-             option8:pref3option2,
-             option9:pref3option3,
-
-
-
-
-
-
-
-
-
-
-
-
-          })
-            .then(() => {
-              alert("Portfolio updated Succesfully!")
-            })
-            .catch((error) => {
-              alert("Error Updating Data!")
-            });
-        }
-      });
-    })
-    .catch((error) => {
-      console.error("Error retrieving data:", error);
-    });
-
-  }
-
-
-
-
-
-
-
 
 
 
@@ -596,8 +530,8 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
 
 
-<Button onClick={updatedata} className={`${updateportfolio1?'block':'hidden'} mx-auto`}>Update portfolio</Button>
-<div className={`my-4 ${updateportfolio1?'block':'hidden'} text-[#189BA5] text-2xl font-bold text-center`}>{result}</div>
+<Button id="updatevalues" className={`${updateportfolio1?'block':'hidden'} mx-auto`}>Update portfolio</Button>
+<div className={`my-4 ${updateportfolio1?'block':'hidden'} text-[#189BA5] text-2xl font-bold text-center`}id="afteresult"></div>
 
 
 
