@@ -27,7 +27,7 @@ const[abcd,setbool]=useState(true);
   const [check, setCheck] = useState(false);
   const [member, setMember] = useState(false);
   const [solo, setSolo] = useState(true);
-
+const[buttondisplay,setdisplay]=useState(false)
   const useEmailValidation = (email) => {
     const isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
       email
@@ -99,6 +99,10 @@ const[abcd,setbool]=useState(true);
 
 
   const handleCheck = (e) => {
+
+
+
+
     if (error == false) {
       setCheck(true);
     } else {
@@ -688,19 +692,14 @@ const[abcd,setbool]=useState(true);
                 </svg>
               }
             >
-              Please fill all the required fields to be able to submit your
-              form.
+              Note: You can also update your portfolio after registration.
             </Alert>
           )}
           <h1 className='registeras'>Register as:</h1>
         <div className="registeroptions">
           
-        <button id="register2" type="submit" onClick={handleCheck}  className="w-full bg-green-500 text-white py-2 px-2 m-auto rounded-lg hover:bg-blue-600" data-tooltip="Tooltip content for Single Delegate Start with your country. Do not simply type in your agenda into google and start reading. Type in your country first and get a solid idea of your government economy, conflicts, etc. Make sure you know your heads of state, GDP, major military and political allies, any major conflicts that persist in or around your country, and jot down a couple of notes. Make a small document about your general foreign policy on various issues. Make a document about your stance on social rights, humanitarian rights, military intervention, etc.
-
-        Once you have gotten your country down, and I mean DOWN, now move on to the agenda. Now, some delegates may crucify me for this, but I look at Wikipedia. ">Single Delegate </button>
-        <button id="register3" type="submit"   className="w-full bg-green-500 text-white weight-bold py-2 px-1 font-bold rounded-lg hover:bg-blue-600" data-tooltip="Tooltip content for Conference ambassadorStart with your country. Do not simply type in your agenda into google and start reading. Type in your country first and get a solid idea of your government economy, conflicts, etc. Make sure you know your heads of state, GDP, major military and political allies, any major conflicts that persist in or around your country, and jot down a couple of notes. Make a small document about your general foreign policy on various issues. Make a document about your stance on social rights, humanitarian rights, military intervention, etc.
-
-        Once you have gotten your country down, and I mean DOWN, now move on to the agenda. Now, some delegates may crucify me for this, but I look at Wikipedia. " >Conference ambassador</button>
+ <button id="register2" type="submit" onClick={handleCheck}  className="w-full bg-green-500 text-white py-2 px-2 m-auto rounded-lg hover:bg-blue-600" data-tooltip="As determined by the committee, representing a specific nation or individual and participating as a single delegate means speaking, discussing and debating on the committee's agenda. Delegating has many advantages, including the chance to engage with others with extensive expertise and improve one's speaking and communication abilities. A certificate recognised by the UN and a delegate kit given by us are just two of its benefits. Additionally, with an additional fee, housing and meals will be covered. Above all, it is an honour in and of itself to participate in one of India's largest MUNs.">Single Delegate </button>
+      <button id="register3" type="submit"   className="w-full bg-green-500 text-white weight-bold py-2 px-1 font-bold rounded-lg hover:bg-blue-600" data-tooltip="Through the Campus Ambassador programme, candidates can demonstrate their leadership skills while helping to bring delegates from all across the nation together. They can also represent IITBHU MUN in their local communities. Getting a certificate recognised by the UN for bringing eight or more delegates is just one of its advantages. The delegates will also receive a subsequent reduction in the delegate price depending on how many delegates they bring. The person who brings the most delegates will receive a memento and be featured on the official IITHBHU MUN Instagram page if they bring more than 25 delegates. " >Conference ambassador</button>
      </div>
      </form>  <div className="flex justify-center m-auto mt-3">
             <button

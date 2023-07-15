@@ -1,18 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {  FaSignInAlt, FaUserCircle } from "react-icons/fa";
+
 import { getDatabase, ref, get, set, onValue, update, query,key, orderByChild, equalTo, child } from 'firebase/database';
 import app from "../public/firebaseconfig";
 import {
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
+  
   Button,
 } from "@material-tailwind/react";
 import { useState } from 'react';
 import { useRouter } from "next/router";
-
+import Footer2 from "../components/footerforlogin";
 import { getAuth,onAuthStateChanged,signOut,sendPasswordResetEmail } from 'firebase/auth';
 import Script from 'next/script';
 import NavBar2 from '../components/navbarforlogin';
@@ -137,6 +134,7 @@ else{
        {
         filteredData.map((item) => (
           <><h2 className="mt-50 text-center font-bold">Record of this user:</h2>
+          <h1 className="mt-32 mb-4 text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">Campus Ambassador Program</h1>
           <ul className='mt-20'>
           <li >
            Your email: {item.email}</li>
@@ -147,6 +145,7 @@ else{
           </ul> </>
         ))}
       </div>
+      <Footer2 />
       </>
     );
   

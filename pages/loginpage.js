@@ -18,7 +18,10 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
-  function signinemail(){signInWithEmailAndPassword(auth,email,password).then((userCredential) => {
+  const[buttonswap,swapbutton]=useState(true);
+  function signinemail(){
+    swapbutton(false)
+    signInWithEmailAndPassword(auth,email,password).then((userCredential) => {
     // Signed in 
     const user = userCredential.user
     console.log("email"),
@@ -29,6 +32,7 @@ const LoginPage = () => {
     console.log(err.code);
     console.log(err.message);
     alert(err.message);
+    swapbutton(true)
   })};
   function signInWithGoogle(){
     signInWithPopup(auth,provider)
@@ -104,13 +108,15 @@ const LoginPage = () => {
           </div>
 
           <div className="flex items-center justify-between">
-            <button
+         {  buttonswap? <button
               className="bg-blue-500 w-40 mx-5 hover:bg-blue-700 text-white font-bold py-1 px-6 rounded focus:outline-none focus:shadow-outline"
               type="submit" onClick={function(){signinemail()}}
             >
               Sign In
-            </button>
-            <button
+            </button>:<button class="buttonload">
+  <i class="fa fa-circle-o-notch fa-spin mx-2"></i>Loading...
+</button>}
+           <button
               className="bg-green-500 w-40 mx-5 hover:bg-green-700 text-white font-bold py-1 px-6 rounded focus:outline-none focus:shadow-outline"
               type="button"
             >

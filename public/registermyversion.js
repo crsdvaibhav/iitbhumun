@@ -118,9 +118,11 @@ function getInput(id) {
 }
 
 function submitForm1(e) {
+  
 document.getElementById('form2').addEventListener("submit",function(e){e.preventDefault()})
   let abcd=validateForm()
 if(abcd){
+  document.getElementById('register2').innerHTML=`<i class="fa fa-circle-o-notch fa-spin mx-2"> </i> Loading...`
     e.preventDefault();
     
     saveRec1(getInput('name_field'), getInput('number'),getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
@@ -132,6 +134,7 @@ if(abcd){
 function submitForm2(e) {
   document.getElementById('form2').addEventListener("submit",function(e){e.preventDefault()})
  if( validateForm()){
+  document.getElementById('register3').innerHTML=`<i class="fa fa-circle-o-notch fa-spin mx-2"> </i> Loading...`
   e.preventDefault();
   
   saveRec2(getInput('name_field'),getInput('number'), getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
@@ -266,6 +269,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     .catch((error) => {
       
       alert("Registration failed: " + error.message);
+      document.getElementById('register2').innerHTML=`Single Delegate`
     });
 
 }
@@ -416,6 +420,7 @@ PaymentConfirmed:0
   .catch((error) => {
     
     alert("Registration failed: " + error.message);
+    document.getElementById('register3').innerHTML=`Conference ambassador`
   });
 }
 
@@ -500,8 +505,8 @@ PaymentConfirmed:0
         const user = result.user;
       document.getElementById("or").innerHTML=`<div class="alert">
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      Signup with google succesful!
-      Kindly fill the same email id that you used for google signup.
+      Signup with Google successful!
+      Kindly fill the same email id that you used for Google signup.
     </div>`;
         document.getElementById("google1").innerHTML=`<h1>Hello ${auth.currentUser.displayName}, Complete the registration form now</h1>`
         // IdP data available using getAdditionalUserInfo(result)
