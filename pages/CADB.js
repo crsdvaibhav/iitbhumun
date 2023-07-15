@@ -139,10 +139,11 @@ else{
           <><h2 className="mt-50 text-center font-bold">Record of this user:</h2>
           <ul className='mt-20'>
           <li >
-            Email: {item.email}</li>
-          <li>  User Registered: {item.UserRegistered}</li>
+           Your email: {item.email}</li>
+            <li> Your Referral Code: {item.referralCode}</li>
+          <li>  User Registered using your referral code: {item.UserRegistered}</li>
           <li>   Payment Confirmed: {item.PaymentConfirmed}</li>
-          <li>    Referral Code: {item.referralCode}</li>
+          
           </ul> </>
         ))}
       </div>
