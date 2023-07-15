@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {  FaSignInAlt, FaUserCircle } from "react-icons/fa";
-import { getDatabase, ref, get, set, onValue, update, query, orderByChild, equalTo, child } from 'firebase/database';
+import { getDatabase, ref, get, set, onValue, update, query,key, orderByChild, equalTo, child } from 'firebase/database';
 import app from "../public/firebaseconfig";
 import {
   Menu,
@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 
 import { getAuth,onAuthStateChanged,signOut,sendPasswordResetEmail } from 'firebase/auth';
 import Script from 'next/script';
+import NavBar2 from '../components/navbarforlogin';
 
 
 
@@ -32,7 +33,7 @@ const CADB = () => {
 
 const [inputData,setinputadta]=useState("");
 
-
+const auth=getAuth();
 // Create a query to find the relevant data entry based on the user's email
 
 
@@ -41,7 +42,7 @@ const [inputData,setinputadta]=useState("");
   };
   async function fetchData() {
     try {
-      const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/preferences.json');
+      const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/Referral_program.json');
       const data = await response.json();
       
       setDATA(data)
@@ -53,7 +54,7 @@ const [inputData,setinputadta]=useState("");
 //   useEffect(() => {
 //  fetchPreferencesData()
 //   }, [isLoggedIn]);
-  
+  setTimeout(()=>{
     if (true) {
       async function fetchData1() {
         try {
@@ -64,7 +65,7 @@ const [inputData,setinputadta]=useState("");
           // Handle errors if necessary
         }
       }
-      
+   
       
         
       
@@ -72,7 +73,7 @@ const [inputData,setinputadta]=useState("");
      
         fetchData1();
     
-    }
+    } },2000)
   
   
 
@@ -89,43 +90,15 @@ const [inputData,setinputadta]=useState("");
        value
     )
   };
-  const handleInput = (itemId) => {
-    console.log("Inside handleSubmit");
-    const database = getDatabase();
-    const itemRef = ref(database, `preferences/${itemId}`);
-    update(itemRef, { alloted: inputValues })
-      .then(() => {
-        setTimeout(() => {
-          alert("Allotted successfully");
-        }, 300);
-      })
-      .catch((error) => {
-        console.log("Error updating value:", error);
-      });
-  };
   
 
-let i=0;
 
 
-  const handleSubmit = (itemId) => {
-    console.log("Inside handleSubmit");
-    const database = getDatabase();
-    const itemRef = ref(database, `preferences/${itemId}`);
-    update(itemRef, { alloted: submitValues[itemId] })
-      .then(() => {
-        setTimeout(() => {
-          alert("Allotted successfully");
-        }, 300);
-      })
-      .catch((error) => {
-        console.log("Error updating value:", error);
-      });
-  };
+  
 
   const filteredData = Object.keys(DATA).reduce((filtered, itemId) => {
     const item = DATA[itemId];
-    if (item.alloted === "NO") {
+    if (item.email === auth.currentUser.email) {
       filtered.push({ itemId, ...item });
     }
     return filtered;
@@ -136,8 +109,7 @@ let i=0;
 
 
 
-
-
+  
 
 
 
@@ -167,34 +139,22 @@ let i=0;
 
     
      return (
-      <div>
-        <h1 className='mb-5 text-center font-bold'>ADMIN PANEL MUN IIT BHU</h1>
-        <h2 className="text-red-500 font-bold text-center my-4">Allotment of preferences for delegates</h2>
-        {filteredData.map(({ itemId, ...item }) => (
-          
-          <div className="my-6   px-2 shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)] border-red-50"key={itemId}>
-            <select className="bg-gray-50 border  border-gray-300 text-gray-900 font-bold text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={(event) => handleOptionChange(event, itemId)}>
-              {Object.keys(item).map((key) => {
-                if (key !== "alloted") {
-                  return (
-                    <option className="font-bold" key={key} value={item[key]}>
-                      {item[key]}
-                    </option>
-                  );
-                }
-               
-              })}
-            </select>
-            <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleSubmit(itemId)}>Allot!</button>
-          <div className='flex'>
-           <input type="text"  placeholder='Input the different choice you want to give!' className=' font-bold w-[40] ml-0' onChange={(event) => handleinputChange(event, itemId)} ></input>
-                         
-            <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
-         </div>
-         
-          </div>
+      <>
+       <NavBar2 navbar={true} backgroundColor="white"/>
+       <div className="my-50 text-center font-bold">
+       
+        {filteredData.map((item) => (
+          <><h2 className="mt-50 text-center font-bold">Record of this user:</h2>
+          <ul className='mt-20'>
+          <li >
+            Email: {item.email}</li>
+          <li>  User Registered: {item.userRegistered}</li>
+          <li>   Payment Confirmed: {item.PaymentConfirmed}</li>
+          <li>    Referral Code: {item.referralCode}</li>
+          </ul> </>
         ))}
       </div>
+      </>
     );
   
     

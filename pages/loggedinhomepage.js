@@ -210,8 +210,8 @@ const[buttonname1,rename1]=useState("Change portfolio")
       <>
         <NavBar2 navbar={true} backgroundColor="white" />
         <div className="my-50 text-center font-bold">
-          <h2 className="my-50 text-center font-bold">Record of this user:</h2>
 
+        <h2 className="mt-50 text-center font-bold">x</h2>
           <div id="content" className="mt-40 w-100 h-fit-content display:'block' h-min-content m-auto text-center font-bold" ></div>
 
           <h1 id="showresult" className='my-4 text-red-500 text-xl w-30px text-center'></h1>
