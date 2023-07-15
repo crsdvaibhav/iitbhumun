@@ -26,21 +26,17 @@ import NavBar2 from '../components/navbarforlogin';
 
 
 const CADB = () => {
-  const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   const [DATA, setDATA] = useState({});
-  const [submitValues, setSubmitValues] = useState({});
-  const [inputValues, setInputValues] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-const [inputData,setinputadta]=useState("");
+
 
 const auth=getAuth();
-// Create a query to find the relevant data entry based on the user's email
 
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+
+  
   async function fetchData() {
     try {
       const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/Referral_program.json');
@@ -52,25 +48,22 @@ const auth=getAuth();
     }
   }
   
-//   useEffect(() => {
-//  fetchPreferencesData()
-//   }, [isLoggedIn]);
+
   setTimeout(()=>{
     if (true) {
       async function fetchData1() {
         try {
           await fetchData(); // Wait for the first command to complete
-          setIsLoggedIn(true); // Execute the second command after the first one is finished
-          // Any other code that depends on the completion of both commands
+          setIsLoading(false); // Execute the second command after the first one is finished
+          
         } catch (error) {
-          // Handle errors if necessary
+          
         }
       }
    
       
         
       
-      // Functional component
      
         fetchData1();
     
@@ -78,21 +71,11 @@ const auth=getAuth();
   
   
 
-  const handleOptionChange = (event, itemId) => {
-    const { value } = event.target;
-    setSubmitValues((prevValues) => ({
-      ...prevValues,
-      [itemId]: value,
-    }));
-  };
-  const handleinputChange = (event) => {
-    const  value  = event.target.value;
-    setInputValues(
-       value
-    )
-  };
   
-
+  
+  if (isLoading) {
+    return <div className='loader block my-auto'></div>
+  }
 
 
   
@@ -112,16 +95,14 @@ const auth=getAuth();
 
   
 
-  if(filteredData.length==0)
+  if(filteredData.length==0&&isLoading==false)
  {
   if(auth.currentUser!=""){
  return(<div className='block mx-auto my-40'><h1 className='m-auto text-center text-4xl  block font-bold text-red-500'>Sorry,You aren't a conference ambassador.</h1>
  
  <Button className='mx-auto my-4 block w-100'><Link href={'/home'}>Home</Link></Button>
  </div>)}
- else{
-  return(<div className='loader'></div>)
- }
+ 
 }
 
 
