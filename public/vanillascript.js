@@ -76,7 +76,7 @@ fetchData()
       localStorage.setItem("name",`${nestedItem.name}`)
 
       document.getElementById("content").innerHTML = `
-      <img src="/images/Profileicon.png" class="inline mx-auto w-40 h-40"></img>
+      <img src="images/Profileicon.png" class="inline mx-auto w-40 h-40"></img>
             <ul class='datacard rounded-lg px-12  bg-red-500 mb-6 w-fit mx-auto  ' >
            <li class="mb-6 text-xl mx-6 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Name:  ${nestedItem.name} </li>
            <li class="mb-6 text-xl  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Age: ${nestedItem.Age} </li>
