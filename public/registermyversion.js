@@ -465,7 +465,7 @@ PaymentConfirmed:0
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-        
+      document.getElementById('register2').innerHTML=`Single Delegate` 
       alert(errorMessage);
       
       
@@ -491,7 +491,7 @@ PaymentConfirmed:0
       .catch((error) => {
         
         const errorMessage = error.message;
-        
+        document.getElementById('register3').innerHTML=`Single Delegate`
         alert(errorMessage);
         // ..
       });}
