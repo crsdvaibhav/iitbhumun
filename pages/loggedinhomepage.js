@@ -212,9 +212,9 @@ const[buttonname1,rename1]=useState("Change portfolio")
         <div className="my-50 text-center font-bold">
 
         <h2 className="mt-50 text-center font-bold">x</h2>
-          <div id="content" className="mt-40 w-100 h-fit-content display:'block' h-min-content m-auto text-center font-bold" ></div>
+          <div id="content" className="mt-40 w-100 h-fit-content display:'block'  h-min-content m-auto text-center font-bold" ></div>
 
-          <h1 id="showresult" className='my-4 text-red-500 text-xl w-30px text-center'></h1>
+          <h1 id="showresult" className='my-4 text-red-500 text-2xl w-30px text-center'></h1>
           <Button className="block mx-auto py-3 my-3 " id="paynow">Pay now!</Button>
           <button id="showbutton" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
 
