@@ -192,7 +192,7 @@ else{
           <img className='mt-24 mx-auto w-72 h-72' src={'images/referral1.png'} ></img>
           <img className='mt-24 mx-auto w-72 h-72' src={'images/5847920.jpg'} ></img></div>
           <h1 className="mt-26 mb-4 text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">Campus Ambassador Program</h1>
-         <div className='shadow-[0_5px_10px_#189BA5] w-fit mx-auto p-10 h-fit mt-10 rounded'>
+         <div className='shadow-[0_5px_10px_#189BA5] w-fit block mx-auto p-10 h-fit mt-10 rounded'>
           <ul className=''>
           <li className='mb-1 text-3xl font-bold' >
           Hello {name}<img src='/images/wave.gif' className='ml-3 w-14 h-14 mb-2 inline'></img></li>
@@ -237,11 +237,11 @@ else{
 
           </div>
           <h1 className="mt-32 mb-6 text-4xl font-extrabold leading-none tracking-tight text-[#189BA5]  md:text-4xl lg:text-5xl dark:text-[#189BA5]">Perks Of Campus Ambassador</h1>
-           <ul className='list-disc w-content mx-52  text-center text-xl'>
-<li className='my-4'><span className='text-[#189] font-bold'>Leadership Opportunity:</span> The Campus Ambassador programme offers candidates a chance to showcase their leadership skills by bringing delegates from various regions together for the IITBHU MUN. As ambassadors, they will play a crucial role in fostering a diverse and inclusive delegation.</li>
-<li className='my-4'><span className='text-[#189] font-bold'>Recognition and Certificate:</span> Campus Ambassadors who successfully bring eight or more delegates will receive a certificate recognized by the United Nations (UN). This recognition serves as a testament to their dedication and contribution to the success of the event.</li>
-<li className='my-4'><span className='text-[#189] font-bold'>Delegate Price Reduction:</span> Ambassadors can enjoy additional benefits based on the number of delegates they bring. They will be eligible for a subsequent reduction in the delegate price, encouraging them to actively recruit participants for the conference.</li>
-<li className='my-4'><span className='text-[#189] font-bold'>Top Ambassador Rewards:</span> The Campus Ambassador who brings the most delegates, surpassing a threshold of 25 participants, will receive a special memento as a token of appreciation. Additionally, they will be featured on the official IITBHU MUN Instagram page, gaining recognition and exposure for their outstanding efforts in mobilizing a large delegation.</li>
+           <ul className='list-disc w-content mx-4 h-content  text-center text-xl md:mx-52 my-4 text-center text-xl flex flex-col items-center'>
+<li className='my-2  md:my-4 mx-auto'><span className='text-[#189] font-bold'>Leadership Opportunity:</span> The Campus Ambassador programme offers candidates a chance to showcase their leadership skills by bringing delegates from various regions together for the IITBHU MUN. As ambassadors, they will play a crucial role in fostering a diverse and inclusive delegation.</li>
+<li className='my-2 md:my-4 mx-auto'><span className='text-[#189] font-bold'>Recognition and Certificate:</span> Campus Ambassadors who successfully bring eight or more delegates will receive a certificate recognized by the United Nations (UN). This recognition serves as a testament to their dedication and contribution to the success of the event.</li>
+<li className='my-2 md:my-4 mx-auto'><span className='text-[#189] font-bold'>Delegate Price Reduction:</span> Ambassadors can enjoy additional benefits based on the number of delegates they bring. They will be eligible for a subsequent reduction in the delegate price, encouraging them to actively recruit participants for the conference.</li>
+<li className='my-2 md:my-4 mx-auto'><span className='text-[#189] font-bold'>Top Ambassador Rewards:</span> The Campus Ambassador who brings the most delegates, surpassing a threshold of 25 participants, will receive a special memento as a token of appreciation. Additionally, they will be featured on the official IITBHU MUN Instagram page, gaining recognition and exposure for their outstanding efforts in mobilizing a large delegation.</li>
 
 
 
