@@ -72,7 +72,7 @@ fetchData()
       const delegateData = Object.values(item);
 
       const nestedItem = delegateData.find((item) => item.email === auth.currentUser.email);
-      console.log(nestedItem)
+      localStorage.setItem("name",`${nestedItem.name}`)
 
       document.getElementById("content").innerHTML = `
       
