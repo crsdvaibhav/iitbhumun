@@ -207,12 +207,13 @@ const[buttonname1,rename1]=useState("Change portfolio")
   
     return (
       
-      <>
+      < >
         <NavBar2 navbar={true} backgroundColor="white" />
         <div className="my-50 text-center font-bold">
 
         <h2 className="mt-50 text-center font-bold">x</h2>
-          <div id="content" className="mt-40 w-100 h-fit-content display:'block'  h-min-content m-auto text-center font-bold" ></div>
+        <h1 className="mt-32  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">User Profile</h1>
+          <div id="content" className="mt-30 w-100 h-fit-content display:'block'  h-min-content m-auto text-center font-bold" ></div>
          
 <div id="progressvalue1" class="flex justify-between gap-15 mb-1">
   <span class="text-base font-medium mx-12 text-blue-700 dark:text-white">Registration Completed</span>

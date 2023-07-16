@@ -77,7 +77,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
       setTimeout(function(){setIsOpen(!isOpen)},100)
     };
   return (
-    <div
+    <div 
       className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
         ? `bg-${backgroundColor} shadow-lg border-b 1xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black`
         : `bg-${backgroundColor} `
@@ -125,7 +125,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
          
           <div className="profile-dropdown">
           
-          <FaUserCircle className='text-black cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
+          <FaUserCircle className='text-black cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}} onTouchStart={function(){setIsOpen(!isOpen)}}/> 
           {isOpen?(
         <div className='dropdowncontent'>
           <ul>
@@ -180,14 +180,14 @@ export default function NavBar2({ navbar,backgroundColor}) {
         </div>
         <FaSignInAlt className='w-[40px] ml-20' fontSize='30'  color='#189BA5' markerHeight="5px" width="20px"></FaSignInAlt> 
         <div className="profile-dropdown">
-        <FaUserCircle className='text-black cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
+        <FaUserCircle className='text-black cursor-pointer ' id='profileicon' onClick={function(){setIsOpen(!isOpen)}}/> 
           {isOpen?(
-        <div className='dropdowncontent '>
+        <div className=' mr-4 dropdowncontent1 '>
           <ul>
-            <li onClick={handleMyProfile}>User dashboard</li>
-            <li onClick={()=>{}}><Link href={'/CADB'}>CA Dashboard</Link></li>
-            <li onClick={handleChangePassword}>Change Password</li>
-            <li onClick={handleLogout}>Logout </li>
+            <li className='mr-4 text-red-500' onClick={handleMyProfile}>User dashboard</li>
+            <li className='mr-4 'onClick={()=>{}}><Link href={'/CADB'}>CA Dashboard</Link></li>
+            <li className='mr-4' onClick={handleChangePassword}>Change Password</li>
+            <li className='mr-4'onClick={handleLogout}>Logout </li>
           </ul>
         </div>
       ):''}

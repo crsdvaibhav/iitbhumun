@@ -105,7 +105,7 @@ margin-right: 40px;
   width: 60px;
   height: 60px;
 }
-.dropdowncontent{
+.dropdowncontent,.dropdowncontent1{
   position: absolute;
   margin-top: 10px;
   display: inline-block;
@@ -115,16 +115,28 @@ margin-right: 40px;
 background:white;
 box-shadow: 2px 2px 2px 1px gainsboro;
 }
-.dropdowncontent ul {
+.dropdowncontent ul,.dropdowncontent1 ul {
   
   margin-left: 10px;
 }
 .dropdowncontent ul li {
+  border-bottom: 1px solid rgb(102, 101, 101);
   cursor: pointer;
   font-weight: bolder;
   padding: 6px 0 ;
   padding-left: 5px;
   margin-right: 40px;
+ width: auto;
+color: black;
+}
+.dropdowncontent1 ul li {
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  font-weight: bolder;
+  padding: 6px 0 ;
+  padding-left: 5px;
+  padding-right: 15px;
+  margin-right: 50px;
  width: auto;
 color: black;
 }
