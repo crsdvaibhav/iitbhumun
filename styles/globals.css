@@ -13,7 +13,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 14px;
 }
-
+#progressvalue1,#progressvalue3{
+  display: none;
+}
 a {
   color: inherit;
   text-decoration: none;

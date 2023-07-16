@@ -1,6 +1,6 @@
 
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-
+import { Progress,Typography } from "@material-tailwind/react";
 import Footer from "../components/Footer";
 import data from '../data/data.json';
 
@@ -213,9 +213,19 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
         <h2 className="mt-50 text-center font-bold">x</h2>
           <div id="content" className="mt-40 w-100 h-fit-content display:'block'  h-min-content m-auto text-center font-bold" ></div>
+         
+<div id="progressvalue1" class="flex justify-between gap-15 mb-1">
+  <span class="text-base font-medium mx-12 text-blue-700 dark:text-white">Registration Completed</span>
+  <span id="progressvalue" class="text-sm font-medium text-blue-700 dark:text-white">50%</span>
+</div>
+<div id="progressvalue3" class="w-80 block mx-auto bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+  <div id="progressvalue2" class="bg-blue-600 h-2.5 rounded-full w-[50%]"></div>
+</div>
 
           <h1 id="showresult" className='my-4 text-red-500 text-2xl w-30px text-center'></h1>
+          
           <Button className="block mx-auto py-3 my-3 " id="paynow">Pay now!</Button>
+          
           <button id="showbutton" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
 
           <button onClick={pft} id="showbutton1" className="bg-transparent mx-6 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">{`${buttonname1}`}</button>

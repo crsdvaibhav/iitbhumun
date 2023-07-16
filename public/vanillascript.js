@@ -65,7 +65,8 @@ fetchData()
   .then((DATA) => {
     document.getElementById("showbutton").style.display = "inline"
     document.getElementById("showbutton1").style.display = "inline"
-
+    document.getElementById("progressvalue1").style.display="block"
+    document.getElementById("progressvalue3").style.display="block"
 
     DATA.map((item) => {
 
@@ -122,6 +123,10 @@ function fetchData1() {
           if (p <= 7 && p >= 5) { document.getElementById("container3ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
           if (p <= 10 && p >= 8) { document.getElementById("container4ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
           if (key === "alloted" && item[key] != "NO") {
+            document.getElementById("progressvalue").innerHTML=`75%`
+            document.getElementById("progressvalue2").style.width="75%"
+           
+            
             console.log(item[key])
             i = 1;
 
