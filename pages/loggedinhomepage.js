@@ -1,8 +1,9 @@
-
+"use client";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { Progress,Typography } from "@material-tailwind/react";
 import Footer from "../components/Footer";
 import data from '../data/data.json';
+import {loadStripe} from "@stripe/stripe-js"
 
 import Script from "next/script";
 import NavBar2 from "../components/navbarforlogin";
@@ -12,8 +13,85 @@ import { getDatabase, get,set, onValue, ref,update } from "firebase/database";
 import { Alert, Button, alert } from "@material-tailwind/react";
 import Router, {  useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
+
 const Loggedinhomepage = () => {
+  <Head ><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/></Head>
+ 
   
+  // const onScriptLoad = async()=>{
+  //   let txnToken;
+  //   let oid=Math.floor(Math.random()*Date.now())
+  //  async function postJSON() {
+  //   try {
+  //     const response = await fetch("localhost:3000/api/precheckout", {
+  //       method: "POST", // or 'PUT'
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+  
+  //     const result = await response.json();
+  //     console.log("Success:", result);
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // }
+  
+  // const data = { username: "Shivanshu" };
+  // postJSON(data);
+  
+  // var config = {
+  // "root": "",
+  // "flow": "DEFAULT",
+  // "data": {
+  // "orderId": oid, /* update order id */
+  // "token": txnToken, /* update token value */
+  // "tokenType": "TXN_TOKEN",
+  // "amount": 1 /* update amount */
+  // },
+  // "handler": {
+  // "notifyMerchant": function(eventName,data){
+  // console.log("notifyMerchant handler function called");
+  // console.log("eventName => ",eventName);
+  // console.log("data => ",data);
+  // }
+  // }
+  // };
+  
+  // // initialze configuration using init method
+  // window.Paytm.CheckoutJS.init(config).then(function onSuccess() {
+  // // after successfully updating configuration, invoke JS Checkout
+  // window.Paytm.CheckoutJS.invoke();
+  // }).catch(function onError(error){
+  // console.log("error => ",error);
+  // });
+  
+  
+  // }
+ 
+  async function checkout({lineItems}){
+let stripepromise=null
+
+let getstripe =(items)=>{
+if(!stripepromise){
+
+
+  stripepromise=loadStripe(process.env.NEXT_PUBLIC_API_KEY)
+}
+return stripepromise}
+const stripe= await getstripe()
+await stripe.redirectToCheckout({
+mode:"payment",
+lineItems,
+successUrl:`${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,
+cancelUrl:window.location.origin
+  })
+
+
+
+  }
   var ab=false;
 const aippm = data.aippm;
 const ls = data.ls;
@@ -208,6 +286,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
     return (
       
       < >
+       {/* <Script type="application/javascript" src={`https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/${process.env.PAYTM_MID}.js`} crossorigin="anonymous"></Script> */}
         <NavBar2 navbar={true} backgroundColor="white" />
         <div className="my-50 text-center font-bold">
 
@@ -225,7 +304,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
           <h1 id="showresult" className='my-4 text-red-500 text-2xl w-30px text-center'></h1>
           
-          <Button className="block mx-auto py-3 my-3 " id="paynow">Pay now!</Button>
+          <Button className="block mx-auto py-3 my-3 " onClick={(()=>{checkout({lineItems:[{price:"price_1NUh7JSG0t1MHhAWVAFbHXEe",quantity:1}]})})} id="paynow">Pay now!</Button>
           
           <button id="showbutton" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
 

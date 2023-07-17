@@ -125,7 +125,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
          
           <div className="profile-dropdown">
           
-          <FaUserCircle className='text-black cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}} onTouchStart={function(){setIsOpen(!isOpen)}}/> 
+          <FaUserCircle className='text-black cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}} /> 
           {isOpen?(
         <div className='dropdowncontent'>
           <ul>
