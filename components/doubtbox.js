@@ -109,7 +109,7 @@ const Doubtbox = () => {
           </div>
         ) : (
           <button
-            className=" bg-center bg-no-repeat bg-cover text-white px-4 w-24 h-24 border-red-300 border-4  py-2 rounded-full hover:bg-blue-600"
+            className=" bg-center bg-no-repeat bg-cover text-white px-4 w-24 h-24 border-red-300 border-4  py-2 rounded-full hover:bg-blue-600 shake-and-rotate"
             style={{ backgroundImage: 'url("/images/doubt.png")' }} onClick={handleExpand}
           >
            

@@ -227,3 +227,23 @@ padding: 4px 6px;
 .whatsapp {
   background-color: #25d366;
 }
+@keyframes shakeAndRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(-5deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(5deg) scale(1);
+  }
+}
+.shake-and-rotate {
+  animation: shakeAndRotate 0.8s infinite;
+}
