@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import { getAuth ,onAuthStateChanged} from 'firebase/auth';
 import NavBar2 from '../components/navbarforlogin';
+import Doubtbox from '../components/doubtbox';
 
 export default function Home() {
 
@@ -35,7 +36,9 @@ export default function Home() {
      {changebar? <NavBar navbar={navbar} backgroundColor={ab} qt=''  />:<NavBar2 navbar={true} backgroundColor="white" />}
       <Hero />
       <Main />
+      <Doubtbox/>
       <Footer />
+
     </div>
   );
 }

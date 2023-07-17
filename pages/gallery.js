@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import NavBar2 from "../components/navbarforlogin";
 import { getAuth } from "firebase/auth";
 import React from "react";import { useState } from 'react';
+import Doubtbox from "../components/doubtbox";
 export default function Gallery() {
   const auth=getAuth();
   const [changebar,setbar]=useState(true);
@@ -35,7 +36,7 @@ export default function Gallery() {
          <PlacesCarousel></PlacesCarousel>
         </div>
       </div>
-
+      <Doubtbox/>
 <Footer></Footer>
     </div>
   );

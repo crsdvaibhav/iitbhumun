@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="sm:grid hidden relative">
         <div className="row-span-full col-span-full">
           <Image
-            src="/images/hero-bg.png"
+            src="/images/MUN.jpg"
             width={1920}
             height={1080}
             layout="responsive"
@@ -40,14 +40,15 @@ export default function Hero() {
             alt="hero images"
           />
         </div>
-        <div className=" row-span-full col-span-full self-center text-center mt-96 mr-56 ">
+        <div className=" row-span-full  justify-center col-span-full self-center text-center mt-96 mr-56 ">
 
-          { <button
+           <button
             className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-8 rounded-md text-[1.125rem] font-semibold "
           ><Link href="/registerpage">
             REGISTER</Link>
           </button>
-          }
+           
+         
         </div>
         <div className="row-span-full col-span-full self-end text-center pb-4 mr-12">
           <Image

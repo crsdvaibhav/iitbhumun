@@ -18,6 +18,7 @@
     "@stripe/stripe-js": "^1.54.1",
     "daisyui": "^2.33.0",
     "firebase": "^9.23.0",
+    "framer-motion": "^10.12.22",
     "next": "12.3.1",
     "nodemailer": "^6.9.3",
     "paytmchecksum": "^1.5.0",

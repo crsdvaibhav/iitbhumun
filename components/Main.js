@@ -199,7 +199,7 @@ export default function Main() {
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
           Testimonials
         </p>
-        <div className="flex items-center w-full justify-start mt-8 sm:mt-[3.75rem] overflow-x-scroll">
+        <div className="flex transition-all duration-300 focus:scale-105 items-center w-full justify-start mt-8 sm:mt-[3.75rem] overflow-x-scroll">
           {data.testimonials.map((item) => {
             return (
               <Card

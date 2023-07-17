@@ -7,6 +7,7 @@ import TeamCard from '../components/TeamCard';
 import NavBar2 from '../components/navbarforlogin';
 import { getAuth } from 'firebase/auth';
 import { useState } from 'react';
+import Doubtbox from '../components/doubtbox';
 
 export default function Secretariat() {
     const auth=getAuth();
@@ -79,7 +80,7 @@ export default function Secretariat() {
                     })}
                 </div>
             </div>
-
+<Doubtbox/>
             <Footer />
         </div >
     )

@@ -6,6 +6,7 @@ import data from "../data/data.json"
 import { getAuth } from "firebase/auth";
 import NavBar2 from "../components/navbarforlogin.js";
 import { useState } from 'react';
+import Doubtbox from "../components/doubtbox.js";
 const arr = data.committees;
 
 export default function Committees() {
@@ -275,6 +276,7 @@ export default function Committees() {
                     </div>
                 </div>
             </div>
+            <Doubtbox/>
             <Footer />
         </div>
     );

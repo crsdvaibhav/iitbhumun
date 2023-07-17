@@ -6,6 +6,7 @@ import { Alert } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
 import GoogleButton from 'react-google-button'
+import Doubtbox from '../components/doubtbox';
 const HomePage = () => {
   
 var ab=false;

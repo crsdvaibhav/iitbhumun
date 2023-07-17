@@ -14,6 +14,7 @@ import { getAuth,onAuthStateChanged,signOut,sendPasswordResetEmail } from 'fireb
 import Script from 'next/script';
 import NavBar2 from '../components/navbarforlogin';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Doubtbox from '../components/doubtbox';
 
 
 
@@ -255,6 +256,7 @@ else{
            </>
         ))}
       </div>
+      <Doubtbox/>
       <Footer2 />
       </>
     );

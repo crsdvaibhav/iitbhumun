@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import NavBar2 from '../components/navbarforlogin';
 import { getAuth } from 'firebase/auth';
 import { useState } from 'react';
+import Doubtbox from '../components/doubtbox';
 
 const Partners = () => {
     const auth=getAuth();
@@ -86,7 +87,7 @@ const Partners = () => {
 
             </div>
 
-
+<Doubtbox/>
             <Footer />
 
         </div>
