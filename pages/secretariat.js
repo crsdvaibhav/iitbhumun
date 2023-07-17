@@ -16,7 +16,8 @@ export default function Secretariat() {
     abc()
 
     return (
-        <div className='bg-gray-100 w-[100%] sm:w-[100%] ' >
+        
+        <div className='bg-gray-200 w-[100%] sm:w-[100%] ' >
             {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
 
             <div className='   text-5xl pt-24 text-center'>

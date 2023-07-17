@@ -74,7 +74,7 @@ const LoginPage = () => {
 
       <div className=" shadow-md rounded px-20 pt-12 pb-28 mb-4       ">
        
-        <h2 className="text-3xl font-bold mb-6 text-[#189BA5]">Login</h2>
+        <h2 className="text-3xl font-bold mb-6 text-[#189BA5] text-center">Login</h2>
         <img className="w-40 h-40 block mx-auto"src='/images/loginicon.png'/>
        
         <form onSubmit={handleSubmit}>

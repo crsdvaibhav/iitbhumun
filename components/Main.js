@@ -73,7 +73,7 @@ export default function Main() {
         </div>
       </div>
 
-      <div className="mt-12 sm:mt-[8.75rem]">
+      <div className="mt-12 sm:mt-[8.75rem] hover:border-2 hover:border-black  hover: shadow-black/10 hover:shadow-xl hover:rounded-lg px-4 py-8" >
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
           Letter from Secretary-General
         </p>

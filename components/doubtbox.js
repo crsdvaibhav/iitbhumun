@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 
 
@@ -27,9 +28,10 @@ const Doubtbox = () => {
     return (
         <div className="fixed bottom-4 right-4">
         {isExpanded ? (
-          <div className="bg-gray-100 p-4 border-2 border-black rounded shadow">
-           
-            <div className="flex justify-end">
+          <div className="bg-gray-100 px-4 py-2 border-2 border-black rounded shadow">
+           <div className="flex ">
+           <img src="/images/active-nav-log.svg" className="mb-2 inline mx-auto h-20 w-fit "/>
+            <div className="flex justify-end ">
               <button
                 type="button"
                 className="text-gray-500 hover:text-red-500 p-1"
@@ -51,7 +53,42 @@ const Doubtbox = () => {
               </button>
              
             </div>
-            <h1>Ask a doubt</h1>
+          </div>
+<h1 className="font-bold text-lg text-blue-500">Follow us!</h1>
+
+<div className="mt-[1.25rem] flex flex-row space-x-4">
+               
+                <div>
+                  <Link href="https://www.linkedin.com/company/iitbhumun/?originalSubdomain=in " >
+<button className="cursor:pointer">
+                      <img src="https://img.freepik.com/free-icon/linkedin_318-157468.jpg?size=626&ext=jpg&ga=GA1.1.353350214.1689486593&semt=sph" className="w-12 h-12 rounded-full hover:w-14 hover:h-14 transition-all"/>
+                    </button>
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://twitter.com/iitbhu_mun">
+                    <button>
+                    
+  <img src="https://img.freepik.com/free-icon/twitter_318-187597.jpg?size=626&ext=jpg&ga=GA1.1.353350214.1689486593&semt=sph" className="w-12 h-12 rounded-full hover:w-14 hover:h-14 transition-all"/>
+                    </button></Link>
+                </div> <div>
+                  <Link href="https://www.instagram.com/iitbhu_mun/?hl=en">
+<button className="cursor:pointer mb-2">
+                      <img src="https://smallimg.pngkey.com/png/small/448-4486200_instagram-logo-circle.png" className="w-12  h-12 rounded-full hover:w-14 hover:h-14 transition-all"/>
+                    </button>
+                  </Link>
+                </div>
+               <div >
+                    <Link href="https://discord.com/@iitbhumun">
+  <button className="cursor:pointer">
+  <img src="https://img.freepik.com/free-icon/discord_318-688926.jpg?size=626&ext=jpg&ga=GA1.1.353350214.1689486593&semt=ais"className="w-12 h-12 rounded-full hover:w-14 hover:h-14 transition-all"/>
+                      
+                      </button>
+                    </Link>
+                  </div>
+              </div>
+
+            <h1 className="mb-2 font-bold">Ask a doubt</h1>
             <form onSubmit={handleSubmit}>
               <textarea
                 className="w-64 h-16 text-black border-2 placeholder-red-500 border-black resize-none  rounded p-2 mb-2"

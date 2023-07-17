@@ -16,10 +16,11 @@ import { getAuth,onAuthStateChanged,signOut,sendPasswordResetEmail } from 'fireb
 import Script from 'next/script';
 
 
-export default function NavBar2({ navbar,backgroundColor}) {
+const   NavBar2 = ({ navbar,backgroundColor})=> {
   const auth = getAuth();
   
 
+const [adminpanel,showadminpanel]=useState(false)
   const [closeReg, setCloseReg] = useState(true);
   const [display, buttonhide] = useState(false);
   const handleChange = () => {
@@ -121,6 +122,7 @@ export default function NavBar2({ navbar,backgroundColor}) {
               FAQ
             </button>
           </Link></div>
+          {adminpanel?<Link href={"/adminpanel"}><Button>Admin Panel</Button></Link>:''}
            <FaSignInAlt className='w-[40px] ml-20' fontSize='30'  color='#189BA5' markerHeight="5px" width="20px"></FaSignInAlt> 
          
           <div className="profile-dropdown">
@@ -196,3 +198,4 @@ export default function NavBar2({ navbar,backgroundColor}) {
     </div>
   );
 }
+export default NavBar2

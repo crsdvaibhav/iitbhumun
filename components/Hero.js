@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import CloseReg from './CloseReg';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import app from '../public/firebaseconfig';
 export default function Hero() {
   const [closeReg, setCloseReg] = useState(true);
   const handleChange = () => {
@@ -10,6 +12,11 @@ export default function Hero() {
       setCloseReg(true);
     }, 1000);
   }
+  const [changebar,setbar]=useState(true);
+  const auth=getAuth()
+  function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
+  abc()
+  
   return (
     <div className="">
       <div className="sm:grid hidden relative">
@@ -32,7 +39,7 @@ export default function Hero() {
           />
         </div>
 
-        <div className="row-span-full col-span-full self-center text-center ">
+        <div className="row-span-full col-span-full self-center text-center logo mb-32 ">
           <Image
             src="/images/hero-logo.svg"
             width={600}
@@ -42,11 +49,11 @@ export default function Hero() {
         </div>
         <div className=" row-span-full  justify-center col-span-full self-center text-center mt-96 mr-56 ">
 
-           <button
-            className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-8 rounded-md text-[1.125rem] font-semibold "
+         {changebar?<button
+            className="text-black bg-[#F5CE3F] hover:bg-yellow-500 absolute px-12 2xl:px-12 h-8 rounded-md text-[1.125rem] font-semibold "
           ><Link href="/registerpage">
             REGISTER</Link>
-          </button>
+          </button>:''}
            
          
         </div>
@@ -78,7 +85,11 @@ export default function Hero() {
             alt="hero images"
           />
         </div>
-        <div className="row-span-full col-span-full self-center text-center ">
+        <div className="row-span-full col-span-full self-center text-center "  data-te-animation-init
+  data-te-animation-start="onScroll"
+  data-te-animation-on-scroll="repeat"
+  data-te-animation-reset="true"
+  data-te-animation="[slide-right_1s_ease-in-out]">
           <Image
             src="/images/hero-logo.svg"
             width={300}

@@ -37,46 +37,46 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
         />
         <div className="justify-end hidden items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
-            <button className=" 2xl:text-xl hover:text-[#189BA5] duration-100">
+            <button className=" border-yellow-500 hover:border-b-2 2xl:text-xl hover:border-spacing-4 duration-100">
               Home
             </button>
           </Link>
           <Link href="/committees">
-            <button className="2xl:text-xl text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
               Committees
             </button>
           </Link>
           <Link href="/secretariat">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl  text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
               Secretariat
             </button>
           </Link>
           <Link href="/partners">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl  text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
               Partners
             </button>
           </Link>
           <Link href="/gallery">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl  text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
               Gallery
             </button>
           </Link>
           <Link href="/faq">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl  text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
               FAQ
             </button>
           </Link><div>
 <Link href="/registerpage">
   
          <button 
-            className={'px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-2 text-black bg-[#F5CE3F] hover:text-[#2c8990]'
+            className={'px-12 2xl:px-12 h-10 rounded-md text-xl font-semibold mx-2 text-black bg-[#F5CE3F] hover:bg-yellow-500'
               }
           >
             Register
           </button ></Link>
           <Link href="/loginpage">
          <button onClick={handleChange}
-            className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-4  text-black bg-[#F5CE3F] hover:text-[#2c8990] ${qt} `}
+            className={`px-12 2xl:px-12 h-10 rounded-md text-xl font-semibold mx-4  text-black bg-[#F5CE3F] hover:bg-yellow-500 ${qt} `}
           >
             Login
           </button></Link>

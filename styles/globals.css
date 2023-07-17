@@ -119,6 +119,18 @@ box-shadow: 2px 2px 2px 1px gainsboro;
   
   margin-left: 10px;
 }
+.logo{
+ animation-name: titu;
+ animation-duration: 2s;
+ animation-delay: 1s;
+ opacity: 0;
+ animation-fill-mode: forwards;
+}
+@keyframes titu{
+from{opacity: 0;}
+to{opacity: 100%;}
+
+}
 .dropdowncontent ul li {
   border-bottom: 1px solid rgb(102, 101, 101);
   cursor: pointer;

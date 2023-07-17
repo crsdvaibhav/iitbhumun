@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CloseReg from './CloseReg';
 import { useState } from 'react';
+import { Button } from '@material-tailwind/react';
 
 export default function Footer2() {
   const [closeReg, setCloseReg] = useState(true);
@@ -11,6 +12,7 @@ export default function Footer2() {
       setCloseReg(true);
     }, 1000);
   }
+ 
   return (
     <div className="bg-[#1A1E21] w-full">
       <div className="hidden flex-col mt-[8.75rem] text-white sm:flex  max-w-[90%] 2xl:max-w-[80%] mx-auto ">
@@ -81,6 +83,7 @@ export default function Footer2() {
               </div>
             </div>
             <div className="mt-[3.75rem]">
+            <Link href={'/adminpanel'}><Button className='text-xl'>Admin Panel</Button></Link>
               <div className="font-custom text-[1.5rem] font-bold mt-[3.75rem]">
                 Follow us
               </div>
@@ -166,6 +169,7 @@ export default function Footer2() {
                 </Link>
               </div>
             </div>
+            
             <div className="mt-4">
               <p className="font-bold">Contact us</p>
               <div className="flex flex-col text-xs mt-2">
@@ -201,6 +205,7 @@ export default function Footer2() {
               
             </div>
             <div className="mt-[44px]">
+              
               <p className="font-bold">Follow us</p>
               <div className="flex flex-col mt-2">
                 <div className="flex">

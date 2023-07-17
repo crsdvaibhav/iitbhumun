@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { getAuth ,onAuthStateChanged} from 'firebase/auth';
 import NavBar2 from '../components/navbarforlogin';
 import Doubtbox from '../components/doubtbox';
+import Footer2 from '../components/footerforlogin';
 
 export default function Home() {
 
@@ -37,7 +38,7 @@ export default function Home() {
       <Hero />
       <Main />
       <Doubtbox/>
-      <Footer />
+     {changebar? <Footer />:<Footer2/>}
 
     </div>
   );
