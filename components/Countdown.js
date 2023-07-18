@@ -8,7 +8,7 @@ export default function CountdownElement() {
     {
       // Render a countdown
       return (
-        <div className="grid grid-cols-4 gap-3 lg:gap-5 mt-12 max-w-[90%] lg:max-w-[80%] 2xl:max-w-[60%] mx-auto">
+        <div className="grid grid-cols-4 gap-3 lg:gap-5 mt-0 max-w-[90%] lg:max-w-[80%] 2xl:max-w-[60%] mx-auto">
           {[days, hours, minutes, seconds].map((count, index) => (
               <div
                 key={count}

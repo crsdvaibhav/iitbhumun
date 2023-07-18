@@ -6,13 +6,14 @@ import Link from 'next/link';
 
 export default function Main() {
   return (
-    <div className="w-[90%] mx-auto pt-16 bg-[#F5F5F5]  flex flex-col space-y-24">
-      <div className="">
-        <p className="font-extrabold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
-          Conference begins in
-        </p>
+    <div className="w-[90%] mx-auto pt-16 bg-[#FFFFFF]  flex flex-col space-y-12">
+      <div className="flex justify-center gap-5">
+        <p className="font-extrabold font-heading text-center  text-[#1A1E21] text-2xl mt-14 sm:text-[2.5rem]">
+          Conference begins in 
+        </p><img src='/images/clock.gif' className='flex w-40 mt-0'/>
+        </div>
         <CountdownElement />
-      </div>
+     
       <div className="mt-12 sm:mt-[8.75rem]">
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
           United Nations Collaboration in This Edition
@@ -77,8 +78,8 @@ export default function Main() {
         <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[2.5rem]">
           Letter from Secretary-General
         </p>
-        <div className="flex justify-center mt-8 sm:mt-[3.75rem]">
-          <p className="px-8 w-[58.75rem] sm:w-[73.375rem] text-[#03001E] sm:text-lg font-light font-custom text-justify">
+        <div className="flex justify-center mt-8 sm:mt-[3.75rem] font-semibold">
+          <p className="px-8 w-[58.75rem] sm:w-[73.375rem] text-[#03001E] sm:text-lg font-semi-bold font-custom text-justify">
             <p>Dear Delegates, respected Faculty Advisors, and the Secretariat, </p>
             <p className='mt-2'>I am pleased to announce the commencement of the twelfth edition of the IITBHU Model United Nations. Having established a remarkable legacy over the span of its 11-year history, IITBHU Model United Nations holds the distinction of being one of the earliest and most esteemed conferences in India.
 </p>

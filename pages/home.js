@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#F5F5F5]">
+    <div className="bg-[#FFFFFF] font-semibold">
      {changebar? <NavBar navbar={navbar} backgroundColor={ab} qt=''  />:<NavBar2 navbar={true} backgroundColor="white" />}
       <Hero />
       <Main />
