@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Head from 'next/head';
 import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,12 +7,28 @@ import Link from 'next/link';
 import app from '../public/firebaseconfig';
 
 import GoogleButton from 'react-google-button';
-import { getAuth,signInWithPopup,signInWithEmailAndPassword, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth,signInWithPopup,signInWithEmailAndPassword,sendPasswordResetEmail,GoogleAuthProvider } from 'firebase/auth';
 
 
 import { useRouter } from 'next/router';
 const LoginPage = () => {
-  
+  const texts = ['RISE', 'SPEAK', 'RESOLVE'];
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        setIsVisible(true);
+      }, 500); // Adjust the time (in milliseconds) for the fade-in effect duration
+    }, 3000); // Adjust the time (in milliseconds) to change text every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   const provider=new GoogleAuthProvider();
   const auth=getAuth();
   const [email, setEmail] = useState('');
@@ -54,7 +70,28 @@ const LoginPage = () => {
       // ...
     })
   };
+function forgotpassword(){
+  
+  if(email!=""){
+    
+  sendPasswordResetEmail(auth,email)
+    .then(() => {
+      // Email sent
+      console.log('Password reset email sent to:', email);
+      alert('Password reset email sent. Please check your inbox.');
+    })
+    .catch((error) => {
+      console.error('Error:', error.message);
+      alert('Error sending password reset email. Please try again later.');
+    });
+  }
+  else{
+    alert("Enter your registered email id first.")
+  }
 
+
+
+}
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,9 +109,9 @@ const LoginPage = () => {
         <title>Login Page</title>
       </Head>
 
-      <div className=" shadow-md rounded px-20 pt-12 pb-28 mb-4       ">
+      <div className=" shadow-md rounded px-20 pt-12 pb-28 mb-4 mt-8       ">
        
-        <h2 className="text-3xl font-bold mb-6 text-[#189BA5] text-center">Login</h2>
+        <h2 className="text-3xl font-bold mb-6 text-[#189BA5] text-center">Welcome back!</h2>
         <img className="w-40 h-40 block mx-auto"src='/images/loginicon.png'/>
        
         <form onSubmit={handleSubmit}>
@@ -94,7 +131,7 @@ const LoginPage = () => {
             />
           </div>
 
-          <div className="mb-6">
+          <div className="mb-2">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
               Password
             </label>
@@ -108,7 +145,7 @@ const LoginPage = () => {
               required
             />
           </div>
-
+<button className='mt-0 mb-4 text-blue-500 font-medium'onClick={()=>{forgotpassword()}} type='button'>Forgot password?</button>
           <div className="flex items-center justify-between">
          {  buttonswap? <button
               className="bg-blue-500 w-40 mx-5 hover:bg-blue-700 text-white font-bold py-1 px-6 rounded focus:outline-none focus:shadow-outline"
@@ -129,6 +166,7 @@ const LoginPage = () => {
           <GoogleButton onClick={function(){
             signInWithGoogle() 
           }} id='#google' className="mx-auto 'block' mt-6 border-r-4"type='button'></GoogleButton>
+       <h1 className='mt-5 text-center text-5xl text-[#189BA5] font-bold'>{texts[currentTextIndex]}</h1>
         </form>
       </div>
     </div>

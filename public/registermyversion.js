@@ -222,31 +222,6 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     
     
     .then(() => {
-      {const dbRef3 = ref(database, "records of single delegates/"+uuid+"/"+Committee1);
-      const dbRef4 = ref(database, "records of single delegates/"+uuid+"/"+Committee2);
-      const dbRef5 = ref(database, "records of single delegates/"+uuid+"/"+Committee3);
-      const newRec1 = push(dbRef3);
-      const newRec2 = push(dbRef4);
-      const newRec3 = push(dbRef5);
-      return Promise.all([
-        set(newRec1, {
-          Committee_1_Country_Preference_1: pref1option1,
-          Committee_1_Country_Preference_2: pref1option2,
-          Committee_1_Country_Preference_3: pref1option3,
-        }),
-        set(newRec2, {
-          Committee_2_Country_Preference_1: pref2option1,
-          Committee_2_Country_Preference_2: pref2option2,
-          Committee_2_Country_Preference_3: pref2option3,
-        }),
-        set(newRec3, {
-          Committee_3_Country_Preference_1: pref3option1,
-          Committee_3_Country_Preference_2: pref3option2,
-          Committee_3_Country_Preference_3: pref3option3,
-        })
-      ]);
- } })
-    .then(() => {
       
       signup1(); 
       
@@ -376,31 +351,7 @@ PaymentConfirmed:0
   
   
   
-  .then(() => {
-    {const dbRef3 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee1);
-    const dbRef4 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee2);
-    const dbRef5 = ref(database, "records of Conference ambassadors/"+uuid+"/"+Committee3);
-    const newRec1 = push(dbRef3);
-    const newRec2 = push(dbRef4);
-    const newRec3 = push(dbRef5);
-    return Promise.all([
-      set(newRec1, {
-        Preference_1: pref1option1,
-        Preference_2: pref1option2,
-        Preference_3: pref1option3,
-      }),
-      set(newRec2, {
-        Preference_1: pref2option1,
-        Preference_2: pref2option2,
-        Preference_3: pref2option3,
-      }),
-      set(newRec3, {
-        Preference_1: pref3option1,
-        Preference_2: pref3option2,
-        Preference_3: pref3option3,
-      })
-    ]);
-} })
+  
   .then(() => {
     signup2(); 
       

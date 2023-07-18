@@ -69,14 +69,14 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
 <Link href="/registerpage">
   
          <button 
-            className={'px-12 2xl:px-12 h-10 rounded-md text-xl font-semibold mx-2 text-black bg-[#F5CE3F] hover:bg-yellow-500'
+            className={'px-12 2xl:px-12 h-10 rounded-md text-xl font-semibold mx-2 text-black bg-[#F5CE3F] hover:bg-yellow-300'
               }
           >
             Register
           </button ></Link>
           <Link href="/loginpage">
          <button onClick={handleChange}
-            className={`px-12 2xl:px-12 h-10 rounded-md text-xl font-semibold mx-4  text-black bg-[#F5CE3F] hover:bg-yellow-500 ${qt} `}
+            className={`px-12 2xl:px-12 h-10 targetDiv rounded-md text-xl font-semibold mx-4  text-black bg-[#F5CE3F] hover:bg-yellow-300 ${qt} `}
           >
             Login
           </button></Link>

@@ -4,7 +4,7 @@ import { Progress,Typography } from "@material-tailwind/react";
 import Footer from "../components/Footer";
 import data from '../data/data.json';
 import {loadStripe} from "@stripe/stripe-js"
-
+import Doubtbox from '../components/doubtbox';
 import Script from "next/script";
 import NavBar2 from "../components/navbarforlogin";
 import Footer2 from "../components/footerforlogin";
@@ -272,11 +272,9 @@ const ip = data.ip;
 
   const [updateportfolio1,setfolio]=useState(false);
    const [hideportfolio,setportfolio]=useState(false)
-  const [buttonname, rename] = useState("Show Portfolio and alloted preference")
+  const [buttonname, rename] = useState("Show Portfolio")
 const[buttonname1,rename1]=useState("Change portfolio")
-  function pfp() {
-    rename(hideportfolio ? buttonname = "Show Portfolio and alloted preference" : buttonname = "Hide Portfolio")
-    setportfolio(!hideportfolio)}
+ 
     function pft() {
       rename1(updateportfolio1 ? buttonname1 = "Change portfolio" : buttonname1 = "Avoid Change")
       setfolio(!updateportfolio1)}
@@ -291,7 +289,8 @@ const[buttonname1,rename1]=useState("Change portfolio")
         <div className="my-50 text-center font-bold">
 
         <h2 className="mt-50 text-center font-bold">x</h2>
-        <h1 className="mt-32  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">User Profile</h1>
+        <div className="sm:flex sm:justify-between block "><div className="mx-auto inline" >
+        <h1 className="mt-32  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Profile</h1>
           <div id="content" className="mt-30 w-100 h-fit-content display:'block'  h-min-content m-auto text-center font-bold" ></div>
          
 <div id="progressvalue1" class="flex justify-between gap-15 mb-1">
@@ -302,27 +301,30 @@ const[buttonname1,rename1]=useState("Change portfolio")
   <div id="progressvalue2" class="bg-blue-600 h-2.5 rounded-full w-[50%]"></div>
 </div>
 
-          <h1 id="showresult" className='my-4 text-red-500 text-2xl w-30px text-center'></h1>
+          <h1 id="showresult" className='my-6 text-red-500 text-2xl w-30px text-center'></h1>
           
           <Button className="block mx-auto py-3 my-3 " onClick={(()=>{checkout({lineItems:[{price:"price_1NUh7JSG0t1MHhAWVAFbHXEe",quantity:1}]})})} id="paynow">Pay now!</Button>
-          
-          <button id="showbutton" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={pfp}>{`${buttonname}`}</button>
+         <img src="/images/join.svg" className="inline mx-auto"/>
+          </div>
+          <div className="h-cover border-l-2 border-gray-500">
+            
+          </div>
+<div className="mt-28">
+<h1 className="mt-29  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Portfolio</h1>
+          <div className={` 'block'   justify-center m-auto`} id= "showportfolio1"  ></div>
+          <div className={` 'block'  justify-center m-auto`} id= "showportfolio"  >
+            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
+              <h2 className="'block' py-4 text-2xl  text-red-500">Committee-1  </h2>
 
-          <button onClick={pft} id="showbutton1" className="bg-transparent mx-6 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">{`${buttonname1}`}</button>
-          <div className={`${hideportfolio ? 'block' : 'hidden'}  justify-center m-auto`} id= "showportfolio1"  ></div>
-          <div className={`${hideportfolio ? 'block' : 'hidden'}  justify-center m-auto`} id= "showportfolio"  >
-            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white shadow-black/10 shadow-xl rounded-lg px-4 py-8">
-              <h2 className="'block' py-4  text-red-500">Portfolio-1  </h2>
-
-              <h1 id="h1"></h1><table className="table-auto min-w-full border text-center text-sm  dark:border-neutral-500" id="container2ul">
+              <h1 id="h1"></h1><table className=" sm:w-72 min-w-full border text-center text-sm  dark:border-neutral-500" id="container2ul">
                 <thead className="border-b font-medium dark:border-neutral-500">
 
                   <th
                     scope="col"
-                    className="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
+                    className="border-r px-6 py-4 dark:border-neutral-500 text-xl">Preference type</th>
                   <th
                     scope="col"
-                    className="border-r px-6 py-4 dark:border-neutral-500">Name</th>
+                    className="border-r px-6 py-4 dark:border-neutral-500 text-xl">Name</th>
 
 
                 </thead>
@@ -332,24 +334,25 @@ const[buttonname1,rename1]=useState("Change portfolio")
                   <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_1_Preference_2</td>
                   <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_1_Preference_3</td>
                   </tr>
-                  <tr id="container2ul-row2">
+                  <tr id="container2ul-row2" className="text-[#189BA5]">
 
                   </tr>
 
                 </tbody>
 
               </table>
+             
             </div>
-            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white shadow-black/10 shadow-xl rounded-lg px-4 py-8">
-              <h2 className="'block' py-4  text-red-500">Portfolio-2  </h2>
+            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
+              <h2 className="'block' py-4 text-2xl text-red-500">Committee-2  </h2>
               <h1 id="h2"> </h1><table className="table-auto min-w-full border text-center text-sm  dark:border-neutral-500" id="container3ul"><thead className="border-b font-medium dark:border-neutral-500">
 
                 <th
                   scope="col"
-                  className="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
+                  className="border-r px-6 py-4 dark:border-neutral-500 text-xl">Preference type</th>
                 <th
                   scope="col"
-                  class="border-r px-6 py-4 dark:border-neutral-500">Name</th>
+                  class="border-r px-6 py-4 dark:border-neutral-500 text-xl">Name</th>
 
 
               </thead>
@@ -362,7 +365,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
                   </tr>
 
 
-                  <tr id="container3ul-row2">
+                  <tr id="container3ul-row2" className="text-[#189BA5]">
 
                   </tr>
 
@@ -373,17 +376,17 @@ const[buttonname1,rename1]=useState("Change portfolio")
             </div>
 
 
-            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white shadow-black/10 shadow-xl rounded-lg px-4 py-8">
-              <h2 className="'block' py-4 text-red-500">Portfolio-3  </h2>
+            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
+              <h2 className="'block' py-4 text-2xl text-red-500">Committee-3  </h2>
               <h1 id="h3"> </h1><table className="table-auto min-w-full border text-center text-sm  dark:border-neutral-500" id="container4ul">
                 <thead className="border-b font-medium dark:border-neutral-500">
 
                   <th
 
-                    className="border-r px-6 py-4 dark:border-neutral-500">Preference type</th>
+                    className="border-r px-6 py-4 dark:border-neutral-500 text-xl">Preference type</th>
                   <th
 
-                    className="border-r px-6 py-4 dark:border-neutral-500">Name</th>
+                    className="border-r px-6 py-4 dark:border-neutral-500 text-xl">Name</th>
 
                 </thead>
                 <tbody>
@@ -392,13 +395,15 @@ const[buttonname1,rename1]=useState("Change portfolio")
                   <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_3_Preference_2</td>
                   <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_3_Preference_3</td>
                   </tr>
-                  <tr id="container4ul-row2">
+                  <tr id="container4ul-row2"  className="text-[#189BA5]">
 
                   </tr>
 
                 </tbody>
               </table>
-
+            
+</div></div>
+<button onClick={pft} id="showbutton1" className="bg-transparent mx-6 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">{`${buttonname1}`}</button>
             </div>
           </div>
           <Script src="vanillascript.js" typeof='module' type='module' />
@@ -630,7 +635,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
 
 <Script src="vanillascript.js" typeof='module' type='module' />
-
+<Doubtbox/>
         <Footer2 />
       </>
     );}

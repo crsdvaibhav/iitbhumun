@@ -60,10 +60,10 @@ function fetchData() {
   });
 }
 document.getElementById("content").innerHTML = "<div class='loader'></div>",
-  document.getElementById("showbutton").style.display = "none"
+ 
 fetchData()
   .then((DATA) => {
-    document.getElementById("showbutton").style.display = "inline"
+    
     document.getElementById("showbutton1").style.display = "inline"
     document.getElementById("progressvalue1").style.display="block"
     document.getElementById("progressvalue3").style.display="block"
