@@ -28,7 +28,7 @@ const Doubtbox = () => {
     return (
         <div className="fixed bottom-4 right-4">
         {isExpanded ? (
-          <div className="bg-gray-100 px-4 py-2 border-2 border-black rounded shadow">
+          <div className="bg-gray-100 px-4 py-2 border-2 border-black rounded-2xl shadow">
            <div className="flex ">
            <img src="/images/active-nav-log.svg" className="mb-2 inline mx-auto h-20 w-fit "/>
             <div className="flex justify-end ">
@@ -109,7 +109,7 @@ const Doubtbox = () => {
           </div>
         ) : (
           <button
-            className=" bg-center bg-no-repeat bg-cover text-white px-4 w-24 h-24 border-red-300 border-4  py-2 rounded-full hover:bg-blue-600 shake-and-rotate"
+            className=" bg-center bg-no-repeat bg-cover text-white px-4 w-20 h-20 border-red-300 border-4  py-2 rounded-full hover:bg-blue-600 shake-and-rotate"
             style={{ backgroundImage: 'url("/images/doubt.png")' }} onClick={handleExpand}
           >
            

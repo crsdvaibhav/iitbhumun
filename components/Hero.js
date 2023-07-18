@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import CloseReg from './CloseReg';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import app from '../public/firebaseconfig';
+import data from '../data/data.json';
 export default function Hero() {
   const [closeReg, setCloseReg] = useState(true);
   const handleChange = () => {
@@ -12,6 +13,23 @@ export default function Hero() {
       setCloseReg(true);
     }, 1000);
   }
+  const testimonial = [];
+
+  data.testimonials.map((i) => {
+    testimonial.push(i.review);
+  });
+  const[index,setCurrentTextIndex]=useState("")
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % testimonial.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  
+  
   const [changebar,setbar]=useState(true);
   const auth=getAuth()
   function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
@@ -37,9 +55,12 @@ export default function Hero() {
             layout="responsive"
             alt="hero images"
           />
+
+
+          
         </div>
 
-        <div className="row-span-full col-span-full self-center text-center logo mb-32 ">
+        <div className="row-span-full col-span-full self-center text-center logo mb-56 ">
           <Image
             src="/images/hero-logo.svg"
             width={600}
@@ -48,22 +69,19 @@ export default function Hero() {
           />
         </div>
         <div className=" row-span-full  justify-center col-span-full self-center text-center mt-96 mr-56 ">
-
+        
          {changebar?<button
-            className="text-black bg-[#F5CE3F] hover:bg-yellow-500 absolute px-12 2xl:px-12 h-8 rounded-md text-[1.125rem] font-semibold "
+            className="text-black bg-[#F5CE3F] hover:bg-yellow-500  mx-auto  px-12 2xl:px-12 h-12 absolute rounded-md text-[1.125rem]  font-semibold "
           ><Link href="/registerpage">
             REGISTER</Link>
           </button>:''}
-           
+         
          
         </div>
-        <div className="row-span-full col-span-full self-end text-center pb-4 mr-12">
-          <Image
-            src="/images/hero-scroll.svg"
-            width={33.95}
-            height={64.61}
-            alt="hero images"
-          />
+        
+        <div className="row-span-full col-span-full self-end  text-center pb-4 mb-28 block">
+         
+          <div id="testim" className='text-[#ffffff] line-clamp-2 font-semibold text-3xl text-center inline mx-auto relative border-xl border-black'>"{(testimonial[index])}" </div>
         </div>
       </div>
       <div className="grid sm:hidden">
