@@ -63,17 +63,17 @@ const [adminpanel,showadminpanel]=useState(false)
     };
   
     function  handleChangePassword(){
-      // Implement your change password logic here
+    
       sendPasswordResetEmail(auth,auth.currentUser.email)
   .then(() => {
-    // Password reset email sent!
+  
     alert("Password reset link sent to your email")
-    // ..
+   
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // ..
+    
   });
 
       setTimeout(function(){setIsOpen(!isOpen)},100)

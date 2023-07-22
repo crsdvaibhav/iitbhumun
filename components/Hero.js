@@ -18,7 +18,7 @@ export default function Hero() {
   data.testimonials.map((i) => {
     testimonial.push(i.review);
   });
-  const[index,setCurrentTextIndex]=useState("")
+  const[index,setCurrentTextIndex]=useState("4")
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -81,7 +81,7 @@ export default function Hero() {
         
         <div className="row-span-full col-span-full self-end  text-center pb-4 mb-28 block">
          
-          <div id="testim" className='text-[#ffffff] line-clamp-2 font-sans font-semibold text-3xl text-center inline mx-auto relative border-xl border-black'>"{(testimonial[index])}" </div>
+          <div id="testimo" className='text-[#FFFDFA] line-clamp-2 font-italic font-semibold text-3xl text-center inline mx-auto relative border-xl testimo border-black'>"{(testimonial[index])}" </div>
         </div>
       </div>
       <div className="grid sm:hidden">

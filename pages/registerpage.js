@@ -352,15 +352,15 @@ const[buttondisplay,setdisplay]=useState(false)
 </div>
 <h1 className="text-2xl m-auto 'block' justify-center text-center my-3" id='or' >OR</h1>
         <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:*</label>
+          <label htmlFor="name" className="block text-[#189BA5] font-bold mb-2">Name:<span className='text-red-500'>*</span></label>
           <input type="text" id="name_field" placeholder="Enter your name" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="age" required className="block text-gray-700 font-bold mb-2">Age:*</label>
+          <label htmlFor="age" required className="block text-[#189BA5] font-bold mb-2">Age:<span className='text-red-500'>*</span></label>
           <input type="number" id="age" placeholder="Age" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="gender" className="block text-gray-700 font-bold mb-2">Gender*</label>
+          <label htmlFor="gender" className="block text-[#189BA5] font-bold mb-2">Gender<span className='text-red-500'>*</span></label>
           <select id="gender" name="gender">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -369,35 +369,35 @@ const[buttondisplay,setdisplay]=useState(false)
           </select>
         </div>
         <div className="mb-4">
-          <label htmlFor="Insitute" required className="block text-gray-700 font-bold mb-2">Name of Institution:</label>
+          <label htmlFor="Insitute" required className="block text-[#189BA5] font-bold mb-2">Name of Institution:<span className='text-red-500'>*</span></label>
           <input type="text" placeholder="College or University" id="Institute" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="region" required className="block text-gray-700 font-bold mb-2">Region:*</label>
+          <label htmlFor="region" required className="block text-[#189BA5] font-bold mb-2">Region:<span className='text-red-500'>*</span></label>
           <input type="text" placeholder="City or state" id="region" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="number" required className="block text-gray-700 font-bold mb-2" >Phone number:*</label>
+          <label htmlFor="number" required className="block text-[#189BA5] font-bold mb-2" >Phone number:<span className='text-red-500'>*</span></label>
           <input type="tel" placeholder="+919279279289" id='number' required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="email" required className="block text-gray-700 font-bold mb-2">Email:*</label>
+          <label htmlFor="email" required className="block text-[#189BA5] font-bold mb-2">Email:<span className='text-red-500'>*</span></label>
           <input type="email" placeholder="Use same email if signed up with google" id="email_field" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="Password" required className="block text-gray-700 font-bold mb-2">Password:*</label>
+          <label htmlFor="Password" required className="block text-[#189BA5] font-bold mb-2">Password:<span className='text-red-500'>*</span></label>
           <input type="password" placeholder="Use a strong password" id="password" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="MUNcount" className="block text-gray-700 font-bold mb-2">Number of MUNS participated earlier:*</label>
+          <label htmlFor="MUNcount" className="block text-[#189BA5] font-bold mb-2">Number of MUNS participated earlier:<span className='text-red-500'>*</span></label>
           <input type="number" id="muncount" placeholder="" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="pastaward" className="block text-gray-700 font-bold mb-2">MUN Awards won in past:</label>
+          <label htmlFor="pastaward" className="block text-[#189BA5] font-bold mb-2">MUN Awards won in past:</label>
           <input type="text" placeholder="Leave if none" id="pastaward"  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
-          <label htmlFor="refferalcode"  className="block text-gray-700 font-bold mb-2">Referral code:</label>
+          <label htmlFor="refferalcode"  className="block text-[#189BA5] font-bold mb-2">Referral code:</label>
           <input type="text"   placeholder="Optional" id="refferalcode"   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
   

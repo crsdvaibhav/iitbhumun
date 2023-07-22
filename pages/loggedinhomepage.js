@@ -289,9 +289,9 @@ const[buttonname1,rename1]=useState("Change portfolio")
         <div className="my-50 text-center font-bold">
 
         <h2 className="mt-50 text-center font-bold">x</h2>
-        <div className="sm:flex sm:justify-between block "><div className="mx-auto inline" >
-        <h1 className="mt-32  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Profile</h1>
-          <div id="content" className="mt-30 w-100 h-fit-content display:'block'  h-min-content m-auto text-center font-bold" ></div>
+        <div id="wholescreen" className="sm:flex  sm:justify-between block "><div className="mx-auto inline" >
+        <h1 className="mt-20 mb-4  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Profile</h1>
+          <div id="content" className="mt-29 w-100 h-fit-content display:'block'  h-min-content m-auto text-center font-bold" ></div>
          
 <div id="progressvalue1" class="flex justify-between gap-15 mb-1">
   <span class="text-base font-medium mx-12 text-blue-700 dark:text-white">Registration Completed</span>
@@ -316,7 +316,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
             <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
               <h2 className="'block' py-4 text-2xl  text-red-500">Committee-1  </h2>
 
-              <h1 id="h1"></h1><table className=" sm:w-72 min-w-full border text-center text-sm  dark:border-neutral-500" id="container2ul">
+              <h1 id="h1"></h1><table className=" sm:w-72 min-w-full border text-center text-sm border-black-500 dark:border-neutral-500" id="container2ul">
                 <thead className="border-b font-medium dark:border-neutral-500">
 
                   <th
@@ -330,9 +330,9 @@ const[buttonname1,rename1]=useState("Change portfolio")
                 </thead>
                 <tbody>
                   <tr id="container2ul-row1">
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_1_Preference_1</td>
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_1_Preference_2</td>
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_1_Preference_3</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 1</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 2</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 3</td>
                   </tr>
                   <tr id="container2ul-row2" className="text-[#189BA5]">
 
@@ -358,9 +358,9 @@ const[buttonname1,rename1]=useState("Change portfolio")
               </thead>
                 <tbody>
                   <tr id="container3ul-row1">
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_2_Preference_1</td>
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_2_Preference_2</td>
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_2_Preference_3</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 1</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 2</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 3</td>
                   
                   </tr>
 
@@ -391,9 +391,9 @@ const[buttonname1,rename1]=useState("Change portfolio")
                 </thead>
                 <tbody>
                   <tr id="container4ul-row1">
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_3Preference_1</td>
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_3_Preference_2</td>
-                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Committee_3_Preference_3</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 1</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 2</td>
+                  <td className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Preference 3</td>
                   </tr>
                   <tr id="container4ul-row2"  className="text-[#189BA5]">
 
