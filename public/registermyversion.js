@@ -42,7 +42,7 @@ const generateUniqueId = () => {
 };
 
 
-
+if(document.getElementById("number").value==""){document.getElementById("number").value="+91"}
 
 const database=getDatabase(app)
 
@@ -205,7 +205,12 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
   const titu=push(hehe);
   
   set(titu,{
-    alloted:"NO", email,Number_of_MUNs_appeared_before:muncount,PastAwards_won:pastaward,option1,option2,option3,option4,option5,option6,option7,option8,option9,
+    alloted:"NO",
+     email,
+    MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
+    
+   PastAwards:` PastAwards_won: ${pastaward}`,
+    option1,option2,option3,option4,option5,option6,option7,option8,option9,
 
 
 
@@ -328,7 +333,12 @@ PaymentConfirmed:0
   const titu=push(hehe);
   
   set(titu,{
-    alloted:"NO",email,Number_of_MUNs_appeared_before:muncount,PastAwards_won:pastaward,option1,option2,option3,option4,option5,option6,option7,option8,option9,
+    alloted:"NO" ,
+    email,
+    MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
+    
+    PastAwards:` PastAwards_won: ${pastaward}`,
+    option1,option2,option3,option4,option5,option6,option7,option8,option9,
 
 
 
