@@ -15,6 +15,8 @@ import Image from 'next/image';
 const AdminPanel = () => {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn1, setIsLoggedInn] = useState(false);
+
   const [DATA, setDATA] = useState({});
   const [submitValues, setSubmitValues] = useState({});
   const [inputValues, setInputValues] = useState({});
@@ -44,6 +46,7 @@ const [inputData,setinputadta]=useState("");
 //   }, [isLoggedIn]);
   const handleLogin = () => {
     if (password === "SHIVANSHUMUN") {
+      setIsLoggedInn(true);
       async function fetchData1() {
         try {
           await fetchData(); // Wait for the first command to complete
@@ -127,9 +130,11 @@ let i=0;
       <div>
         <h1 className='mb-5 text-center font-bold'>ADMIN PANEL MUN IIT BHU</h1>
         <input type="password" value={password} onChange={handlePasswordChange} placeholder="Enter password" className="text-center font bold mx-auto my-3 block" />
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-auto rounded block" onClick={handleLogin}>
+        {isLoggedIn1?<button className="buttonload mx-auto block">
+  <i class="fa fa-circle-o-notch fa-spin mx-2"></i>Loading...
+</button>:<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-auto rounded block" onClick={handleLogin}>
           Login
-        </button>
+        </button>}
       </div>
     );
   } else {
