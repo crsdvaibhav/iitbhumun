@@ -205,14 +205,17 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
   const titu=push(hehe);
   
   set(titu,{
-    alloted:"NO",
-     email,
+    name:name,
+    Phone_number:number,
+    alloted:"NO" ,
+    email,
+    Age:age,
+    Gender:gender,
+    Institute:Institute,
+    Region:region,
     MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
-    
-   PastAwards:` PastAwards_won: ${pastaward}`,
+    PastAwards:` PastAwards_won: ${pastaward}`,
     option1,option2,option3,option4,option5,option6,option7,option8,option9,
-
-
 
 
 
@@ -333,10 +336,16 @@ PaymentConfirmed:0
   const titu=push(hehe);
   
   set(titu,{
+    name:name,
+    Phone_number:number,
     alloted:"NO" ,
     email,
+    Age:age,
+    Gender:gender,
+    Institute:Institute,
+    Region:region,
+    Referralcode:refferalcode,
     MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
-    
     PastAwards:` PastAwards_won: ${pastaward}`,
     option1,option2,option3,option4,option5,option6,option7,option8,option9,
 

@@ -7,7 +7,7 @@
 import React, { Component, useEffect, useState,} from 'react';
 import app from "../public/firebaseconfig";
 
-import { getDatabase, ref, get, set, onValue, update, query, orderByChild, equalTo, child } from 'firebase/database';
+import { getDatabase, ref, get, set, onValue, update, } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 import { text } from '@fortawesome/fontawesome-svg-core';
 import Image from 'next/image';
@@ -154,7 +154,7 @@ let i=0;
           <div className="my-6   px-2 shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)] border-red-50"key={itemId}>
             <select className="bg-gray-50 border  border-blue-500 text-gray-900 font-bold text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={(event) => handleOptionChange(event, itemId)}>
               {Object.keys(item).map((key) => {
-                if (key !== "alloted") {
+                if (key=="email"||key=="MUNcount"||key=="PastAwards"||key == "option6"||key == "option7"||key == "option8"||key == "option9"||key == "option1"||key == "option2"||key == "option3"||key == "option4"||key == "option5") {
                   return (
                     <option className="font-bold" key={key} value={item[key]}>
                       {item[key]}
