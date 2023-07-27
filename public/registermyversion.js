@@ -252,6 +252,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     Institute:Institute,
     Institute_ID:`${localStorage.getItem("url")}`,
     Delegate_type:"Outstation",
+    Payment_done:"NO",
     Region:region,
     MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
     PastAwards:` PastAwards_won: ${pastaward}`,
@@ -270,7 +271,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     
     
     .then(() => {
-      
+      localStorage.removeItem("url"),
       signup1(); 
       
        

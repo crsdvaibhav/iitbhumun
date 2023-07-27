@@ -20,11 +20,12 @@ const AdminPanel = () => {
 
   const [DATA, setDATA] = useState({});
   const [submitValues, setSubmitValues] = useState({});
+  const [submitValues1, setSubmitValues1] = useState({});
   const [inputValues, setInputValues] = useState({});
-
+const[delegate,setdelegate]=useState("Outstation");
 const [inputData,setinputadta]=useState("");
 
-
+console.log(delegate)
 // Create a query to find the relevant data entry based on the user's email
 
 
@@ -78,6 +79,14 @@ const [inputData,setinputadta]=useState("");
       [itemId]: value,
     }));
   };
+  const handleOptionChange1 = (event, itemId) => {
+    const { value } = event.target;
+    setSubmitValues1((prevValues) => ({
+      ...prevValues,
+      [itemId]: value,
+    }));
+  };
+  
   const handleinputChange = (event) => {
     const  value  = event.target.value;
     setInputValues(
@@ -85,7 +94,8 @@ const [inputData,setinputadta]=useState("");
     )
   };
   const handleInput = (itemId) => {
-    console.log("Inside handleSubmit");
+    console.log("Inside handleInput");
+    handleSubmit1()
     const database = getDatabase();
     const itemRef = ref(database, `preferences/${itemId}`);
     update(itemRef, { alloted: inputValues })
@@ -102,12 +112,28 @@ const [inputData,setinputadta]=useState("");
 
 let i=0;
 
-
+const handleSubmit1 = (itemId) => {
+  console.log("Inside handleSubmit");
+  const database = getDatabase();
+  const itemRef = ref(database, `preferences/${itemId}`);
+  update(itemRef, {  
+  Delegate_type:submitValues1[itemId],
+  })
+    .then(() => {
+     
+    })
+    .catch((error) => {
+      console.log("Error updating value:", error);
+    });
+};
   const handleSubmit = (itemId) => {
+    handleSubmit1(itemId)
     console.log("Inside handleSubmit");
     const database = getDatabase();
     const itemRef = ref(database, `preferences/${itemId}`);
-    update(itemRef, { alloted: submitValues[itemId] })
+    update(itemRef, { alloted: submitValues[itemId] ,
+    
+    })
       .then(() => {
         setTimeout(() => {
           alert("Allotted successfully");
@@ -117,6 +143,7 @@ let i=0;
         console.log("Error updating value:", error);
       });
   };
+  
 
   const filteredData = Object.keys(DATA).reduce((filtered, itemId) => {
     const item = DATA[itemId];
@@ -175,8 +202,30 @@ let i=0;
          </div>
          
          { Object.keys(item).map((key) => {if (key=="Institute_ID"){if(item[key]!=null)return <a target='_blank'rel='noreferrer' href={`${item["Institute_ID"]}`}><button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" >View ID</button></a>}})}
-
-
+         <select className="bg-gray-50 border  border-blue-500 text-gray-900 font-bold text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={(event) => handleOptionChange1(event, itemId)}>
+              {Object.keys(item).map((key) => {
+                if (key=="Delegate_type") {
+                  return (
+<>
+                    <option className="font-bold" key={key} value={item[key]}>
+                      {item[key]}
+                    </option>
+                    <option className="font-bold"  value="IIT BHU">
+                     IIT BHU
+                    </option>
+                    <option className="font-bold"  value="BHU">
+                     BHU
+                    </option>
+                    </>
+                    
+                    
+                  );
+                }
+                
+               
+              })}
+            </select>
+           
 
           </div>
 
