@@ -11,6 +11,7 @@ import { getDatabase, ref, get, set, onValue, update, } from 'firebase/database'
 import { getAuth } from 'firebase/auth';
 import { text } from '@fortawesome/fontawesome-svg-core';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AdminPanel = () => {
   const [password, setPassword] = useState("");
@@ -156,11 +157,13 @@ let i=0;
               {Object.keys(item).map((key) => {
                 if (key=="email"||key=="MUNcount"||key=="PastAwards"||key == "option6"||key == "option7"||key == "option8"||key == "option9"||key == "option1"||key == "option2"||key == "option3"||key == "option4"||key == "option5") {
                   return (
+
                     <option className="font-bold" key={key} value={item[key]}>
                       {item[key]}
                     </option>
                   );
                 }
+                
                
               })}
             </select>
@@ -171,8 +174,18 @@ let i=0;
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
          </div>
          
+         { Object.keys(item).map((key) => {if (item["Institute_ID"]!=null&&key=="Institute_ID"){return <a target='_blank' href={`${item["Institute_ID"]}`}><button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" >View ID</button></a>}})}
+
+
+
           </div>
-        ))}
+
+  
+
+        ))
+        
+        
+        }
       </div>
     );
   }

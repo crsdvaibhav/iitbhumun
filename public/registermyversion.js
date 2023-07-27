@@ -2,6 +2,7 @@
 import { getDatabase,ref,push,set,onValue,get,runTransaction } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
+import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js';
 const provider = new GoogleAuthProvider();
 
 const firebaseConfig = {
@@ -41,7 +42,37 @@ const generateUniqueId = () => {
   return uniqueId;
 };
 
+function uploadPhoto() {
+  const storage = getStorage(app);
+  const fileInput = document.getElementById('photoInput');
+  const file = fileInput.files[0];
+console.log(file)
+  if (!file) {
+    console.error('No file selected.');
+    return;
+  }
+const id=generateUniqueId()
+  // Create a unique filename for the photo (you can use the current timestamp or any other method)
+  const photoRef = Sref(storage, `photos/${id}${file.name}`);
 
+  // Upload the file to Firebase Storage
+  uploadBytes(photoRef, file).then((snapshot) => {
+    // Get the download URL of the uploaded photo
+    
+    getDownloadURL(photoRef).then((downloadURL) => {
+    
+      console.log('Photo URL:', downloadURL);
+      
+      localStorage.setItem("url",downloadURL)
+      
+      
+    }).catch((error) => {
+      console.error('Error getting download URL:', error);
+    });
+  }).catch((error) => {
+    console.error('Error uploading photo:', error);
+  });
+}
 if(document.getElementById("number").value==""){document.getElementById("number").value="+91"}
 
 const database=getDatabase(app)
@@ -201,7 +232,14 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
   const option7=Committee3+":  "+pref3option1;
   const option8=Committee3+":  "+pref3option2;
   const option9=Committee3+":  "+pref3option3;
+
+  const fileInput = document.getElementById('photoInput');
+  const file = fileInput.files[0];
+ 
+  if(file){uploadPhoto()}
+  console.log(localStorage.getItem("url"))
   const hehe=ref(database,"preferences/")
+  
   const titu=push(hehe);
   
   set(titu,{
@@ -212,6 +250,8 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     Age:age,
     Gender:gender,
     Institute:Institute,
+    Institute_ID:`${localStorage.getItem("url")}`,
+    Delegate_type:"Outstation",
     Region:region,
     MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
     PastAwards:` PastAwards_won: ${pastaward}`,
@@ -332,6 +372,10 @@ PaymentConfirmed:0
   const option7=Committee3+":  "+pref3option1;
   const option8=Committee3+":  "+pref3option2;
   const option9=Committee3+":  "+pref3option3;
+  const fileInput = document.getElementById('photoInput');
+  const file = fileInput.files[0];
+  if(file){uploadPhoto()}
+  console.log(localStorage.getItem("url"))
   const hehe=ref(database,"preferences/")
   const titu=push(hehe);
   
@@ -343,6 +387,8 @@ PaymentConfirmed:0
     Age:age,
     Gender:gender,
     Institute:Institute,
+    Institute_ID:`${localStorage.getItem("url")}`,
+    Delegate_type:"Outstation",
     Region:region,
     Referralcode:refferalcode,
     MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,

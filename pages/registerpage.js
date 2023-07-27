@@ -373,6 +373,10 @@ const[buttondisplay,setdisplay]=useState(false)
           <input type="text" placeholder="College or University" id="Institute" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
         <div className="mb-4">
+          <label htmlFor="Insitute" required className="block text-[#189BA5] font-bold mb-2">Institute ID card if from BHU or IIT BHU:<span className='text-red-500'></span></label>
+          <input type="file" placeholder="College or University" id="photoInput" required className="w-full px-4 py-2 border rounded-lg focus:outline-none text-[#189BA5] focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+        <div className="mb-4">
           <label htmlFor="region" required className="block text-[#189BA5] font-bold mb-2">Region:<span className='text-red-500'>*</span></label>
           <input type="text" placeholder="City or state" id="region" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
