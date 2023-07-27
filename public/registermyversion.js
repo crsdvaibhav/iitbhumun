@@ -389,6 +389,7 @@ PaymentConfirmed:0
     Institute:Institute,
     Institute_ID:`${localStorage.getItem("url")}`,
     Delegate_type:"Outstation",
+    Payment_done:"NO",
     Region:region,
     Referralcode:refferalcode,
     MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,

@@ -174,7 +174,7 @@ let i=0;
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
          </div>
          
-         { Object.keys(item).map((key) => {if (item["Institute_ID"]!=null&&key=="Institute_ID"){return <a target='_blank' href={`${item["Institute_ID"]}`}><button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" >View ID</button></a>}})}
+         { Object.keys(item).map((key) => {if (key=="Institute_ID"){if(item[key]!=null)return <a target='_blank'rel='noreferrer' href={`${item["Institute_ID"]}`}><button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" >View ID</button></a>}})}
 
 
 
