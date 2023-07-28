@@ -303,8 +303,8 @@ const[buttonname1,rename1]=useState("Change portfolio")
 
           <h1 id="showresult" className='my-6 text-red-500 text-2xl w-30px text-center'></h1>
           
-          <Button className="block mx-auto py-3 my-3 " onClick={(()=>{checkout({lineItems:[{price:"price_1NUh7JSG0t1MHhAWVAFbHXEe",quantity:1}]})})} id="paynow">Pay now!</Button>
-         <img src="/images/join.svg" className="inline mx-auto"/>
+         <h1 id="paynow!">Pay on this QR code and upload Screenshot with time of payment</h1>
+         <img src="/images/join.svg" id="paymentqr" className="inline mx-auto"/>
           </div>
           <div className="h-cover border-l-2 border-gray-500">
             

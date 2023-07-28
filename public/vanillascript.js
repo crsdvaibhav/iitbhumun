@@ -126,7 +126,7 @@ function fetchData1() {
           if (p <= 15 && p >= 13) { document.getElementById("container2ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]} </td>` }
           if (p <= 18 && p >= 16) { document.getElementById("container3ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
           if (p <= 21 && p >= 19) { document.getElementById("container4ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
-          if (key === "alloted" && item[key] != "NO") {
+          if (key == "alloted" && item[key] != "NO") {
             document.getElementById("progressvalue").innerHTML=`75%`
             document.getElementById("progressvalue2").style.width="75%"
            
@@ -145,6 +145,12 @@ function fetchData1() {
           p++;
         });
         if (i == 0) { document.getElementById("showresult").innerHTML = `Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment.` }
+        if(i==1){
+if(key==Delegate_type&&item[key]=="IIT BHU"){document.getElementById("paymentqr").src="images/aastha.jpg"}
+if(key==Delegate_type&&item[key]=="BHU"){document.getElementById("paymentqr").src="images/abhishek.jpg"}
+if(key==Delegate_type&&item[key]=="Outstation"){document.getElementById("paymentqr").src="images/satwik.jpg"}
+        }
+        
       });
     })
     .catch((error) => {
