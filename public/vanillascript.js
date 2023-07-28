@@ -247,9 +247,9 @@ function fetchData1() {
       filteredData.forEach((item) => {
         Object.keys(item).forEach((key) => {
 
-          if (p <= 16 && p >= 14) { document.getElementById("container2ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]} </td>` }
-          if (p <= 19 && p >= 17) { document.getElementById("container3ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
-          if (p <= 22 && p >= 20) { document.getElementById("container4ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
+          if (p <= 17 && p >= 15) { document.getElementById("container2ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]} </td>` }
+          if (p <= 20 && p >= 18) { document.getElementById("container3ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
+          if (p <= 23 && p >= 21) { document.getElementById("container4ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
           
            
             p++;

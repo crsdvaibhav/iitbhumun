@@ -21,7 +21,7 @@ const AdminPanel = () => {
 
   const [DATA, setDATA] = useState({});
   const [submitValues, setSubmitValues] = useState({});
-  const [submitValues1, setSubmitValues1] = useState({});
+  const [submitValues1, setSubmitValues1] = useState("");
   const [inputValues, setInputValues] = useState({});
 const[delegate,setdelegate]=useState("Outstation");
 const [inputData,setinputadta]=useState("");
@@ -96,7 +96,8 @@ console.log(delegate)
   };
   const handleInput = (itemId) => {
     console.log("Inside handleInput");
-    handleSubmit1()
+    if(submitValues1!=""){
+      handleSubmit1(itemId)}
     const database = getDatabase();
     const itemRef = ref(database, `preferences/${itemId}`);
     update(itemRef, { alloted: inputValues })
@@ -128,7 +129,8 @@ const handleSubmit1 = (itemId) => {
     });
 };
   const handleSubmit = (itemId) => {
-    handleSubmit1(itemId)
+    if(submitValues1!=""){
+    handleSubmit1(itemId)}
     console.log("Inside handleSubmit");
     const database = getDatabase();
     const itemRef = ref(database, `preferences/${itemId}`);
@@ -203,12 +205,15 @@ const handleSubmit1 = (itemId) => {
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
          </div>
          
-         { Object.keys(item).map((key) => {if (key=="Institute_ID"){if(item[key]!=null)return <a target='_blank'rel='noreferrer' href={`${item["Institute_ID"]}`}><button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" >View ID</button></a>}})}
-         <select className="bg-gray-50 border  border-blue-500 text-gray-900 font-bold text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={(event) => handleOptionChange1(event, itemId)}>
+         { Object.keys(item).map((key) => {if (key=="Institute_ID"){if(item["Institute_ID"]!=""){return <a target='_blank'rel='noreferrer' href={`${item["Institute_ID"]}`}>
+          <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" >View ID</button></a>}}})}
+          <label className='block font-sans my-2'>Payment QR code type to assign</label>
+         <select className="bg-gray-50 border  border-blue-500 text-gray-900 font-bold text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  onChange={(event) => handleOptionChange1(event, itemId) }>
               {Object.keys(item).map((key) => {
                 if (key=="Delegate_type") {
                   return (
 <>
+
                     <option className="font-bold" key={key} value={item[key]}>
                       {item[key]}
                     </option>

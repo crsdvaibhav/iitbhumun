@@ -57,9 +57,9 @@ let i=0;
     
     })
       .then(() => {
-        setTimeout(() => {
-          alert("Allotted successfully");
-        }, 300);
+        
+          alert("Payment verified successfully");
+       console.log(itemRef.Referralcode)
       })
       .catch((error) => {
         console.log("Error updating value:", error);
@@ -97,8 +97,8 @@ let i=0;
                   return (
                     <>
 <h1 className='mx-auto text-center font-bold text-2xl'>{item["email"]}</h1>
-<img className={'w-52 h-52  hover:w-96 hover:h-96 '} src={item["PaymentSS"]}/>
-<div>
+<a href={item["PaymentSS"]} target='_blank' rel='noreferrer'><img className={'w-52 h-52   '} src={item["PaymentSS"]}/></a>
+<div className='flext justify-center'>
 <Button onClick={function(){handleSubmit(itemId)}} className='my-2'>Approve Payment!</Button>
 <a href={item["PaymentSS"]} target='_blank' rel='noreferrer'><Button  className=' ml-6 my-2'>View Screenshot</Button></a>
 </div>
