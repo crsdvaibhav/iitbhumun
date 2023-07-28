@@ -230,7 +230,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
 <div id="progressvalue3" class="w-80 block mx-auto bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
   <div id="progressvalue2" class="bg-blue-600 h-2.5 rounded-full w-[50%]"></div>
 </div>
-
+<div id="ssform1">
           <h1 id="showresult" className='my-6 text-red-500 text-2xl w-30px text-center'></h1>
           
          <h1 id="paynow!" className="hidden">Pay on this QR code and upload Screenshot with time of payment</h1>
@@ -242,7 +242,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
           </div>
           <div className="h-cover border-l-2 border-gray-500">
             
-          </div>
+          </div></div>
 <div className="mt-28">
 <h1 className="mt-29  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Portfolio</h1>
           <div className={` 'block'   justify-center m-auto`} id= "showportfolio1"  ></div>

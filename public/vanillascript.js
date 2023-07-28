@@ -178,9 +178,7 @@ function fetchData() {
         resolve(filteredData2);
       }
     });
-    // if (!data1 && !data2) {
-    //   resolve([]);
-    // }
+    
   });
 }
 document.getElementById("content").innerHTML = "<div class='loader'></div>",
@@ -290,6 +288,13 @@ function fetchData1() {
             
             
             }}
+            if(key=="Payment_done"&&item[key]!="NO"){
+              document.getElementById("progressvalue").innerHTML=`100%`
+              document.getElementById("progressvalue2").style.width="100%"
+              document.getElementById("ssform1").innerHTML="<h1 class='mt-4 text-2xl'>Payment Completed! You are all set for IIT BHU MUN 2023</h1>"
+            
+
+            }
   
 
 
