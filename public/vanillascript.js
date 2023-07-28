@@ -146,9 +146,9 @@ function fetchData1() {
         });
         if (i == 0) { document.getElementById("showresult").innerHTML = `Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment.` }
         if(i==1){
-if(key==Delegate_type&&item[key]=="IIT BHU"){document.getElementById("paymentqr").src="images/aastha.jpg"}
-if(key==Delegate_type&&item[key]=="BHU"){document.getElementById("paymentqr").src="images/abhishek.jpg"}
-if(key==Delegate_type&&item[key]=="Outstation"){document.getElementById("paymentqr").src="images/satwik.jpg"}
+if(key==Delegate_type&&item[key]=="IIT BHU"){document.getElementById("paymentqr").src="/images/aastha.jpg"}
+if(key==Delegate_type&&item[key]=="BHU"){document.getElementById("paymentqr").src="/images/abhishek.jpg"}
+if(key==Delegate_type&&item[key]=="Outstation"){document.getElementById("paymentqr").src="/images/satwik.jpg"}
         }
         
       });
