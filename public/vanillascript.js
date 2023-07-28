@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebas
 import { getDatabase, ref, push, set, get, onValue, update } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, signInWithEmailAndPassword, signOut, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-
+import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js';
 const firebaseConfig = {
   apiKey: "AIzaSyAYLIn8hGjgVrX3h23aVZPx47Sn8bZBCz4",
   authDomain: "mun-2023.firebaseapp.com",
@@ -13,11 +13,135 @@ const firebaseConfig = {
   appId: "1:843433332162:web:faa917397b259754461a5b",
   measurementId: "G-L3C80FWLKS"
 };
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const database = getDatabase();
+
+function  uploadPhoto() {
+  const storage = getStorage(app);
+  const fileInput = document.getElementById('photoInput1');
+  const file = fileInput.files[0];
+console.log(file)
+  if (!file) {
+    console.error('No file selected.');
+    return;
+  }
+
+  // Create a unique filename for the photo (you can use the current timestamp or any other method)
+  const photoRef = Sref(storage, `paymentss/${Date}${file.name}`);
+
+  // Upload the file to Firebase Storage
+  uploadBytes(photoRef, file).then((snapshot) => {
+    // Get the download URL of the uploaded photo
+    
+    getDownloadURL(photoRef).then((downloadURL) => {
+    
+      console.log('Photo URL:', downloadURL);
+      
+      localStorage.setItem("url1",downloadURL)
+      addphoto()
+      
+    }).catch((error) => {
+      console.error('Error getting download URL:', error);
+    });
+  }).catch((error) => {
+    console.error('Error uploading photo:', error);
+  });
+}
+document.getElementById("ssbutton").addEventListener("click",uploadPhoto)
+function addphoto(){
+
+  
+  const databaseRef = ref(database, "preferences");
+  const auth = getAuth();
+  // Retrieve the data once
+  get(databaseRef)
+    .then((snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+
+        const data = childSnapshot.val();
+
+
+        if (data.email === auth.currentUser.email) {
+
+
+          // Get the reference to the specific data using the child snapshot key
+          const dataRef = ref(database, `preferences/${childSnapshot.key}`);
+
+          // Update the value using the reference and the updated data
+          update(dataRef, {
+PaymentSS:localStorage.getItem("url1"),
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+          })
+            .then(() => {
+              alert("Successfully Uploaded!")
+            })
+            .catch((error) => {
+              alert("Error Updating Data!")
+
+            });
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Error retrieving data:", error);
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Initialize Firebase
 
 
 const userEmail = auth.currentUser ? auth.currentUser.email : "shivanshu264@gmail.com";
@@ -67,6 +191,8 @@ fetchData()
     document.getElementById("showbutton1").style.display = "inline"
     document.getElementById("progressvalue1").style.display="block"
     document.getElementById("progressvalue3").style.display="block"
+    document.getElementById("paymentqr").style.display="inline"
+
     
 
 
@@ -123,33 +249,59 @@ function fetchData1() {
       filteredData.forEach((item) => {
         Object.keys(item).forEach((key) => {
 
-          if (p <= 15 && p >= 13) { document.getElementById("container2ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]} </td>` }
-          if (p <= 18 && p >= 16) { document.getElementById("container3ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
-          if (p <= 21 && p >= 19) { document.getElementById("container4ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
-          if (key == "alloted" && item[key] != "NO") {
-            document.getElementById("progressvalue").innerHTML=`75%`
-            document.getElementById("progressvalue2").style.width="75%"
+          if (p <= 16 && p >= 14) { document.getElementById("container2ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]} </td>` }
+          if (p <= 19 && p >= 17) { document.getElementById("container3ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
+          if (p <= 22 && p >= 20) { document.getElementById("container4ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
+          
            
-            
-            console.log(item[key])
+            p++;
+      });
+          Object.keys(item).forEach((key) => {
+            if (key == "alloted" && item[key] != "NO") {
+              document.getElementById("progressvalue").innerHTML=`75%`
+              document.getElementById("progressvalue2").style.width="75%"
+
             i = 1;
-
-
+            
             document.getElementById("showresult").innerHTML = `Congratulations! You have been allotted as a delegate speaker of <span class="text-[#189BA5]">${item[key]}</span>`
 
-            document.getElementById("paynow").style.display = 'block'
+            document.getElementById("paynow!").style.display = 'block'
+            Object.keys(item).forEach((key) => {
+              if(key=="Delegate_type"&&item[key]=="IIT BHU"){document.getElementById("paymentqr").src="/images/aastha.jpg"
+              document.getElementById("paymentqr").style.display="inline"
+              document.getElementById("paymentqr").style.width="220px"
+              document.getElementById("paymentqr").style.height="180px"
+              document.getElementById("ssform").style.display="block"
+            
+            }
+              if(key=="Delegate_type"&&item[key]=="BHU"){{document.getElementById("paymentqr").src="/images/abhishek.jpg"
+              document.getElementById("paymentqr").style.display="inline"
+              document.getElementById("paymentqr").style.width="220px"
+              document.getElementById("paymentqr").style.height="180px"
+              document.getElementById("ssform").style.display="block"
+            
+            
+            }}
+             if(key=="Delegate_type"&&item[key]=="Outstation"){{document.getElementById("paymentqr").src="/images/satwik.jpg"
+             document.getElementById("paymentqr").style.display="inline"
+              document.getElementById("paymentqr").style.width="220px"
+              document.getElementById("paymentqr").style.height="180px"
+              document.getElementById("ssform").style.display="block"
+            
+            
+            }}
+  
 
 
-
+            })
           }
-          p++;
+         
+        
+          
         });
         if (i == 0) { document.getElementById("showresult").innerHTML = `Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment.` }
         
-if(key==Delegate_type&&item[key]=="IIT BHU"){if(i==1){document.getElementById("paymentqr").src="/images/aastha.jpg"}}
-if(key==Delegate_type&&item[key]=="BHU"){if(i==1){document.getElementById("paymentqr").src="/images/abhishek.jpg"}}
-if(key==Delegate_type&&item[key]=="Outstation"){if(i==1){document.getElementById("paymentqr").src="/images/satwik.jpg"}}
-        
+
         
       });
     })
