@@ -440,6 +440,19 @@
       "vicechairsrc": "/images/jpc-vc.jpg",
       "href": "https://drive.google.com/file/d/1--HOVJr5RZL80oXTxgzERVoe-Zulxr3z/view?usp=sharing"
     },
+    
+    {
+      "id": 4,
+      "title": "UNHRC",
+      "data": " The UNHRC is the intergovernmental body within the United Nations responsible for promoting and protecting human rights worldwide. Its primary function includes monitoring the practice of human rights among the member states.",
+      "chair": " Domil Johnson",
+      "vicechair": " Sourodeep Ghosh",
+      "agenda": " Deliberation on the right to life for people living with HIV/AIDS.",
+      "logosrc": "/images/UNHRC.svg",
+      "chairsrc": "/images/unhrc-chair.jpg",
+      "vicechairsrc": "/images/unhrc-vc.jpg",
+      "href": "https://drive.google.com/file/d/1xOwgGbsxF9n7lIYRTk0YWOC_68INRWOx/view?usp=sharing"
+    },
     {
       "id": 3,
       "title": "AIPPM",
@@ -452,18 +465,6 @@
       "vicechairsrc": "/images/aippm-vc.jpg",
       "href": "https://drive.google.com/file/d/1yIX18FW7rnzR0dVX6MkD0EgLf2_xaFae/view?usp=sharing"
     },
-    {
-      "id": 4,
-      "title": "UNHRC",
-      "data": " The UNHRC is the intergovernmental body within the United Nations responsible for promoting and protecting human rights worldwide. Its primary function includes monitoring the practice of human rights among the member states.",
-      "chair": " Domil Johnson",
-      "vicechair": " Sourodeep Ghosh",
-      "agenda": " Deliberation on the right to life for people living with HIV/AIDS.",
-      "logosrc": "/images/UNHRC.svg",
-      "chairsrc": "/images/unhrc-chair.jpg",
-      "vicechairsrc": "/images/unhrc-vc.jpg"
-    },
-   
     {
       "id": 5,
       "title": "UNCSW",
