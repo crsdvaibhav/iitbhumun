@@ -205,7 +205,7 @@ const handleSubmit1 = (itemId) => {
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
          </div>
          
-         {Object.keys(item).map((key) => {if (key==="Institute_ID"&&item[key]!=""){return (<a target='_blank'rel='noreferrer' key={key} href={item["Institute_ID"]}>
+         {Object.keys(item).map((key) => {if (key==="Institute_ID"&&item["Institute_ID"]!=""&&item["Institute_ID"]!="null"){return (<a target='_blank'rel='noreferrer' key={key} href={item['Institute_ID']} >
           <button key={key} className="bg-transparent ml-4 mx-auto  'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" >View ID</button></a>)}})}
           <label className='block font-sans my-2' >Payment QR code type to assign</label>
          <select className="bg-gray-50 border  border-blue-500 text-gray-900 font-bold text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  onChange={(event) => handleOptionChange1(event, itemId) }>
