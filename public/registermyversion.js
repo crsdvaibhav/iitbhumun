@@ -135,8 +135,8 @@ const muncount=document.getElementById('muncount').value.trim();
 
   return true;
 }
-
-    document.getElementById('register2').addEventListener("click", submitForm1);
+// submitForm1 ko add kar dena jab delegate registration open ho
+    document.getElementById('register2').addEventListener("click",function(){alert("Single Delegate registration opening shortly!!")} );
     document.getElementById('register3').addEventListener("click", submitForm2);
 
    
