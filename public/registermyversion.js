@@ -243,6 +243,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
   const titu=push(hehe);
   
   set(titu,{
+    Registration_type:"Single Delegates",
     name:name,
     Phone_number:number,
     alloted:"NO" ,
@@ -383,6 +384,7 @@ PaymentConfirmed:0
   const titu=push(hehe);
   
   set(titu,{
+    Registration_type:"Campus Ambassador",
     name:name,
     Phone_number:number,
     alloted:"NO" ,
