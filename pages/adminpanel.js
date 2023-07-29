@@ -180,7 +180,7 @@ const handleSubmit1 = (itemId) => {
         />
         <h1 className='mb-5 text-center text-xl font-bold'>ADMIN PANEL MUN IIT BHU</h1></div>
         <h2 className="text-red-500 font-bold text-center my-4">Allotment of preferences for delegates</h2>
-        <Link href={'/adminpanel2'}><Button>Go to Payment SS verification</Button></Link>
+        <Link href={'/adminpanel2642023'}><Button>Go to Payment SS verification</Button></Link>
         {filteredData.map(({ itemId, ...item }) => (
           
           <div className="my-6   px-2 shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)] border-red-50"key={itemId}>
