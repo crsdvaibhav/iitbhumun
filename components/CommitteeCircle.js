@@ -12,7 +12,7 @@ export default function CommitteeCircle(props) {
     return (
         <Fragment >
             <button
-                onClick={handleChange} onMouseEnter={handleChange}
+                onClick={handleChange} 
                 className="mx-2 w-[11.313rem] h-[11.313rem]  shadow-[#189BA5]/20  background-[white] top-[12.5rem] left-[9.836rem]"
             >
                 <div className="flex flex-col items-center ">
