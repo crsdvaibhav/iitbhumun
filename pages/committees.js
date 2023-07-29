@@ -86,6 +86,7 @@ export default function Committees() {
                         <div className="font-heading text-[2rem] font-bold pt-4">
                             Rise. Speak. Resolve.
                         </div>
+                       
                     </div>
                 </div>
 
@@ -109,8 +110,8 @@ export default function Committees() {
                             src={arr[5].logosrc}
                             title={arr[5].title}
                             data={arr[5].data}
-                            chair={arr[5].chair}
-                            vicechair={arr[5].vicechair}
+                            Cochair-1={arr[5].Chair}
+                            Cochair-2={arr[5].Cochair}
                             agenda={arr[5].agenda}
                             chairsrc={arr[5].chairsrc}
                             vicechairsrc={arr[5].vicechairsrc}
@@ -118,7 +119,7 @@ export default function Committees() {
 
                         />
                     </div>
-                    <div className="flex pt-4">
+                    {/* <div className="flex pt-4">
                         <CommitteeCircle
                             key={arr[6].id}
                             src={arr[6].logosrc}
@@ -132,20 +133,8 @@ export default function Committees() {
                             href={arr[6].href}
 
                         />
-                        <CommitteeCircle
-                            key={arr[7].id}
-                            src={arr[7].logosrc}
-                            title={arr[7].title}
-                            data={arr[7].data}
-                            chair={arr[7].chair}
-                            vicechair={arr[7].vicechair}
-                            agenda={arr[7].agenda}
-                            chairsrc={arr[7].chairsrc}
-                            vicechairsrc={arr[7].vicechairsrc}
-                            href={arr[7].href}
-
-                        />
-                    </div>
+                       
+                    </div> */}
                 </div>
             </div>
             <div className="sm:hidden w-full flex flex-col items-center pt-24">
@@ -237,8 +226,8 @@ export default function Committees() {
                             src={arr[5].logosrc}
                             title={arr[5].title}
                             data={arr[5].data}
-                            chair={arr[5].chair}
-                            vicechair={arr[5].vicechair}
+                            Cochair-1={arr[5].Chair}
+                            Cochair-2={arr[5].Cochair}
                             agenda={arr[5].agenda}
                             chairsrc={arr[5].chairsrc}
                             vicechairsrc={arr[5].vicechairsrc}
@@ -246,7 +235,7 @@ export default function Committees() {
 
                         />
                     </div>
-                    <div className="flex justify-around w-full pt-4">
+                    {/* <div className="flex justify-around w-full pt-4">
                         <CommitteeCircle
                             key={arr[6].id}
                             src={arr[6].logosrc}
@@ -260,20 +249,8 @@ export default function Committees() {
                             href={arr[6].href}
 
                         />
-                        <CommitteeCircle
-                            key={arr[7].id}
-                            src={arr[7].logosrc}
-                            title={arr[7].title}
-                            data={arr[7].data}
-                            chair={arr[7].chair}
-                            vicechair={arr[7].vicechair}
-                            agenda={arr[7].agenda}
-                            chairsrc={arr[7].chairsrc}
-                            vicechairsrc={arr[7].vicechairsrc}
-                            href={arr[7].href}
-
-                        />
-                    </div>
+                        
+                    </div> */}
                 </div>
             </div>
             <Doubtbox/>

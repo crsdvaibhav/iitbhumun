@@ -13,7 +13,7 @@ const DialogBox = (props) => {
             <DialogHeader className="font-bold font-sans text-[2rem]   text-[#189BA5]">
                 <span className=" p-4 mt-[1rem]"> {props.title}</span>
                 <a href={`${props.href}`}>
-                    <Button
+                    {/* <Button
                         color="[#189BA5]"
                         className="mr-1"
                         variant="gradient"
@@ -22,7 +22,7 @@ const DialogBox = (props) => {
                     >
                         <span className="font-bold text-sm text-[#ffffff]">Background
                             Guide</span>
-                    </Button>
+                    </Button> */}
                 </a>
             </DialogHeader>
             <DialogBody divider>

@@ -309,8 +309,6 @@ export default function Register() {
 
   if (selected1 === 'AIPPM') {
     type1 = aippm;
-  } else if (selected1 === 'Lok Sabha') {
-    type1 = ls;
   } else if (selected1 === 'CCC') {
     type1 = ccc;
   } else if (selected1 === 'UNCSW') {
@@ -321,9 +319,7 @@ export default function Register() {
     type1 = disec;
   } else if (selected1 === 'WTO(Online)') {
     type1 = wto;
-  } else if (selected1 === 'UNODC(Online)') {
-    type1 = unodc;
-  } else if (selected1 === 'International Press(Hybrid)') {
+  }  else if (selected1 === 'International Press(Hybrid)') {
     type1 = ip;
   }
 
@@ -346,9 +342,7 @@ export default function Register() {
 
   if (selected2 === 'AIPPM') {
     type2 = aippm;
-  } else if (selected2 === 'Lok Sabha') {
-    type2 = ls;
-  } else if (selected2 === 'CCC') {
+  }  else if (selected2 === 'CCC') {
     type2 = ccc;
   } else if (selected2 === 'UNCSW') {
     type2 = uncsw;
@@ -358,9 +352,7 @@ export default function Register() {
     type2 = disec;
   } else if (selected2 === 'WTO(Online)') {
     type2 = wto;
-  } else if (selected2 === 'UNODC(Online)') {
-    type2 = unodc;
-  } else if (selected2 === 'International Press(Hybrid)') {
+  }  else if (selected2 === 'International Press(Hybrid)') {
     type2 = ip;
   }
 
@@ -383,9 +375,7 @@ export default function Register() {
 
   if (selected3 === 'AIPPM') {
     type3 = aippm;
-  } else if (selected3 === 'Lok Sabha') {
-    type3 = ls;
-  } else if (selected3 === 'CCC') {
+  }  else if (selected3 === 'CCC') {
     type3 = ccc;
   } else if (selected3 === 'UNCSW') {
     type3 = uncsw;
@@ -395,8 +385,6 @@ export default function Register() {
     type3 = disec;
   } else if (selected3 === 'WTO(Online)') {
     type3 = wto;
-  } else if (selected3 === 'UNODC(Online)') {
-    type3 = unodc;
   } else if (selected3 === 'International Press(Hybrid)') {
     type3 = ip;
   }

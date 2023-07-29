@@ -23,15 +23,12 @@ const Loggedinhomepage = () => {
  
  
   var ab=false;
-const aippm = data.aippm;
-const ls = data.ls;
-const ccc = data.ccc;
-const uncsw = data.uncsw;
-const ecosoc = data.ecosoc;
-const disec = data.disec;
-const wto = data.wto;
-const unodc = data.unodc;
-const ip = data.ip;
+  const aippm = data.aippm;
+  const unccc = data.unfccc;
+  const g20 = data.g20;
+  const uncsw = data.uncsw;
+  const unhrc = data.unhrc;
+  const jpc = data.jpc;
   
   const [selected1, setSelected1] = useState('None');
   const [selected2, setSelected2] = useState('none');
@@ -58,22 +55,18 @@ const ip = data.ip;
   let options1 = null;
   if (selected1 === 'AIPPM') {
     type1 = aippm;
-  } else if (selected1 === 'Lok Sabha') {
-    type1 = ls;
-  } else if (selected1 === 'CCC') {
-    type1 = ccc;
+  } else if (selected1 === 'G-20') {
+    type1 = g20;
+  } else if (selected1 === 'UNFCCC') {
+    type1 = unccc;
   } else if (selected1 === 'UNCSW') {
     type1 = uncsw;
-  } else if (selected1 === 'ECOSOC') {
-    type1 = ecosoc;
+  } else if (selected1 === 'UNHRC') {
+    type1 = unhrc;
   } else if (selected1 === 'DISEC') {
     type1 = disec;
-  } else if (selected1 === 'WTO(Online)') {
-    type1 = wto;
-  } else if (selected1 === 'UNODC(Online)') {
-    type1 = unodc;
-  } else if (selected1 === 'International Press(Hybrid)') {
-    type1 = ip;
+  } else if (selected1 === 'JPC') {
+    type1 = jpc;
   }
 
   if (type1) {
@@ -90,22 +83,18 @@ const ip = data.ip;
   let options2 = null;
   if (selected2 === 'AIPPM') {
     type2 = aippm;
-  } else if (selected2 === 'Lok Sabha') {
-    type2 = ls;
-  } else if (selected2 === 'CCC') {
-    type2 = ccc;
+  } else if (selected2 === 'G-20') {
+    type2 = g20;
+  } else if (selected2 === 'UNFCCC') {
+    type2 = unccc;
   } else if (selected2 === 'UNCSW') {
     type2 = uncsw;
-  } else if (selected2 === 'ECOSOC') {
-    type2 = ecosoc;
+  } else if (selected2 === 'UNHRC') {
+    type2 = unhrc;
   } else if (selected2 === 'DISEC') {
     type2 = disec;
-  } else if (selected2 === 'WTO(Online)') {
-    type2 = wto;
-  } else if (selected2 === 'UNODC(Online)') {
-    type2 = unodc;
-  } else if (selected2 === 'International Press(Hybrid)') {
-    type2 = ip;
+  } else if (selected2 === 'JPC') {
+    type2 = jpc;
   }
 
 
@@ -126,22 +115,18 @@ const ip = data.ip;
   let options3 = null;
   if (selected3 === 'AIPPM') {
     type3 = aippm;
-  } else if (selected3 === 'Lok Sabha') {
-    type3 = ls;
-  } else if (selected3 === 'CCC') {
-    type3 = ccc;
+  } else if (selected3 === 'G-20') {
+    type3 = g20;
+  } else if (selected3 === 'UNFCCC') {
+    type3 = unccc;
   } else if (selected3 === 'UNCSW') {
     type3 = uncsw;
-  } else if (selected3 === 'ECOSOC') {
-    type3 = ecosoc;
+  } else if (selected3 === 'UNHRC') {
+    type3 = unhrc;
   } else if (selected3 === 'DISEC') {
     type3 = disec;
-  } else if (selected3 === 'WTO(Online)') {
-    type3 = wto;
-  } else if (selected3 === 'UNODC(Online)') {
-    type3 = unodc;
-  } else if (selected3 === 'International Press(Hybrid)') {
-    type3 = ip;
+  } else if (selected3 === 'JPC') {
+    type3 = jpc;
   }
 
 
