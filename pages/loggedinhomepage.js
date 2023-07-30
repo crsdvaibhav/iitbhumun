@@ -217,14 +217,14 @@ const[buttonname1,rename1]=useState("Change portfolio")
 </div>
 <div id="ssform1">
           <h1 id="showresult" className='my-6 text-red-500 text-2xl w-30px text-center'></h1>
-          
+          <div id="afterpayment">
          <h1 id="paynow!" className="hidden">Pay on this QR code and upload Screenshot with time of payment</h1>
          <img  src="/images/join.svg" id="paymentqr" className="inline mx-auto mt-3 hidden"/>
          <form className="hidden my-3" id="ssform">
          
          <input type="file" id="photoInput1"/>
          <Button id="ssbutton" className="block mx-auto my-3">Upload</Button></form>
-          </div>
+          </div></div>
           <div className="h-cover border-l-2 border-gray-500">
             
           </div></div>

@@ -51,7 +51,7 @@ console.log(file)
 document.getElementById("ssbutton").addEventListener("click",uploadPhoto)
 function addphoto(){
 
-  
+  document.getElementById('ssbutton').innerHTML=`<i class="fa fa-circle-o-notch fa-spin mx-2"> </i> Uploading...`
   const databaseRef = ref(database, "preferences");
   const auth = getAuth();
   // Retrieve the data once
@@ -87,11 +87,13 @@ PaymentSS:localStorage.getItem("url1"),
 
           })
             .then(() => {
-              alert("Successfully Uploaded!")
+              
+              document.getElementById("afterpayment").innerHTML="<h1 class='text-2xl text-center font-semibold'>We have received your payment screenshot,We will verify and update the portal soon.</h1>"
             })
             .catch((error) => {
-              alert("Error Updating Data!")
 
+              alert("Error Updating Data!")
+document.getElementById('ssbutton').innerHTML=`Upload`
             });
         }
       });
@@ -288,10 +290,13 @@ function fetchData1() {
             
             
             }}
+            if(key=="PaymentSS"&&item[key]!=""){
+              document.getElementById("afterpayment").innerHTML="<h1 class='text-2xl text-center font-semibold'>We have received your payment screenshot,We will verify and update the portal soon.</h1>"
+            }
             if(key=="Payment_done"&&item[key]!="NO"){
               document.getElementById("progressvalue").innerHTML=`100%`
               document.getElementById("progressvalue2").style.width="100%"
-              document.getElementById("ssform1").innerHTML="<h1 class='mt-4 text-2xl'>Payment Completed! You are all set for IIT BHU MUN 2023</h1>"
+              document.getElementById("ssform1").innerHTML="<h1 class='mt-4 text-2xl'>Payment Completed! You are all set for IIT BHU MUN 2023.</h1>"
             
     if(item["Referralcode"]!=null){
       const snapshot = get(ref(database, "Referral_program/"))
