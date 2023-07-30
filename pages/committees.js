@@ -18,7 +18,7 @@ export default function Committees() {
         <div className="bg-[#F5F5F5]">
            {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
             <div className="h-[70vh] sm:justify-center sm:flex hidden">
-                <div className="w-1/3 h-[80vh] flex flex-col items-end justify-center">
+                <div className="w-1/3 h-[80vh] flex  items-center justify-center">
                     <div className="flex pb-4">
                         <CommitteeCircle
                             key={arr[0].id}
@@ -60,19 +60,7 @@ export default function Committees() {
                             href={arr[2].href}
 
                         />
-                        <CommitteeCircle
-                            key={arr[3].id}
-                            src={arr[3].logosrc}
-                            title={arr[3].title}
-                            data={arr[3].data}
-                            chair={arr[3].chair}
-                            vicechair={arr[3].vicechair}
-                            agenda={arr[3].agenda}
-                            chairsrc={arr[3].chairsrc}
-                            vicechairsrc={arr[3].vicechairsrc}
-                            href={arr[3].href}
-
-                        />
+                       
                     </div>
                 </div>
 
@@ -103,6 +91,19 @@ export default function Committees() {
                             chairsrc={arr[4].chairsrc}
                             vicechairsrc={arr[4].vicechairsrc}
                             href={arr[4].href}
+
+                        />
+                         <CommitteeCircle
+                            key={arr[3].id}
+                            src={arr[3].logosrc}
+                            title={arr[3].title}
+                            data={arr[3].data}
+                            chair={arr[3].chair}
+                            vicechair={arr[3].vicechair}
+                            agenda={arr[3].agenda}
+                            chairsrc={arr[3].chairsrc}
+                            vicechairsrc={arr[3].vicechairsrc}
+                            href={arr[3].href}
 
                         />
                         <CommitteeCircle
