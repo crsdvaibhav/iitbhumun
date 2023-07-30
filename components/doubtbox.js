@@ -79,7 +79,7 @@ const Doubtbox = () => {
                   </Link>
                 </div>
                <div >
-                    <Link href="https://discord.com/@iitbhumun">
+                    <Link href="https://discord.gg/5VJPdtaX2G">
   <button className="cursor:pointer">
   <img src="https://img.freepik.com/free-icon/discord_318-688926.jpg?size=626&ext=jpg&ga=GA1.1.353350214.1689486593&semt=ais"className="w-12 h-12 rounded-full hover:w-14 hover:h-14 transition-all"/>
                       
