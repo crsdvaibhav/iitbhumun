@@ -17,7 +17,7 @@ export default function CommitteeCircle(props) {
             >
                 <div className="flex flex-col items-center ">
                     <div className="pt-[1.688rem] rounded-full w-[120] h-[120]  ">
-                        <Image className="nevermind  shadow-[#189BA5]/20 shadow-lg  rounded-full"
+                        <Image className="nevermind1  shadow-[#189BA5]/20 shadow-lg  rounded-full"
                             src={props.src}
                             width={125}
                             height={125}

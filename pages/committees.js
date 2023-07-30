@@ -94,6 +94,7 @@ export default function Committees() {
 
                         />
                          <CommitteeCircle
+                        
                             key={arr[3].id}
                             src={arr[3].logosrc}
                             title={arr[3].title}
