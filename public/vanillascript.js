@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
-import { getDatabase, ref, push, set, get, onValue, update } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
+import { getDatabase, ref, push, set, get, onValue, update,runTransaction } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, signInWithEmailAndPassword, signOut, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js';
@@ -293,6 +293,31 @@ function fetchData1() {
               document.getElementById("progressvalue2").style.width="100%"
               document.getElementById("ssform1").innerHTML="<h1 class='mt-4 text-2xl'>Payment Completed! You are all set for IIT BHU MUN 2023</h1>"
             
+    if(item["Referralcode"]!=null){
+      const snapshot = get(ref(database, "Referral_program/"))
+        .then((snapshot) => {
+          const data = snapshot.val();
+        
+          const filteredData = [];
+          for (const itemId in data) {
+            const item1 = data[itemId];
+            if (item1.referralCode === item["Referralcode"]) {
+              const entryId = itemId;
+              const userRegisteredRef = ref(database,"Referral_program/"+entryId+"/"+"PaymentConfirmed");
+    
+              runTransaction(userRegisteredRef, (PaymentConfirmed) => {
+                return (PaymentConfirmed || 0) + 1; // Increment the count by 1
+              })
+                .then(() => {
+                  console.log('PaymentConfirmed count incremented successfully');
+                })
+                .catch((error) => {
+                  console.error('Error incrementing PaymentConfirmed count:', error);
+                });
+            }
+          }})
+
+  }
 
             }
   
