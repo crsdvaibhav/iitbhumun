@@ -96,8 +96,9 @@ a {
 }
 .datacard{
   padding:12px 4px ;
-  box-shadow: 1px 1px 1px whitesmoke;
-  background: #fbfdfa;
+  box-shadow: 0px 0px 0px 2px rgb(0, 0, 0);
+  background: #fff;
+  width: 700px;
 }
 .selectedportfolio{
   display: flex;
@@ -120,6 +121,7 @@ margin-right: 40px;
   max-height: 140px;
 background:white;
 box-shadow: 0px 0px 0px 2px #0ea3ad;
+
 }
 .dropdowncontent ul,.dropdowncontent1 ul {
   

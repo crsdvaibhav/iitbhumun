@@ -204,18 +204,18 @@ const[buttonname1,rename1]=useState("Change portfolio")
         <div className="my-50 text-center font-bold">
 
         <h2 className="mt-50 text-center font-bold">x</h2>
-        <div id="wholescreen" className="sm:flex  sm:justify-between block "><div className="mx-auto inline" >
-        <h1 className="mt-20 mb-4  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Profile</h1>
+        <div id="wholescreen" className="sm:flex justify-center sm:justify-between block "><div className="mx-auto inline" >
+        <h1 className="mt-20 mb-4 block mx-auto text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Profile</h1>
           <div id="content" className="mt-29 w-100 h-fit-content display:'block'  h-min-content m-auto text-center font-bold" ></div>
          
 <div id="progressvalue1" class="flex justify-between gap-15 mb-1">
-  <span class="text-base font-medium mx-12 text-blue-700 dark:text-white">Registration Completed</span>
-  <span id="progressvalue" class="text-sm font-medium text-blue-700 dark:text-white">50%</span>
+  <span class=" text-xl font-medium mx-12 text-blue-700 dark:text-white">Registration Completed</span>
+  <span id="progressvalue" class="text-xl font-semibold text-blue-700 dark:text-white mx-auto block">50%</span>
 </div>
 <div id="progressvalue3" class="w-80 block mx-auto bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
   <div id="progressvalue2" class="bg-blue-600 h-2.5 rounded-full w-[50%]"></div>
 </div>
-<div id="ssform1">
+<div className="sm:block mx-auto" id="ssform1">
           <h1 id="showresult" className='my-6 text-red-500 text-2xl w-30px text-center'></h1>
           <div id="afterpayment">
          <h1 id="paynow!" className="hidden text-2xl">Pay on this QR code and upload Screenshot with time of payment.</h1>

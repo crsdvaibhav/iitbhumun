@@ -6,20 +6,20 @@ export default function SecretariatCard(props) {
 
     return (
         <div className="">
-            <div className="p-2 w-[350px] rounded ">
+            <div className="p-2 w-[370px] rounded ">
 
-                <div className=' relative bg-gradient-to-t from-yellow-600 h-[240px] rounded-t-xl'>
-                    <Image className='absolute '
+                <div className=' relative bg-gradient-to-t from-yellow-600 h-[300px] rounded-t-xl'>
+                    <Image className='absolute  '
                         src={props.src}
                         width={650}
-                        height={465}
+                        height={580}
                         alt="char images"
                     />
                 </div>
 
                 <div className='bg-white h-[180px] justify-center m-auto rounded-b-xl text-center'>
-                    <h2 className="text-3xl mb-2 pt-6 font-bold">{props.name}</h2>
-                    <h4 className="mb-2 mt-10 text-3xl text-[#189BA5]">{props.position}</h4>
+                    <h2 className="text-3xl mt-2 mb-1 pt-6 font-bold">{props.name}</h2>
+                    <h4 className="mb-2 mt-8 text-3xl text-[#189BA5]">{props.position}</h4>
 
                 </div>
 
