@@ -1,5 +1,6 @@
 import { ThemeProvider } from '@material-tailwind/react';
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/react';
 import '../styles/globals.css';
 import { motion } from 'framer-motion';
 
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps,router }) {
   },
 }}>
       <Component {...pageProps} /></motion.div>
+      <Analytics />
     </ThemeProvider>
   );
 }
