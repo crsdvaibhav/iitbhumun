@@ -17,6 +17,21 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const database = getDatabase();
 
+async function fetchData2(data) {
+  try {
+    const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/Referral_program.json');
+    const data = await response.json();
+    
+    return data
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+
+
+
+
 function  uploadPhoto() {
   const storage = getStorage(app);
   const fileInput = document.getElementById('photoInput1');
@@ -267,25 +282,136 @@ function fetchData1() {
 
             document.getElementById("paynow!").style.display = 'block'
             Object.keys(item).forEach((key) => {
-              if(key=="Delegate_type"&&item[key]=="IIT BHU"){document.getElementById("paymentqr").src="/images/aastha.jpg"
-              document.getElementById("paymentqr").style.display="inline"
-              document.getElementById("paymentqr").style.width="220px"
-              document.getElementById("paymentqr").style.height="180px"
+              if(key=="Delegate_type"&&item[key]=="IIT BHU"){
+                if(item["Registration_type"]=="Campus Ambassador")
+             { const snapshot = get(ref(database, "Referral_program/"))
+             .then((snapshot) => {
+               const data = snapshot.val();
+         
+               const filteredData1 = [];
+               for (const itemId in data) {
+                 const item = data[itemId];
+                 if (item.email === auth.currentUser.email) {
+                   filteredData1.push(item);
+                 }
+               }
+               
+
+               filteredData1.forEach((item) => { Object.keys(item).forEach((key) => {
+                if(key=="PaymentConfirmed"&&item[key]>=10){document.getElementById("paymentqr").src="/images/QRfor10.jpg"}
+                if(key=="PaymentConfirmed"&&item[key]>=15){document.getElementById("paymentqr").src="/images/QRfor15.jpg"}
+                if(key=="PaymentConfirmed"&&item[key]>=25){document.getElementById("paymentqr").src="/images/QRfor25.jpg"}
+                              })})
+
+
+
+
+              
+              
+              })
+              
+             
+              
+             
+             
+            
+             
+            
+            }
+                else{document.getElementById("paymentqr").src="/images/aastha.jpg"}
+              document.getElementById("paymentqr").style.display="block"
+              document.getElementById("paymentqr").style.width="320px"
+              document.getElementById("paymentqr").style.height="240px"
               document.getElementById("ssform").style.display="block"
             
             }
-              if(key=="Delegate_type"&&item[key]=="BHU"){{document.getElementById("paymentqr").src="/images/abhishek.jpg"
-              document.getElementById("paymentqr").style.display="inline"
-              document.getElementById("paymentqr").style.width="220px"
-              document.getElementById("paymentqr").style.height="180px"
+              if(key=="Delegate_type"&&item[key]=="BHU"){{
+                if(item["Registration_type"]=="Campus Ambassador")
+             { const snapshot = get(ref(database, "Referral_program/"))
+             .then((snapshot) => {
+               const data = snapshot.val();
+         
+               const filteredData1 = [];
+               for (const itemId in data) {
+                 const item = data[itemId];
+                 if (item.email === auth.currentUser.email) {
+                   filteredData1.push(item);
+                 }
+               }
+               
+
+               filteredData1.forEach((item) => { Object.keys(item).forEach((key) => {
+                if(key=="PaymentConfirmed"&&item[key]>=10){document.getElementById("paymentqr").src="/images/QRfor10.jpg"}
+                if(key=="PaymentConfirmed"&&item[key]>=15){document.getElementById("paymentqr").src="/images/QRfor15.jpg"}
+                if(key=="PaymentConfirmed"&&item[key]>=25){document.getElementById("paymentqr").src="/images/QRfor25.jpg"}
+                              })})
+
+
+
+
+              
+              
+              })
+              
+             
+              
+             
+             
+            
+             
+            
+            }
+                
+                
+               else{ document.getElementById("paymentqr").src="/images/abhishek.jpg"}
+              document.getElementById("paymentqr").style.display="block"
+              document.getElementById("paymentqr").style.width="320px"
+              document.getElementById("paymentqr").style.height="240px"
               document.getElementById("ssform").style.display="block"
             
             
             }}
-             if(key=="Delegate_type"&&item[key]=="Outstation"){{document.getElementById("paymentqr").src="/images/satwik.jpg"
-             document.getElementById("paymentqr").style.display="inline"
-              document.getElementById("paymentqr").style.width="220px"
-              document.getElementById("paymentqr").style.height="180px"
+             if(key=="Delegate_type"&&item[key]=="Outstation"){{
+             if(item["Registration_type"]=="Campus Ambassador")
+             { const snapshot = get(ref(database, "Referral_program/"))
+             .then((snapshot) => {
+               const data = snapshot.val();
+         
+               const filteredData1 = [];
+               for (const itemId in data) {
+                 const item = data[itemId];
+                 if (item.email === auth.currentUser.email) {
+                   filteredData1.push(item);
+                 }
+               }
+               
+
+               filteredData1.forEach((item) => { Object.keys(item).forEach((key) => {
+                if(key=="PaymentConfirmed"&&item[key]>=10){document.getElementById("paymentqr").src="/images/QRfor10.jpg"}
+                if(key=="PaymentConfirmed"&&item[key]>=15){document.getElementById("paymentqr").src="/images/QRfor15.jpg"}
+                if(key=="PaymentConfirmed"&&item[key]>=25){document.getElementById("paymentqr").src="/images/QRfor25.jpg"}
+                              })})
+
+
+
+
+              
+              
+              })
+              
+             
+              
+             
+             
+            
+             
+            
+            }
+             else{
+              document.getElementById("paymentqr").src="/images/satwik.jpg"}
+             document.getElementById("paymentqr").style.display="block"
+             document.getElementById("paymentqr").style.width="520px"
+              document.getElementById("paymentqr").style.height="440px"
               document.getElementById("ssform").style.display="block"
             
             
