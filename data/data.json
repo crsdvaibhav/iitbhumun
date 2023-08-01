@@ -211,18 +211,19 @@
     },
     {
       "id": 6,
-      "name": "Mayank Gupta",
-      "position": "Technical Team Head",
-      "description": "Random description",
-      "img": "/images/mayank.png"
-    },
-    {
-      "id": 7,
       "name": "Swaralee Nagwanshi",
       "position": "Head of Creative Affairs",
       "description": "Random description",
       "img": "/images/swaralee.png"
+    },
+    {
+      "id": 7,
+      "name": "Mayank Gupta",
+      "position": "Technical Team Head",
+      "description": "Random description",
+      "img": "/images/mayank.png"
     }
+    
   ],
   "heads": [
    
