@@ -26,7 +26,7 @@ const DialogBox = (props) => {
                 </a>
             </DialogHeader>
             <DialogBody divider>
-                <div className="h-full">
+                <div className="h-full ">
                     <div className="font-custom sm:text-[1.25rem] font-medium px-4 py-4">
                         {props.data}
                     </div>
