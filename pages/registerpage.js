@@ -310,6 +310,7 @@ const[buttondisplay,setdisplay]=useState(false)
     <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[4.5rem] pt-8">
         Delegate Application Form
           </p>
+          
           <div className="place-items-center flex justify-center font-semibold text-center py-16">
             <div
               
@@ -330,7 +331,7 @@ const[buttondisplay,setdisplay]=useState(false)
             </div>
           </div>
       <form id="registrationForm"  className=" bg-white rounded-lg shadow-md p-6">
-       
+      <h1 className='text-center font-semibold sm:xl text-2xl mt-2 mb-2'><span className='text-red-500'>Note: </span>Campus Ambassadors also need to fill up this form.</h1>
        
     <div id='google'className="m-auto"> <GoogleButton className="m-auto" id='google'
   onClick={() => { }}
