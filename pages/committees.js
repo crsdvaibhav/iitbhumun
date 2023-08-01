@@ -112,8 +112,8 @@ export default function Committees() {
                             src={arr[5].logosrc}
                             title={arr[5].title}
                             data={arr[5].data}
-                            Cochair-1={arr[5].Chair}
-                            Cochair-2={arr[5].Cochair}
+                            chair={arr[5].chair}
+                            vicechair={arr[5].vicechair}
                             agenda={arr[5].agenda}
                             chairsrc={arr[5].chairsrc}
                             vicechairsrc={arr[5].vicechairsrc}

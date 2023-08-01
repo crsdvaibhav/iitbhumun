@@ -41,9 +41,13 @@ const DialogBox = (props) => {
                             <div className="font-bold sm:text-[1.5rem]">
                                 {props.chair}
                             </div>
-                            <div className="sm:text-[1.25rem] font-medium">
-                                Chair
+                            {props.chair==="Aditya Sharma"?<div className="sm:text-[1.25rem] font-medium">
+                               Co-Chair
+                            </div>:<div className="sm:text-[1.25rem] font-medium">
+                               Chair
                             </div>
+                        
+                        }
                         </div>
                         <div className="font-custom flex flex-col items-center">
                             <div className="h-32 w-32 sm:h-48 sm:w-48 rounded-full border-2 border-black overflow-hidden relative">
@@ -52,9 +56,13 @@ const DialogBox = (props) => {
                             <div className="font-bold sm:text-[1.5rem]">
                                 {props.vicechair}
                             </div>
-                            <div className="sm:text-[1.25rem] font-medium">
-                                Vice Chair
+                            {props.chair==="Aditya Sharma"?<div className="sm:text-[1.25rem] font-medium">
+                               Co-Chair
+                            </div>:<div className="sm:text-[1.25rem] font-medium">
+                              Vice-Chair
                             </div>
+                        
+                        }
                         </div>
                     </div>
                     <div className="font-heading font-bold text-[1rem] sm:text-[2rem] text-center py-4">
