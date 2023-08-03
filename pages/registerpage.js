@@ -362,7 +362,7 @@ const[buttondisplay,setdisplay]=useState(false)
         <div className="mb-4">
           <label htmlFor="Insitute" required className="block text-[#189BA5] font-bold mb-2">Institute ID card if from BHU or IIT BHU:<span className='text-red-500'></span></label>
           <input type="file" placeholder="College or University" id="photoInput" required className="w-full px-4 py-2 border rounded-lg focus:outline-none text-[#189BA5] focus:ring-blue-500 focus:border-blue-500"/>
-          <label className='text-red-500 font-medium'>Kindly Upload for availing Student Benefit</label>
+          <label className='text-red-500 font-medium'>Kindly Upload For Availing Student Benefit</label>
         </div>
         <div className="mb-4">
           <label htmlFor="region" required className="block text-[#189BA5] font-bold mb-2">Region:<span className='text-red-500'>*</span></label>
