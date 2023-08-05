@@ -38,9 +38,9 @@ export default function Hero() {
   
   return (
    
-    
+    <div className=''>
       <div className="sm:grid hidden relative">
-        <div className="row-span-full col-span-full hero">
+        <div className="row-span-full col-span-full hero mx-0">
           <div className='flex'>
             <div className='leftside'>
           <h1 className='finaldate1 text-4xl text-[#B6FF1A] md:text-8xl mt-96 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
@@ -71,8 +71,8 @@ export default function Hero() {
          */}
         <div className="row-span-full col-span-full self-end  text-center pb-4 mb-28 block">
          
-          {/* <div id="testimo" className='text-[#FFFDFA] line-clamp-2 font-italic font-semibold text-3xl text-center inline mx-auto relative border-xl testimo border-black'>"{(testimonial[index])}" </div>
-        </div> */}
+          {/* <div id="testimo" className='text-[#FFFDFA] line-clamp-2 font-italic font-semibold text-3xl text-center inline mx-auto relative border-xl testimo border-black'>"{(testimonial[index])}" </div>*/}
+        </div> 
       </div>
       <div className="grid sm:hidden">
         <div className="row-span-full col-span-full">
