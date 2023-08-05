@@ -70,8 +70,8 @@ export default function Hero() {
          */}
         <div className="row-span-full col-span-full self-end  text-center pb-4 mb-28 block">
          
-          <div id="testimo" className='text-[#FFFDFA] line-clamp-2 font-italic font-semibold text-3xl text-center inline mx-auto relative border-xl testimo border-black'>"{(testimonial[index])}" </div>
-        </div>
+          {/* <div id="testimo" className='text-[#FFFDFA] line-clamp-2 font-italic font-semibold text-3xl text-center inline mx-auto relative border-xl testimo border-black'>"{(testimonial[index])}" </div>
+        </div> */}
       </div>
       <div className="grid sm:hidden">
         <div className="row-span-full col-span-full">
