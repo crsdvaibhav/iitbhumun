@@ -32,12 +32,12 @@ const EventsCarousel1 = () => {
                 className='border-4 border-black w-full h-full rounded-[2rem] bg-center bg-cover duration-500'
             ></div>
             {/* Left*/}
-            <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-black cursor-pointer'>
-                <BsChevronCompactLeft onClick={prevSlide} size={30} />
+            <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2  text-black cursor-pointer'>
+                <BsChevronCompactLeft className='text-white bg-green-500 rounded-full' onClick={prevSlide} size={30} />
             </div>
             {/* Right*/}
-            <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-black cursor-pointer'>
-                <BsChevronCompactRight onClick={nextSlide} size={30} />
+            <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2  text-black cursor-pointer'>
+                <BsChevronCompactRight className='text-white bg-green-500 rounded-full' onClick={nextSlide} size={30} />
             </div>
             <div className='flex top-4 justify-center py-2'>
                 {data.eventsCarousel.map((slide, slideIndex) => (
