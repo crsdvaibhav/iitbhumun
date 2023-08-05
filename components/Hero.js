@@ -42,15 +42,15 @@ export default function Hero() {
         <div className="row-span-full col-span-full hero">
           <div className='flex'>
             <div className='leftside'>
-          <h1 className='finaldate1 text-4xl text-[#B6FF1A] md:text-9xl mt-96 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
-          <h1 className='finaldate2 text-4xl text-[#B6FF1A] md:text-9xl ml-24'>UNITED NATIONS</h1>
-          <h1 className='finaldate3 text-3xl text-[#fff] mt-4 my-2 md:text-8xl ml-24'>RISE.SPEAK.RESOLVE</h1>
+          <h1 className='finaldate1 text-4xl text-[#B6FF1A] md:text-8xl mt-96 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
+          <h1 className='finaldate2 text-4xl text-[#B6FF1A] md:text-8xl ml-24'>UNITED NATIONS</h1>
+          <h1 className='finaldate3 text-3xl text-[#fff] mt-4 my-2 md:text-7xl ml-24'>RISE.SPEAK.RESOLVE</h1>
           {changebar?<div className='flex gap-24 justify-center ml-4 mt-14'><Link href={'/registerpage'}><button className='bg-[#A3CF3ACC] hover:bg-green-500 hover:text-[#fff] text-5xl px-12 p-4 rounded-lg'>Register</button></Link>
          <Link href={'/loginpage'}><button className='bg-[#A3CF3ACC] hover:bg-green-500 hover:text-[#fff] text-5xl p-4 px-12 rounded-lg'>Login</button></Link></div>:<Link href={'/loggedinhomepage'}><Button className='block  mx-auto my-8 text-5xl'>View Profile</Button></Link>}
           </div>
           <div className='rightside'>
         <img className='block md:w-96 w-44 mx-auto mt-48' src='/images/munvector.svg'></img>
-          <h1 className=' finaldate text-4xl text-[#fff] md:text-9xl mt-18 ml-24 border-[#fff] border-solid'>29 SEPT - 1 OCT</h1>
+          <h1 className=' finaldate text-4xl text-[#fff] md:text-8xl mt-18 ml-24 border-[#fff] border-solid'>29 SEPT - 1 OCT</h1>
           <h1 className='  text-4xl text-[#fff] currentyear font-bold text-center mt-24 ml-24 border-[#fff] border-solid'>2023</h1>
           </div>
         </div></div>
