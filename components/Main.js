@@ -118,24 +118,24 @@ export default function Main() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/images/legacy-circle2.png"
+              src="/images/Group264.png"
+              width={230}
+              height={230}
+              alt="legacy"
+            />
+            <span className="mt-[0.25rem] text-[1.25rem] font-custom text-[#189BA5] font-medium">
+            Delegates
+            </span>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/Group251.png"
               width={230}
               height={230}
               alt="legacy"
             />
             <span className="mt-[0.25rem] text-[1.25rem] font-custom text-[#189BA5] font-medium">
               Nationalities
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <Image
-              src="/images/legacy-circle3.svg"
-              width={230}
-              height={230}
-              alt="legacy"
-            />
-            <span className="mt-[0.25rem] text-[1.25rem] font-custom text-[#189BA5] font-medium">
-              Delegates
             </span>
           </div>
         </div>

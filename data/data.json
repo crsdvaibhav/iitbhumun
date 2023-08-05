@@ -1,7 +1,7 @@
 {
   "title": "IIT BHU MUN",
   "about": "IITBHU Model United Nations (MUN) is one of the most extensive MUNs conducted in the spiritual city of India, Varanasi. The conference has undergone stellar growth since it's inception attracting participation from 22+ countries and 7000+  delegates across its 11 brilliant editions. The 11th edition of the Conference was organised in collaboration with UNIC, New Delhi, under the patronage of UNESCO-INCCU. The Honorable Prime Minister along with some highly distinguished personalities like ambassadors and high commissioners of India also endorsed IITBHU MUN with an inspiring message. Being in the middle of the country's Cultural Capital with its spiritual diversity amidst Asia’s largest residential university, IITBHU MUN has been an ideal location for the conglomeration of passionate debaters and leaders from all over the world to promote diplomacy, advocacy and public speaking among young minds. The Secretariat extends you a cordial invitation to participate in the 12the edition of the IITBHU Model United Nations Conference 2023 which will be organised between 29th September 2023 to 1st October 2023. With eminent guests, stellar Executive Boards, ignited young minds, and exhilarating debates, the upcoming edition promises to be the best yet. The Secretariat is committed to providing you with the best MUN experience and a lifetime memory possible in the holy city of Varanasi.",
-  "legacyText": "IITBHU Model United Nations has quite well journey since its inception in 2012. The conference has hosted about 4000 delegates over 11 incredible editions. It has collaborated with premier institutions such as UNIC for India and Bhutan, New Delhi and has been supported by the UNESCO-INCCU via patronage. The 2021 edition of the conference marked yet another milestone when IITBHU MUN went international and hosted participants from 17 countries, this conference is also  endorsed by the Prime Minister of India, Shri Narendra Modi. In the last year edition of the conference four Indian ambassadors to four different countries took part as guest speakers and delegates from 17 countries participated in the conference.IITBHU Model United Nations is counted among the top MUN conferences in India. It has been over a decade since IITBHU MUN set the ball rolling and now it has come a long way with more than 7000 delegates from more than 22 countries discussing their views and ideologies on the pious grounds of Varanasi. The 11th edition of the Conference was organized in collaboration with UNIC, New Delhi,  under the patronage of UNESCO-INCCU.  IITBHU MUN was humbled by endorsement from the Hon’ble Prime Minister of India who appreciated the efforts put in by pupils to decipher the events going on in the world at present and work together to come up with solutions. Our conferences have graced many renowned personalities including Dr. Ajay Kumar, the former Defence Secretary of India.",
+  "legacyText": "IITBHU Model United Nations has had a quite fruitful journey since its inception in 2012. The conference has hosted about 7000 delegates over 11 incredible editions. It has collaborated with premier institutions such as UNIC for India and Bhutan, New Delhi and has been supported by the UNESCO-INCCU via patronage. The 2021 edition of the conference marked yet another milestone when IITBHU MUN went international and hosted participants from 22 countries, this conference is also  endorsed by the Prime Minister of India, Shri Narendra Modi.The previous edition of the conference was endorsed by a quartet of Indian ambassadors to four distinct nations and delegates from 22 countries took part in the conference.IITBHU Model United Nations is counted among the top MUN conferences in India. It has been over a decade since IITBHU MUN set the ball rolling and now it has come a long way with more than 7000 delegates from more than 22 countries discussing their views and ideologies on the pious grounds of Varanasi. The 11th edition of the Conference was organized in collaboration with UNIC, New Delhi,  under the patronage of UNESCO-INCCU.  IITBHU MUN was humbled by endorsement from the Hon’ble Prime Minister of India who appreciated the efforts put in by pupils to decipher the events going on in the world at present and work together to come up with solutions. Our conferences have graced many renowned personalities including Dr. Ajay Kumar, the former Defence Secretary of India.",
   "testimonials": [
     {
       "id": 1,
@@ -281,8 +281,8 @@
     {
       "id": 1,
       "vertical": "Tech",
-      "member1": "Shivanshu Ranjan",
-      "member2": "Chaitanya Gambali"
+      "member1": "Shivanshu",
+      "member2": "Chaitanya"
      
     },
     {
@@ -294,8 +294,8 @@
       "member4": "Jatasya",
       "member5": "Ranya",
       "member6": "Bhumishka",
-      "member7": "Hemant",
-      "member8": "Anjali Roy",
+      "member7": "Hemanth",
+      "member8": "Anjali",
       "member9": "Akruti"
       
     },
@@ -304,8 +304,7 @@
       "vertical": "Public Relations",
       "member1": "Pulkit Soni",
       "member2": "Siddhi ",
-      "member3": "Naini",
-      "member4": "Abhinav "
+      "member3": "Naini"
     },
     {
       "id": 1,
@@ -315,7 +314,9 @@
       "member3": "Aditya",
       "member4": "Smarth",
       "member5": "Agrim",
-      "member6": "Jatin"
+      "member6": "Jatin",
+      "member7": "Shrusti",
+      "member8": "Aarushi"
 
     },
    
@@ -386,6 +387,7 @@
     }
   ],
   "placesToVisit": [
+    
     {
       "id": 1,
       "src": "/images/assi_ghat.jpg",
@@ -510,13 +512,14 @@
     { "source": "/images/MUN-30.jpg", "title": "kvt" },
     { "source": "/images/MUN-250.jpg", "title": "kvt" }
   ],
-  "placesCarousel": [
-    { "source": "/images/kvt.webp", "title": "kvt" },
+  "placesCarousel1": [
     { "source": "/images/dashashwamedh_ghat.jpg", "title": "kvt" },
-    { "source": "/images/assi_ghat.jpg", "title": "kvt" },
+    { "source": "/images/darbhanga-ghat.jpg", "title": "kvt" },
     { "source": "/images/manikarnika_ghat.jpg", "title": "kvt" },
-    { "source": "/images/Panchganga-Ghat.jpg", "title": "kvt" },
-    { "source": "/images/sarnath.jpg", "title": "kvt" }
+    { "source": "/images/man_mandir.jpg", "title": "kvt" },
+    { "source": "/images/Panchganga-GHAT.jpg", "title": "kvt" }
+    
+    
   ],
 
 

@@ -171,7 +171,7 @@ export default function Footer() {
                 <Link href="/home">
                   <button className="p-1 hover:text-[#189BA5]">Home</button>
                 </Link>
-                <Link href="">
+                <Link href="/committees">
                   <button className="p-1 hover:text-[#189BA5]" >Committees</button>
                 </Link>
                 <Link href="/secretariat">

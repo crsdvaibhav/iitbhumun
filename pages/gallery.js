@@ -8,6 +8,7 @@ import NavBar2 from "../components/navbarforlogin";
 import { getAuth } from "firebase/auth";
 import React from "react";import { useState } from 'react';
 import Doubtbox from "../components/doubtbox";
+import EventsCarousel1 from "../components/PlacesCarousel";
 export default function Gallery() {
   const auth=getAuth();
   const [changebar,setbar]=useState(true);
@@ -24,7 +25,7 @@ export default function Gallery() {
           PAST EXPERIENCE
         </div>
         <div className=' w-full '>
-          <EventsCarousel />
+        <EventsCarousel/>
         </div>
 
       </div>
@@ -33,7 +34,7 @@ export default function Gallery() {
           PLACES TO VISIT IN VARANASI
         </div>
         <div className=' w-full'>
-         <PlacesCarousel></PlacesCarousel>
+         <EventsCarousel1 />
         </div>
       </div>
       <Doubtbox/>
