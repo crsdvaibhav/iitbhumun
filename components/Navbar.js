@@ -24,15 +24,15 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
   return (
     <div
       className={`fixed w-full z-30 font-medium  sm:py-2  ${navbar
-        ? `bg-${backgroundColor} shadow-lg border-b 1xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black`
-        : `bg-${backgroundColor} text-white`
+        ? `bg-[#113C48] shadow-lg  text-white`
+        : `bg-[#113C48] text-white`
         }`}
     >
       <div className="hidden sm:flex flex-row items-center justify-between mx-16">
         <Image
-          src="/images/active-nav-log.svg"
-          width={50}
-          height={50}
+          src="/images/munvector.svg"
+          width={60}
+          height={60}
           alt="active-nav-logo"
         />
         <div className="justify-end hidden items-center sm:flex space-x-12 2xl:space-x-24 font-medium">

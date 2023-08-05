@@ -94,6 +94,28 @@ a {
   min-width: 300px;
   margin: 8px auto;
 }
+.finaldate{
+  text-shadow: 6px 6px 6px #113C48, 6px 6px 6px #113C48;
+}
+.finaldate1{
+  text-shadow: 1px 1px 1px #fff, 1px 1px 1px #fff;
+}
+.finaldate3{
+  text-shadow: 1px 1px 1px #000, 1px 1px 1px #000;
+}
+.hero{
+  background-image: url("/images/fullbg.png");
+  height: 1080px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: fill;
+  padding: 0;
+  margin: 0;
+
+}
+.currentyear{
+  font-size: 180px;
+}
 .datacard{
   padding:12px 4px ;
   box-shadow: 0px 0px 0px 2px rgb(0, 0, 0);

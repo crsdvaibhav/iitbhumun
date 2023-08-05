@@ -23,7 +23,7 @@ export default function Home() {
      setab("white")
       setNavbar(true);
     } else {
-      setab("")
+      setab("red")
       setNavbar(false);
     }
   };
@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#FFFFFF] font-semibold">
-     {changebar? <NavBar navbar={navbar} backgroundColor={ab} qt=''  />:<NavBar2 navbar={true} backgroundColor="white" />}
+     {changebar? <NavBar navbar={true} backgroundColor={ab} qt=''  />:<NavBar2 navbar={true} backgroundColor="white" />}
       <Hero />
       <Main />
       <Doubtbox/>

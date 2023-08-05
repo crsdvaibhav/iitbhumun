@@ -81,8 +81,8 @@ const [adminpanel,showadminpanel]=useState(false)
   return (
     <div 
       className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
-        ? `bg-${backgroundColor} shadow-lg border-b 1xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black`
-        : `bg-${backgroundColor} `
+        ? `bg-[#113C48]  `
+        : `bg-[#113C48]  `
         }`}
     >
       <div className="hidden sm:flex flex-row items-center justify-between mx-16">
@@ -92,34 +92,34 @@ const [adminpanel,showadminpanel]=useState(false)
           height={50}
           alt="active-nav-logo"
         />
-        <div className="justify-end hidden text-black items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
+        <div className="justify-end hidden text-white  items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
-            <button className=" 2xl:text-xl  hover:text-[#189BA5] duration-100">
+            <button className=" 2xl:text-xl  hover:border-b-2 hover:border-spacing-4   duration-100">
               Home
             </button>
           </Link>
           <Link href="/committees">
-            <button className="2xl:text-xl text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
               Committees
             </button>
           </Link>
           <Link href="/secretariat">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4  text-lg  duration-100">
               Secretariat
             </button>
           </Link>
           <Link href="/partners">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
               Partners
             </button>
           </Link>
           <Link href="/gallery">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
               Gallery
             </button>
           </Link>
           <Link href="/faq">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
               FAQ
             </button>
           </Link></div>
@@ -128,7 +128,7 @@ const [adminpanel,showadminpanel]=useState(false)
          
           <div className="profile-dropdown">
           
-          <FaUserCircle className='text-black cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}} /> 
+          <FaUserCircle className='text-white cursor-pointer' id='profileicon' onClick={function(){setIsOpen(!isOpen)}} /> 
           {isOpen?(
         <div className='dropdowncontent'>
           <ul>
