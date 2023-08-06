@@ -358,6 +358,7 @@ const[buttondisplay,setdisplay]=useState(false)
         <div className="mb-4">
           <label htmlFor="Insitute" required className="block text-[#189BA5] font-bold mb-2">Name of Institution:<span className='text-red-500'>*</span></label>
           <input type="text" placeholder="College or University" id="Institute" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+          <div id="autocomplete-list" class="autocomplete-items"></div>
         </div>
         <div className="mb-4">
           <label htmlFor="Insitute" required className="block text-[#189BA5] font-bold mb-2">Institute ID card if from BHU or IIT BHU:<span className='text-red-500'></span></label>

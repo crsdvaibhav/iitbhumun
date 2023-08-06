@@ -4,7 +4,36 @@ import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmail
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js';
 const provider = new GoogleAuthProvider();
+const inputField = document.getElementById("Institute");
+const autocompleteList = document.getElementById("autocomplete-list");
 
+
+fetch("../data/colleges.json")  // Adjust the path to include the 'data' folder
+  .then(response => response.json())
+  .then(data => {
+    const instituteData = data;
+  console.log(instituteData)
+  }) // Use the entire JSON array
+
+  //   inputField.addEventListener("input", function() {
+  //     const inputValue = inputField.value.toLowerCase();
+  //     autocompleteList.innerHTML = "";
+
+  //     const matchingColleges = instituteData.filter(institute => {
+  //       return institute.college.toLowerCase().includes(inputValue);
+  //     });
+
+  //     matchingColleges.forEach(institute => {
+  //       const suggestion = document.createElement("div");
+  //       suggestion.textContent = institute.college;
+  //       suggestion.addEventListener("click", function() {
+  //         inputField.value = this.textContent;
+  //         autocompleteList.innerHTML = "";
+  //       });
+  //       autocompleteList.appendChild(suggestion);
+  //     });
+  //   });
+  // });
 const firebaseConfig = {
   apiKey: "AIzaSyAYLIn8hGjgVrX3h23aVZPx47Sn8bZBCz4",
   authDomain: "mun-2023.firebaseapp.com",
