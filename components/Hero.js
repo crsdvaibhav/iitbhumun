@@ -41,7 +41,7 @@ export default function Hero() {
     <div className=''>
       <div className="sm:block hidden relative">
         <div className="row-span-full col-span-full hero mx-0">
-          <div className='flex justify-center gap-80'>
+          <div className='flex justify-center gap-72'>
             <div className='leftside block
     '>
           <h1 className='finaldate1 text-4xl text-[#B6FF1A] text-center md:text-8xl mt-96 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
