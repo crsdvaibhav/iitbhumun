@@ -17,9 +17,9 @@ export default function Committees() {
     return (
         <div className="bg-[#F5F5F5]">
            {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
-            <div className="h-[70vh] sm:justify-center sm:flex hidden">
-                <div className="w-1/3 h-[80vh] flex  items-center justify-center">
-                    <div className="flex pb-4">
+            <div className="h-[80vh] sm:justify-between sm:flex hidden">
+                <div className="block mx-auto">
+            <div className="flex justify-evenly mx-auto mt-24 gap-0">
                         <CommitteeCircle
                             key={arr[0].id}
                             src={arr[0].logosrc}
@@ -33,21 +33,6 @@ export default function Committees() {
                             href={arr[0].href}
                         />
                         <CommitteeCircle
-                            key={arr[1].id}
-                            src={arr[1].logosrc}
-                            title={arr[1].title}
-                            data={arr[1].data}
-                            chair={arr[1].chair}
-                            vicechair={arr[1].vicechair}
-                            agenda={arr[1].agenda}
-                            chairsrc={arr[1].chairsrc}
-                            vicechairsrc={arr[1].vicechairsrc}
-                            href={arr[1].href}
-
-                        />
-                    </div>
-                    <div className="flex pt-4">
-                        <CommitteeCircle
                             key={arr[2].id}
                             src={arr[2].logosrc}
                             title={arr[2].title}
@@ -60,27 +45,12 @@ export default function Committees() {
                             href={arr[2].href}
 
                         />
-                       
-                    </div>
-                </div>
+                   </div>
+                    
+              
 
-                <div className="w-1/3 h-[80vh] flex items-center justify-center">
-                    <div className="text-center">
-                        <Image
-                            src="/images/c-logo.svg"
-                            width={241}
-                            height={253}
-                        />
-                        <div className="font-heading text-[2rem] font-bold pt-4">
-                            Rise. Speak. Resolve.
-                        </div>
-                       
-                    </div>
-                </div>
-
-                <div className="w-1/3 h-[80vh] flex flex-col items-start justify-center">
-                    <div className="flex pb-4">
-                        <CommitteeCircle
+                   <div className="flex justify-between mx-auto gap-28">
+                <CommitteeCircle
                             key={arr[4].id}
                             src={arr[4].logosrc}
                             title={arr[4].title}
@@ -93,6 +63,35 @@ export default function Committees() {
                             href={arr[4].href}
 
                         />
+                    <div className="text-center">
+
+                        <Image
+                            src="/images/c-logo.svg"
+                            width={131}
+                            height={143}
+                        />
+                        <div className="font-heading text-[2rem] text-[#A3CF3A] font-bold pt-2 mb-12">
+                            Rise. Speak. Resolve.
+                        </div>
+                       
+                   </div>
+                    <CommitteeCircle
+                            key={arr[5].id}
+                            src={arr[5].logosrc}
+                            title={arr[5].title}
+                            data={arr[5].data}
+                            chair={arr[5].chair}
+                            vicechair={arr[5].vicechair}
+                            agenda={arr[5].agenda}
+                            chairsrc={arr[5].chairsrc}
+                            vicechairsrc={arr[5].vicechairsrc}
+                            href={arr[5].href}
+
+                        />
+               </div>
+
+                
+                       <div className="flex justify-evenly mx-auto">
                          <CommitteeCircle
                         
                             key={arr[3].id}
@@ -107,37 +106,21 @@ export default function Committees() {
                             href={arr[3].href}
 
                         />
-                        <CommitteeCircle
-                            key={arr[5].id}
-                            src={arr[5].logosrc}
-                            title={arr[5].title}
-                            data={arr[5].data}
-                            chair={arr[5].chair}
-                            vicechair={arr[5].vicechair}
-                            agenda={arr[5].agenda}
-                            chairsrc={arr[5].chairsrc}
-                            vicechairsrc={arr[5].vicechairsrc}
-                            href={arr[5].href}
+                      <CommitteeCircle
+                            key={arr[1].id}
+                            src={arr[1].logosrc}
+                            title={arr[1].title}
+                            data={arr[1].data}
+                            chair={arr[1].chair}
+                            vicechair={arr[1].vicechair}
+                            agenda={arr[1].agenda}
+                            chairsrc={arr[1].chairsrc}
+                            vicechairsrc={arr[1].vicechairsrc}
+                            href={arr[1].href}
 
                         />
                     </div>
-                    {/* <div className="flex pt-4">
-                        <CommitteeCircle
-                            key={arr[6].id}
-                            src={arr[6].logosrc}
-                            title={arr[6].title}
-                            data={arr[6].data}
-                            chair={arr[6].chair}
-                            vicechair={arr[6].vicechair}
-                            agenda={arr[6].agenda}
-                            chairsrc={arr[6].chairsrc}
-                            vicechairsrc={arr[6].vicechairsrc}
-                            href={arr[6].href}
-
-                        />
-                       
-                    </div> */}
-                </div>
+                    </div>
             </div>
             <div className="sm:hidden w-full flex flex-col items-center pt-24">
                 <div className="flex items-center justify-center">

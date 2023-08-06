@@ -16,7 +16,7 @@ export default function CommitteeCircle(props) {
                 className="mx-2 w-[11.313rem] h-[11.313rem]  shadow-[#189BA5]/20  background-[white] top-[12.5rem] left-[9.836rem]"
             >
                 <div className="flex flex-col items-center ">
-                    <div className="pt-[1.688rem] rounded-full w-[120] h-[120]  ">
+            
                         <Image className="nevermind  shadow-[#189BA5]/20 shadow-lg  rounded-full"
                             src={props.src}
                             width={125}
@@ -24,7 +24,7 @@ export default function CommitteeCircle(props) {
                             alt=""
                             
                         />
-                    </div>
+                    
                     <div className="font-bold font-sans text-[1.2rem] pb-2 text-[#189BA5]">
                         {props.title}
                     </div>
