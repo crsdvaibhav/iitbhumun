@@ -110,7 +110,7 @@ const Doubtbox = () => {
         ) : (
           <button
             className=" bg-center bg-no-repeat bg-cover text-white px-4 w-20 h-20    py-2 rounded-full  shake-and-rotate"
-            style={{ backgroundImage: 'url("/images/chatbot.png")' }} onClick={handleExpand}
+            style={{ backgroundImage: 'url("/images/emoji.png")' }} onClick={handleExpand}
           >
            
           </button>

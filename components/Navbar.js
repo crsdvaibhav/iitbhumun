@@ -37,46 +37,46 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
         />
         <div className="justify-end hidden items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
-            <button className=" border-yellow-500 hover:border-b-2 2xl:text-xl hover:border-spacing-4 duration-100">
+            <button className=" border-[#A3CF3A] hover:border-b-2 2xl:text-xl hover:border-spacing-4 duration-100">
               Home
             </button>
           </Link>
           <Link href="/committees">
-            <button className="2xl:text-xl text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
+            <button className="2xl:text-xl text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               Committees
             </button>
           </Link>
           <Link href="/secretariat">
-            <button className="2xl:text-xl  text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
+            <button className="2xl:text-xl  text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               Secretariat
             </button>
           </Link>
           <Link href="/partners">
-            <button className="2xl:text-xl  text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
+            <button className="2xl:text-xl  text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               Partners
             </button>
           </Link>
           <Link href="/gallery">
-            <button className="2xl:text-xl  text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
+            <button className="2xl:text-xl  text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               Gallery
             </button>
           </Link>
           <Link href="/faq">
-            <button className="2xl:text-xl  text-lg border-yellow-500 hover:border-b-2 hover:border-spacing-2 duration-100">
+            <button className="2xl:text-xl  text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               FAQ
             </button>
           </Link><div>
 <Link href="/registerpage">
   
          <button 
-            className={'px-12 2xl:px-12 h-10 rounded-md text-xl font-semibold mx-2 text-black bg-[#F5CE3F] hover:bg-yellow-300'
+            className={'px-12 2xl:px-12 h-10 rounded-md text-xl font-semibold mx-2 text-black bg-[#ABCF3A] hover:bg-yellow-300'
               }
           >
             Register
           </button ></Link>
           <Link href="/loginpage">
          <button onClick={handleChange}
-            className={`px-12 2xl:px-12 h-10 targetDiv rounded-md text-xl font-semibold mx-4  text-black bg-[#F5CE3F] hover:bg-yellow-300 ${qt} `}
+            className={`px-12 2xl:px-12 h-10 targetDiv rounded-md text-xl font-semibold mx-4  text-black bg-[#ABCF3A] hover:bg-yellow-300 ${qt} `}
           >
             Login
           </button></Link>

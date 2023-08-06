@@ -104,7 +104,7 @@ a {
   text-shadow: 1px 1px 1px #000, 1px 1px 1px #000;
 }
 .hero{
-  background-image: url("/images/fullbg.png");
+  background-image: url("/images/homeimage.png");
   height: 1080px;
   background-size: 100%;
   background-repeat: no-repeat;
