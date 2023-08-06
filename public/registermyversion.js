@@ -7,7 +7,14 @@ import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.
 const provider = new GoogleAuthProvider();
 const inputField = document.getElementById("Institute");
 const autocompleteList = document.getElementById("autocomplete-list");
-const dataUrl = "https://github.com/Shibbu264/collegelist/blob/main/colleges%20(2).json";
+const dataUrl = "https://raw.githubusercontent.com/Shibbu264/iitbhumun/newbegin/data/newdata.json"
+ document.addEventListener("click", event => {
+  const targetElement = event.target;
+  if (!targetElement.closest("#autocomplete-list")) {
+   
+    closeAutocompleteList();
+  }
+});;
 const closeAutocompleteList = () => {
   autocompleteList.innerHTML = "";
 };
@@ -15,7 +22,7 @@ const closeAutocompleteList = () => {
 fetch(dataUrl)  // Adjust the path to include the 'data' folder
   .then(response => response.json())
   .then(data => {
-    const instituteData = data;
+    const instituteData = data.Institute;
   console.log(instituteData)
 
   document.addEventListener("click", event => {
@@ -26,17 +33,19 @@ fetch(dataUrl)  // Adjust the path to include the 'data' folder
     }
   });
     inputField.addEventListener("input", function() {
-      const inputValue = inputField.value.toLowerCase();
+      const inputValue = inputField.value.toUpperCase();
       autocompleteList.innerHTML = "";
 
       const matchingColleges = instituteData.filter(institute => {
-        return institute.college.toLowerCase().includes(inputValue);
+
+        return institute.includes(inputValue);
+
       });
 
       matchingColleges.forEach(institute => {
-        if (inputValue.length>3){
+        if (inputValue.length>0){
         const suggestion = document.createElement("div");
-        suggestion.textContent = institute.college;
+        suggestion.textContent = institute;
         suggestion.addEventListener("click", function() {
           inputField.value = this.textContent;
           autocompleteList.innerHTML = "";
