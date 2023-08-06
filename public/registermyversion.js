@@ -3,38 +3,39 @@ import { getDatabase,ref,push,set,onValue,get,runTransaction } from "https://www
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js';
-import data from '../data/colleges.json';
+
 const provider = new GoogleAuthProvider();
 const inputField = document.getElementById("Institute");
 const autocompleteList = document.getElementById("autocomplete-list");
+const dataUrl = "https://raw.githubusercontent.com/VarthanV/Indian-Colleges-List/master/colleges.json";
 
-console.log(data);
-fetch("https://firebasestorage.googleapis.com/v0/b/mun-2023.appspot.com/o/colleges.json?alt=media&token=a435e7da-4ac3-4a92-8b14-def6af49b734")  // Adjust the path to include the 'data' folder
+fetch(dataUrl)  // Adjust the path to include the 'data' folder
   .then(response => response.json())
   .then(data => {
     const instituteData = data;
   console.log(instituteData)
-  }) // Use the entire JSON array
 
-  //   inputField.addEventListener("input", function() {
-  //     const inputValue = inputField.value.toLowerCase();
-  //     autocompleteList.innerHTML = "";
 
-  //     const matchingColleges = instituteData.filter(institute => {
-  //       return institute.college.toLowerCase().includes(inputValue);
-  //     });
+    inputField.addEventListener("input", function() {
+      const inputValue = inputField.value.toLowerCase();
+      autocompleteList.innerHTML = "";
 
-  //     matchingColleges.forEach(institute => {
-  //       const suggestion = document.createElement("div");
-  //       suggestion.textContent = institute.college;
-  //       suggestion.addEventListener("click", function() {
-  //         inputField.value = this.textContent;
-  //         autocompleteList.innerHTML = "";
-  //       });
-  //       autocompleteList.appendChild(suggestion);
-  //     });
-  //   });
-  // });
+      const matchingColleges = instituteData.filter(institute => {
+        return institute.college.toLowerCase().includes(inputValue);
+      });
+
+      matchingColleges.forEach(institute => {
+        if (inputValue.length>3){
+        const suggestion = document.createElement("div");
+        suggestion.textContent = institute.college;
+        suggestion.addEventListener("click", function() {
+          inputField.value = this.textContent;
+          autocompleteList.innerHTML = "";
+        });
+        autocompleteList.appendChild(suggestion);
+      }});
+    });
+  });
 const firebaseConfig = {
   apiKey: "AIzaSyAYLIn8hGjgVrX3h23aVZPx47Sn8bZBCz4",
   authDomain: "mun-2023.firebaseapp.com",
