@@ -3,12 +3,13 @@ import { getDatabase,ref,push,set,onValue,get,runTransaction } from "https://www
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js';
+import data from '../data/colleges.json';
 const provider = new GoogleAuthProvider();
 const inputField = document.getElementById("Institute");
 const autocompleteList = document.getElementById("autocomplete-list");
 
-
-fetch("../data/colleges.json")  // Adjust the path to include the 'data' folder
+console.log(data);
+fetch("https://firebasestorage.googleapis.com/v0/b/mun-2023.appspot.com/o/colleges.json?alt=media&token=a435e7da-4ac3-4a92-8b14-def6af49b734")  // Adjust the path to include the 'data' folder
   .then(response => response.json())
   .then(data => {
     const instituteData = data;
