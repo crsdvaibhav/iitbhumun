@@ -7,7 +7,7 @@ import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.
 const provider = new GoogleAuthProvider();
 const inputField = document.getElementById("Institute");
 const autocompleteList = document.getElementById("autocomplete-list");
-const dataUrl = "https://github.com/jaysoni-india/database/blob/70e661615cf48f5ef9b544e28389105c3fe5a83e/indian_college_list.json";
+const dataUrl = "https://github.com/Shibbu264/collegelist/blob/main/colleges%20(2).json";
 const closeAutocompleteList = () => {
   autocompleteList.innerHTML = "";
 };
