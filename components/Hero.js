@@ -41,9 +41,8 @@ export default function Hero() {
     <div className=''>
       <div className="sm:block hidden relative">
         <div className="row-span-full col-span-full hero mx-0">
-          <div className='flex justify-center gap-72'>
-            <div className='leftside block
-    '>
+          <div className='flex justify-center gap-60'>
+            <div className='leftside block'>
           <h1 className='finaldate1 text-4xl text-[#B6FF1A] text-center md:text-8xl mt-96 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
           <h1 className='finaldate2 text-4xl text-[#B6FF1A] text-center md:text-8xl ml-24'>UNITED NATIONS</h1>
           <h1 className='finaldate3 text-3xl text-[#fff] mt-4 text-center my-2 md:text-7xl ml-24'>RISE.SPEAK.RESOLVE</h1>
@@ -51,7 +50,7 @@ export default function Hero() {
          <Link href={'/loginpage'}><button className='bg-[#A3CF3ACC] hover:bg-green-500 hover:text-[#fff] text-4xl p-4 px-12 rounded-lg'>Login</button></Link></div>:<Link href={'/loggedinhomepage'}><Button className='block  mx-auto my-8 text-5xl'>View Profile</Button></Link>}
           </div>
           <div className='rightside block'>
-        <img className='block md:w-96 w-44 mx-auto mt-48' src='/images/munvector.svg'></img>
+        <img className='block md:w-96 w-44 mx-auto mt-48' src='/images/Group.png'></img>
           <h1 className=' finaldate text-4xl text-center text-[#fff] whitespace-nowrap md:text-8xl mt-18 ml-24 border-[#fff] border-solid'>29 SEPT - 1 OCT</h1>
           <h1 className='  text-4xl text-[#fff] currentyear font-bold text-center mt-24 ml-24 border-[#fff] border-solid'>2023</h1>
           </div>
