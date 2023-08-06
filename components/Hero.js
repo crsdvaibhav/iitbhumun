@@ -39,7 +39,7 @@ export default function Hero() {
   return (
    
     <div className=''>
-      <div className="sm:block hidden relative">
+      <div className="sm:block sm:w-full sm:overflow-x-hidden hidden relative">
         <div className="row-span-full sm:w-screen sm:h-screen sm:overflow-x-hidden col-span-full hero mx-0">
           <div className='flex justify-center gap-48'>
             <div className='leftside block'>
