@@ -7,7 +7,10 @@ import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.
 const provider = new GoogleAuthProvider();
 const inputField = document.getElementById("Institute");
 const autocompleteList = document.getElementById("autocomplete-list");
-const dataUrl = "https://raw.githubusercontent.com/VarthanV/Indian-Colleges-List/master/colleges.json";
+const dataUrl = "https://github.com/jaysoni-india/database/blob/70e661615cf48f5ef9b544e28389105c3fe5a83e/indian_college_list.json";
+const closeAutocompleteList = () => {
+  autocompleteList.innerHTML = "";
+};
 
 fetch(dataUrl)  // Adjust the path to include the 'data' folder
   .then(response => response.json())
@@ -15,7 +18,13 @@ fetch(dataUrl)  // Adjust the path to include the 'data' folder
     const instituteData = data;
   console.log(instituteData)
 
-
+  document.addEventListener("click", event => {
+    const targetElement = event.target;
+    if (!targetElement.closest("#autocomplete-list")) {
+      // Click happened outside the dropdown container, so close the autocomplete list.
+      closeAutocompleteList();
+    }
+  });
     inputField.addEventListener("input", function() {
       const inputValue = inputField.value.toLowerCase();
       autocompleteList.innerHTML = "";
@@ -31,6 +40,7 @@ fetch(dataUrl)  // Adjust the path to include the 'data' folder
         suggestion.addEventListener("click", function() {
           inputField.value = this.textContent;
           autocompleteList.innerHTML = "";
+          
         });
         autocompleteList.appendChild(suggestion);
       }});

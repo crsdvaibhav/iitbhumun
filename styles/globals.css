@@ -113,6 +113,14 @@ a {
   margin: 0;
 
 }
+#autocomplete-list div{
+  cursor: pointer;
+}
+#autocomplete-list div:hover{
+
+background-color: rgb(216, 213, 213);
+
+}
 .currentyear{
   font-size: 140px;
 }
