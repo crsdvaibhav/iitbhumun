@@ -40,10 +40,10 @@ export default function Hero() {
    
     <div className=''>
       <div className="sm:block hidden relative">
-        <div className="row-span-full w-screen sm:overflow-x-hidden col-span-full hero mx-0">
+        <div className="row-span-full sm:w-screen sm:h-screen sm:overflow-x-hidden col-span-full hero mx-0">
           <div className='flex justify-center gap-56'>
             <div className='leftside block'>
-          <h1 className='finaldate1 text-4xl text-[#B6FF1A] whitespace-nowrap text-left md:text-8xl mt-96 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
+          <h1 className='finaldate1 text-4xl text-[#B6FF1A] whitespace-nowrap text-left md:text-8xl mt-80 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
           <h1 className='finaldate2 text-4xl text-[#B6FF1A] text-left whitespace-nowrap md:text-8xl ml-24'>UNITED NATIONS</h1>
           <h1 className='finaldate3 text-3xl text-[#fff] mt-4 text-left my-2 whitespace-nowrap md:text-6xl ml-24'>RISE.SPEAK.RESOLVE</h1>
           {changebar?<div className='flex gap-24 justify-center ml-4 mt-14'><Link href={'/registerpage'}><button className='bg-[#A3CF3ACC] hover:bg-[#F5CE3F]  text-4xl px-12 p-4 rounded-lg'>Register</button></Link>
