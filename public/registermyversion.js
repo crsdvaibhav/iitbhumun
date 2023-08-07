@@ -3,7 +3,7 @@ import { getDatabase,ref,push,set,onValue,get,runTransaction } from "https://www
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js';
-import { update } from "firebase/database";
+
 
 const provider = new GoogleAuthProvider();
 const inputField = document.getElementById("Institute");
@@ -571,7 +571,8 @@ PaymentConfirmed:0
         // ..
       });}
 
-      document.getElementById("google").addEventListener("click", function(){ signInWithPopup(auth, provider)
+      document.getElementById("google").addEventListener("click", function(){ console.log("")
+      signInWithPopup(auth, provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -579,7 +580,7 @@ PaymentConfirmed:0
         // The signed-in user info.
         const user = result.user;
      
-        alert(`Hello ${auth.currentUser.displayName}, Complete the registration form now`)
+        alert("Hello ${auth.currentUser.displayName}, Complete the registration form now")
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       }).catch((error) => {
@@ -589,6 +590,7 @@ PaymentConfirmed:0
         // The email of the user's account used.
         const email = error.customData.email;
         // The AuthCredential type that was used.
+        alert("Server error ocurred.")
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       })
