@@ -580,8 +580,11 @@ PaymentConfirmed:0
         // The signed-in user info.
         const user = result.user;
      
-        alert("Hello ${auth.currentUser.displayName}, Complete the registration form now")
+        alert(`Hello ${auth.currentUser.displayName}, Complete the registration form now`)
         // IdP data available using getAdditionalUserInfo(result)
+        document.getElementById("google").style.display=("none")
+        document.getElementById("or").innerHTML=`Hello ${auth.currentUser.displayName}  `
+        document.getElementById("or").style.color="#189BA5" 
         // ...
       }).catch((error) => {
         // Handle Errors here.
