@@ -3,6 +3,7 @@ import { getDatabase,ref,push,set,onValue,get,runTransaction } from "https://www
 import { getAuth, createUserWithEmailAndPassword,signInWithPopup,signInWithEmailAndPassword,signOut,GoogleAuthProvider, } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { initializeApp} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js';
+import { update } from "firebase/database";
 
 const provider = new GoogleAuthProvider();
 const inputField = document.getElementById("Institute");
@@ -244,6 +245,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
                 return (userRegistered || 0) + 1; // Increment the count by 1
               })
                 .then(() => {
+                 
                   console.log('UserRegistered count incremented successfully');
                 })
                 .catch((error) => {
@@ -576,12 +578,8 @@ PaymentConfirmed:0
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-      document.getElementById("or").innerHTML=`<div class="alert">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      Signup with Google successful!
-      Kindly fill the same email id that you used for Google signup.
-    </div>`;
-        document.getElementById("google1").innerHTML=`<h1>Hello ${auth.currentUser.displayName}, Complete the registration form now</h1>`
+     
+        alert(`Hello ${auth.currentUser.displayName}, Complete the registration form now`)
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       }).catch((error) => {

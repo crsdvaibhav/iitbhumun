@@ -30,6 +30,7 @@ import Doubtbox from '../components/doubtbox';
 const CADB = () => {
   
   const [DATA, setDATA] = useState({});
+  const [DATA3, setDATA3] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const handleFacebookShare = () => {
@@ -83,6 +84,30 @@ const CADB = () => {
 
 const auth=getAuth();
 
+async function fetchData2() {
+  try {
+    const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/preferences.json');
+    const data = await response.json();
+    
+     setDATA3(data)
+     filteredData.map((item1) => {
+      const filteredData2 = Object.keys(DATA3).reduce((filtered, itemId) => {
+        const item = DATA3[itemId];
+        
+        if (item.ReferralCode === item1.referralCode) {
+          
+          console.log(item1.referralCode)
+          filtered.push({ itemId, ...item });
+        }
+        return filtered;
+      }, []);
+    // console.log(filteredData2)
+      
+            })
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
 
 
   
@@ -92,6 +117,7 @@ const auth=getAuth();
       const data = await response.json();
       
       setDATA(data)
+      
     } catch (error) {
       console.error('Error:', error);
     }
@@ -207,8 +233,9 @@ else{
     }} src='/images/copy.png' className='ml-3 inline w-8 h-8 cursor-pointer'></img></li>
           <li className='mb-1 text-xl'>  User Registered using your referral code:<span className='text-[#189BA5] font-bold '> {item.UserRegistered}</span> </li>
           <li className='mb-4 text-xl'>   Payment Confirmed: <span className='text-[#189BA5] font-bold'> {item.PaymentConfirmed}</span></li>
-          
+          {/* <Button onClick={()=>{fetchData2()}} className='my-1 mb-3'>View Details</Button> */}
           </ul>
+         
           <h1 className=' bg-[#189BA5] text-white inline px-3 py-1 mt-10 rounded-md' >Invite your friends!</h1>
           <div className="social-buttons mt-5">
   <button className="social-button facebook" onClick={handleFacebookShare}>
