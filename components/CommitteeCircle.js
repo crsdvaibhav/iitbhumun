@@ -17,15 +17,15 @@ export default function CommitteeCircle(props) {
             >
                 <div className="flex flex-col items-center ">
             
-                        <Image className="nevermind  shadow-[#189BA5]/20 shadow-lg  rounded-full"
+                        <Image className="   rounded-full"
                             src={props.src}
-                            width={125}
-                            height={125}
+                            width={135}
+                            height={135}
                             alt=""
                             
                         />
                     
-                    <div className="font-bold font-sans text-[1.2rem] pb-2 text-[#189BA5]">
+                    <div className="font-bold font-sans text-[1.2rem] pb-2 text-[#fff]">
                         {props.title}
                     </div>
                 </div>
