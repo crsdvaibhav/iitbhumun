@@ -65,7 +65,7 @@ export default function Committees() {
                         />
                     <div className="text-center">
 
-                        <Image
+                        <Image className=""
                             src="/images/c-logo.svg"
                             width={131}
                             height={143}
