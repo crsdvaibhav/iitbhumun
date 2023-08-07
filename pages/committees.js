@@ -15,9 +15,9 @@ export default function Committees() {
    function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
     abc()
     return (
-        <div className="bg-[#F5F5F5] committees">
+        <div className="bg-[#189BA5] sm:bg-white   ">
            {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
-            <div className="h-[80vh] sm:justify-between sm:flex  hidden">
+            <div className="h-screen committees sm:justify-between sm:flex  hidden">
                 <div className="block mx-auto">
             <div className="flex justify-evenly mx-auto mt-24 gap-0">
                         <CommitteeCircle

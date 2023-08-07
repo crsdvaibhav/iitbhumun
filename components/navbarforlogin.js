@@ -81,7 +81,7 @@ const [adminpanel,showadminpanel]=useState(false)
   return (
     <div 
       className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
-        ? `bg-[#113C48]  `
+        ? `sm:bg-[#113C48] bg-white `
         : `bg-[#113C48]  `
         }`}
     >
@@ -188,7 +188,7 @@ const [adminpanel,showadminpanel]=useState(false)
         <div className=' mr-4 dropdowncontent1 '>
           <ul>
             <li className='mr-4 text-red-500' onClick={handleMyProfile}>User dashboard</li>
-            <li className='mr-4 'onClick={()=>{}}><Link href={'/CADB'}>CA Dashboard</Link></li>
+            <li className='mr-4 pr-2 'onClick={()=>{}}><Link href={'/CADB'}>CA Dashboard</Link></li>
             <li className='mr-4' onClick={handleChangePassword}>Change Password</li>
             <li className='mr-4'onClick={handleLogout}>Logout </li>
           </ul>
