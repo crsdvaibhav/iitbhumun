@@ -31,7 +31,11 @@ const CADB = () => {
   
   const [DATA, setDATA] = useState({});
   const [DATA3, setDATA3] = useState({});
+  const [DATA4, setDATA4] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoading1, setIsLoading1] = useState(true);
+  const [name1, setname] = useState("<th className='table-auto min-w-full border text-center text-sm  dark:border-neutral-500'>Name</th>");
+  const [name2, setname2] = useState("<th className='table-auto min-w-full border text-center text-sm  dark:border-neutral-500'>Payment status</th>");
 
   const handleFacebookShare = () => {
     const sharingURL = 'https://www.facebook.com/sharer/sharer.php?u=https://iitbhumun-om6k.vercel.app/';
@@ -84,30 +88,7 @@ const CADB = () => {
 
 const auth=getAuth();
 
-async function fetchData2() {
-  try {
-    const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/preferences.json');
-    const data = await response.json();
-    
-     setDATA3(data)
-     filteredData.map((item1) => {
-      const filteredData2 = Object.keys(DATA3).reduce((filtered, itemId) => {
-        const item = DATA3[itemId];
-        
-        if (item.ReferralCode === item1.referralCode) {
-          
-          console.log(item1.referralCode)
-          filtered.push({ itemId, ...item });
-        }
-        return filtered;
-      }, []);
-    // console.log(filteredData2)
-      
-            })
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
+
 
 
   
@@ -117,18 +98,19 @@ async function fetchData2() {
       const data = await response.json();
       
       setDATA(data)
-      
+  
     } catch (error) {
       console.error('Error:', error);
     }
   }
   
-
+ 
   setTimeout(()=>{
     if (true) {
       async function fetchData1() {
         try {
-          await fetchData(); // Wait for the first command to complete
+          await fetchData();
+          // Wait for the first command to complete
           setIsLoading(false); // Execute the second command after the first one is finished
           
         } catch (error) {
@@ -233,10 +215,20 @@ else{
     }} src='/images/copy.png' className='ml-3 inline w-8 h-8 cursor-pointer'></img></li>
           <li className='mb-1 text-xl'>  User Registered using your referral code:<span className='text-[#189BA5] font-bold '> {item.UserRegistered}</span> </li>
           <li className='mb-4 text-xl'>   Payment Confirmed: <span className='text-[#189BA5] font-bold'> {item.PaymentConfirmed}</span></li>
-          {/* <Button onClick={()=>{fetchData2()}} className='my-1 mb-3'>View Details</Button> */}
+         <Button id='viewdetails'
+           className='my-1 mb-3'>View Details</Button>
+
           </ul>
-         
-          <h1 className=' bg-[#189BA5] text-white inline px-3 py-1 mt-10 rounded-md' >Invite your friends!</h1>
+          <table className="mx-auto px-2 table-auto  border text-center text-sm  dark:border-black hidden" id='showtable'>
+          <tbody>
+         <tr id='html1' className=" text-center  mx-auto px-2">
+<td className='table-auto min-w-full border text-center text-lg font-semibold text-red-500  dark:border-neutral-500 py-2'>Name </td>
+         </tr>
+         <tr id='html2'className=" text-center  mx-auto px-2">
+<td className='table-auto min-w-full border text-center text-lg  font-semibold text-red-500 dark:border-neutral-500 py-2'>Payment done</td>
+         </tr></tbody>
+         </table>
+          <h1 className=' text-center block mx-auto text-white  px-3 py-1 mt-10 rounded-md' ><span className='rounded-md px-3 py-1 bg-[#189BA5] w-fit '>Invite your friends!</span></h1>
           <div className="social-buttons mt-5">
   <button className="social-button facebook" onClick={handleFacebookShare}>
    
@@ -285,6 +277,7 @@ else{
       </div>
       <Doubtbox/>
       <Footer2 />
+      <Script src="vanillascript2.js" typeof='module' type='module' />
       </>
     );
   
