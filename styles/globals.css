@@ -113,13 +113,16 @@ a {
   margin: 0;
 
 }
+
 .committees{
   background-image: url("/images/commitees.png");
   background-size: 100%;
   
+  margin: 0;
   background-repeat: no-repeat;
   width:cover;
-  height: cover;
+  height:cover;
+
 }
 .sm\:bg-image-sm {
   background: #189BA5;

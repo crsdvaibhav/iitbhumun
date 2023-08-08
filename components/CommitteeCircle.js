@@ -19,8 +19,8 @@ export default function CommitteeCircle(props) {
             
                         <Image className="  "
                             src={props.src}
-                            width={135}
-                            height={135}
+                            width={125}
+                            height={125}
                             alt=""
                             
                         />

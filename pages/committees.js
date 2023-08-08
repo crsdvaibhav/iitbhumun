@@ -15,12 +15,12 @@ export default function Committees() {
    function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
     abc()
     return (
-        <div className="bg-[#189BA5] sm:bg-white   ">
+        <div className="bg-black ">
            {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
-            <div className="h-screen committees sm:justify-between sm:flex  hidden">
-                <div className="block mx-auto">
-            <div className="flex justify-evenly mx-auto mt-24 gap-0">
-                        <CommitteeCircle
+            <div className="committees sm:justify-between sm:flex  hidden">
+ <div className="block mx-auto   h-cover">  
+            <div className="flex justify-around mx-auto mb-0 mt-14 gap-96">
+                       <div className="mr-72"> <CommitteeCircle 
                             key={arr[0].id}
                             src={arr[0].logosrc}
                             title={arr[0].title}
@@ -31,7 +31,8 @@ export default function Committees() {
                             chairsrc={arr[0].chairsrc}
                             vicechairsrc={arr[0].vicechairsrc}
                             href={arr[0].href}
-                        />
+                        /></div>
+                        <div className="ml-72">
                         <CommitteeCircle
                             key={arr[2].id}
                             src={arr[2].logosrc}
@@ -44,12 +45,13 @@ export default function Committees() {
                             vicechairsrc={arr[2].vicechairsrc}
                             href={arr[2].href}
 
-                        />
+                        /></div>
                    </div>
                     
               
 
-                   <div className="flex justify-between mx-auto gap-28">
+                   <div className="flex justify-around my-0  mx-auto gap-0">
+               
                 <CommitteeCircle
                             key={arr[4].id}
                             src={arr[4].logosrc}
@@ -67,10 +69,10 @@ export default function Committees() {
 
                         <Image className=""
                             src="/images/c-logo.svg"
-                            width={131}
-                            height={143}
+                            width={151}
+                            height={163}
                         />
-                        <div className="font-heading text-[2rem] text-[#A3CF3A] font-bold pt-2 mb-12">
+                        <div className="font-heading text-[2rem] text-[#A3CF3A] font-bold ">
                             Rise. Speak. Resolve.
                         </div>
                        
@@ -119,6 +121,22 @@ export default function Committees() {
                             href={arr[1].href}
 
                         />
+                    </div>
+                    <div className="flex justify-center ">
+                        <CommitteeCircle
+                            key={arr[6].id}
+                            src={arr[6].logosrc}
+                            title={arr[6].title}
+                            data={arr[6].data}
+                            chair={arr[6].chair}
+                            vicechair={arr[6].vicechair}
+                            agenda={arr[6].agenda}
+                            chairsrc={arr[6].chairsrc}
+                            vicechairsrc={arr[6].vicechairsrc}
+                            href={arr[6].href}
+
+                        />
+                        
                     </div>
                     </div>
             </div>
@@ -220,7 +238,7 @@ export default function Committees() {
 
                         />
                     </div>
-                    {/* <div className="flex justify-around w-full pt-4">
+                    <div className="flex justify-center w-full pt-4">
                         <CommitteeCircle
                             key={arr[6].id}
                             src={arr[6].logosrc}
@@ -235,7 +253,7 @@ export default function Committees() {
 
                         />
                         
-                    </div> */}
+                    </div>
                 </div>
             </div>
             <Doubtbox/>

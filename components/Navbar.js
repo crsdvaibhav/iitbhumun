@@ -24,7 +24,7 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
   return (
     <div
       className={`fixed w-full z-30 font-medium  sm:py-2  ${navbar
-        ? `bg-[#113C48] shadow-lg  text-white`
+        ? `bg-[#113C48]  shadow-lg  text-white`
         : `bg-[#113C48] text-white`
         }`}
     >
@@ -120,10 +120,10 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
           />
         </div>
        
-          <button onClick={handleChange} className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
+          <button onClick={handleChange} className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#A3B63A] rounded-lg">
             <Link href={'/registerpage'}>Register</Link>
           </button>
-          <button  className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
+          <button  className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#A3B63A] rounded-lg">
                  <Link href={'/loginpage'}>    Login</Link> 
                 </button>
       </div>
