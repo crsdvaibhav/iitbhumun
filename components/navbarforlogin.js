@@ -94,32 +94,32 @@ const [adminpanel,showadminpanel]=useState(false)
         />
         <div className="justify-end hidden text-white  items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
-            <button className=" 2xl:text-xl  hover:border-b-2 hover:border-spacing-4   duration-100">
+            <button className=" 2xl:text-xl border-[#A3CF3A]  hover:border-b-2 hover:border-spacing-4   duration-100">
               Home
             </button>
           </Link>
           <Link href="/committees">
-            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
+            <button className="2xl:text-xl border-[#A3CF3A] hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
               Committees
             </button>
           </Link>
           <Link href="/secretariat">
-            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4  text-lg  duration-100">
+            <button className="2xl:text-xl border-[#A3CF3A] hover:border-b-2 hover:border-spacing-4  text-lg  duration-100">
               Secretariat
             </button>
           </Link>
           <Link href="/partners">
-            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
+            <button className="2xl:text-xl border-[#A3CF3A] hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
               Partners
             </button>
           </Link>
           <Link href="/gallery">
-            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
+            <button className="2xl:text-xl border-[#A3CF3A] hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
               Gallery
             </button>
           </Link>
           <Link href="/faq">
-            <button className="2xl:text-xl hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
+            <button className="2xl:text-xl border-[#A3CF3A] hover:border-b-2 hover:border-spacing-4 text-lg  duration-100">
               FAQ
             </button>
           </Link></div>
