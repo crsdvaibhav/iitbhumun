@@ -18,6 +18,7 @@ export default function Committees() {
         <div className="bg-black ">
            {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
             <div className="committees sm:justify-between sm:flex  hidden">
+            <h1 className="absolute text-2xl left-0 right-0 block mx-auto text-red-600 text-center mt-24">Delegate Applications for International Press will be released on our social media handles.</h1>
  <div className="block mx-auto   h-cover">  
             <div className="flex justify-around mx-auto mb-0 mt-14 gap-96">
                        <div className="mr-72"> <CommitteeCircle 
@@ -142,6 +143,7 @@ export default function Committees() {
             </div>
             <div className="sm:hidden w-full flex flex-col items-center pt-24">
                 <div className="flex items-center justify-center">
+                <h1 className="absolute text-2xl left-0 right-0 block mx-auto text-red-600 text-center mt-80 px-2">Delegate Applications for International Press will be released on our social media handles.</h1>
                     <div className="text-center">
                         <Image
                             src="/images/c-logo.svg"
