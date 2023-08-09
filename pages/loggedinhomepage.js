@@ -198,16 +198,17 @@ const[buttonname1,rename1]=useState("Change portfolio")
   
     return (
       
-      < >
+      <div className="bgchange relative w-fit sm:w-auto" >
        {/* <Script type="application/javascript" src={`https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/${process.env.PAYTM_MID}.js`} crossorigin="anonymous"></Script> */}
         <NavBar2 navbar={true} backgroundColor="white" />
-        <div className="my-50 text-center font-bold">
+        <div className="  my-50 text-center font-bold block mx-auto ">
 
         <h2 className="mt-50 text-center font-bold">x</h2>
-        <div id="wholescreen" className="sm:block  sm:mx-auto sm:justify-center block "><div className="mx-auto block" >
-        <h1 className="mt-24 mb-4 text-center inline-block mx-auto text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl  dark:text-[#189BA5]">My Profile</h1>
-          <div id="content" className="mt-29 w-fit h-fit  px-4    mx-auto text-center font-bold" ></div>
-         
+        <div id="wholescreen" className="sm:block  sm:mx-auto  block mx-auto "><div className="mx-auto block" >
+        <h1 className="mt-24 mb-4 text-center inline-block mx-auto text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl  dark:text-[#189BA5]"></h1>
+
+          <div id="content" className="mt-29  h-fit px-4  relative  mx-auto text-center font-bold" ></div>
+          <h1 class="absolute top-0 left-0 bottom-0 right-0 z-[-1] text-9xl font-bold text-white">Heading Behind</h1>
 <div id="progressvalue1" class="text-center mx-auto gap-15 mb-1">
   <span class=" text-xl font-medium mx-12 text-blue-700 dark:text-white">Registration Completed</span>
   <span id="progressvalue" class="text-xl text-center font-semibold text-blue-700 dark:text-white mx-auto block">50%</span>
@@ -225,14 +226,14 @@ const[buttonname1,rename1]=useState("Change portfolio")
          <input type="file" id="photoInput1"/>
          <Button id="ssbutton" className="block mx-auto my-3">Upload</Button></form>
           </div></div>
-          <div className="h-cover border-l-2 border-gray-500">
+          <div className=" h-cover border-l-2 border-gray-500">
             
           </div></div>
-<div className="mt-28">
-<h1 className="mt-29  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Portfolio</h1>
-          <div className={` 'block'   justify-center m-auto`} id= "showportfolio1"  ></div>
-          <div className={` 'block'  justify-center m-auto`} id= "showportfolio"  >
-            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
+<div className="mt-28 ">
+<h1 className="mt-29  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] mb-4 md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Portfolio</h1>
+        
+          <div className={` sm:flex sm:justify-between  block mx-auto`} id= "showportfolio"  >
+            <div className=" sm:mx-auto mb-[2.938rem] mx-auto w-fit sm:w-fit sm:h-cover bg-white rounded-lg px-4 py-8">
               <h2 className="'block' py-4 text-2xl  text-red-500">Committee-1  </h2>
 
               <h1 id="h1"></h1><table className=" sm:w-72 min-w-full border text-center text-sm border-black-500 dark:border-neutral-500" id="container2ul">
@@ -262,7 +263,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
               </table>
              
             </div>
-            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
+            <div className=" sm:mx-[auto] mb-[2.938rem] mx-auto w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
               <h2 className="'block' py-4 text-2xl text-red-500">Committee-2  </h2>
               <h1 id="h2"> </h1><table className="table-auto min-w-full border text-center text-sm  dark:border-neutral-500" id="container3ul"><thead className="border-b font-medium dark:border-neutral-500">
 
@@ -295,7 +296,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
             </div>
 
 
-            <div className=" sm:mx-[auto] mb-[2.938rem] w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
+            <div className=" sm:mx-[auto] mb-[2.938rem] mx-auto w-[fit-content] sm:w-[fit-content] sm:h-[cover] bg-white rounded-lg px-4 py-8">
               <h2 className="'block' py-4 text-2xl text-red-500">Committee-3  </h2>
               <h1 id="h3"> </h1><table className="table-auto min-w-full border text-center text-sm  dark:border-neutral-500" id="container4ul">
                 <thead className="border-b font-medium dark:border-neutral-500">
@@ -327,7 +328,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
           </div>
           <Script src="vanillascript.js" typeof='module' type='module' />
         </div>
-        <div className={`flex flex-col sm:grid sm:grid-flow-col sm:grid-cols-3  items-center py-12 m-auto justify-items-center`}>
+        <div className={`flex flex-col  sm:grid sm:grid-flow-col sm:grid-cols-3  items-center py-12 m-auto justify-items-center`}>
             <div className={`${updateportfolio1?'block':'hidden'}`}>
               
               <p className=" text-center font-bold text-3xl mb-5">
@@ -556,7 +557,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
 <Script src="vanillascript.js" typeof='module' type='module' />
 <Doubtbox/>
         <Footer2 />
-      </>
+      </div>
     );}
    
       

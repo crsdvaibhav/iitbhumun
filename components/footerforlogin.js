@@ -146,7 +146,7 @@ export default function Footer2() {
         </div>
       </div>
 
-      <div className="bg-[#1A1E21] mt-12 text-white px-4 sm:hidden flex flex-col items-center font-custom">
+      <div className="bg-[#1A1E21] mt-12  text-white px-4 sm:hidden flex flex-col items-center font-custom">
         <div className="w-full flex items-start justify-between mt-8">
           <div className="ml-2 flex flex-col">
             <div>
@@ -202,10 +202,10 @@ export default function Footer2() {
             <div className="flex flex-col">
               <p className="font-bold">Participation</p>
              
-              
+              <Link href={'/adminpanel'}><Button className='text-sm px-2 py-1 mb-0 mt-4'>Admin Panel</Button></Link>
             </div>
-            <div className="mt-[44px]">
-              
+            <div className="mt-[40px]">
+           
               <p className="font-bold">Follow us</p>
               <div className="flex flex-col mt-2">
                 <div className="flex">

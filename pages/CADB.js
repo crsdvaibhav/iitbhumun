@@ -189,7 +189,7 @@ else{
 
     
      return (
-      <>
+      <div className="relative w-fit sm:w-auto" >
        <NavBar2 navbar={true} backgroundColor="white"/>
        <div className="my-50 text-center font-bold">
        {
@@ -230,29 +230,34 @@ else{
          </table>
           <h1 className=' text-center block mx-auto text-white  px-3 py-1 mt-10 rounded-md' ><span className='rounded-md px-3 py-1 bg-[#189BA5] w-fit '>Invite your friends!</span></h1>
           <div className="social-buttons mt-5">
-  <button className="social-button facebook" onClick={handleFacebookShare}>
+  <button className="social-button sm:flex hidden facebook " onClick={handleFacebookShare}>
    
     Share on Facebook
-    <img src='/images/facebook.png' className='ml-3 w-8 h-8'></img>
+    <img onClick={handleFacebookShare}  src='/images/facebook.png' className='ml-3 w-8 h-8'></img>
   </button>
-
-  <button className="social-button twitter" onClick={handleTwitterShare}>
+ 
+  <button className="social-button twitter sm:flex hidden" onClick={handleTwitterShare}>
    
     Share on Twitter
-    <img src='/images/twitter.png' className='ml-3 w-8 h-8'></img>
+    <img onClick={handleTwitterShare} src='/images/twitter.png' className='ml-3 w-8 h-8'></img>
   </button>
-
-  <button className="social-button linkedin" onClick={handleLinkedInShare}>
+  <div className=' flex justify-between mx-auto  gap-12'>
+  <img onClick={handleFacebookShare}  src='/images/facebook.png' className=' w-10 h-10 flex  sm:hidden'></img>
+  <img onClick={handleTwitterShare} src='/images/twitter.png' className=' w-10 h-10 flex  sm:hidden'></img>
+  <img onClick={handleLinkedInShare}  src='/images/linkedin.png' className=' w-10 h-10 flex  sm:hidden'></img>
+  <img onClick={handleWhatsAppShare} src='/images/whatsapp.png' className=' w-10 h-10 flex  sm:hidden'></img></div>
+  <button className="social-button sm:flex hidden linkedin" onClick={handleLinkedInShare}>
     
     Share on LinkedIn
-    <img src='/images/linkedin.png' className='ml-3 w-8 h-8'></img>
+    <img onClick={handleLinkedInShare}  src='/images/linkedin.png' className='ml-3 w-8 h-8'></img>
   </button>
-
-  <button className="social-button whatsapp" onClick={handleWhatsAppShare}>
+  
+  <button className="social-button sm:flex hidden whatsapp" onClick={handleWhatsAppShare}>
  
     Share on WhatsApp
-    <img src='/images/whatsapp.png' className='ml-3 w-8 h-8'></img>
+    <img onClick={handleWhatsAppShare} src='/images/whatsapp.png' className='ml-3 w-8 h-8'></img>
   </button>
+  
 </div>
 
           </div>
@@ -278,7 +283,7 @@ else{
       <Doubtbox/>
       <Footer2 />
       <Script src="vanillascript2.js" typeof='module' type='module' />
-      </>
+      </div>
     );
   
         }

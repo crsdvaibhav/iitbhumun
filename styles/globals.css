@@ -82,7 +82,9 @@ a {
   cursor: pointer;
   transition: 0.3s;
 }
-
+.bgchange{
+  background:linear-gradient(#164B5B, #000000, #000202);
+}
 /* When moving the mouse over the close button */
 .closebtn:hover {
   color: black;
@@ -91,9 +93,10 @@ a {
   color: #189BA5;
   padding: 10px;
   width: fit-content;
-  min-width: 300px;
+ 
   margin: 8px auto;
 }
+
 .finaldate{
   text-shadow: 6px 6px 6px #113C48, 6px 6px 6px #113C48;
 }
@@ -146,12 +149,16 @@ background-color: rgb(216, 213, 213);
 .currentyear{
   font-size: 140px;
 }
-.datacard{
-  padding:12px 4px ;
+.datacard {
+  padding:12px 12px ;
   box-shadow: 0px 0px 0px 2px rgb(0, 0, 0);
-  background: #fff;
+  background: linear-gradient(119.3deg, #5e757b 4.67%, rgba(22, 62, 73, 0) 25.22%, rgba(0, 0, 0, 0) 50.55%),
+linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+padding-left: 10px;
   width: fit-content;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .selectedportfolio{
   display: flex;
@@ -279,7 +286,7 @@ padding: 4px 6px;
 }
 
 .social-button {
-  display: flex;
+
   align-items: center;
   background-color: #007bff;
   color: #fff;

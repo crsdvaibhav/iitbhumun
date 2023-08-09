@@ -198,7 +198,7 @@ function fetchData() {
     
   });
 }
-document.getElementById("content").innerHTML = "<div class='loader m-0'></div>",
+document.getElementById("content").innerHTML = "<div class='loader m-auto'></div>",
  
 fetchData()
   .then((DATA) => {
@@ -220,17 +220,17 @@ fetchData()
 
       document.getElementById("content").innerHTML = `
      
-            <ul class='datacard rounded-lg sm:px-0 px-24  bg-red-500 mb-6 w-fit mx-auto block  ' >
+            <ul class='datacard rounded-lg sm:px-8 px-24  bg-red-500 mb-6 w-fit mx-auto block  ' >
             
-            <img src="images/profileicon.png" class="inline mx-auto w-40 h-40"></img>
-           <li class="mb-6 text-2xl mx-6 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'>Name:</span>  ${nestedItem.name} </li>
-           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'>Age:</span> ${nestedItem.Age} </li>
-           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'>Gender: </span> ${nestedItem.Gender} </li>
-           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'>Institute: </span> ${nestedItem.Institute} </li>
-           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'>Number of MUN participated before:</span>  ${nestedItem.MUNcount} </li>
-           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'>Region:</span> ${nestedItem.Region} </li>
-           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'> Email:</span> ${nestedItem.email} </li>
-          <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'>Phone Number:</span>${nestedItem.Phone_number}
+            <img src="images/profileicon.png" class="inline mx-auto w-40 h-40 rounded-full"></img>
+           <li class="mb-6 text-2xl mx-6 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Name:  ${nestedItem.name} </li>
+           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Age: ${nestedItem.Age} </li>
+           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Gender:  ${nestedItem.Gender} </li>
+           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Institute:  ${nestedItem.Institute} </li>
+           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Number of MUN participated before:  ${nestedItem.MUNcount} </li>
+           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Region: ${nestedItem.Region} </li>
+           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"> Email: ${nestedItem.email} </li>
+          <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Phone Number:${nestedItem.Phone_number}
            </ul>
            <div class='selectedportfolio'>
           
