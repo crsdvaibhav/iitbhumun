@@ -205,7 +205,7 @@ fetchData()
     
     document.getElementById("showbutton1").style.display = "inline"
     document.getElementById("progressvalue1").style.display="block"
-    document.getElementById("progressvalue3").style.display="block"
+    document.getElementById("progressvalue3").style.display="inline-block"
     document.getElementById("paymentqr").style.display="inline"
 
     
@@ -278,9 +278,10 @@ function fetchData1() {
 
             i = 1;
             
-            document.getElementById("showresult").innerHTML = `Congratulations! You have been allotted as a delegate speaker of <span class="text-[#189BA5]">${item[key]}</span>`
-
+            document.getElementById("showresult").innerHTML = `Congratulations! You have been allotted as a delegate speaker of <span class="text-[#fff] block mx-auto">${item[key]}</span>`
+           
             document.getElementById("paynow!").style.display = 'block'
+            document.getElementById("showresult").style.color="#A3CF3A"
             Object.keys(item).forEach((key) => {
               if(key=="Delegate_type"&&item[key]=="IIT BHU"){
                 if(item["Registration_type"]=="Campus Ambassador")
@@ -420,12 +421,12 @@ function fetchData1() {
             
             }}
             if(key=="PaymentSS"&&item[key]!=""){
-              document.getElementById("afterpayment").innerHTML="<h1 class='text-2xl text-center font-semibold'>We have received your payment screenshot,We will verify and update the portal soon.</h1>"
+              document.getElementById("afterpayment").innerHTML="<h1 class='text-2xl text-['#A3CF3A'] text-center font-semibold'>We have received your payment screenshot,We will verify and update the portal soon.</h1>"
             }
             if(key=="Payment_done"&&item[key]!="NO"){
               document.getElementById("progressvalue").innerHTML=`100%`
               document.getElementById("progressvalue2").style.width="100%"
-              document.getElementById("ssform1").innerHTML="<h1 class='mt-4 text-2xl'>Payment Completed! You are all set for IIT BHU MUN 2023.</h1>"
+              document.getElementById("ssform1").innerHTML="<h1 class='mt-4 text-2xl text-['#A3CF3A']'>Payment Completed! You are all set for IIT BHU MUN 2023.</h1>"
             
     if(item["Referralcode"]!=null){
       const snapshot = get(ref(database, "Referral_program/"))
@@ -463,9 +464,9 @@ function fetchData1() {
         
           
         });
-        if (i == 0) { document.getElementById("showresult").innerHTML = `Sit back and relax,you will be notified on email after allotment of preferences!You can also visit the site regularly to check the allotment.` }
+        if (i == 0) { document.getElementById("showresult").innerHTML = `Sit back and relax,you will be notified on email after allotment of preferences! You can also visit the site regularly to check the allotment.` }
         
-
+        // document.getElementById("showresult").style.color="white"
         
       });
     })

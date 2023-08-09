@@ -210,16 +210,16 @@ const[buttonname1,rename1]=useState("Change portfolio")
           <div id="content" className="mt-29  h-fit px-4  relative  mx-auto text-center font-bold" ></div>
           <h1 class="absolute top-0 left-0 bottom-0 right-0 z-[-1] text-9xl font-bold text-white">Heading Behind</h1>
 <div id="progressvalue1" class="text-center mx-auto gap-15 mb-1">
-  <span class=" text-xl font-medium mx-12 text-blue-700 dark:text-white">Registration Completed</span>
-  <span id="progressvalue" class="text-xl text-center font-semibold text-blue-700 dark:text-white mx-auto block">50%</span>
+  <span class=" text-xl font-medium mx-12 text-white dark:text-white">Registration meter</span>
+  
 </div>
-<div id="progressvalue3" class="w-80 block mx-auto bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-  <div id="progressvalue2" class="bg-blue-600 h-2.5 rounded-full w-[50%]"></div>
+<div id="progressvalue3"  class="sm:w-96 w-80 block mx-auto bg-[#DCD5D57A] rounded-full h-3 dark:bg-gray-700">
+  <div id="progressvalue2" class="bg-[#A3CF3A] h-3 rounded-full w-[50%]"></div><span id="progressvalue" class="text-xl mt-1 text-center font-semibold text-white dark:text-white mx-auto block">50%</span>
 </div>
 <div className="block mx-auto" id="ssform1">
-          <h1 id="showresult" className='my-6 text-red-500 text-2xl w-30px text-center'></h1>
+          <h1 id="showresult" className='my-6 text-[#fff] text-2xl w-30px text-center'></h1>
           <div id="afterpayment">
-         <h1 id="paynow!" className="hidden text-2xl">Pay on this QR code and upload Screenshot with time of payment.</h1>
+         <h1 id="paynow!" className="hidden text-2xl text-[#A3CF3A]">Pay on this QR code and upload Screenshot with time of payment.</h1>
          <img  src="/images/join.svg" id="paymentqr" className="inline mx-auto mt-3 hidden"/>
          <form className="hidden my-3" id="ssform">
          
