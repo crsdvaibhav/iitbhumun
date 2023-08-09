@@ -198,7 +198,7 @@ function fetchData() {
     
   });
 }
-document.getElementById("content").innerHTML = "<div class='loader'></div>",
+document.getElementById("content").innerHTML = "<div class='loader m-0'></div>",
  
 fetchData()
   .then((DATA) => {
@@ -220,7 +220,7 @@ fetchData()
 
       document.getElementById("content").innerHTML = `
      
-            <ul class='datacard rounded-lg px-24  bg-red-500 mb-6 w-fit mx-auto  ' >
+            <ul class='datacard rounded-lg sm:px-0 px-24  bg-red-500 mb-6 w-fit mx-auto block  ' >
             
             <img src="images/profileicon.png" class="inline mx-auto w-40 h-40"></img>
            <li class="mb-6 text-2xl mx-6 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"><span class='text-black'>Name:</span>  ${nestedItem.name} </li>

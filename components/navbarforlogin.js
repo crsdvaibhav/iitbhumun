@@ -187,8 +187,8 @@ const [adminpanel,showadminpanel]=useState(false)
           {isOpen?(
         <div className=' mr-4 dropdowncontent1 '>
           <ul>
-            <li className='mr-4 text-red-500' onClick={handleMyProfile}>User dashboard</li>
-            <li className='mr-4 pr-2 'onClick={()=>{}}><Link href={'/CADB'}>CA Dashboard</Link></li>
+            <li className='mr-4 pr-2' onClick={handleMyProfile}>User dashboard</li>
+            <li className='mr-6 px-4 'onClick={()=>{}}><Link href={'/CADB'}>CA Dashboard</Link></li>
             <li className='mr-4' onClick={handleChangePassword}>Change Password</li>
             <li className='mr-4'onClick={handleLogout}>Logout </li>
           </ul>

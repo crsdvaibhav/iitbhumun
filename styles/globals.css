@@ -150,7 +150,8 @@ background-color: rgb(216, 213, 213);
   padding:12px 4px ;
   box-shadow: 0px 0px 0px 2px rgb(0, 0, 0);
   background: #fff;
-  width: 700px;
+  width: fit-content;
+  display: block;
 }
 .selectedportfolio{
   display: flex;
@@ -175,9 +176,24 @@ background:white;
 box-shadow: 0px 0px 0px 2px #0ea3ad;
 
 }
-.dropdowncontent ul,.dropdowncontent1 ul {
+.dropdowncontent ul {
   
   margin-left: 10px;
+  
+}
+.dropdowncontent1 ul {
+margin-right: 5px;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 5px 0 0;
+  
+}
+.dropdowncontent1 ul li {
+  
+ padding-right: 10px;
+  
+  
+  
 }
 .logo{
  animation-name: titu;
