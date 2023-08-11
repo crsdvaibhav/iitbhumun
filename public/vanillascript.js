@@ -217,7 +217,7 @@ fetchData()
 
       const nestedItem = delegateData.find((item) => item.email === auth.currentUser.email);
       localStorage.setItem("name",`${nestedItem.name}`)
-
+      document.getElementById("content").classList.add('animatecontent');
       document.getElementById("content").innerHTML = `
      
             <ul class='datacard rounded-lg sm:px-8 px-24  bg-red-500 mb-6 w-fit mx-auto block  ' >
