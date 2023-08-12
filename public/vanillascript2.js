@@ -69,7 +69,7 @@ async function fetchData2() {
               })
     } catch (error) {
       
-      console.error('Error:', error);
+      alert('Error:', error);
     }
   }
   document.getElementById("viewdetails").addEventListener("click",function(){fetchData2()})

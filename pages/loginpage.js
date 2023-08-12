@@ -103,7 +103,7 @@ function forgotpassword(){
   return (
     <> 
     <NavBar navbar={true} backgroundColor="white" qt='hidden'/>
-    <div className="flex flex-col items-center justify-center min-h-screen py-2  bg-no-repeat bg-center bg-auto bg-origin-padding  place-items-center"  style={{ backgroundImage: 'url("/images/Group-242.svg")' }}>
+    <div className="flex flex-col w-100% items-center justify-center min-h-screen py-2  bg-no-repeat bg-center bg-auto bg-origin-padding  place-items-center"  style={{ backgroundImage: 'url("/images/Group-242.svg")' }}>
    
       <Head>
         <title>Login Page</title>

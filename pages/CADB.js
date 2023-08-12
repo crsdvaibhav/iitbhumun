@@ -15,6 +15,7 @@ import Script from 'next/script';
 import NavBar2 from '../components/navbarforlogin';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Doubtbox from '../components/doubtbox';
+import Head from 'next/head';
 
 
 
@@ -156,7 +157,7 @@ const name=localStorage.getItem("name")
   if(auth.currentUser!=""){
  return(
  
- <div className='block mx-auto my-40'><h1 className='m-auto text-center text-4xl  block font-bold text-red-500'>Sorry,You aren't a conference ambassador.</h1>
+ <div className=' my-40'><h1 className='m-auto text-center text-4xl  block font-bold text-red-500'>Sorry,You aren't a conference ambassador.</h1>
  
  <Button className='mx-auto my-4 block w-100'><Link href={'/home'}>Home</Link></Button>
  </div>)}
@@ -189,15 +190,17 @@ else{
 
     
      return (
-      <div className="relative w-fit sm:w-auto" >
+      <div className=" block mx-auto p-0 w-100% sm:w-auto" >
+        <Head><meta name="viewport" content="width=device-width, initial-scale=1"/>
+</Head>
        <NavBar2 navbar={true} backgroundColor="white"/>
-       <div className="my-50 text-center font-bold">
+       <div className="my-50 mx-auto block text-center font-bold">
        {
         filteredData.map((item) => (
          
           <><h2 className="mt-50 text-center font-bold">Record of this user:</h2>
           <div className='flex'>
-          <img className='mt-24 mx-auto w-72 h-72' src={'images/5847920.jpg'} ></img>
+          <img className='mt-24 block mx-auto w-72 h-72' src={'images/5847920.jpg'} ></img>
           <img className='mt-24 mx-auto w-72 h-72' src={'images/referral1.png'} ></img>
           <img className='mt-24 mx-auto w-72 h-72 hidden sm:block' src={'images/5847920.jpg'} ></img></div>
           <h1 className="mt-26 mb-4 text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl lg:text-6xl dark:text-[#189BA5]">Campus Ambassador Program</h1>

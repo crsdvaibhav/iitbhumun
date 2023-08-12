@@ -80,19 +80,19 @@ const [adminpanel,showadminpanel]=useState(false)
     };
   return (
     <div 
-      className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
+      className={`fixed w-screen font-medium text-white sm:py-2 ${navbar
         ? `sm:bg-[#113C48] bg-white `
         : `bg-[#113C48]  `
         }`}
     >
-      <div className="hidden sm:flex flex-row items-center justify-between mx-16">
+      <div className="hidden sm:flex w-screen flex-row items-center justify-between mx-16">
         <Image
           src="/images/active-nav-log.svg"
           width={50}
           height={50}
           alt="active-nav-logo"
         />
-        <div className="justify-end hidden text-white  items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
+        <div className="justify-end hidden w-screen text-white  items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
             <button className=" 2xl:text-xl border-[#A3CF3A]  hover:border-b-2 hover:border-spacing-4   duration-100">
               Home
@@ -162,7 +162,7 @@ const [adminpanel,showadminpanel]=useState(false)
                 alt="mobile-actinav"
               />
             </MenuHandler>
-            <MenuList className="sm:hidden absolute z-30 top-0 h-full w-[100vw] rounded-none flex flex-col items-center justify-center bg-[#189BA5] bg-opacity-50 text-white text-3xl font-heading font-bold text-center backdrop-blur-lg">
+            <MenuList className="sm:hidden absolute z-30 top-0 h-full w-[100vw] rounded-none flex flex-col items-center justify-center bg-[#ABCF3A] bg-opacity-50 text-white text-3xl font-heading font-bold text-center backdrop-blur-lg">
               <MenuItem className='text-center hover:text-yellow-400'><Link href="/">Home</Link></MenuItem>
               <MenuItem className='text-center hover:text-yellow-400'><Link href="/committees">Committee</Link></MenuItem>
               <MenuItem className='text-center hover:text-yellow-400'><Link href="/secretariat">Secretariat</Link></MenuItem>

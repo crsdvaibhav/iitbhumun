@@ -45,12 +45,12 @@ export default function Hero() {
             <div className='leftside block'>
           <h1 className='finaldate1 text-4xl text-[#B6FF1A] whitespace-nowrap text-left md:text-8xl mt-72 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
           <h1 className='finaldate2 text-4xl text-[#B6FF1A] text-left whitespace-nowrap md:text-8xl ml-24'>UNITED NATIONS</h1>
-          <h1 className='finaldate3 text-3xl text-[#fff] mt-4 text-left my-2 whitespace-nowrap md:text-6xl ml-24'>RISE.SPEAK.RESOLVE</h1>
-          {changebar?<div className='flex gap-24 justify-center ml-4 mt-14'><Link href={'/registerpage'}><button className='bg-[#B6FF1A] hover:bg-[#F5CE3F]  text-4xl px-12 p-4 rounded-lg'>Register</button></Link>
-         <Link href={'/loginpage'}><button className='bg-[#B6FF1A] hover:bg-[#F5CE3F]  text-4xl p-4 px-12 rounded-lg mr-32'>Login</button></Link></div>:<Link href={'/loggedinhomepage'}><Button className='block bg-[#B6FF1A] text-black-500  mx-auto my-8 text-4xl'>View Profile</Button></Link>}
+          <h1 className='finaldate3 typewriter text-3xl text-[#fff] mt-4 text-left my-2 whitespace-nowrap md:text-6xl ml-24'>RISE.SPEAK.RESOLVE</h1>
+          {changebar?<div className='flex gap-24 justify-center ml-4 mt-14'><Link href={'/registerpage'}><button className='bg-[#B6FF1A] hover:bg-[#ABCF3A]  text-4xl px-12 p-4 rounded-lg'>Register</button></Link>
+         <Link href={'/loginpage'}><button className='bg-[#B6FF1A] hover:bg-[#ABCF3A]  text-4xl p-4 px-12 rounded-lg mr-32'>Login</button></Link></div>:<Link href={'/loggedinhomepage'}><Button className='block bg-[#B6FF1A] text-black-500  mx-auto my-8 text-4xl'>View Profile</Button></Link>}
           </div>
           <div className='rightside block mr-28'>
-        <img className='block mb-12 md:w-56 w-44 mx-auto mt-48' src='/images/Group.png'></img>
+        <img className='block mb-12 md:w-56 w-44 ml-48 mt-48' src='/images/Group.png'></img>
           <h1 className=' finaldate text-4xl text-center text-[#fff] whitespace-nowrap md:text-6xl mt-18 ml-24 mx-auto border-[#fff] border-solid'>29 SEPT - 1 OCT</h1>
           <h1 className='  text-4xl text-[#fff] currentyear font-bold text-center mt-16 ml-20 mx-auto border-[#fff]  border-solid'>  2023</h1>
           </div>
