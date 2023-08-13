@@ -80,12 +80,12 @@ const [adminpanel,showadminpanel]=useState(false)
     };
   return (
     <div 
-      className={`fixed w-full font-medium text-white sm:py-2 ${navbar
+      className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
         ? `sm:bg-[#113C48] bg-white `
         : `bg-[#113C48]  `
         }`}
     >
-      <div className="hidden sm:flex w-screen flex-row items-center justify-between mx-16">
+      <div className="hidden sm:flex  flex-row items-center justify-between mx-16">
         <Image
           src="/images/active-nav-log.svg"
           width={50}
