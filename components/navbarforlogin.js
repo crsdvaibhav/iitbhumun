@@ -80,7 +80,7 @@ const [adminpanel,showadminpanel]=useState(false)
     };
   return (
     <div 
-      className={`fixed w-screen font-medium text-white sm:py-2 ${navbar
+      className={`fixed w-full font-medium text-white sm:py-2 ${navbar
         ? `sm:bg-[#113C48] bg-white `
         : `bg-[#113C48]  `
         }`}
