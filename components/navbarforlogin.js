@@ -92,7 +92,7 @@ const [adminpanel,showadminpanel]=useState(false)
           height={50}
           alt="active-nav-logo"
         />
-        <div className="justify-end hidden w-screen text-white  items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
+        <div className="justify-end hidden  text-white  items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
             <button className=" 2xl:text-xl border-[#A3CF3A]  hover:border-b-2 hover:border-spacing-4   duration-100">
               Home
