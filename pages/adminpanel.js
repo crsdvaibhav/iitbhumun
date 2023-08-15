@@ -182,6 +182,19 @@ const handleSubmit1 = (itemId) => {
         <h1 className='mb-5 text-center text-xl font-bold'>ADMIN PANEL MUN IIT BHU</h1></div>
         <h2 className="text-red-500 font-bold text-center my-4">Allotment of preferences for delegates</h2>
         <Link href={'/adminpanel2642023'}><Button>Go to Payment SS verification</Button></Link>
+       
+        
+        <input type='text' id='Institute' className="ml-14 px-2 border-rounded border-black" placeholder='Copy-Paste Helper' ></input>
+       
+        <img onClick={async () => {
+      try {
+        await navigator.clipboard.writeText(document.getElementById("Institute").value);
+        
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+    }} src='/images/copy.png' className='ml-3 hover:border-2 hover:border-red-500 hover:p-1 inline w-8 h-8 cursor-pointer'></img>
+         <div id="autocomplete-list" className="autocomplete-items "></div>  
         {filteredData.map(({ itemId, ...item }) => (
           
           <div className="my-6   px-2 shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)] border-red-50"key={itemId}>
@@ -201,8 +214,8 @@ const handleSubmit1 = (itemId) => {
             </select>
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleSubmit(itemId)}>Allot!</button>
           <div >
-           <input type="text" id='Institute' placeholder='Input the different choice you want to give!' className='  p-5 text-xl block  ml-0 w-96 text-center border rounded-md border-black' onChange={(event) => handleinputChange(event, itemId)} ></input>
-           <div id="autocomplete-list" className="autocomplete-items "></div>  
+           <input type="text" placeholder='Input the different choice you want to give!' className='  p-5 text-xl block  ml-0 w-96 text-center border rounded-md border-black' onChange={(event) => handleinputChange(event, itemId)} ></input>
+           
             <button className="bg-transparent ml-4 mx-auto block hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
             
          </div>

@@ -164,10 +164,13 @@ a {
 }
 #autocomplete-list div{
   cursor: pointer;
+  width: -90px;
+  color: #ABCF3A;
+  background-color: #5e757b;
 }
 #autocomplete-list div:hover{
 
-background-color: rgb(216, 213, 213);
+background-color: rgb(32, 28, 28);
 
 }
 .currentyear{
