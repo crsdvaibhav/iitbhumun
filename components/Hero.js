@@ -42,7 +42,7 @@ export default function Hero() {
       <div className="sm:block sm:w-full sm:overflow-x-hidden hidden relative">
         <div className="row-span-full sm:w-full sm:h-screen sm:overflow-x-hidden col-span-full hero mx-0">
           <div className='flex justify-center gapmanager'>
-            <div className='leftside block'>
+            <div className='leftside block '>
           <h1 className='finaldate1 text-4xl text-[#B6FF1A] whitespace-nowrap text-left md:text-8xl mt-72 ml-24 border-[#fff] border-solid'>IIT BHU MODEL</h1>
           <h1 className='finaldate2 text-4xl text-[#B6FF1A] text-left whitespace-nowrap md:text-8xl ml-24'>UNITED NATIONS</h1>
           <h1 className='finaldate3 typewriter text-3xl text-[#fff] mt-4 text-left my-2 whitespace-nowrap md:text-6xl ml-24'>RISE.SPEAK.RESOLVE</h1>
