@@ -171,8 +171,9 @@ const handleSubmit1 = (itemId) => {
     );
   } else {
     return (
-      <div>
-        <div className='flex justify-center gap-2'>
+      <div className='m-0'>
+        <div className='fixed mb-24 top-0  left-0 right-0 bg-blue-gray-500'>
+        <div className='flex justify-center gap-2 '>
         <Image
           src="/images/active-nav-log.svg"
           width={50}
@@ -195,7 +196,8 @@ const handleSubmit1 = (itemId) => {
         console.error('Failed to copy: ', err);
       }
     }} src='/images/copy.png' className='ml-3 hover:border-2 hover:border-red-500 hover:p-1 inline w-8 h-8 cursor-pointer'></img>
-         <div id="autocomplete-list" className="autocomplete-items "></div>  
+         <div id="autocomplete-list" className="autocomplete-items "></div>  </div>
+         <div className='mt-48'></div>
         {filteredData.map(({ itemId, ...item }) => (
           
           <div className="my-6   px-2 shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)] border-red-50"key={itemId}>
