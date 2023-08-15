@@ -180,6 +180,7 @@ const handleSubmit1 = (itemId) => {
           alt="active-nav-logo"
         />
         <h1 className='mb-5 text-center text-xl font-bold'>ADMIN PANEL MUN IIT BHU</h1></div>
+     
         <h2 className="text-red-500 font-bold text-center my-4">Allotment of preferences for delegates</h2>
         <Link href={'/adminpanel2642023'}><Button>Go to Payment SS verification</Button></Link>
        
@@ -189,7 +190,7 @@ const handleSubmit1 = (itemId) => {
         <img onClick={async () => {
       try {
         await navigator.clipboard.writeText(document.getElementById("Institute").value);
-        
+        document.getElementById("Institute").value=""
       } catch (err) {
         console.error('Failed to copy: ', err);
       }
