@@ -13,6 +13,7 @@ import { text } from '@fortawesome/fontawesome-svg-core';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@material-tailwind/react';
+import Script from 'next/script';
 
 const AdminPanel = () => {
   const [password, setPassword] = useState("");
@@ -26,7 +27,7 @@ const AdminPanel = () => {
 const[delegate,setdelegate]=useState("Outstation");
 const [inputData,setinputadta]=useState("");
 
-console.log(delegate)
+
 // Create a query to find the relevant data entry based on the user's email
 
 
@@ -125,13 +126,13 @@ const handleSubmit1 = (itemId) => {
      
     })
     .catch((error) => {
-      console.log("Error updating value:", error);
+      alert("Error updating value:", error);
     });
 };
   const handleSubmit = (itemId) => {
     if(submitValues1!=""){
     handleSubmit1(itemId)}
-    console.log("Inside handleSubmit");
+    
     const database = getDatabase();
     const itemRef = ref(database, `preferences/${itemId}`);
     update(itemRef, { alloted: submitValues[itemId] ,
@@ -143,11 +144,11 @@ const handleSubmit1 = (itemId) => {
         }, 300);
       })
       .catch((error) => {
-        console.log("Error updating value:", error);
+        alert("Error updating value:", error);
       });
   };
+ 
   
-
   const filteredData = Object.keys(DATA).reduce((filtered, itemId) => {
     const item = DATA[itemId];
     if (item.alloted === "NO") {
@@ -199,10 +200,11 @@ const handleSubmit1 = (itemId) => {
               })}
             </select>
             <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleSubmit(itemId)}>Allot!</button>
-          <div className='flex'>
-           <input type="text"  placeholder='Input the different choice you want to give!' className=' font-bold   ml-0 w-96 text-center border rounded-md border-black' onChange={(event) => handleinputChange(event, itemId)} ></input>
-                         
-            <button className="bg-transparent ml-4 mx-auto 'block' hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
+          <div >
+           <input type="text" id='Institute' placeholder='Input the different choice you want to give!' className='  p-5 text-xl block  ml-0 w-96 text-center border rounded-md border-black' onChange={(event) => handleinputChange(event, itemId)} ></input>
+           <div id="autocomplete-list" className="autocomplete-items "></div>  
+            <button className="bg-transparent ml-4 mx-auto block hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 my-4 border border-blue-500 hover:border-transparent rounded" onClick={() => handleInput(itemId)}>Allot!</button>
+            
          </div>
          
          {Object.keys(item).map((key) => {if (key==="Institute_ID"&&item["Institute_ID"]!=""&&item["Institute_ID"]!="null"){return (<a target='_blank'rel='noreferrer' key={key} href={item['Institute_ID']} >
@@ -232,7 +234,7 @@ const handleSubmit1 = (itemId) => {
                
               })}
             </select>
-           
+            
 
           </div>
 
@@ -242,6 +244,7 @@ const handleSubmit1 = (itemId) => {
         
         
         }
+        <Script src="foradmin.js" typeof='module' type='module' />
       </div>
     );
   }
