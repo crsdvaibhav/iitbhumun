@@ -382,3 +382,6 @@ padding: 4px 6px;
   from, to { border-color: transparent }
   50% { border-color: #ABCF3A; }
 }
+.gapmanager{
+  gap: 50%;
+}
