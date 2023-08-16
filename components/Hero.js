@@ -47,7 +47,7 @@ export default function Hero() {
           <h1 className='finaldate2 text-4xl text-[#B6FF1A] text-left whitespace-nowrap md:text-8xl ml-24'>UNITED NATIONS</h1>
           <h1 className='finaldate3 typewriter text-3xl text-[#fff] mt-4 text-left my-2 whitespace-nowrap md:text-6xl ml-24'>RISE.SPEAK.RESOLVE</h1>
           {changebar?<div className='flex gap-24 justify-center ml-4 mt-14'><Link href={'/registerpage'}><button className='bg-[#B6FF1A] hover:bg-[#ABCF3A]  text-4xl px-12 p-4 rounded-lg'>Register</button></Link>
-         <Link href={'/loginpage'}><button className='bg-[#B6FF1A] hover:bg-[#ABCF3A]  text-4xl p-4 px-12 rounded-lg mr-32'>Login</button></Link></div>:<Link href={'/loggedinhomepage'}><Button className='block bg-[#B6FF1A] text-black-500  mx-auto my-8 text-4xl'>View Profile</Button></Link>}
+         <Link href={'/loginpage'}><button className='bg-[#B6FF1A] hover:bg-[#ABCF3A]  text-4xl p-4 px-12 rounded-lg mr-32'>Login</button></Link></div>:<Button onClick={()=>{window.location.replace("/loggedinhomepage")}} className='block bg-[#B6FF1A] text-black-500  mx-auto my-8 text-4xl'>View Profile</Button>}
           </div>
           <div className='rightside block mr-28'>
         <img className='block mb-12 md:w-56 w-44 ml-48 mt-48' src='/images/Group.png'></img>
