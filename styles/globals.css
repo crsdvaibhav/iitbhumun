@@ -388,3 +388,6 @@ padding: 4px 6px;
 .gapmanager{
   gap: 5%;
 }
+.hideit{
+  display: block;
+}

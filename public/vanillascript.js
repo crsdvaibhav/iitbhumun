@@ -227,7 +227,7 @@ fetchData()
            <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Age: ${nestedItem.Age} </li>
            <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Gender:  ${nestedItem.Gender} </li>
            <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Institute:  ${nestedItem.Institute} </li>
-           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Number of MUN participated before:  ${nestedItem.MUNcount} </li>
+           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Number of MUN appeared before:  ${nestedItem.MUNcount} </li>
            <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Region: ${nestedItem.Region} </li>
            <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"> Email: ${nestedItem.email} </li>
           <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Phone Number:${nestedItem.Phone_number}
@@ -237,6 +237,7 @@ fetchData()
            </div>
            `;
      
+       
 
 
 
@@ -267,7 +268,7 @@ function fetchData1() {
           if (p <= 18 && p >= 16) { document.getElementById("container2ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]} </td>` }
           if (p <= 21 && p >= 19) { document.getElementById("container3ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
           if (p <= 24 && p >= 22) { document.getElementById("container4ul-row2").innerHTML += `<td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">${item[key]}</td>` }
-          
+         
            
             p++;
       });
@@ -277,7 +278,7 @@ function fetchData1() {
               document.getElementById("progressvalue2").style.width="75%"
 
             i = 1;
-            
+    
             document.getElementById("showresult").innerHTML = `Congratulations! You have been allotted as a delegate speaker of <span class="text-[#fff] block mx-auto">${item[key]}</span>`
            
             document.getElementById("paynow!").style.display = 'block'
@@ -320,7 +321,13 @@ function fetchData1() {
              
             
             }
-                else{document.getElementById("paymentqr").src="/images/aastha.jpg"}
+                else{
+                  Object.keys(item).forEach((key) => {
+if(key=="p_name2"){document.getElementById("paymentqr").src="/images/paymentprice*2.jpg"}
+else{ document.getElementById("paymentqr").src="/images/aastha.jpg"}
+                  })
+                  
+                 }
               document.getElementById("paymentqr").style.display="block"
               document.getElementById("paymentqr").style.width="320px"
               document.getElementById("paymentqr").style.height="240px"
@@ -366,7 +373,10 @@ function fetchData1() {
             }
                 
                 
-               else{ document.getElementById("paymentqr").src="/images/abhishek.jpg"}
+               else{   Object.keys(item).forEach((key) => {
+                if(key=="p_name2"){document.getElementById("paymentqr").src="/images/paymentprice*2.jpg"}
+                else{ document.getElementById("paymentqr").src="/images/abhishek.jpg"}
+                                  })}
               document.getElementById("paymentqr").style.display="block"
               document.getElementById("paymentqr").style.width="320px"
               document.getElementById("paymentqr").style.height="240px"
@@ -374,6 +384,7 @@ function fetchData1() {
             
             
             }}
+         
              if(key=="Delegate_type"&&item[key]=="Outstation"){{
              if(item["Registration_type"]=="Campus Ambassador")
              { const snapshot = get(ref(database, "Referral_program/"))
@@ -412,7 +423,12 @@ function fetchData1() {
             
             }
              else{
-              document.getElementById("paymentqr").src="/images/satwik.jpg"}
+              Object.keys(item).forEach((key) => {
+                if(key=="p_name2"){document.getElementById("paymentqr").src="/images/paymentprice*2.jpg"
+              
+              }
+                else{ document.getElementById("paymentqr").src="/images/satwik.jpg"}
+                                  })}
              document.getElementById("paymentqr").style.display="block"
              document.getElementById("paymentqr").style.width="520px"
               document.getElementById("paymentqr").style.height="440px"
@@ -455,12 +471,32 @@ function fetchData1() {
   }
 
             }
+            
   
 
 
             })
           }
-         
+          if(key=="p_name2"){
+           document.getElementById("ddheader").innerHTML=`<h1 id="ddportfolio" class="  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] mb-12 md:text-5xl lg:text-6xl dark:text-[#189BA5]">Double Delegate Profile</h1>`
+          document.getElementById("content3").innerHTML = `
+ 
+          <ul class='datacard rounded-lg sm:px-8 px-24  bg-red-500 mb-6 w-fit mx-auto block  ' >
+          
+          <img src="images/profileicon.png" class="inline mx-auto w-40 h-40 rounded-full"></img>
+         <li class="mb-6 text-2xl mx-6 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Name:  ${item["p_name2"]} </li>
+         <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Age: ${item["p_Age2"]} </li>
+         <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Gender:  ${item["p_Gender2"]} </li>
+         <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Institute:  ${item["p_Institute2"]} </li>
+         <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"> ${item["p_MUNcount2"]} </li>
+         <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Region:${item["p_Region2"]} </li>
+         <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"> Email: ${item["p_email2"]} </li>
+        <li class="mb-6 text-2xl border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-fit p-4.5 px-4.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">Phone Number:${item["p_Phone_number_2"]}</li>             </ul>
+        
+         `;
+        
+     
+        }
         
           
         });

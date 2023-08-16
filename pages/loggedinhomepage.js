@@ -206,8 +206,9 @@ const[buttonname1,rename1]=useState("Change portfolio")
         <h2 className="mt-50 text-center font-bold">x</h2>
         <div id="wholescreen" className="sm:block  sm:mx-auto   block mx-auto "><div className="mx-auto block" >
         <h1 className="mt-24 mb-4 text-center inline-block mx-auto text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] md:text-5xl  dark:text-[#189BA5]"></h1>
-
+<div id="ddheader"></div>
           <div id="content" className="mt-29  h-fit px-4 md:w-screen  relative  mx-auto text-center font-bold" ></div>
+          <div id="content3" className="hideit mt-29  h-fit px-4 md:w-screen  relative  mx-auto text-center font-bold" ></div>
           <h1 class="absolute top-0 left-0 bottom-0 right-0 z-[-1] text-9xl font-bold text-white">Heading Behind</h1>
 <div id="progressvalue1" class="text-center mx-auto gap-15 mb-1">
   <span class=" text-xl font-medium mx-12 text-white dark:text-white">Registration meter</span>
@@ -230,7 +231,7 @@ const[buttonname1,rename1]=useState("Change portfolio")
             
           </div></div>
 <div className="mt-28 ">
-<h1 className="  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] mb-12 md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Portfolio</h1>
+<h1 id="ddportfolio" className="  text-4xl font-extrabold leading-none tracking-tight text-[#189BA5] mb-12 md:text-5xl lg:text-6xl dark:text-[#189BA5]">My Portfolio</h1>
         
           <div className={` sm:flex sm:justify-between  block mx-auto`} id= "showportfolio"  >
             <div className=" sm:mx-auto tablebg mb-[2.938rem] mx-auto w-fit sm:w-fit sm:h-cover bg-white rounded-lg px-4 py-8">
