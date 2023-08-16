@@ -8,6 +8,8 @@ import { getDownloadURL, uploadBytes,getStorage,ref as Sref } from 'https://www.
 const provider = new GoogleAuthProvider();
 const inputField = document.getElementById("Institute");
 const autocompleteList = document.getElementById("autocomplete-list");
+const inputField2 = document.getElementById("Institute2");
+const autocompleteList2 = document.getElementById("autocomplete-list2");
 const dataUrl = "https://raw.githubusercontent.com/Shibbu264/iitbhumun/newbegin/data/newdata.json"
  document.addEventListener("click", event => {
   const targetElement = event.target;
@@ -15,35 +17,44 @@ const dataUrl = "https://raw.githubusercontent.com/Shibbu264/iitbhumun/newbegin/
    
     closeAutocompleteList();
   }
+  if (!targetElement.closest("#autocomplete-list2")) {
+   
+    closeAutocompleteList2();
+  }
 });;
 const closeAutocompleteList = () => {
   autocompleteList.innerHTML = "";
+};
+const closeAutocompleteList2 = () => {
+  autocompleteList2.innerHTML = "";
 };
 
 fetch(dataUrl)  // Adjust the path to include the 'data' folder
   .then(response => response.json())
   .then(data => {
     const instituteData = data.Institute;
-  console.log(instituteData)
 
-  document.addEventListener("click", event => {
-    const targetElement = event.target;
-    if (!targetElement.closest("#autocomplete-list")) {
-      // Click happened outside the dropdown container, so close the autocomplete list.
-      closeAutocompleteList();
-    }
-  });
+
+  // document.addEventListener("click", event => {
+  //   const targetElement = event.target;
+  //   if (!targetElement.closest("#autocomplete-list")) {
+     
+  //     closeAutocompleteList();
+  //   }
+  // });
     inputField.addEventListener("input", function() {
       const inputValue = inputField.value.toUpperCase();
+      
       autocompleteList.innerHTML = "";
-
-      const matchingColleges = instituteData.filter(institute => {
+     
+      const matchingColleges1 = instituteData.filter(institute => {
 
         return institute.includes(inputValue);
 
       });
+     
 
-      matchingColleges.forEach(institute => {
+      matchingColleges1.forEach(institute => {
         if (inputValue.length>0){
         const suggestion = document.createElement("div");
         suggestion.textContent = institute;
@@ -53,9 +64,60 @@ fetch(dataUrl)  // Adjust the path to include the 'data' folder
           
         });
         autocompleteList.appendChild(suggestion);
+       
       }});
+    
     });
+    inputField2.addEventListener("input", function() {
+      const inputValue2 = inputField2.value.toUpperCase();
+      
+      autocompleteList2.innerHTML = "";
+     
+    
+      const matchingColleges2 = instituteData.filter(institute => {
+
+        return institute.includes(inputValue2);
+
+      });
+
+      matchingColleges2.forEach(institute => {
+        if (inputValue2.length>0){
+        const suggestion = document.createElement("div");
+        suggestion.textContent = institute;
+        suggestion.addEventListener("click", function() {
+          inputField2.value = this.textContent;
+          autocompleteList2.innerHTML = "";
+          
+        });
+        autocompleteList2.appendChild(suggestion);
+       
+      }});
+    
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   });
+  
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyAYLIn8hGjgVrX3h23aVZPx47Sn8bZBCz4",
   authDomain: "mun-2023.firebaseapp.com",
@@ -124,12 +186,44 @@ const id=generateUniqueId()
     console.error('Error uploading photo:', error);
   });
 }
+function uploadPhoto2() {
+  const storage = getStorage(app);
+  const fileInput = document.getElementById('photoInput2');
+  const file = fileInput.files[0];
+console.log(file)
+  if (!file) {
+    console.error('No file selected.');
+    return;
+  }
+const id=generateUniqueId()
+  // Create a unique filename for the photo (you can use the current timestamp or any other method)
+  const photoRef = Sref(storage, `photos/${id}${file.name}`);
+
+  // Upload the file to Firebase Storage
+  uploadBytes(photoRef, file).then((snapshot) => {
+    // Get the download URL of the uploaded photo
+    
+    getDownloadURL(photoRef).then((downloadURL) => {
+    
+      console.log('Photo URL:', downloadURL);
+      
+      localStorage.setItem("url2",downloadURL)
+      
+      
+    }).catch((error) => {
+      console.error('Error getting download URL:', error);
+    });
+  }).catch((error) => {
+    console.error('Error uploading photo:', error);
+  });
+}
 if(document.getElementById("number").value==""){document.getElementById("number").value="+91"}
 
 const database=getDatabase(app)
 
 function validateForm() {
   const name = document.getElementById('name_field').value.trim();
+  const name2 = document.getElementById('name_field2').value.trim();
   const age = document.getElementById('age').value;
   const gender = document.getElementById('gender').value;
   const institute = document.getElementById('Institute').value.trim();
@@ -137,6 +231,59 @@ function validateForm() {
   const email = document.getElementById('email_field').value.trim();
   const password = document.getElementById('password').value.trim();
 const muncount=document.getElementById('muncount').value.trim();
+const age2 = document.getElementById('age2').value;
+const gender2 = document.getElementById('gender2').value;
+const institute2 = document.getElementById('Institute2').value.trim();
+const region2 = document.getElementById('region2').value.trim();
+const email2 = document.getElementById('email_field2').value.trim();
+
+const muncount2=document.getElementById('muncount2').value.trim();
+if(name2!=''){
+  if (muncount2 === '') {
+    alert('Please enter the number of MUN you participated before!.');
+    return false;
+  }
+
+
+  if (age2 === '') {
+    alert('Please enter your age.');
+    return false;
+  }
+
+  if (gender2 === '') {
+    alert('Please select your gender.');
+    return false;
+  }
+
+  if (institute2 === '') {
+    alert('Please enter the name of your institution.');
+    return false;
+  }
+
+  if (region2 === '') {
+    alert('Please enter your region (city or state).');
+    return false;
+  }
+
+  if (email2 === '') {
+    alert('Please enter your email.');
+    return false;
+  }
+
+  // Email validation using regular expression
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email2)) {
+    alert('Please enter a valid email address.');
+    return false;
+  }
+
+  
+
+  return true;
+
+
+
+}
   if (name === '') {
     alert('Please enter your name.');
     return false;
@@ -202,12 +349,13 @@ function getInput(id) {
 function submitForm1(e) {
   
 document.getElementById('form2').addEventListener("submit",function(e){e.preventDefault()})
-  let abcd=validateForm()
+  // let abcd=validateForm()
+  var abcd=true
 if(abcd){
   document.getElementById('register2').innerHTML=`<i class="fa fa-circle-o-notch fa-spin mx-2"> </i> Loading...`
     e.preventDefault();
     
-    saveRec1(getInput('name_field'), getInput('number'),getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'));
+    saveRec1(getInput('name_field'), getInput('number'),getInput('email_field'), getInput('age'),getInput('gender'),getInput('Institute'),getInput('region'),getInput('muncount'),getInput('pastaward'),getInput('refferalcode'),getInput('Committee1'),getInput('pref1option1'),getInput('pref1option2'),getInput('pref1option3'),getInput('Committee2'),getInput('pref2option1'),getInput('pref2option2'),getInput('pref2option3'),getInput('Committee3'),getInput('pref3option1'),getInput('pref3option2'),getInput('pref3option3'),getInput('name_field2'),getInput('number2'), getInput('email_field2'), getInput('age2'),getInput('gender2'),getInput('Institute2'),getInput('region2'),getInput('muncount2'),getInput('pastaward2'),getInput('refferalcode2'));
     
   }
     
@@ -224,7 +372,7 @@ function submitForm2(e) {
 }
  
 }
-function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
+function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3,name2,number2,email2,age2,gender2,Institute2,region2,muncount2,pastaward2,refferalcode2) {
     const uuid=generateUniqueId()
     console.log(uuid)
   
@@ -287,13 +435,78 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
 
   const fileInput = document.getElementById('photoInput');
   const file = fileInput.files[0];
+  const fileInput2 = document.getElementById('photoInput2');
+  const file2 = fileInput2.files[0];
  
   if(file){uploadPhoto()}
+  if(file2){uploadPhoto2()}
   console.log(localStorage.getItem("url"))
   const hehe=ref(database,"preferences/")
   
   const titu=push(hehe);
+  if(name2!=''){set(titu,{
+    Registration_type:"Double Delegates",
+    name:name,
+    Phone_number:number,
+    alloted:"NO" ,
+    email,
+    Age:age,
+    Gender:gender,
+    Institute:Institute,
+    Institute_ID:`${localStorage.getItem("url")}`,
+    Delegate_type:"Outstation",
+    Payment_done:"NO",
+    PaymentSS:"",
+    Region:region,
+    Referralcode:refferalcode,
+    MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
+    PastAwards:` PastAwards_won: ${pastaward}`,
+    option1,option2,option3,option4,option5,option6,option7,option8,option9,
+    p_name2:name2,
+    p_Phone_number_2:number2,
+    p_email2:email2,
+    p_Age2:age2,
+    p_Gender2:gender2,
+    p_Institute2:Institute2,
+    p_Institute_ID2:`${localStorage.getItem("url2")}`,
+    p_Region2:region2,
+    p_Referralcode2:refferalcode2,
+    p_MUNcount2:`Number_of_MUNs_appeared_before: ${muncount2}`,
+    p_PastAwards2:` PastAwards_won: ${pastaward2}`,
+
+
+
+
+
+
+
+  }) .then(() => {
+    localStorage.removeItem("url"),
+    localStorage.removeItem("url2"),
+    signup1(); 
+    
+     
+    
+    
+        
+      
+    
+    
+   
+  }).then(() => {
+    // Registration and signup successful
+    document.getElementById("registrationForm").reset();
+    document.getElementById("form2").reset();
+    
+    
+  })
   
+  .catch((error) => {
+    
+    alert("Registration failed: " + error.message);
+    document.getElementById('register2').innerHTML=`Double Delegate`
+  });}
+  else{
   set(titu,{
     Registration_type:"Single Delegates",
     name:name,
@@ -327,6 +540,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     
     .then(() => {
       localStorage.removeItem("url"),
+      localStorage.removeItem("url2"),
       signup1(); 
       
        
@@ -350,7 +564,7 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
       alert("Registration failed: " + error.message);
       document.getElementById('register2').innerHTML=`Single Delegate`
     });
-
+  }
 }
 
 function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {

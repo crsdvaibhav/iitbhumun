@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Script from 'next/script'
 import Link from 'next/link';
 import data from '../data/data.json';
-import { Alert } from '@material-tailwind/react';
+import { Alert, Button } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
 import GoogleButton from 'react-google-button'
@@ -293,7 +293,7 @@ const[buttondisplay,setdisplay]=useState(false)
   if (type3) {
     options3 = type3.map((el) => <option key={el}>{el}</option>);
   }
-
+const[boolcheck,setbool1]=useState(true)
   return (
     <div id='qt'>
       <Head>
@@ -331,13 +331,15 @@ const[buttondisplay,setdisplay]=useState(false)
             </div>
           </div>
       <form id="registrationForm"  className=" bg-white rounded-lg shadow-md p-6">
-      <h1 className='text-center font-semibold sm:xl text-2xl mt-2 mb-2'><span className='text-red-500'>Note: </span>Campus Ambassadors also need to fill up this form.</h1>
+        <Button onClick={()=>{setbool1(!boolcheck)}} className='mx-auto block'>{boolcheck?"Register as Double Delegate":"Register as Single Delegate"}</Button>
+    { boolcheck? <h1 value="nothing" id='valuecheck' className='text-center font-semibold sm:xl text-2xl mt-2 mb-2'><span className='text-red-500'>Note: </span>Campus Ambassadors also need to fill up this form.</h1>:<h1 value="something" id='valuecheck1' className='text-center text-2xl my-3 font-bold'>Double Delegate Registration</h1>}
        
     <div id='google'className="m-auto"> <GoogleButton className="m-auto" id='google'
   onClick={() => { }}
 />
 </div>
 <h1 className="text-2xl m-auto 'block' justify-center text-center my-3" id='or' >OR</h1>
+{boolcheck?<div></div>:<h1 className='text-xl text-center my-4 font-bold'>Delegate-1 Details</h1>}
         <div className="mb-4">
           <label htmlFor="name" className="block text-[#189BA5] font-bold mb-2">Name:<span className='text-red-500'>*</span></label>
           <input type="text" id="name_field" placeholder="Enter your name" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
@@ -393,8 +395,60 @@ const[buttondisplay,setdisplay]=useState(false)
           <label htmlFor="refferalcode"  className="block text-[#189BA5] font-bold mb-2">Referral code:</label>
           <input type="text"   placeholder="Optional" id="refferalcode"   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
         </div>
-  
+        {<div className={boolcheck?'hidden':''}><h1 className='text-xl text-center my-4 font-bold'>Delegate-2 Details</h1>
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-[#189BA5] font-bold mb-2">Name:<span className='text-red-500'>*</span></label>
+          <input type="text" id="name_field2" placeholder="Enter your name" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="age" required className="block text-[#189BA5] font-bold mb-2">Age:<span className='text-red-500'>*</span></label>
+          <input type="number" id="age2" placeholder="Age" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="gender" className="block text-[#189BA5] font-bold mb-2">Gender<span className='text-red-500'>*</span></label>
+          <select id="gender2" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+            
+          </select>
+        </div>
        
+        <div className="mb-4">
+          <label htmlFor="Insitute" required className="block text-[#189BA5] font-bold mb-2">Name of Institution:<span className='text-red-500'>*</span></label>
+          <input type="text" placeholder="College or University" id="Institute2" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+          <div id="autocomplete-list2" class="autocomplete-items"></div>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="Insitute" required className="block text-[#189BA5] font-bold mb-2">Institute ID card if from BHU or IIT BHU:<span className='text-red-500'></span></label>
+          <input type="file" placeholder="College or University" id="photoInput2" required className="w-full px-4 py-2 border rounded-lg focus:outline-none text-[#189BA5] focus:ring-blue-500 focus:border-blue-500"/>
+          <label className='text-red-500 font-medium'>Kindly Upload For Availing Student Benefit</label>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="region" required className="block text-[#189BA5] font-bold mb-2">Region:<span className='text-red-500'>*</span></label>
+          <input type="text" placeholder="City or state" id="region2" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="number" required className="block text-[#189BA5] font-bold mb-2" >Phone number:<span className='text-red-500'>*</span></label>
+          <input type="tel" placeholder="+919279279289" id='number2' required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" required className="block text-[#189BA5] font-bold mb-2">Email:<span className='text-red-500'>*</span></label>
+          <input type="email" placeholder="Use same email if signed up with google" id="email_field2" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+       
+        <div className="mb-4">
+          <label htmlFor="MUNcount" className="block text-[#189BA5] font-bold mb-2">Number of MUNS participated earlier:<span className='text-red-500'>*</span></label>
+          <input type="number" id="muncount2" placeholder="" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="pastaward" className="block text-[#189BA5] font-bold mb-2">MUN Awards won in past:</label>
+          <input type="text" placeholder="Leave if none" id="pastaward2"  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="refferalcode"  className="block text-[#189BA5] font-bold mb-2">Referral code:</label>
+          <input type="text"   placeholder="Optional" id="refferalcode2"   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
+        </div></div>}
         
         
         <div className="registeroptions2">
@@ -690,10 +744,10 @@ const[buttondisplay,setdisplay]=useState(false)
             </Alert>
           )}
           <h1 className='registeras'>Register as:</h1>
-        <div className="registeroptions">
-          
- <button id="register2" type="submit" onClick={handleCheck}  className="w-full cursor-not-allowed bg-green-500 text-white py-2 px-2 m-auto rounded-lg hover:bg-blue-600" data-tooltip="As determined by the committee, representing a specific nation or individual and participating as a single delegate means speaking, discussing and debating on the committee's agenda. Delegating has many advantages, including the chance to engage with others with extensive expertise and improve one's speaking and communication abilities. A certificate recognised by the UN and a delegate kit given by us are just two of its benefits. Additionally, with an additional fee, housing and meals will be covered. Above all, it is an honour in and of itself to participate in one of India's largest MUNs.">Single Delegate </button>
-      <button id="register3" type="submit"   className="w-full bg-green-500 text-white weight-bold py-2 px-1 font-bold rounded-lg hover:bg-blue-600" data-tooltip="Through the Campus Ambassador programme, candidates can demonstrate their leadership skills while helping to bring delegates from all across the nation together. They can also represent IITBHU MUN in their local communities. Getting a certificate recognised by the UN for bringing eight or more delegates is just one of its advantages. The delegates will also receive a subsequent reduction in the delegate price depending on how many delegates they bring. The person who brings the most delegates will receive a memento and be featured on the official IITHBHU MUN Instagram page if they bring more than 25 delegates. " >Campus ambassador</button>
+              <div className="registeroptions">
+       
+ <button id="register2" type="submit" onClick={handleCheck}  className={`${boolcheck?'sm:ml-52 sm:mr-52 ':'block mx-auto'}sm:w-full w-48 mx-auto block cursor-pointer bg-green-500 text-white py-2 sm:px-2 px-4 m-auto rounded-lg hover:bg-blue-600`} data-tooltip="As determined by the committee, representing a specific nation or individual and participating as a single delegate means speaking, discussing and debating on the committee's agenda. Delegating has many advantages, including the chance to engage with others with extensive expertise and improve one's speaking and communication abilities. A certificate recognised by the UN and a delegate kit given by us are just two of its benefits. Additionally, with an additional fee, housing and meals will be covered. Above all, it is an honour in and of itself to participate in one of India's largest MUNs.">{boolcheck?"Single Delegate":"Double Delegate"} </button>
+     {boolcheck? <button id="register3" type="submit"   className={`sm:w-full w-48 sm:ml-52 sm:mr-52 mx-auto  bg-green-500 text-white weight-bold py-2 sm:px-2 px-4 font-bold rounded-lg hover:bg-blue-600`} data-tooltip="Through the Campus Ambassador programme, candidates can demonstrate their leadership skills while helping to bring delegates from all across the nation together. They can also represent IITBHU MUN in their local communities. Getting a certificate recognised by the UN for bringing eight or more delegates is just one of its advantages. The delegates will also receive a subsequent reduction in the delegate price depending on how many delegates they bring. The person who brings the most delegates will receive a memento and be featured on the official IITHBHU MUN Instagram page if they bring more than 25 delegates." >Campus ambassador</button>:''}
      </div>
      </form>  <div className="flex justify-center m-auto mt-3">
             <button

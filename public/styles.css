@@ -111,8 +111,7 @@ margin-bottom: 8px;
     position: relative;
   }
   #register2,#register3{
-    margin-left:100px;
-    margin-right: 100px;
+   
     height: 40px;
   }
   .registeroptions button::before {

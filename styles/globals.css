@@ -162,13 +162,13 @@ a {
   width:cover;
   height: cover;
 }
-#autocomplete-list div{
+#autocomplete-list div,#autocomplete-list2 div{
   cursor: pointer;
   width: -90px;
   color: #ABCF3A;
   background-color: #5e757b;
 }
-#autocomplete-list div:hover{
+#autocomplete-list div:hover,#autocomplete-list2 div:hover{
 
 background-color: rgb(32, 28, 28);
 
