@@ -349,8 +349,8 @@ function getInput(id) {
 function submitForm1(e) {
   
 document.getElementById('form2').addEventListener("submit",function(e){e.preventDefault()})
-  // let abcd=validateForm()
-  var abcd=true
+   let abcd=validateForm()
+ 
 if(abcd){
   document.getElementById('register2').innerHTML=`<i class="fa fa-circle-o-notch fa-spin mx-2"> </i> Loading...`
     e.preventDefault();
