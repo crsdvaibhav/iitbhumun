@@ -381,12 +381,16 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
       const data = snapshot.val();
 
       const filteredData = [];
+      let i=0;
       for (const itemId in data) {
+        i++;
         const item = data[itemId];
         if (item.email === email) {
           alert("Email already exists!")
+          document.getElementById('register3').innerHTML=`Single Delegate`
+          break;
         }
-        else{ if(refferalcode!=null){
+        else if(i==data.length-1){ if(refferalcode!=null){
           const snapshot = get(ref(database, "Referral_program/"))
             .then((snapshot) => {
               const data = snapshot.val();
@@ -573,26 +577,35 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
           alert("Registration failed: " + error.message);
           document.getElementById('register2').innerHTML=`Single Delegate`
         });
-      }}
+        break;
+      }
+    
+    }
       }})
       
    
 }
 
 function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
-  const uuid=generateUniqueId()
-  const Reff =generateReferralCode();
+ 
   const snapshot = get(ref(database, "preferences/"))
   .then((snapshot) => {
     const data = snapshot.val();
-
+let i=0;
     const filteredData = [];
     for (const itemId in data) {
       const item = data[itemId];
+      i++;
       if (item.email === email) {
         alert("Email already exists!")
+        document.getElementById('register3').innerHTML=`Campus ambassador`
+        break;
       }
-      else{ const abcd=ref(database,"Referral_program/")
+      else if(i==data.length()-1){
+        const uuid=generateUniqueId()
+        const Reff =generateReferralCode();
+        
+        const abcd=ref(database,"Referral_program/")
       localStorage.setItem("value",Reff)
       const refrec=push(abcd)
       set(refrec,{
@@ -730,7 +743,10 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
         
         alert("Registration failed: " + error.message);
         document.getElementById('register3').innerHTML=`Conference ambassador`
-      });}}})
+      });
+    break;
+    
+    }}})
    
  
 }
