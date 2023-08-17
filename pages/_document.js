@@ -4,7 +4,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function Document() {
   return (
     <Html>
-      <Head>
+      <Head><link rel="stylesheet" href="/styles.css" />
         {/* Seo needs to be done */}
         <title>IITBHU MUN</title>
         <meta

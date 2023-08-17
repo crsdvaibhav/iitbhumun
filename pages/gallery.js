@@ -1,25 +1,31 @@
-import Navbar from "../components/Navbar";
-import Image from "next/image";
 
+import Image from "next/image";
+import NavBar from '../components/Navbar';
 import EventsCarousel from "../components/EventsCarousel";
 import PlacesCarousel from "../components/PlacesCarousel";
-export default function NavBar() {
-
+import Footer from "../components/Footer";
+import NavBar2 from "../components/navbarforlogin";
+import { getAuth } from "firebase/auth";
+import React from "react";import { useState } from 'react';
+import Doubtbox from "../components/doubtbox";
+import EventsCarousel1 from "../components/PlacesCarousel";
+export default function Gallery() {
+  const auth=getAuth();
+  const [changebar,setbar]=useState(true);
+ function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
+  abc()
 
   return (
-    <>
-      <Navbar navbar={true} />
-      <div>
-        <Image width={3000} height={1024} src="/images/Mun.webp" alt="image h" />
-      </div>
+    <div className='bg-gray-100 w-[100%] sm:w-[100%] ' >
+        {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
 
 
-      <div className="mt-[40px]">
+      <div className="">
         <div className="bold text-center font-extrabold text-4xl">
           PAST EXPERIENCE
         </div>
         <div className=' w-full '>
-          <EventsCarousel />
+        <EventsCarousel/>
         </div>
 
       </div>
@@ -27,12 +33,12 @@ export default function NavBar() {
         <div className="bold text-center font-extrabold text-4xl">
           PLACES TO VISIT IN VARANASI
         </div>
-        <div className=' w-full '>
-          <PlacesCarousel />
+        <div className=' w-full'>
+         <EventsCarousel1 />
         </div>
       </div>
-
-
-    </>
+      <Doubtbox/>
+<Footer></Footer>
+    </div>
   );
 }

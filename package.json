@@ -9,15 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@material-tailwind/react": "^1.2.4",
+    "@sendgrid/mail": "^7.7.0",
+    "@stripe/stripe-js": "^1.54.1",
+    "@vercel/analytics": "^1.0.1",
     "daisyui": "^2.33.0",
+    "firebase": "^9.23.0",
+    "framer-motion": "^10.12.22",
     "next": "12.3.1",
-    "react": "18.2.0",
+    "nodemailer": "^6.9.3",
+    "paytmchecksum": "^1.5.0",
+    "react": "^18.2.0",
     "react-countdown": "^2.3.3",
     "react-dom": "18.2.0",
-    "react-icons": "^4.7.1",
+    "react-google-button": "^0.7.2",
+    "react-icons": "^4.10.1",
     "react-select": "^5.6.0",
-    "sheetdb-js": "^1.0.3"
+    "sheetdb-js": "^1.0.3",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
@@ -25,5 +38,6 @@
     "eslint-config-next": "12.3.1",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
+   
   }
 }

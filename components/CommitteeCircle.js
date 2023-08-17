@@ -10,23 +10,22 @@ export default function CommitteeCircle(props) {
     }
 
     return (
-        <Fragment>
+        <Fragment >
             <button
-                onClick={handleChange}
-                className="mx-2 w-[11.313rem] h-[11.313rem] rounded-full shadow-[#189BA5]/20 shadow-xl top-[12.5rem] left-[9.836rem] bg-white"
+                onClick={handleChange} 
+                className="mx-2 w-[13.313rem] h-[13.313rem]  shadow-[#189BA5]/20  background-[white] top-[12.5rem] left-[9.836rem]"
             >
-                <div className="flex flex-col items-center">
-                    <div className="pt-[1.688rem]">
-                        <Image
+                <div className="flex flex-col items-center ">
+            
+                        <Image className="  "
                             src={props.src}
-                            width={114}
-                            height={95}
+                            width={125}
+                            height={125}
                             alt=""
+                            
                         />
-                    </div>
-                    <div className="font-bold font-sans text-[1.2rem] pb-2 text-[#189BA5]">
-                        {props.title}
-                    </div>
+                    
+                    
                 </div>
             </button>
             <DialogBox open={open} handleOpen={handleChange} href={props.href} title={props.title} data={props.data} chair={props.chair} vicechair={props.vicechair} agenda={props.agenda} csrc={props.chairsrc} vcsrc={props.vicechairsrc} />

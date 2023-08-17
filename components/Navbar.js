@@ -7,72 +7,81 @@ import {
   MenuItem,
 } from "@material-tailwind/react";
 import { useState } from 'react';
-import CloseReg from './CloseReg';
+import Register from './CloseReg';
 
 
-export default function NavBar({ navbar }) {
+export default function NavBar({ navbar,backgroundColor,qt}) {
 
   const [closeReg, setCloseReg] = useState(true);
+  const [display, buttonhide] = useState(false);
   const handleChange = () => {
     setCloseReg(false);
     setTimeout(() => {
       setCloseReg(true);
     }, 1000);
+    buttonhide(true)
   }
   return (
     <div
-      className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
-        ? 'bg-[#F1F1F1] shadow-lg border-b 2xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black'
-        : ''
+      className={`fixed w-full z-30 font-medium  sm:py-2  ${navbar
+        ? `bg-[#113C48]  shadow-lg  text-white`
+        : `bg-[#113C48] text-white`
         }`}
     >
       <div className="hidden sm:flex flex-row items-center justify-between mx-16">
         <Image
-          src="/images/active-nav-log.svg"
-          width={50}
-          height={50}
+          src="/images/munvector.svg"
+          width={60}
+          height={60}
           alt="active-nav-logo"
         />
         <div className="justify-end hidden items-center sm:flex space-x-12 2xl:space-x-24 font-medium">
           <Link href="home">
-            <button className=" 2xl:text-xl hover:text-[#189BA5] duration-100">
+            <button className=" border-[#A3CF3A] hover:border-b-2 2xl:text-xl hover:border-spacing-4 duration-100">
               Home
             </button>
           </Link>
           <Link href="/committees">
-            <button className="2xl:text-xl text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               Committees
             </button>
           </Link>
           <Link href="/secretariat">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl  text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               Secretariat
             </button>
           </Link>
           <Link href="/partners">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl  text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               Partners
             </button>
           </Link>
           <Link href="/gallery">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl  text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               Gallery
             </button>
           </Link>
           <Link href="/faq">
-            <button className="2xl:text-xl  text-lg hover:text-[#189BA5] duration-100">
+            <button className="2xl:text-xl  text-lg border-[#A3CF3A] hover:border-b-2 hover:border-spacing-2 duration-100">
               FAQ
             </button>
-          </Link>
-
-          {!closeReg ? (
-            <CloseReg />
-          ) : <button onClick={handleChange}
-            className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold ${navbar ? 'bg-[#1A1E21] text-white' : 'text-black bg-[#F5CE3F]'
-              }`}
+          </Link><div>
+<Link href="/registerpage">
+  
+         <button 
+            className={'px-12 2xl:px-12 h-10 rounded-md text-xl font-semibold mx-2 text-black bg-[#ABCF3A] hover:bg-yellow-300'
+              }
           >
             Register
-          </button>}
+          </button ></Link>
+          <Link href="/loginpage">
+         <button onClick={handleChange}
+            className={`px-12 2xl:px-12 h-10 targetDiv rounded-md text-xl font-semibold mx-4  text-black bg-[#ABCF3A] hover:bg-yellow-300 ${qt} `}
+          >
+            Login
+          </button></Link>
+         
+         </div>
         </div>
       </div>
       <div
@@ -110,13 +119,13 @@ export default function NavBar({ navbar }) {
             alt="mobile-activenav-logo"
           />
         </div>
-        {!closeReg ? (
-          <CloseReg />
-        ) :
-          <button onClick={handleChange} className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
-            <a>Register</a>
+       
+          <button onClick={handleChange} className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#A3B63A] rounded-lg">
+            <Link href={'/registerpage'}>Register</Link>
           </button>
-        }
+          <button  className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#A3B63A] rounded-lg">
+                 <Link href={'/loginpage'}>    Login</Link> 
+                </button>
       </div>
     </div>
   );
