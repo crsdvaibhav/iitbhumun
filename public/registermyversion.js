@@ -379,18 +379,19 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     const snapshot = get(ref(database, "preferences/"))
     .then((snapshot) => {
       const data = snapshot.val();
-
-      const filteredData = [];
+console.log(data.length)
+    
       let i=0;
       for (const itemId in data) {
-        i++;
+       
         const item = data[itemId];
         if (item.email === email) {
           alert("Email already exists!")
-          document.getElementById('register3').innerHTML=`Single Delegate`
+          document.getElementById('register2').innerHTML=`Single Delegate`
+          i=1;
           break;
-        }
-        else if(i==data.length-1){ if(refferalcode!=null){
+        }}
+        if(i==0){ if(refferalcode!=null){
           const snapshot = get(ref(database, "Referral_program/"))
             .then((snapshot) => {
               const data = snapshot.val();
@@ -577,11 +578,11 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
           alert("Registration failed: " + error.message);
           document.getElementById('register2').innerHTML=`Single Delegate`
         });
-        break;
+       
       }
     
     }
-      }})
+      })
       
    
 }
@@ -592,16 +593,20 @@ function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastawa
   .then((snapshot) => {
     const data = snapshot.val();
 let i=0;
-    const filteredData = [];
+console.log(data.length)
+    
     for (const itemId in data) {
       const item = data[itemId];
-      i++;
+     
       if (item.email === email) {
         alert("Email already exists!")
         document.getElementById('register3').innerHTML=`Campus ambassador`
+        i=1;
         break;
-      }
-      else if(i==data.length()-1){
+       
+      }}
+      
+      if(i==0){
         const uuid=generateUniqueId()
         const Reff =generateReferralCode();
         
@@ -744,9 +749,9 @@ let i=0;
         alert("Registration failed: " + error.message);
         document.getElementById('register3').innerHTML=`Conference ambassador`
       });
-    break;
+  
     
-    }}})
+    }})
    
  
 }
