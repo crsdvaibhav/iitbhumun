@@ -376,341 +376,363 @@ function saveRec1(name,number,email,age,gender,Institute,region,muncount,pastawa
     const uuid=generateUniqueId()
     console.log(uuid)
   
-  
-    if(refferalcode!=null){
-      const snapshot = get(ref(database, "Referral_program/"))
-        .then((snapshot) => {
-          const data = snapshot.val();
+    const snapshot = get(ref(database, "preferences/"))
+    .then((snapshot) => {
+      const data = snapshot.val();
+
+      const filteredData = [];
+      for (const itemId in data) {
+        const item = data[itemId];
+        if (item.email === email) {
+          alert("Email already exists!")
+        }
+        else{ if(refferalcode!=null){
+          const snapshot = get(ref(database, "Referral_program/"))
+            .then((snapshot) => {
+              const data = snapshot.val();
+            
+              const filteredData = [];
+              for (const itemId in data) {
+                const item = data[itemId];
+                if (item.referralCode === refferalcode) {
+                  const entryId = itemId;
+                  const userRegisteredRef = ref(database,"Referral_program/"+entryId+"/"+"UserRegistered");
         
-          const filteredData = [];
-          for (const itemId in data) {
-            const item = data[itemId];
-            if (item.referralCode === refferalcode) {
-              const entryId = itemId;
-              const userRegisteredRef = ref(database,"Referral_program/"+entryId+"/"+"UserRegistered");
+                  runTransaction(userRegisteredRef, (userRegistered) => {
+                    return (userRegistered || 0) + 1; // Increment the count by 1
+                  })
+                    .then(() => {
+                     
+                      console.log('UserRegistered count incremented successfully');
+                    })
+                    .catch((error) => {
+                      console.error('Error incrementing UserRegistered count:', error);
+                    });
+                }
+              }})
     
-              runTransaction(userRegisteredRef, (userRegistered) => {
-                return (userRegistered || 0) + 1; // Increment the count by 1
-              })
-                .then(() => {
-                 
-                  console.log('UserRegistered count incremented successfully');
-                })
-                .catch((error) => {
-                  console.error('Error incrementing UserRegistered count:', error);
-                });
-            }
-          }})
-
-  }
-  const dbRef1 = ref(database, "records of single delegates/"+uuid);
-   
-    const newRec = push(dbRef1);
-    
-    set(newRec, {
-      name:name,
-      email:email,
-      Phone_number:number,
-      Committee_Preference_1: Committee1,
-      Committee_Preference_2: Committee2,
-      Committee_Preference_3: Committee3,
-      Age:age,
-      Gender:gender,
-      Institute:Institute,
-      Region:region,
-      MUNcount:muncount,
-      PastAwards:pastaward,
-      Referralcode:refferalcode,
-
-    })
-    const option1=Committee1+": "+pref1option1;
-  const option2=Committee1+":  "+pref1option2;
-  const option3=Committee1+":  "+pref1option3;
-  const option4=Committee2+":  "+pref2option1;
-  const option5=Committee2+":  "+pref2option2;
-  const option6=Committee2+":  "+pref2option3;
-  const option7=Committee3+":  "+pref3option1;
-  const option8=Committee3+":  "+pref3option2;
-  const option9=Committee3+":  "+pref3option3;
-
-  const fileInput = document.getElementById('photoInput');
-  const file = fileInput.files[0];
-  const fileInput2 = document.getElementById('photoInput2');
-  const file2 = fileInput2.files[0];
- 
-  if(file){uploadPhoto()}
-  if(file2){uploadPhoto2()}
-  console.log(localStorage.getItem("url"))
-  const hehe=ref(database,"preferences/")
-  
-  const titu=push(hehe);
-  if(name2!=''){set(titu,{
-    Registration_type:"Double Delegates",
-    name:name,
-    Phone_number:number,
-    alloted:"NO" ,
-    email,
-    Age:age,
-    Gender:gender,
-    Institute:Institute,
-    Institute_ID:`${localStorage.getItem("url")}`,
-    Delegate_type:"Outstation",
-    Payment_done:"NO",
-    PaymentSS:"",
-    Region:region,
-    Referralcode:refferalcode,
-    MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
-    PastAwards:` PastAwards_won: ${pastaward}`,
-    option1,option2,option3,option4,option5,option6,option7,option8,option9,
-    p_name2:name2,
-    p_Phone_number_2:number2,
-    p_email2:email2,
-    p_Age2:age2,
-    p_Gender2:gender2,
-    p_Institute2:Institute2,
-    p_Institute_ID2:`${localStorage.getItem("url2")}`,
-    p_Region2:region2,
-    p_Referralcode2:refferalcode2,
-    p_MUNcount2:`Number_of_MUNs_appeared_before: ${muncount2}`,
-    p_PastAwards2:` PastAwards_won: ${pastaward2}`,
-
-
-
-
-
-
-
-  }) .then(() => {
-    localStorage.removeItem("url"),
-    localStorage.removeItem("url2"),
-    signup1(); 
-    
-     
-    
-    
-        
-      
-    
-    
-   
-  }).then(() => {
-    // Registration and signup successful
-    document.getElementById("registrationForm").reset();
-    document.getElementById("form2").reset();
-    
-    
-  })
-  
-  .catch((error) => {
-    
-    alert("Registration failed: " + error.message);
-    document.getElementById('register2').innerHTML=`Double Delegate`
-  });}
-  else{
-  set(titu,{
-    Registration_type:"Single Delegates",
-    name:name,
-    Phone_number:number,
-    alloted:"NO" ,
-    email,
-    Age:age,
-    Gender:gender,
-    Institute:Institute,
-    Institute_ID:`${localStorage.getItem("url")}`,
-    Delegate_type:"Outstation",
-    Payment_done:"NO",
-    PaymentSS:"",
-    Region:region,
-    Referralcode:refferalcode,
-    MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
-    PastAwards:` PastAwards_won: ${pastaward}`,
-    option1,option2,option3,option4,option5,option6,option7,option8,option9,
-    
-
-
-
-
-
-
-  })
-  
-  
-    
-    
-    
-    .then(() => {
-      localStorage.removeItem("url"),
-      localStorage.removeItem("url2"),
-      signup1(); 
-      
+      }
+      const dbRef1 = ref(database, "records of single delegates/"+uuid);
        
+        const newRec = push(dbRef1);
+        
+        set(newRec, {
+          name:name,
+          email:email,
+          Phone_number:number,
+          Committee_Preference_1: Committee1,
+          Committee_Preference_2: Committee2,
+          Committee_Preference_3: Committee3,
+          Age:age,
+          Gender:gender,
+          Institute:Institute,
+          Region:region,
+          MUNcount:muncount,
+          PastAwards:pastaward,
+          Referralcode:refferalcode,
+    
+        })
+        const option1=Committee1+": "+pref1option1;
+      const option2=Committee1+":  "+pref1option2;
+      const option3=Committee1+":  "+pref1option3;
+      const option4=Committee2+":  "+pref2option1;
+      const option5=Committee2+":  "+pref2option2;
+      const option6=Committee2+":  "+pref2option3;
+      const option7=Committee3+":  "+pref3option1;
+      const option8=Committee3+":  "+pref3option2;
+      const option9=Committee3+":  "+pref3option3;
+    
+      const fileInput = document.getElementById('photoInput');
+      const file = fileInput.files[0];
+      const fileInput2 = document.getElementById('photoInput2');
+      const file2 = fileInput2.files[0];
+     
+      if(file){uploadPhoto()}
+      if(file2){uploadPhoto2()}
+      console.log(localStorage.getItem("url"))
+      const hehe=ref(database,"preferences/")
       
-      
+      const titu=push(hehe);
+      if(name2!=''){set(titu,{
+        Registration_type:"Double Delegates",
+        name:name,
+        Phone_number:number,
+        alloted:"NO" ,
+        email,
+        Age:age,
+        Gender:gender,
+        Institute:Institute,
+        Institute_ID:`${localStorage.getItem("url")}`,
+        Delegate_type:"Outstation",
+        Payment_done:"NO",
+        PaymentSS:"",
+        Region:region,
+        Referralcode:refferalcode,
+        MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
+        PastAwards:` PastAwards_won: ${pastaward}`,
+        option1,option2,option3,option4,option5,option6,option7,option8,option9,
+        p_name2:name2,
+        p_Phone_number_2:number2,
+        p_email2:email2,
+        p_Age2:age2,
+        p_Gender2:gender2,
+        p_Institute2:Institute2,
+        p_Institute_ID2:`${localStorage.getItem("url2")}`,
+        p_Region2:region2,
+        p_Referralcode2:refferalcode2,
+        p_MUNcount2:`Number_of_MUNs_appeared_before: ${muncount2}`,
+        p_PastAwards2:` PastAwards_won: ${pastaward2}`,
+    
+    
+    
+    
+    
+    
+    
+      }) .then(() => {
+        localStorage.removeItem("url"),
+        localStorage.removeItem("url2"),
+        signup1(); 
+        
+         
+        
+        
+            
           
         
+        
+       
+      }).then(() => {
+        // Registration and signup successful
+        document.getElementById("registrationForm").reset();
+        document.getElementById("form2").reset();
+        
+        
+      })
       
-      
-     
-    }).then(() => {
-      // Registration and signup successful
-      document.getElementById("registrationForm").reset();
-      document.getElementById("form2").reset();
-      
-      
-    })
+      .catch((error) => {
+        
+        alert("Registration failed: " + error.message);
+        document.getElementById('register2').innerHTML=`Double Delegate`
+      });}
+      else{
+      set(titu,{
+        Registration_type:"Single Delegates",
+        name:name,
+        Phone_number:number,
+        alloted:"NO" ,
+        email,
+        Age:age,
+        Gender:gender,
+        Institute:Institute,
+        Institute_ID:`${localStorage.getItem("url")}`,
+        Delegate_type:"Outstation",
+        Payment_done:"NO",
+        PaymentSS:"",
+        Region:region,
+        Referralcode:refferalcode,
+        MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
+        PastAwards:` PastAwards_won: ${pastaward}`,
+        option1,option2,option3,option4,option5,option6,option7,option8,option9,
+        
     
-    .catch((error) => {
+    
+    
+    
+    
+    
+      })
       
-      alert("Registration failed: " + error.message);
-      document.getElementById('register2').innerHTML=`Single Delegate`
-    });
-  }
+      
+        
+        
+        
+        .then(() => {
+          localStorage.removeItem("url"),
+          localStorage.removeItem("url2"),
+          signup1(); 
+          
+           
+          
+          
+              
+            
+          
+          
+         
+        }).then(() => {
+          // Registration and signup successful
+          document.getElementById("registrationForm").reset();
+          document.getElementById("form2").reset();
+          
+          
+        })
+        
+        .catch((error) => {
+          
+          alert("Registration failed: " + error.message);
+          document.getElementById('register2').innerHTML=`Single Delegate`
+        });
+      }}
+      }})
+      
+   
 }
 
 function saveRec2(name,number,email,age,gender,Institute,region,muncount,pastaward,refferalcode,Committee1,pref1option1,pref1option2,pref1option3,Committee2,pref2option1,pref2option2,pref2option3,Committee3,pref3option1,pref3option2,pref3option3) {
   const uuid=generateUniqueId()
   const Reff =generateReferralCode();
- 
-   
-  const abcd=ref(database,"Referral_program/")
-  localStorage.setItem("value",Reff)
-  const refrec=push(abcd)
-  set(refrec,{
-email:email,
-referralCode:Reff,
-UserRegistered:0,
-PaymentConfirmed:0
+  const snapshot = get(ref(database, "preferences/"))
+  .then((snapshot) => {
+    const data = snapshot.val();
 
-  })
-//To increase referral count
-  if(refferalcode!=null){
-      const snapshot = get(ref(database, "Referral_program/"))
-        .then((snapshot) => {
-          const data = snapshot.val();
-        
-          const filteredData = [];
-          for (const itemId in data) {
-            const item = data[itemId];
-            if (item.referralCode === refferalcode) {
-              const entryId = itemId;
-              const userRegisteredRef = ref(database,"Referral_program/"+entryId+"/"+"UserRegistered");
-    
-              runTransaction(userRegisteredRef, (userRegistered) => {
-                return (userRegistered || 0) + 1; // Increment the count by 1
-              })
-                .then(() => {
-                  console.log('UserRegistered count incremented successfully');
-                })
-                .catch((error) => {
-                  console.error('Error incrementing UserRegistered count:', error);
-                });
-            }
-          }})
-  
-  
-  
-   
-
-
-  }
-  const dbRef2 = ref(database, "records of Conference ambassadors/"+uuid);
-  
-  const newRec = push(dbRef2);
-  set(newRec, {
-    name:name,
-    Phone_number:number,
+    const filteredData = [];
+    for (const itemId in data) {
+      const item = data[itemId];
+      if (item.email === email) {
+        alert("Email already exists!")
+      }
+      else{ const abcd=ref(database,"Referral_program/")
+      localStorage.setItem("value",Reff)
+      const refrec=push(abcd)
+      set(refrec,{
     email:email,
-    Committee_Preference_1: Committee1,
-    Committee_Preference_2: Committee2,
-    Committee_Preference_3: Committee3,
-    Age:age,
-    Gender:gender,
-    Institute:Institute,
-    Region:region,
-    MUNcount:muncount,
-    PastAwards:pastaward,
-    Referralcode:refferalcode,
+    referralCode:Reff,
+    UserRegistered:0,
+    PaymentConfirmed:0
     
-
-  },)
-  const option1=Committee1+":  "+pref1option1;
-  const option2=Committee1+":  "+pref1option2;
-  const option3=Committee1+":  "+pref1option3;
-  const option4=Committee2+":  "+pref2option1;
-  const option5=Committee2+":  "+pref2option2;
-  const option6=Committee2+":  "+pref2option3;
-  const option7=Committee3+":  "+pref3option1;
-  const option8=Committee3+":  "+pref3option2;
-  const option9=Committee3+":  "+pref3option3;
-  const fileInput = document.getElementById('photoInput');
-  const file = fileInput.files[0];
-  if(file){uploadPhoto()}
-  console.log(localStorage.getItem("url"))
-  const hehe=ref(database,"preferences/")
-  const titu=push(hehe);
-  
-  set(titu,{
-    Registration_type:"Campus Ambassador",
-    name:name,
-    Phone_number:number,
-    alloted:"NO" ,
-    email,
-    Age:age,
-    Gender:gender,
-    Institute:Institute,
-    Institute_ID:`${localStorage.getItem("url")}`,
-    Delegate_type:"Outstation",
-    Payment_done:"NO",
-    PaymentSS:"",
-    Region:region,
-    Referralcode:refferalcode,
-    MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
-    PastAwards:` PastAwards_won: ${pastaward}`,
-    option1,option2,option3,option4,option5,option6,option7,option8,option9,
-
-
-
-
-
-
-
-
-
-  })
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  .then(() => {
-    signup2(); 
+      })
+    //To increase referral count
+      if(refferalcode!=null){
+          const snapshot = get(ref(database, "Referral_program/"))
+            .then((snapshot) => {
+              const data = snapshot.val();
+            
+              const filteredData = [];
+              for (const itemId in data) {
+                const item = data[itemId];
+                if (item.referralCode === refferalcode) {
+                  const entryId = itemId;
+                  const userRegisteredRef = ref(database,"Referral_program/"+entryId+"/"+"UserRegistered");
+        
+                  runTransaction(userRegisteredRef, (userRegistered) => {
+                    return (userRegistered || 0) + 1; // Increment the count by 1
+                  })
+                    .then(() => {
+                      console.log('UserRegistered count incremented successfully');
+                    })
+                    .catch((error) => {
+                      console.error('Error incrementing UserRegistered count:', error);
+                    });
+                }
+              }})
+      
+      
       
        
+    
+    
+      }
+      const dbRef2 = ref(database, "records of Conference ambassadors/"+uuid);
+      
+      const newRec = push(dbRef2);
+      set(newRec, {
+        name:name,
+        Phone_number:number,
+        email:email,
+        Committee_Preference_1: Committee1,
+        Committee_Preference_2: Committee2,
+        Committee_Preference_3: Committee3,
+        Age:age,
+        Gender:gender,
+        Institute:Institute,
+        Region:region,
+        MUNcount:muncount,
+        PastAwards:pastaward,
+        Referralcode:refferalcode,
         
+    
+      },)
+      const option1=Committee1+":  "+pref1option1;
+      const option2=Committee1+":  "+pref1option2;
+      const option3=Committee1+":  "+pref1option3;
+      const option4=Committee2+":  "+pref2option1;
+      const option5=Committee2+":  "+pref2option2;
+      const option6=Committee2+":  "+pref2option3;
+      const option7=Committee3+":  "+pref3option1;
+      const option8=Committee3+":  "+pref3option2;
+      const option9=Committee3+":  "+pref3option3;
+      const fileInput = document.getElementById('photoInput');
+      const file = fileInput.files[0];
+      if(file){uploadPhoto()}
+      console.log(localStorage.getItem("url"))
+      const hehe=ref(database,"preferences/")
+      const titu=push(hehe);
+      
+      set(titu,{
+        Registration_type:"Campus Ambassador",
+        name:name,
+        Phone_number:number,
+        alloted:"NO" ,
+        email,
+        Age:age,
+        Gender:gender,
+        Institute:Institute,
+        Institute_ID:`${localStorage.getItem("url")}`,
+        Delegate_type:"Outstation",
+        Payment_done:"NO",
+        PaymentSS:"",
+        Region:region,
+        Referralcode:refferalcode,
+        MUNcount:`Number_of_MUNs_appeared_before: ${muncount}`,
+        PastAwards:` PastAwards_won: ${pastaward}`,
+        option1,option2,option3,option4,option5,option6,option7,option8,option9,
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      })
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      .then(() => {
+        signup2(); 
           
-    
-    
-  })
-  .then(() => {
-    // Registration and signup successful
-    document.getElementById("registrationForm").reset();
-    document.getElementById("form2").reset();
-    
-    
-  })
-  .catch((error) => {
-    
-    alert("Registration failed: " + error.message);
-    document.getElementById('register3').innerHTML=`Conference ambassador`
-  });
+           
+            
+              
+        
+        
+      })
+      .then(() => {
+        // Registration and signup successful
+        document.getElementById("registrationForm").reset();
+        document.getElementById("form2").reset();
+        
+        
+      })
+      .catch((error) => {
+        
+        alert("Registration failed: " + error.message);
+        document.getElementById('register3').innerHTML=`Conference ambassador`
+      });}}})
+   
+ 
 }
 
 
