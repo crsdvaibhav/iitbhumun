@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import '../styles/globals.css';
 import { motion } from 'framer-motion';
 
-function MyApp({ Component, pageProps,router }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <ThemeProvider>
       <Head>
@@ -20,17 +20,26 @@ function MyApp({ Component, pageProps,router }) {
         <meta property="og:url" content="https://iitbhumun.com/" />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/images/Vector-dark.png" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        ></link>
       </Head>
-      <motion.div key={`${router.route}`} initial="pageInitial" animate="pageAnimate" variants={{
-  pageInitial: {
-    opacity: 0
-  },
-  pageAnimate: {
-    opacity: 1
-  },
-}}>
-      <Component {...pageProps} /></motion.div>
+      <motion.div
+        key={`${router.route}`}
+        initial="pageInitial"
+        animate="pageAnimate"
+        variants={{
+          pageInitial: {
+            opacity: 0,
+          },
+          pageAnimate: {
+            opacity: 1,
+          },
+        }}
+      >
+        <Component {...pageProps} />
+      </motion.div>
       <Analytics />
     </ThemeProvider>
   );
