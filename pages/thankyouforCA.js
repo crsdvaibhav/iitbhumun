@@ -21,7 +21,7 @@ const  Thankyou=()=> {
    
     async function fetchData() {
         try {
-          const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/Referral_program.json');
+          const response = await fetch('https://mun2024-7dfb9-default-rtdb.firebaseio.com//Referral_program.json');
           const data = await response.json();
           
           setDATA(data)
@@ -80,7 +80,7 @@ if(key=="referralCode"){
         
       <button className=' qtp mx-2 rounded-md '><Link href={'/loginpage'}>Login</Link></button>
       <div className="font-bold text-2xl text-[#189BA5] flex m-auto justify-center pt-4" >
- <div>Login using your email and password to confirm your portfolio and complete payment.</div>
+ <div>Login using your email and password or with Continue with google option to confirm your portfolio and complete payment.</div>
 
       </div>
       <div className="flex m-auto justify-center pt-4" >

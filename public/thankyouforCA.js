@@ -18,7 +18,7 @@
    
 //     async function fetchData() {
 //         try {
-//           const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/Referral_program.json');
+//           const response = await fetch('https://mun2024-7dfb9-default-rtdb.firebaseio.com//Referral_program.json');
 //           const data = await response.json();
           
 //           setDATA(data)

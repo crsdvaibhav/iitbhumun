@@ -4,7 +4,6 @@ import Link from 'next/link';
 import data from '../data/data.json';
 import { Alert } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
-import { getAuth } from 'firebase/auth';
 import GoogleButton from 'react-google-button'
 const HomePage = () => {
   
@@ -21,12 +20,10 @@ const ip = data.ip;
 
 const id = Math.floor(100000 + Math.random() * 900000);
 
-const[abcd,setbool]=useState(true);
   var [error, setError] = useState(true);
   const [error1, setError1] = useState(true);
   const [check, setCheck] = useState(false);
   const [member, setMember] = useState(false);
-  const [solo, setSolo] = useState(true);
 
   const useEmailValidation = (email) => {
     const isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
@@ -694,10 +691,10 @@ const[abcd,setbool]=useState(true);
           <h1 className='registeras'>Register as:</h1>
         <div className="registeroptions">
           
-        <button id="register2" type="submit" onClick={handleCheck}  className="w-full bg-green-500 text-white py-2 px-2 m-auto rounded-lg hover:bg-blue-600" data-tooltip="Tooltip content for Single Delegate Start with your country. Do not simply type in your agenda into google and start reading. Type in your country first and get a solid idea of your government economy, conflicts, etc. Make sure you know your heads of state, GDP, major military and political allies, any major conflicts that persist in or around your country, and jot down a couple of notes. Make a small document about your general foreign policy on various issues. Make a document about your stance on social rights, humanitarian rights, military intervention, etc.
+        <button id="register2" type="submit" onClick={handleCheck}  className="w-full bg-green-500 text-white disabled:opacity-10 py-2 px-2 m-auto rounded-lg hover:bg-blue-600" data-tooltip="Tooltip content for Single Delegate Start with your country. Do not simply type in your agenda into google and start reading. Type in your country first and get a solid idea of your government economy, conflicts, etc. Make sure you know your heads of state, GDP, major military and political allies, any major conflicts that persist in or around your country, and jot down a couple of notes. Make a small document about your general foreign policy on various issues. Make a document about your stance on social rights, humanitarian rights, military intervention, etc.
 
         Once you have gotten your country down, and I mean DOWN, now move on to the agenda. Now, some delegates may crucify me for this, but I look at Wikipedia. ">Single Delegate </button>
-        <button id="register3" type="submit"   className="w-full bg-green-500 text-white weight-bold py-2 px-1 font-bold rounded-lg hover:bg-blue-600" data-tooltip="Tooltip content for Conference ambassadorStart with your country. Do not simply type in your agenda into google and start reading. Type in your country first and get a solid idea of your government economy, conflicts, etc. Make sure you know your heads of state, GDP, major military and political allies, any major conflicts that persist in or around your country, and jot down a couple of notes. Make a small document about your general foreign policy on various issues. Make a document about your stance on social rights, humanitarian rights, military intervention, etc.
+        <button id="register3" type="submit"   className="w-full bg-green-500 text-white weight-bold disabled:opacity-10 py-2 px-1 font-bold rounded-lg hover:bg-blue-600" data-tooltip="Tooltip content for Conference ambassadorStart with your country. Do not simply type in your agenda into google and start reading. Type in your country first and get a solid idea of your government economy, conflicts, etc. Make sure you know your heads of state, GDP, major military and political allies, any major conflicts that persist in or around your country, and jot down a couple of notes. Make a small document about your general foreign policy on various issues. Make a document about your stance on social rights, humanitarian rights, military intervention, etc.
 
         Once you have gotten your country down, and I mean DOWN, now move on to the agenda. Now, some delegates may crucify me for this, but I look at Wikipedia. " >Conference ambassador</button>
      </div>

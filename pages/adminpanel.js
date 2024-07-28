@@ -4,12 +4,11 @@
 // AdminPanel.js
 // AdminPanel.js
 // AdminPanel.js
-import React, { Component, useEffect, useState,} from 'react';
-import app from "../public/firebaseconfig";
+import React, { useState,} from 'react';
 
-import { getDatabase, ref, get, set, onValue, update } from 'firebase/database';
-import { getAuth } from 'firebase/auth';
-import { text } from '@fortawesome/fontawesome-svg-core';
+
+import { getDatabase, ref,update } from 'firebase/database';
+
 
 const AdminPanel = () => {
   const [password, setPassword] = useState("");
@@ -27,7 +26,7 @@ const [inputData,setinputadta]=useState("");
   };
   async function fetchData() {
     try {
-      const response = await fetch('https://mun-2023-default-rtdb.firebaseio.com/preferences.json');
+      const response = await fetch('https://mun2024-7dfb9-default-rtdb.firebaseio.com//preferences.json');
       const data = await response.json();
       
       setDATA(data)

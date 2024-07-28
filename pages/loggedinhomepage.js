@@ -11,8 +11,7 @@ import Footer2 from "../components/footerforlogin";
 import { useEffect, useState, Ref } from "react";
 import { getDatabase, get, onValue, ref } from "firebase/database";
 import { Button, alert } from "@material-tailwind/react";
-import Router, {  useRouter } from "next/router";
-import Link from "next/link";
+
 const Loggedinhomepage = () => {
   <Script src="/vanillascript.js" typeof='module' type='module' />
    const [hideportfolio,setportfolio]=useState(false)
@@ -161,7 +160,7 @@ const Loggedinhomepage = () => {
           </div>
 
 
-          <Script src="/vanilla.js" type="module" typeof="module"/>
+          <Script src="/vanillascript.js" type="module" typeof="module"/>
         </div>
         <Footer2 />
       </>
