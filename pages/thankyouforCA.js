@@ -1,15 +1,13 @@
 import Link from 'next/link';
 import Footer from '../components/Footer';
 import Image from 'next/image';
-
-import { getDatabase } from "firebase/database";
 import { useState } from 'react';
 import { getAuth } from 'firebase/auth';
 
 const Thankyou = () => {
   const auth = getAuth()
   const [DATA, setDATA] = useState([])
-  const database = getDatabase()
+
 
   async function fetchData() {
     try {
@@ -62,10 +60,6 @@ const Thankyou = () => {
         key == "referralCode" && <h1 key={key}>{item[filteredData]}</h1>
       ))
       }
-
-
-
-
       <button className=' qtp mx-2 rounded-md '><Link href={'/loginpage'}>Login</Link></button>
       <div className="font-bold text-2xl text-[#189BA5] flex m-auto justify-center pt-4" >
         <div>Login using your email and password or with Continue with google option to confirm your portfolio and complete payment.</div>
@@ -80,8 +74,6 @@ const Thankyou = () => {
         />
       </div>
       <div className=" font-bold flex space-y-5 flex-col justify-between items-center sm:w-3/4 w-5/6 lg:w-1/2 mx-auto text-sm lg:text-2xl text-justify p-12">
-
-
         For any issues with Login and Payment
         ,Kindly write to us at{' '}
         <a href="mailto:secretariat@iitbhumun.com" className="text-indigo-700 mt-8  ">
