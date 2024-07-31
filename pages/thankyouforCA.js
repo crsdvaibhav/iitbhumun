@@ -2,8 +2,7 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 
-import { getDatabase, get, onValue, ref } from "firebase/database";
-import app from '../public/firebaseconfig';
+import { getDatabase} from "firebase/database";
 import { useState } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
@@ -66,14 +65,10 @@ const  Thankyou=()=> {
       </p>
       <h1>Your refferal code is </h1>
         
-      {Object.keys(filteredData).map((key) => {
-if(key=="referralCode"){
-    
-    return(<h1>{item[filteredData]}</h1>)
-}
-
-
-      })}
+      {Object.keys(filteredData).map((key) => (
+key=="referralCode" && <h1 key={key}>{item[filteredData]}</h1>
+      ))
+      }
         
         
         
