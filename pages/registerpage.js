@@ -4,7 +4,6 @@ import Link from 'next/link';
 import data from '../data/data.json';
 import { Alert } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
-import GoogleButton from 'react-google-button'
 const HomePage = () => {
   
 var ab=false;
@@ -32,7 +31,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
     return isEmailValid;
   };
   
-  const [formInput, setFormInput] = useState({
+  const initialFormInput = {
     Event_ID: id,
     Name: '',
     Age: 0,
@@ -58,100 +57,21 @@ const id = Math.floor(100000 + Math.random() * 900000);
     Committee_3_Country_Preference_1: '',
     Committee_3_Country_Preference_2: '',
     Committee_3_Country_Preference_3: '',
-  });
-  const [formInput2, setFormInput2] = useState({
-    Event_ID: id,
-    Name: '',
-    Age: 0,
-    Gender: '',
-    City: '',
-    Country: '',
-    Institute_Name: '',
-    Mobile_Number: '',
-    Email_ID: '',
-    Referral_Code: '',
-    No_of_MUNs: '',
-    List_of_previous_MUNs: '',
-    Awards_in_previous_MUNs: '',
-    Committee_Preference_1: '',
-    Committee_Preference_2: '',
-    Committee_Preference_3: '',
-    Committee_1_Country_Preference_1: '',
-    Committee_1_Country_Preference_2: '',
-    Committee_1_Country_Preference_3: '',
-    Committee_2_Country_Preference_1: '',
-    Committee_2_Country_Preference_2: '',
-    Committee_2_Country_Preference_3: '',
-    Committee_3_Country_Preference_1: '',
-    Committee_3_Country_Preference_2: '',
-    Committee_3_Country_Preference_3: '',
-  });
-
-  const isEmailValid1 = useEmailValidation(formInput.Email_ID);
-  const isEmailValid2 = useEmailValidation(formInput2.Email_ID);
-  // const isPhoneValid1 = usePhoneValidation(formInput.Mobile_Number);
-  // const isPhoneValid2 = usePhoneValidation(formInput2.Mobile_Number);
-
-  
-
-
-  const handleCheck = (e) => {
-    if (error == false) {
-      setCheck(true);
-    } else {
-      setCheck(false);
-    }
   };
+
+  const [formInput, setFormInput] = useState(initialFormInput);
+  const [formInput2, setFormInput2] = useState(initialFormInput);
+
+  const isEmailValid = (email) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+  
+  const validateForm = (input) => {
+    return Object.values(input).every(value => value !== '' && value !== '0') && isEmailValid(input.Email_ID);
+  };
+
   useEffect(() => {
-    if (member == true) {
-      if (
-        formInput2.Name === '' ||
-        formInput2.Age === '0' ||
-        formInput2.Gender === '' ||
-        formInput2.City === '' ||
-        formInput2.Country === '' ||
-        formInput2.Institute_Name === '' ||
-        formInput2.Mobile_Number === '' ||
-        formInput2.Email_ID === '' ||
-        formInput2.No_of_MUNs === '' ||
-        formInput.Name === '' ||
-        formInput.Age === '0' ||
-        formInput.Gender === '' ||
-        formInput.City === '' ||
-        formInput.Country === '' ||
-        formInput.Institute_Name === '' ||
-        formInput.Mobile_Number === '' ||
-        formInput.Email_ID === '' ||
-        formInput.No_of_MUNs === '' ||
-        isEmailValid1 == false ||
-        isEmailValid2 == false
-      ) {
-        setError(true);
-      } else {
-        setError(false);
-      }
-    }
+    setError(!validateForm(member ? formInput2 : formInput));
   }, [formInput, formInput2, member]);
-  useEffect(() => {
-    if (member == false) {
-      if (
-        formInput.Name === '' ||
-        formInput.Age === '0' ||
-        formInput.Gender === '' ||
-        formInput.City === '' ||
-        formInput.Country === '' ||
-        formInput.Institute_Name === '' ||
-        formInput.Mobile_Number === '' ||
-        formInput.Email_ID === '' ||
-        formInput.No_of_MUNs === '' ||
-        isEmailValid1 == false
-      ) {
-        setError(true);
-      } else {
-        setError(false);
-      }
-    }
-  }, [formInput, member]);
+
   useEffect(() => {
     if (
       formInput.Committee_Preference_1 === '' ||
@@ -181,40 +101,34 @@ const id = Math.floor(100000 + Math.random() * 900000);
 
   const [selected1, setSelected1] = useState('None');
 
-  const handleChange1 = (e) => {
-    setFormInput({
-      ...formInput,
-      Committee_Preference_1: e.target.value,
-    });
-    setSelected1(e.target.value);
+  const handleChange = (index, value) => {
+    const updatedInput = { ...formInput };
+    updatedInput[`Committee_Preference_${index}`] = value;
+    setFormInput(updatedInput);
+  };
+  const handleCheck = (e) => {
+    if (error == false) {
+      setCheck(true);
+    } else {
+      setCheck(false);
+    }
   };
 
-  let type1 = null;
-  let options1 = null;
+  const renderCommitteeOptions = (selected) => {
+    const type = {
+      AIPPM: aippm,
+      'Lok Sabha': ls,
+      CCC: ccc,
+      UNCSW: uncsw,
+      ECOSOC: ecosoc,
+      DISEC: disec,
+      'WTO(Online)': wto,
+      'UNODC(Online)': unodc,
+      'International Press(Hybrid)': ip,
+    }[selected];
 
-  if (selected1 === 'AIPPM') {
-    type1 = aippm;
-  } else if (selected1 === 'Lok Sabha') {
-    type1 = ls;
-  } else if (selected1 === 'CCC') {
-    type1 = ccc;
-  } else if (selected1 === 'UNCSW') {
-    type1 = uncsw;
-  } else if (selected1 === 'ECOSOC') {
-    type1 = ecosoc;
-  } else if (selected1 === 'DISEC') {
-    type1 = disec;
-  } else if (selected1 === 'WTO(Online)') {
-    type1 = wto;
-  } else if (selected1 === 'UNODC(Online)') {
-    type1 = unodc;
-  } else if (selected1 === 'International Press(Hybrid)') {
-    type1 = ip;
-  }
-
-  if (type1) {
-    options1 = type1.map((el) => <option key={el}>{el}</option>);
-  }
+    return type ? type.map(el => <option key={el}>{el}</option>) : null;
+  };
 
   const [selected2, setSelected2] = useState('none');
   const [pref1option1, setSelected4] = useState('');
@@ -235,33 +149,6 @@ const id = Math.floor(100000 + Math.random() * 900000);
     setSelected2(e.target.value);
   };
 
-  let type2 = null;
-  let options2 = null;
-
-  if (selected2 === 'AIPPM') {
-    type2 = aippm;
-  } else if (selected2 === 'Lok Sabha') {
-    type2 = ls;
-  } else if (selected2 === 'CCC') {
-    type2 = ccc;
-  } else if (selected2 === 'UNCSW') {
-    type2 = uncsw;
-  } else if (selected2 === 'ECOSOC') {
-    type2 = ecosoc;
-  } else if (selected2 === 'DISEC') {
-    type2 = disec;
-  } else if (selected2 === 'WTO(Online)') {
-    type2 = wto;
-  } else if (selected2 === 'UNODC(Online)') {
-    type2 = unodc;
-  } else if (selected2 === 'International Press(Hybrid)') {
-    type2 = ip;
-  }
-
-  if (type2) {
-    options2 = type2.map((el) => <option key={el}>{el}</option>);
-  }
-
   const [selected3, setSelected3] = useState('none');
 
   const handleChange3 = (e) => {
@@ -271,33 +158,6 @@ const id = Math.floor(100000 + Math.random() * 900000);
     });
     setSelected3(e.target.value);
   };
-
-  let type3 = null;
-  let options3 = null;
-
-  if (selected3 === 'AIPPM') {
-    type3 = aippm;
-  } else if (selected3 === 'Lok Sabha') {
-    type3 = ls;
-  } else if (selected3 === 'CCC') {
-    type3 = ccc;
-  } else if (selected3 === 'UNCSW') {
-    type3 = uncsw;
-  } else if (selected3 === 'ECOSOC') {
-    type3 = ecosoc;
-  } else if (selected3 === 'DISEC') {
-    type3 = disec;
-  } else if (selected3 === 'WTO(Online)') {
-    type3 = wto;
-  } else if (selected3 === 'UNODC(Online)') {
-    type3 = unodc;
-  } else if (selected3 === 'International Press(Hybrid)') {
-    type3 = ip;
-  }
-
-  if (type3) {
-    options3 = type3.map((el) => <option key={el}>{el}</option>);
-  }
 
   return (
     <div id='qt'>
@@ -336,12 +196,6 @@ const id = Math.floor(100000 + Math.random() * 900000);
           </div>
       <form id="registrationForm"  className=" bg-white rounded-lg shadow-md p-6">
        
-       
-    <div id='google'className="m-auto"> <GoogleButton className="m-auto" id='google'
-  onClick={() => { }}
-/>
-</div>
-<h1 className="text-2xl m-auto 'block' justify-center text-center my-3" id='or' >OR</h1>
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:*</label>
           <input type="text" id="name_field" placeholder="Enter your name" required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"/>
@@ -460,7 +314,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                   value={selected1}
                   className="w-72 p-2 rounded-lg"
                   onChange={(e) => {
-                    handleChange1(e);
+                    handleChange(1, e.target.value);
                     
                    
                   }} 
@@ -484,7 +338,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     className="w-72 p-2 rounded-lg"   
                     on onChange={(e)=>{setSelected4(e.target.value)}}
                   >
-                    {options1}
+                    {renderCommitteeOptions(selected1)}
                   </select>
                 </div>
               </div>
@@ -498,7 +352,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     className="w-72 p-2 rounded-lg" 
                     onChange={(e)=>{setSelected5(e.target.value)}}
                   >
-                    {options1}
+                    {renderCommitteeOptions(selected1)}
                   </select>
                 </div>
               </div>
@@ -512,7 +366,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     className="w-72 p-2 rounded-lg"
                   
                   >
-                    {options1}
+                    {renderCommitteeOptions(selected1)}
                   </select>
                 </div>
               </div>
@@ -554,7 +408,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     className="w-72 p-2 rounded-lg"
                    
                   >
-                    {options2}
+                    {renderCommitteeOptions(selected2)}
                   </select>
                 </div>
               </div>{' '}
@@ -568,7 +422,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     className="w-72 p-2 rounded-lg"
                     onChange={(e)=>{setSelected8(e.target.value)}}
                   >
-                    {options2}
+                    {renderCommitteeOptions(selected2)}
                   </select>
                 </div>
               </div>
@@ -582,7 +436,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     className="w-72 p-2 rounded-lg"
                     onChange={(e)=>{setSelected9(e.target.value)}}
                   >
-                    {options2}
+                    {renderCommitteeOptions(selected2)}
                   </select>
                 </div>
               </div>
@@ -624,7 +478,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     value={pref3option1} id='pref3option1'
                     onChange={(e)=>{setSelected10(e.target.value)}}
                   >
-                    {options3}
+                    {renderCommitteeOptions(selected3)}
                   </select>
                 </div>
               </div>
@@ -639,7 +493,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     value={pref3option2} id='pref3option2'
                     onChange={(e)=>{setSelected11(e.target.value)}}
                   >
-                    {options3}
+                    {renderCommitteeOptions(selected3)}
                   </select>
                 </div>
               </div>
@@ -654,7 +508,7 @@ const id = Math.floor(100000 + Math.random() * 900000);
                     value={pref3option3} id='pref3option3'
                     onChange={(e)=>{setSelected12(e.target.value)}}
                   >
-                    {options3}
+                    {renderCommitteeOptions(selected3)}
                   </select>
                 </div>
               </div>
@@ -708,24 +562,8 @@ const id = Math.floor(100000 + Math.random() * 900000);
             >
               Back
             </button>
-            
           </div>
             </div>
-       
-    
-
-  
-
-    
-
-
-    
-
-    
-<Script src="registermyversion.js" typeof='module' type='module'/>
-<Script src="https://smtpjs.com/v3/smtp.js"/>
-
-
     </div>
   );
 };

@@ -1,11 +1,15 @@
 import { ThemeProvider } from '@material-tailwind/react';
+import { SessionProvider } from "next-auth/react"
 import Head from 'next/head';
 import '../styles/globals.css';
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },}) {
   return (
     <ThemeProvider>
+      <SessionProvider session={session}>
       <Head>
         <title>IITBHU MUN</title>
         <meta
@@ -21,6 +25,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/images/Vector-dark.png" />
       </Head>
       <Component {...pageProps} />
+      </SessionProvider>
     </ThemeProvider>
   );
 }

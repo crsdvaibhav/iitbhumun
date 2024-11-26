@@ -1,6 +1,6 @@
 
-import { getDatabase, ref, push, set,  get, runTransaction } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
-import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,EmailAuthProvider,linkWithCredential } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { getDatabase, ref, push, set, get, runTransaction } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, EmailAuthProvider, linkWithCredential } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"
 const provider = new GoogleAuthProvider();
 
@@ -81,21 +81,21 @@ function getInput(id) {
 }
 
 function submitForm1(e) {
-  document.getElementById('register2').disabled=true
+  document.getElementById('register2').disabled = true
   document.getElementById('form2').addEventListener("submit", function (e) { e.preventDefault() })
   let abcd = validateForm()
   if (abcd) {
     e.preventDefault();
     saveRec1(getInput('name_field'), getInput('number'), getInput('email_field'), getInput('age'), getInput('gender'), getInput('Institute'), getInput('region'), getInput('muncount'), getInput('pastaward'), getInput('refferalcode'), getInput('Committee1'), getInput('pref1option1'), getInput('pref1option2'), getInput('pref1option3'), getInput('Committee2'), getInput('pref2option1'), getInput('pref2option2'), getInput('pref2option3'), getInput('Committee3'), getInput('pref3option1'), getInput('pref3option2'), getInput('pref3option3'));
   }
-  else{
-    document.getElementById('register2').disabled=false
+  else {
+    document.getElementById('register2').disabled = false
   }
 
 
 }
 function submitForm2(e) {
-  document.getElementById('register3').disabled=true
+  document.getElementById('register3').disabled = true
   document.getElementById('form2').addEventListener("submit", function (e) { e.preventDefault() })
   if (validateForm()) {
     e.preventDefault();
@@ -103,8 +103,8 @@ function submitForm2(e) {
     saveRec2(getInput('name_field'), getInput('number'), getInput('email_field'), getInput('age'), getInput('gender'), getInput('Institute'), getInput('region'), getInput('muncount'), getInput('pastaward'), getInput('refferalcode'), getInput('Committee1'), getInput('pref1option1'), getInput('pref1option2'), getInput('pref1option3'), getInput('Committee2'), getInput('pref2option1'), getInput('pref2option2'), getInput('pref2option3'), getInput('Committee3'), getInput('pref3option1'), getInput('pref3option2'), getInput('pref3option3'));
 
   }
-  else{
-    document.getElementById('register3').disabled=false
+  else {
+    document.getElementById('register3').disabled = false
   }
 
 }
@@ -217,7 +217,7 @@ function saveRec1(name, number, email, age, gender, Institute, region, muncount,
     .then(() => {
 
       signup1();
-      document.getElementById('register2').disabled=false
+      document.getElementById('register2').disabled = false
 
 
 
@@ -229,7 +229,7 @@ function saveRec1(name, number, email, age, gender, Institute, region, muncount,
     })
 
     .catch((error) => {
-      document.getElementById('register2').disabled=false
+      document.getElementById('register2').disabled = false
       alert("Registration failed: " + error.message);
     });
 
@@ -267,7 +267,7 @@ function saveRec2(name, number, email, age, gender, Institute, region, muncount,
                 console.log('UserRegistered count incremented successfully');
               })
               .catch((error) => {
-                document.getElementById('register3').disabled=false
+                document.getElementById('register3').disabled = false
                 console.error('Error incrementing UserRegistered count:', error);
               });
           }
@@ -418,7 +418,7 @@ function signup1() {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorMessage,"QT")
+      console.log(errorMessage, "QT")
       if (errorCode === 'auth/email-already-in-use') {
         handleEmailAlreadyInUse(email1, password1);
       } else {
@@ -480,15 +480,15 @@ function signup2() {
 document.getElementById("google").addEventListener("click", function () {
   console.log("clicked")
   signInWithPopup(auth, provider)
-  .then((result) => {
-    document.getElementById("or").innerHTML = `<h1 className="afterLoginNotice">Hello <span>${auth.currentUser.displayName}</span>, Complete the registration form now without refreshing the website !</h1>`;
-    const email = document.getElementById('email_field');
-    email.value=auth.currentUser.email
-    email.disabled=true
+    .then((result) => {
+      document.getElementById("or").innerHTML = `<h1 className="afterLoginNotice">Hello <span>${auth.currentUser.displayName}</span>, Complete the registration form now without refreshing the website !</h1>`;
+      const email = document.getElementById('email_field');
+      email.value = auth.currentUser.email
+      email.disabled = true
 
-  }).catch((error) => {
-    const errorMessage = error.message;
-    alert(errorMessage)
-  })
+    }).catch((error) => {
+      const errorMessage = error.message;
+      alert(errorMessage)
+    })
 })
 
