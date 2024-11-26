@@ -66,19 +66,11 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
               FAQ
             </button>
           </Link><div>
-<Link href="/registerpage">
-  
-         <button 
-            className={'px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-2 text-black bg-[#F5CE3F] hover:text-[#189BA5]'
-              }
-          >
-            Register
-          </button ></Link>
-          <Link href="/loginpage">
+          <Link href="/login">
          <button onClick={handleChange}
             className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-4  text-black bg-[#F5CE3F] hover:text-[#189BA5] ${qt} `}
           >
-            Login
+            Register / Login
           </button></Link>
          
          </div>

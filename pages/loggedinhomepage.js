@@ -1,15 +1,7 @@
-
-
-
-
-
-
-
 import Script from "next/script";
 import NavBar2 from "../components/navbarforlogin";
 import Footer2 from "../components/footerforlogin";
 import { useEffect, useState, Ref } from "react";
-import { getDatabase, get, onValue, ref } from "firebase/database";
 import { Button, alert } from "@material-tailwind/react";
 
 const Loggedinhomepage = () => {

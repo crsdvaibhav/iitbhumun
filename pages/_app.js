@@ -2,6 +2,7 @@ import { ThemeProvider } from '@material-tailwind/react';
 import { SessionProvider } from "next-auth/react"
 import Head from 'next/head';
 import '../styles/globals.css';
+import AuthGuard from '../components/Providers/Authguard';
 
 
 function MyApp({
@@ -10,6 +11,7 @@ function MyApp({
   return (
     <ThemeProvider>
       <SessionProvider session={session}>
+      <AuthGuard>
       <Head>
         <title>IITBHU MUN</title>
         <meta
@@ -25,6 +27,7 @@ function MyApp({
         <link rel="icon" href="/images/Vector-dark.png" />
       </Head>
       <Component {...pageProps} />
+      </AuthGuard>  
       </SessionProvider>
     </ThemeProvider>
   );
