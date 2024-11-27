@@ -1,17 +1,18 @@
-import { ThemeProvider } from '@material-tailwind/react';
 import { SessionProvider } from "next-auth/react"
 import Head from 'next/head';
 import '../styles/globals.css';
-import AuthGuard from '../components/Providers/Authguard';
+import GlobalProvider from "../components/Providers/GlobalProvider";
+import { Provider } from "react-redux";
+import { store } from "../lib/store";
 
 
 function MyApp({
   Component,
   pageProps: { session, ...pageProps },}) {
   return (
-    <ThemeProvider>
       <SessionProvider session={session}>
-      <AuthGuard>
+        <Provider store={store}>
+     <GlobalProvider>
       <Head>
         <title>IITBHU MUN</title>
         <meta
@@ -27,9 +28,9 @@ function MyApp({
         <link rel="icon" href="/images/Vector-dark.png" />
       </Head>
       <Component {...pageProps} />
-      </AuthGuard>  
+      </GlobalProvider>
+      </Provider>
       </SessionProvider>
-    </ThemeProvider>
   );
 }
 

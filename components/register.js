@@ -6,8 +6,8 @@ import { Alert } from '@material-tailwind/react';
 
 // Import data from a separate file
 import data from '../data/data.json';
-import CommitteeSelectionStage from '../components/RegistrationStages/CommitteeSelectionStage';
-import PersonalInfoStage from '../components/RegistrationStages/PersonalInfoStage';
+import CommitteeSelectionStage from './RegistrationStages/CommitteeSelectionStage';
+import PersonalInfoStage from './RegistrationStages/PersonalInfoStage';
 import { useSession } from 'next-auth/react';
 
 // Constant for committee mapping
