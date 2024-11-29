@@ -1,24 +1,21 @@
 import prisma from "../../lib/prisma";
+import { getSession } from "next-auth/react";
 
 export default async function handler(req, res) {
+  const session = await getSession({ req });
+
+  if (!session) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
   if (req.method === "GET") {
     try {
-      const users = await prisma.user.findMany();
-      res.status(200).json(users);
+      const user = await prisma.user.findUnique({
+        where: { email: session.user.email }
+      });
+      res.status(200).json(user);
     } catch (error) {
-      console.error("Error fetching users: ", error);
-      res.status(500).json({ message: "Error fetching users", error: error.message });
+      res.status(401).json({"message":"Unauthorised"})
     }
-  } else if (req.method === "POST") {
-    try {
-      const data = req.body;
-      const user = await prisma.user.create({ data });
-      res.status(201).json(user);
-    } catch (error) {
-      console.error("Error creating user: ", error);
-      res.status(500).json({ message: "Error creating user", error: error.message });
-    }
-  } else {
-    res.status(405).json({ message: "Method Not Allowed" });
   }
 }

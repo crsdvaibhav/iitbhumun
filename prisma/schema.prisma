@@ -8,9 +8,32 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
-  formFilled Boolean @default(false)
+  id         Int      @id @default(autoincrement())
+  email      String   @unique
+  name       String?
+  createdAt  DateTime @default(now())
+  formFilled Boolean  @default(false)
+}
+
+model Registration {
+  id                   Int      @id @default(autoincrement())
+  eventId              Int      @map("Event_ID")
+  name                 String   @map("Name")
+  age                  String   @map("Age")
+  gender               String   @map("Gender")
+  city                 String?  @map("City")
+  country              String?  @map("Country")
+  instituteName        String   @map("Institute_Name")
+  mobileNumber         String   @map("Mobile_Number")
+  emailId              String   @map("Email_ID") @unique
+  referralCode         String?  @map("Referral_Code")
+  numberOfMUNs         String?  @map("No_of_MUNs")
+  listOfPreviousMUNs   String?  @map("List_of_previous_MUNs")
+  awardsInPreviousMUNs String?  @map("Awards_in_previous_MUNs")
+  committees           String[] // Stored as JSON array
+  countryPreferences   Json
+  alloted              String?  @default("")
+  paymentDone          Boolean? @default(false) // Stored as nested JSON array
+
+  @@map("registrations")
 }

@@ -1,17 +1,19 @@
 import Head from 'next/head';
-import Script from 'next/script';
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Alert } from '@material-tailwind/react';
-
+import { Alert, Button } from '@material-tailwind/react';
+import { toast } from 'react-hot-toast';
 // Import data from a separate file
-import data from '../data/data.json';
-import CommitteeSelectionStage from './RegistrationStages/CommitteeSelectionStage';
-import PersonalInfoStage from './RegistrationStages/PersonalInfoStage';
+import data from "../../../data/data.json";
+import CommitteeSelectionStage from '../../RegistrationStages/CommitteeSelectionStage';
+import PersonalInfoStage from '../../RegistrationStages/PersonalInfoStage';
 import { useSession } from 'next-auth/react';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeDialog } from '../../../lib/slices/GlobalDialogWrapperSlice';
+import { setUser } from '../../../lib/slices/userSlice';
 
 // Constant for committee mapping
 const COMMITTEE_OPTIONS = {
+  'None': [],
   'AIPPM': data.aippm,
   'Lok Sabha': data.ls,
   'CCC': data.ccc,
@@ -20,7 +22,7 @@ const COMMITTEE_OPTIONS = {
   'DISEC': data.disec,
   'WTO(Online)': data.wto,
   'UNODC(Online)': data.unodc,
-  'International Press(Hybrid)': data.ip,
+  'International Press(Hybrid)': data.ip
 };
 
 // Initial form input structure
@@ -38,17 +40,12 @@ const INITIAL_FORM_INPUT = {
   No_of_MUNs: '',
   List_of_previous_MUNs: '',
   Awards_in_previous_MUNs: '',
-  Committee_Preferences: ['', '', ''],
-  Committee_Country_Preferences: [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-  ]
 };
 
 const Register = () => {
-
+  const dispatch=useDispatch()
   const eventId = Math.floor(100000 + Math.random() * 900000);
+  const user=useSelector(state=>state.user)
   const session=useSession()
   const [isPersonalInfoStage, setIsPersonalInfoStage] = useState(true);
   const [formInput, setFormInput] = useState({
@@ -60,9 +57,9 @@ const Register = () => {
   const [committeeSelections, setCommitteeSelections] = useState({
     committees: ['None', 'None', 'None'],
     countryPreferences: [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
+      ['Select an option', 'Select an option', 'Select an option'],
+      ['Select an option', 'Select an option', 'Select an option'],
+      ['Select an option', 'Select an option', 'Select an option']
     ]
   });
   const [formErrors, setFormErrors] = useState({});
@@ -126,11 +123,6 @@ const Register = () => {
       ...prev,
       committees: updatedCommittees
     }));
-
-    // Update form input
-    const updatedFormInput = {...formInput};
-    updatedFormInput[`Committee_Preference_${portfolioIndex + 1}`] = value;
-    setFormInput(updatedFormInput);
   };
 
   // Handler for country preference selection
@@ -142,15 +134,11 @@ const Register = () => {
       ...prev,
       countryPreferences: updatedCountryPreferences
     }));
-
-    // Update form input
-    const updatedFormInput = {...formInput};
-    updatedFormInput[`Committee_${committeeIndex + 1}_Country_Preference_${optionIndex + 1}`] = value;
-    setFormInput(updatedFormInput);
   };
 
   // Render committee options
   const renderCommitteeOptions = (selectedCommittee) => {
+    if (!selectedCommittee || selectedCommittee === 'None') return null;
     return COMMITTEE_OPTIONS[selectedCommittee]?.map(option => (
       <option key={option} value={option}>{option}</option>
     )) || null;
@@ -176,18 +164,44 @@ const Register = () => {
   };
 
   // Form submission handler
-  const handleFormSubmit = () => {
-    // Combine all form data
-    const completeFormData = {
-      ...formInput,
-      ...committeeSelections
-    };
+  const [loading,setLoading]=useState(false)
+  const handleFormSubmit =async () => {
+    setLoading(true)
+    try {
+      // Combine all form data
+      const completeFormData = {
+        ...formInput,
+        ...committeeSelections
+      };
 
-    // Perform final validation
-    console.log('Submitting form data:', completeFormData);
-    
-    // TODO: Implement actual form submission logic 
-    // (e.g., API call, Firebase submission)
+      // Submit registration data
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(completeFormData),
+      });
+
+      if (!response.ok) {
+        setLoading(false);
+        if (response.status === 409) {
+          toast.error('You have already registered with this email.');
+        } else {
+          toast.error(data.message || 'Registration failed. Please try again.');
+        }
+        throw new Error(data.message);
+      }
+      // Show success message and redirect
+      setLoading(false)
+      toast.success("Registration successfull")
+      dispatch(closeDialog())
+      dispatch(setUser({ ...user, formFilled: true }))
+      router.push('/dashboard'); 
+
+    } catch (error) {
+      setLoading(false)
+    }
   };
 
   return (
@@ -196,16 +210,16 @@ const Register = () => {
         <title>MUN Registration Form</title>
       </Head>
       
-      <div className="container mx-auto px-4 py-8">
+      <div className={"flex justify-center flex-col items-center w-full mx-auto pb-4"}>
         {/* Progress Indicator */}
-        <div className="place-items-center flex justify-center font-semibold text-center py-16">
+        <div className="place-items-center flex justify-center font-semibold text-center pb-8">
           <div 
             className={`text-3xl ${isPersonalInfoStage ? 'bg-[#1A1E21] text-white' : 'bg-white text-[#1A1E21]'} 
             w-10 h-10 border-2 border-[#1A1E21] rounded-full flex items-center justify-center`}
           >
             1
           </div>
-          <div className="w-40 mx-2 border h-0 justify-center border-[#1A1E21] my-6">
+          <div className="md:w-40 max-md:w-24 mx-2 border h-0 justify-center border-[#1A1E21] my-6">
             Personal Info
           </div>
           <div 
@@ -214,13 +228,13 @@ const Register = () => {
           >
             2
           </div>
-          <div className="w-40 mx-2 border h-0 justify-center border-[#1A1E21] my-6">
+          <div className="md:w-40 max-md:w-24 mx-2 border h-0 justify-center border-[#1A1E21] my-6">
             Portfolio Selection
           </div>
         </div>
 
         {/* Form Stages */}
-        <form onSubmit={handleNextStage}>
+        <form className='w-full' onSubmit={handleNextStage}>
           {isPersonalInfoStage ? (
             <PersonalInfoStage 
               formInput={formInput}
@@ -240,13 +254,14 @@ const Register = () => {
           {/* Navigation Buttons */}
           <div className="flex justify-between mt-6">
             {!isPersonalInfoStage && (
-              <button 
+              <Button 
+                disabled={loading}
                 type="button"
                 onClick={handlePreviousStage}
                 className="bg-gray-300 text-gray-700 py-2 px-4 rounded"
               >
                 Back
-              </button>
+              </Button>
             )}
             <button 
               type="submit"

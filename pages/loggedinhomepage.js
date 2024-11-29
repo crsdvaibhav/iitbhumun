@@ -1,5 +1,5 @@
 import Script from "next/script";
-import NavBar2 from "../components/navbarforlogin";
+
 import Footer2 from "../components/footerforlogin";
 import { useEffect, useState, Ref } from "react";
 import { Button, alert } from "@material-tailwind/react";

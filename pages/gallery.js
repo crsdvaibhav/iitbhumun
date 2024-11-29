@@ -4,18 +4,17 @@ import NavBar from '../components/Navbar';
 import EventsCarousel from "../components/EventsCarousel";
 import PlacesCarousel from "../components/PlacesCarousel";
 import Footer from "../components/Footer";
-import NavBar2 from "../components/navbarforlogin";
-import { getAuth } from "firebase/auth";
+
+
 import React from "react";import { useState } from 'react';
 export default function Gallery() {
-  const auth=getAuth();
-  const [changebar,setbar]=useState(true);
- function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
-  abc()
+  
+  
+
 
   return (
     <div className='bg-gray-100 w-[100%] sm:w-[100%] ' >
-        {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
+        {<NavBar navbar={true}/>}
 
 
       <div className="">

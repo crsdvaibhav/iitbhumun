@@ -6,26 +6,62 @@ import {
   MenuList,
   MenuItem,
 } from "@material-tailwind/react";
-import { useState } from 'react';
-import Register from './CloseReg';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useDispatch, useSelector } from 'react-redux';
+import { openDialog } from '../lib/slices/GlobalDialogWrapperSlice';
+import { useSession } from 'next-auth/react';
+import { AppRegistrationOutlined, Dashboard, LoginOutlined } from '@mui/icons-material';
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { useEffect } from 'react';
 
 
-export default function NavBar({ navbar,backgroundColor,qt}) {
-
-  const [closeReg, setCloseReg] = useState(true);
-  const [display, buttonhide] = useState(false);
+export default function NavBar({ navbar }) {
+  const dispatch = useDispatch()
+  const session=useSession()
+  const user=useSelector(state=>state.User.user)
+  
   const handleChange = () => {
-    setCloseReg(false);
-    setTimeout(() => {
-      setCloseReg(true);
-    }, 1000);
-    buttonhide(true)
+    dispatch(openDialog('login'))
+  }
+  function renderCta(){
+    if(session.status=="authenticated"){
+      return (
+<DropdownMenu.Root>
+		<DropdownMenu.Trigger>
+    <AccountCircleIcon sx={{ fontSize: { xs: '2rem', md: '3rem' } }} />
+    </DropdownMenu.Trigger>
+		<DropdownMenu.Portal>
+			<DropdownMenu.Content align="center" className='bg-white cursor-pointer p-4 rounded-lg flex flex-col gap-2 border-b border-gray-500' sideOffset={15}>
+				<DropdownMenu.Item className='flex gap-1' onClick={()=>dispatch(openDialog('logout'))}>
+          <LoginOutlined/><span>Logout</span>
+        </DropdownMenu.Item>
+        {!(user?.formFilled) && <DropdownMenu.Item className='flex gap-1' onClick={()=>dispatch(openDialog('register'))}>
+          <AppRegistrationOutlined/><span>Complete register</span>
+        </DropdownMenu.Item >}
+        <Link href={"/dashboard"}><DropdownMenu.Item className='flex gap-1'>
+          <Dashboard/><span>My dashboard</span>
+          </DropdownMenu.Item>
+          </Link>
+        </DropdownMenu.Content>
+		</DropdownMenu.Portal>
+	</DropdownMenu.Root>
+
+
+      )
+    }
+    else{
+    return <button onClick={handleChange}
+    className={`px-12 2xl:px-12 h-10 rounded-md hover:scale-105 text-[1.125rem] font-semibold mx-4  text-black bg-[#F5CE3F]`}
+  >
+    Register
+  </button>
+    }
   }
   return (
     <div
-      className={`fixed w-full z-30 font-medium text-white sm:py-2 ${navbar
-        ? `bg-${backgroundColor} shadow-lg border-b 1xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black`
-        : `bg-${backgroundColor} `
+      className={`fixed w-full z-30 font-medium sm:py-2 ${navbar
+        ? `bg-white shadow-lg border-b 1xl:shadow-[#F1F1F1]/50 shadow-[#F1F1F1]/50 text-black`
+        : `bg-none text-white `
         }`}
     >
       <div className="hidden sm:flex flex-row items-center justify-between mx-16">
@@ -66,14 +102,10 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
               FAQ
             </button>
           </Link><div>
-          <Link href="/login">
-         <button onClick={handleChange}
-            className={`px-12 2xl:px-12 h-10 rounded-md text-[1.125rem] font-semibold mx-4  text-black bg-[#F5CE3F] hover:text-[#189BA5] ${qt} `}
-          >
-            Register / Login
-          </button></Link>
-         
-         </div>
+            <div className='mr-12'>
+           {renderCta()}
+           </div>
+          </div>
         </div>
       </div>
       <div
@@ -111,13 +143,9 @@ export default function NavBar({ navbar,backgroundColor,qt}) {
             alt="mobile-activenav-logo"
           />
         </div>
-       
-          <button onClick={handleChange} className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
-            <Link href={'/registerpage'}>Register</Link>
-          </button>
-          <button  className="py-2 px-[1.5rem] text-xs font-custom font-semibold text-white bg-[#189BA5] rounded-lg">
-                 <Link href={'/loginpage'}>    Login</Link> 
-                </button>
+        <div className='mr-6'>
+       {renderCta()}
+       </div>
       </div>
     </div>
   );

@@ -4,18 +4,14 @@ import data from '../data/data.json';
 import Image from 'next/image';
 import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
-import NavBar2 from '../components/navbarforlogin';
-import { getAuth } from 'firebase/auth';
-import { useState } from 'react';
+
 
 const Partners = () => {
-    const auth=getAuth();
-    const [changebar,setbar]=useState(true);
-   function abc(){auth.onAuthStateChanged((user)=>{if(user){setbar(false)}else{setbar(true)}})}
-    abc()
+    
+
     return (
         <div>
-            {changebar? <NavBar navbar={true} backgroundColor="white" qt='' />:<NavBar2 navbar={true} backgroundColor="white" />}
+            {<NavBar navbar={true}/>}
             <div className="mt-12 sm:mt-[0rem] pt-48 m-auto justify-center">
                 <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[3.5rem]">
                     Our Collaborators

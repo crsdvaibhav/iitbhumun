@@ -2,8 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import CloseReg from './CloseReg';
+import { useDispatch } from 'react-redux';
+import { openDialog } from '../lib/slices/GlobalDialogWrapperSlice';
+import { useSession } from 'next-auth/react';
 export default function Hero() {
   const [closeReg, setCloseReg] = useState(true);
+  const session=useSession()
+  const dispatch=useDispatch()
   const handleChange = () => {
     setCloseReg(false);
     setTimeout(() => {
@@ -42,10 +47,10 @@ export default function Hero() {
         </div>
         <div className=" row-span-full col-span-full self-center text-center mt-96 mr-56 ">
 
-          { <button
+          {session?.status=="unauthenticated" && <button onClick={()=>dispatch(openDialog('login'))}
             className="text-black bg-[#F5CE3F] absolute px-12 2xl:px-12 h-8 rounded-md text-[1.125rem] font-semibold "
-          ><Link href="/registerpage">
-            REGISTER</Link>
+          >
+            REGISTER
           </button>
           }
         </div>
