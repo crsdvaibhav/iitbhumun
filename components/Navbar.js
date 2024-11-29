@@ -38,10 +38,10 @@ export default function NavBar({ navbar }) {
         {!(user?.formFilled) && <DropdownMenu.Item className='flex gap-1' onClick={()=>dispatch(openDialog('register'))}>
           <AppRegistrationOutlined/><span>Complete register</span>
         </DropdownMenu.Item >}
-        <Link href={"/dashboard"}><DropdownMenu.Item className='flex gap-1'>
+        {(user?.formFilled) && <Link href={"/dashboard"}><DropdownMenu.Item className='flex gap-1'>
           <Dashboard/><span>My dashboard</span>
           </DropdownMenu.Item>
-          </Link>
+          </Link>}
         </DropdownMenu.Content>
 		</DropdownMenu.Portal>
 	</DropdownMenu.Root>
