@@ -10,8 +10,7 @@ export default function Logout() {
         return (
           <div className="mt-6 mx-auto">
             <h1>{session.user.name}, You want to signout?</h1><br />
-            <Button variant="filled" onClick={() =>{ signOut()
-              router.push("/")
+            <Button variant="filled" onClick={() =>{ signOut({redirect:"/"})
             }}>Sign out</Button>
           </div>
         )

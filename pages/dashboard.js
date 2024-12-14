@@ -17,12 +17,14 @@ import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Cancel';
 import data from "./../data/data.json"
 import toast from 'react-hot-toast';
+import { useSession } from 'next-auth/react';
 
 export default function Dashboard() {
     const [registration, setRegistration] = useState(null);
     const [editMode, setEditMode] = useState(false);
     const [editedData, setEditedData] = useState({});
     const [loading, setLoading] = useState(true);
+    const session =useSession()
     const COMMITTEE_OPTIONS = {
         'None': [],
         'AIPPM': data.aippm,
@@ -41,6 +43,7 @@ export default function Dashboard() {
     }, []);
 
     const fetchRegistration = async () => {
+        if(session.status=="loading"|| session.status=="unauthenticated" ){return ;}
         try {
             const response = await fetch('/api/register');
             const data = await response.json();

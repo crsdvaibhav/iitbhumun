@@ -14,11 +14,11 @@ const AuthGuard = ({ children }) => {
   const protectedRoutes = ["/test", "/dashboard"]; // Add more protected routes as needed
 
   if (status === "loading") {
-    return <></>; // Show a loading state while checking session
+    return <>{children}</>; // Show a loading state while checking session
   }
 
   // Check if the current route is protected and if the user is authenticated
-  if (protectedRoutes.includes(router.pathname) && !session) {
+  if (protectedRoutes.includes(router.pathname) && status=="unauthenticated") {
     dispatch(openDialog('login'))
     return null; // Prevent rendering the protected content
   }
