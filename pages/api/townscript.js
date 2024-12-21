@@ -48,8 +48,6 @@ export default async function handler(req, res) {
   if (!session) {
     return res.status(401).json({ message: "Unauthorized" });
   }
-
-  if (req.method === "GET") {
     try {
         console.log(req.data)
       const user = await prisma.user.update({
@@ -64,4 +62,3 @@ export default async function handler(req, res) {
       res.status(401).json({"message":"Unauthorised"})
     }
   }
-}
