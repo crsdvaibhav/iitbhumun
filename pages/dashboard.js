@@ -24,7 +24,7 @@ export default function Dashboard() {
     const [editMode, setEditMode] = useState(false);
     const [editedData, setEditedData] = useState({});
     const [loading, setLoading] = useState(true);
-    const session =useSession()
+    const session = useSession()
     const COMMITTEE_OPTIONS = {
         'None': [],
         'AIPPM': data.aippm,
@@ -36,14 +36,14 @@ export default function Dashboard() {
         'WTO(Online)': data.wto,
         'UNODC(Online)': data.unodc,
         'International Press(Hybrid)': data.ip
-      };
+    };
 
     useEffect(() => {
         fetchRegistration();
-    }, []);
+    }, [session.status]);
 
     const fetchRegistration = async () => {
-        if(session.status=="loading"|| session.status=="unauthenticated" ){return ;}
+        if (session.status == "loading" || session.status == "unauthenticated") { return; }
         try {
             const response = await fetch('/api/register');
             const data = await response.json();
@@ -61,49 +61,49 @@ export default function Dashboard() {
     };
     const handleEdit = () => {
         setEditMode(true);
-      };
-    
-      const handleCancel = () => {
+    };
+
+    const handleCancel = () => {
         setEditedData(registration);
         setEditMode(false);
-      };
-// ... existing code ...
+    };
+    // ... existing code ...
 
-const handleChange = (field) => (event) => {
-    if (field.includes('[')) {
-        const value = event.target.value;
-        setEditedData(prevData => {
-            const newData = { ...prevData };
-            const matches = field.match(/([\w]+)\[(\d+)\](?:\[(\d+)\])?/);
-            if (matches) {
-                const [_, arrayName, index1, index2] = matches;
-                
-                if (arrayName === 'committees') {
-                    if (!newData.committees) newData.committees = [];
-                    newData.committees[index1] = value;
-                } else if (arrayName === 'countryPreferences') {
-                    if (!newData.countryPreferences) newData.countryPreferences = [];
-                    if (!newData.countryPreferences[index1]) newData.countryPreferences[index1] = [];
-                    newData.countryPreferences[index1][index2] = value;
+    const handleChange = (field) => (event) => {
+        if (field.includes('[')) {
+            const value = event.target.value;
+            setEditedData(prevData => {
+                const newData = { ...prevData };
+                const matches = field.match(/([\w]+)\[(\d+)\](?:\[(\d+)\])?/);
+                if (matches) {
+                    const [_, arrayName, index1, index2] = matches;
+
+                    if (arrayName === 'committees') {
+                        if (!newData.committees) newData.committees = [];
+                        newData.committees[index1] = value;
+                    } else if (arrayName === 'countryPreferences') {
+                        if (!newData.countryPreferences) newData.countryPreferences = [];
+                        if (!newData.countryPreferences[index1]) newData.countryPreferences[index1] = [];
+                        newData.countryPreferences[index1][index2] = value;
+                    }
                 }
-            }
-            
-            return newData;
-        });
-    } else {
-        setEditedData(prevData => ({
-            ...prevData,
-            [field]: event.target.value
-        }));
-    }
-};
+
+                return newData;
+            });
+        } else {
+            setEditedData(prevData => ({
+                ...prevData,
+                [field]: event.target.value
+            }));
+        }
+    };
 
     const renderCommitteeOptions = (selectedCommittee) => {
         if (!selectedCommittee || selectedCommittee === 'None') return null;
         return COMMITTEE_OPTIONS[selectedCommittee]?.map(option => (
-          <option key={option} value={option}>{option}</option>
+            <option key={option} value={option}>{option}</option>
         )) || null;
-      };
+    };
     const handleSubmit = async () => {
         try {
             const response = await fetch('/api/register', {
@@ -155,8 +155,21 @@ const handleChange = (field) => (event) => {
         <div className='flex flex-col'>
             <NavBar navbar={true} />
             <div className='md:mt-20 mt-16'>
-                <Box sx={{ p: 3 }}>
-                    <Paper elevation={3} sx={{ p: 3 }}>
+                <div className='grid grid-cols-12 gap-4 md:px-6 px-4 items-center w-full'>
+                <span className="text-xl md:col-span-4 col-span-12 w-full">
+  <iframe
+    id="ts-iframe"
+    src={`https://www.townscript.com/v2/widget/iit-bhu-214032/booking?td-MOCK TICKET=1&name=${registration?.name}&emailid=${registration?.emailId}`}
+    frameBorder="0"
+    height="500"
+    width="80%"
+  ></iframe>
+  <link
+    rel="stylesheet"
+    href="https://www.townscript.com/static/Bookingflow/css/ts-iframe.style.css"
+  />
+</span>
+                    <Paper className='md:col-span-8 col-span-12' elevation={3} sx={{ p: 3 }}>
                         {/* ... existing header code ... */}
                         <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
                             <Typography variant="h4">Registration Details</Typography>
@@ -261,9 +274,9 @@ const handleChange = (field) => (event) => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        {editMode && <div className='flex justify-center mt-4 mx-auto'><Button variant="contained"  onClick={handleSubmit}>Submit</Button></div>}
+                        {editMode && <div className='flex justify-center mt-4 mx-auto'><Button variant="contained" onClick={handleSubmit}>Submit</Button></div>}
                     </Paper>
-                </Box>
+                </div>
             </div>
         </div>
     );
