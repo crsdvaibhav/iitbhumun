@@ -14,7 +14,11 @@ model User {
   createdAt  DateTime @default(now())
   formFilled Boolean  @default(false)
 }
-
+model Portfolio {
+  id Int @id @default(autoincrement())
+  Name String 
+  alloted Boolean @default(false)
+}
 model Registration {
   id                   Int      @id @default(autoincrement())
   eventId              Int      @map("Event_ID")
@@ -33,6 +37,7 @@ model Registration {
   committees           String[] // Stored as JSON array
   countryPreferences   Json
   alloted              String?  @default("")
+  allotmentApproved    Boolean?  @default(false)
   paymentDone          Boolean? @default(false) // Stored as nested JSON array
 
   @@map("registrations")
