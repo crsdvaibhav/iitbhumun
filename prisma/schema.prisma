@@ -16,8 +16,8 @@ model User {
 }
 model Portfolio {
   id Int @id @default(autoincrement())
-  Name String 
-  alloted Boolean @default(false)
+  name String 
+  portfolio String[] @default([])
 }
 model Registration {
   id                   Int      @id @default(autoincrement())
@@ -36,7 +36,7 @@ model Registration {
   awardsInPreviousMUNs String?  @map("Awards_in_previous_MUNs")
   committees           String[] // Stored as JSON array
   countryPreferences   Json
-  alloted              String?  @default("")
+  alloted              String[]  @default([])
   allotmentApproved    Boolean?  @default(false)
   paymentDone          Boolean? @default(false) // Stored as nested JSON array
 
