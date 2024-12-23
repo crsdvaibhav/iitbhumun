@@ -61,7 +61,9 @@ export default async function handler(req, res) {
         awardsInPreviousMUNs: registrationData.Awards_in_previous_MUNs,
         committees: registrationData.committees,
         countryPreferences: registrationData.countryPreferences,
-        alloted:'',
+        alloted:{
+          set:[]
+        },
         paymentDone:false
       },
     });

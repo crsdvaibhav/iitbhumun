@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from '../components/Navbar';
+import TicketSelection from '../components/ticketselection';
 import {
     Box,
     Paper,
@@ -155,127 +156,121 @@ export default function Dashboard() {
         <div className='flex flex-col'>
             <NavBar navbar={true} />
             <div className='md:mt-20 mt-16'>
-                <div className='grid grid-cols-12 gap-4 md:px-6 px-4 items-center w-full'>
-                <span className="text-xl md:col-span-4 col-span-12 w-full">
-  <iframe
-    id="ts-iframe"
-    src={`https://www.townscript.com/v2/widget/iit-bhu-214032/booking?td-MOCK TICKET=1&name=${registration?.name}&emailid=${registration?.emailId}`}
-    frameBorder="0"
-    height="500"
-    width="80%"
-  ></iframe>
-  <link
-    rel="stylesheet"
-    href="https://www.townscript.com/static/Bookingflow/css/ts-iframe.style.css"
-  />
-</span>
-                    <Paper className='md:col-span-8 col-span-12' elevation={3} sx={{ p: 3 }}>
-                        {/* ... existing header code ... */}
-                        <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
-                            <Typography variant="h4">Registration Details</Typography>
-                            {!editMode ? (
-                                <IconButton onClick={handleEdit} color="primary">
-                                    <EditIcon />
-                                </IconButton>
-                            ) : (
-                                <Box>
-                                    <IconButton onClick={handleSubmit} color="primary">
-                                        <SaveIcon />
-                                    </IconButton>
-                                    <IconButton onClick={handleCancel} color="error">
-                                        <CancelIcon />
-                                    </IconButton>
-                                </Box>
-                            )}
-                        </Box>
-                        <Grid container spacing={3}>
-                            {fields.map((field) => (
-                                <Grid item xs={12} sm={6} key={field.key}>
-                                    {editMode ? (
-                                        <TextField
-                                            fullWidth
-                                            label={field.label}
-                                            value={editedData[field.key] || ''}
-                                            onChange={handleChange(field.key)}
-                                            disabled={field.readOnly}
-                                        />
+                <div className='max-w-7xl mx-auto w-full'>
+                    <div className='grid grid-cols-12 gap-4 md:px-6 px-4 items-center w-full'>
+                        <div className='col-span-12 md:col-start-3 md:col-span-8'>
+                            <Paper elevation={3} sx={{ p: 3 }}>
+                                <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
+                                    <Typography variant="h4">Registration Details</Typography>
+                                    {!editMode ? (
+                                        <IconButton onClick={handleEdit} color="primary">
+                                            <EditIcon />
+                                        </IconButton>
                                     ) : (
                                         <Box>
-                                            <Typography variant="subtitle2" color="textSecondary">
-                                                {field.label}
-                                            </Typography>
-                                            <Typography>{registration[field.key]}</Typography>
+                                            <IconButton onClick={handleSubmit} color="primary">
+                                                <SaveIcon />
+                                            </IconButton>
+                                            <IconButton onClick={handleCancel} color="error">
+                                                <CancelIcon />
+                                            </IconButton>
                                         </Box>
                                     )}
-                                </Grid>
-                            ))}
-
-                            {/* New Committee and Country Preferences Section */}
-                            <Grid item xs={12}>
-                                <Typography variant="h6" sx={{ mb: 2 }}>Committee Selections</Typography>
+                                </Box>
                                 <Grid container spacing={3}>
-                                    {['PORTFOLIO I', 'PORTFOLIO II', 'PORTFOLIO III'].map((portfolio, index) => (
-                                        <Grid item xs={12} md={4} key={portfolio}>
-                                            <Paper elevation={2} sx={{ p: 2 }}>
-                                                <Typography variant="subtitle1" fontWeight="bold" sx={{ mb: 2 }}>
-                                                    {portfolio}
-                                                </Typography>
-
-                                                <Box sx={{ mb: 2 }}>
+                                    {fields.map((field) => (
+                                        <Grid item xs={12} sm={6} key={field.key}>
+                                            {editMode ? (
+                                                <TextField
+                                                    fullWidth
+                                                    label={field.label}
+                                                    value={editedData[field.key] || ''}
+                                                    onChange={handleChange(field.key)}
+                                                    disabled={field.readOnly}
+                                                />
+                                            ) : (
+                                                <Box>
                                                     <Typography variant="subtitle2" color="textSecondary">
-                                                        Committee
+                                                        {field.label}
                                                     </Typography>
-                                                    {editMode ? (
-                                                        <TextField
-                                                            fullWidth
-                                                            select
-                                                            value={editedData.committees?.[index] || ''}
-                                                            onChange={handleChange(`committees[${index}]`)}
-                                                            SelectProps={{ native: true }}
-                                                        >
-                                                            {data.registerCommittees.map(committee => (
-                                                                <option key={committee} value={committee}>
-                                                                    {committee}
-                                                                </option>
-                                                            ))}
-                                                        </TextField>
-                                                    ) : (
-                                                        <Typography>
-                                                            {registration.committees?.[index]}
-                                                        </Typography>
-                                                    )}
+                                                    <Typography>{registration[field.key]}</Typography>
                                                 </Box>
-
-                                                {[0, 1, 2].map((prefIndex) => (
-                                                    <Box key={prefIndex} sx={{ mb: 1 }}>
-                                                        <Typography variant="subtitle2" color="textSecondary">
-                                                            Country Preference {prefIndex + 1}
-                                                        </Typography>
-                                                        {editMode ? (
-                                                            <TextField
-                                                                fullWidth
-                                                                select
-                                                                value={editedData.countryPreferences?.[index]?.[prefIndex] || ''}
-                                                                onChange={handleChange(`countryPreferences[${index}][${prefIndex}]`)}
-                                                                SelectProps={{ native: true }}
-                                                            >
-                                                                {renderCommitteeOptions(editedData.committees?.[index])}
-                                                            </TextField>
-                                                        ) : (
-                                                            <Typography>
-                                                                {registration.countryPreferences?.[index]?.[prefIndex]}
-                                                            </Typography>
-                                                        )}
-                                                    </Box>
-                                                ))}
-                                            </Paper>
+                                            )}
                                         </Grid>
                                     ))}
+
+                                    {/* New Committee and Country Preferences Section */}
+                                    <Grid item xs={12}>
+                                        <Typography variant="h6" sx={{ mb: 2 }}>Committee Selections</Typography>
+                                        <Grid container spacing={3}>
+                                            {['PORTFOLIO I', 'PORTFOLIO II', 'PORTFOLIO III'].map((portfolio, index) => (
+                                                <Grid item xs={12} md={4} key={portfolio}>
+                                                    <Paper elevation={2} sx={{ p: 2 }}>
+                                                        <Typography variant="subtitle1" fontWeight="bold" sx={{ mb: 2 }}>
+                                                            {portfolio}
+                                                        </Typography>
+
+                                                        <Box sx={{ mb: 2 }}>
+                                                            <Typography variant="subtitle2" color="textSecondary">
+                                                                Committee
+                                                            </Typography>
+                                                            {editMode ? (
+                                                                <TextField
+                                                                    fullWidth
+                                                                    select
+                                                                    value={editedData.committees?.[index] || ''}
+                                                                    onChange={handleChange(`committees[${index}]`)}
+                                                                    SelectProps={{ native: true }}
+                                                                >
+                                                                    {data.registerCommittees.map(committee => (
+                                                                        <option key={committee} value={committee}>
+                                                                            {committee}
+                                                                        </option>
+                                                                    ))}
+                                                                </TextField>
+                                                            ) : (
+                                                                <Typography>
+                                                                    {registration.committees?.[index]}
+                                                                </Typography>
+                                                            )}
+                                                        </Box>
+
+                                                        {[0, 1, 2].map((prefIndex) => (
+                                                            <Box key={prefIndex} sx={{ mb: 1 }}>
+                                                                <Typography variant="subtitle2" color="textSecondary">
+                                                                    Country Preference {prefIndex + 1}
+                                                                </Typography>
+                                                                {editMode ? (
+                                                                    <TextField
+                                                                        fullWidth
+                                                                        select
+                                                                        value={editedData.countryPreferences?.[index]?.[prefIndex] || ''}
+                                                                        onChange={handleChange(`countryPreferences[${index}][${prefIndex}]`)}
+                                                                        SelectProps={{ native: true }}
+                                                                    >
+                                                                        {renderCommitteeOptions(editedData.committees?.[index])}
+                                                                    </TextField>
+                                                                ) : (
+                                                                    <Typography>
+                                                                        {registration.countryPreferences?.[index]?.[prefIndex]}
+                                                                    </Typography>
+                                                                )}
+                                                            </Box>
+                                                        ))}
+                                                        
+                                                    </Paper>
+                                                </Grid>
+                                            ))}
+                                        </Grid>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </Grid>
-                        {editMode && <div className='flex justify-center mt-4 mx-auto'><Button variant="contained" onClick={handleSubmit}>Submit</Button></div>}
-                    </Paper>
+                                {editMode && <div className='flex justify-center mt-4 mx-auto'><Button variant="contained" onClick={handleSubmit}>Submit</Button></div>}
+                                
+                                {/* Add the TicketSelection component */}
+                                <TicketSelection registration={registration} />
+                            </Paper>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

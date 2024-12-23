@@ -7,6 +7,7 @@ import { useSession } from 'next-auth/react';
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
+  const { data: session, status } = useSession();
 
   // Initialize the navbar state only on the client side to avoid hydration issues
   const [isMounted, setIsMounted] = useState(false);
