@@ -45,7 +45,7 @@ import { getSession } from "next-auth/react";
 export default async function handler(req, res) {
 console.log("hereeee")
     try {
-        console.log(req.data)
+        console.log(req.body)
       const user = await prisma.user.update({
         where: { email: session.user.email },
         update:{
