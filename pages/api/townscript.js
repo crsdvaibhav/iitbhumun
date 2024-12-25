@@ -46,14 +46,14 @@ export default async function handler(req, res) {
 console.log("hereeee")
     try {
         console.log(req.body.data)
-      const user = await prisma.user.update({
-        where: { email: req.body.userEmailId },
+      const registerUser = await prisma.registrations.update({
+        where: { emailId: req.body.userEmailId },
         update:{
             paymentDone:true
         }
       });
-      console.log(user)
-      res.status(200).json(user);
+      console.log(registerUser)
+      res.status(200).json(registerUser);
     } catch (error) {
       res.status(401).json({"message":"Unauthorised"})
     }
