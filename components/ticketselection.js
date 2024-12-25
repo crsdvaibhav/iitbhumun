@@ -4,23 +4,28 @@ import { useState } from 'react';
 const ticketTypes = [
   {
     id: 'bhu/iitbhu',
-    label: 'IIT BHU/BHU Student (852)'
+    label: 'IIT BHU/BHU Student (899)'
   },
   {
     id: 'non bhu without accomodation ',
-    label: 'Non BHU Student (No Accommodation) (1065)'
+    label: 'Non BHU Student (No Accommodation) (999)'
   },
   {
     id: 'accomodation included',
-    label: 'Non BHU Student With Accommodation (1905)'
-  }
+    label: 'Non BHU Student With Accommodation (1899)'
+  },
+  {
+    id: 'Mock',
+    label: 'Mock'
+  },
+  
 ];
 
 export default function TicketSelection({ registration }) {
   const [selectedTicketType, setSelectedTicketType] = useState('');
 
   return (
-    <Box sx={{ mt: 4, borderTop: 1, pt: 4, borderColor: 'divider' }}>
+    <Box border={1} borderRadius={4} sx={{ mt: 4,  p: 4, borderColor: 'divider' }}>
       <Typography variant="h5" gutterBottom>
         Purchase Ticket
       </Typography>
@@ -56,7 +61,7 @@ export default function TicketSelection({ registration }) {
           <Box sx={{ mt: 2 }}>
             <iframe
               id="ts-iframe"
-              src={`https://www.townscript.com/v2/widget/demo-342410/booking?td-${selectedTicketType}=1&name=${registration?.name}&emailid=${registration?.emailId}`}
+              src={`https://www.townscript.com/v2/widget/model-united-nations-412203/booking?td-${selectedTicketType}=1&name=${registration?.name}&emailid=${registration?.emailId}`}
               frameBorder="0"
               height="500"
               width="100%"

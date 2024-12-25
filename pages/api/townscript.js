@@ -43,11 +43,7 @@ import { getSession } from "next-auth/react";
 
 
 export default async function handler(req, res) {
-  const session = await getSession({ req });
-
-  if (!session) {
-    return res.status(401).json({ message: "Unauthorized" });
-  }
+console.log("hereeee")
     try {
         console.log(req.data)
       const user = await prisma.user.update({

@@ -158,6 +158,7 @@ export default function Dashboard() {
             <div className='md:mt-20 mt-16'>
                 <div className='max-w-7xl mx-auto w-full'>
                     <div className='grid grid-cols-12 gap-4 md:px-6 px-4 items-center w-full'>
+                   <div className='col-span-12'> <TicketSelection registration={registration} /></div>
                         <div className='col-span-12 md:col-start-3 md:col-span-8'>
                             <Paper elevation={3} sx={{ p: 3 }}>
                                 <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
@@ -257,7 +258,7 @@ export default function Dashboard() {
                                                                 )}
                                                             </Box>
                                                         ))}
-                                                        
+
                                                     </Paper>
                                                 </Grid>
                                             ))}
@@ -265,9 +266,6 @@ export default function Dashboard() {
                                     </Grid>
                                 </Grid>
                                 {editMode && <div className='flex justify-center mt-4 mx-auto'><Button variant="contained" onClick={handleSubmit}>Submit</Button></div>}
-                                
-                                {/* Add the TicketSelection component */}
-                                <TicketSelection registration={registration} />
                             </Paper>
                         </div>
                     </div>
