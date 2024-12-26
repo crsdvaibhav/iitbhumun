@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     try {
         
       const registerUser = await prisma.registration.update({
-        where: { emailId: req.body.userEmailId },
+        where: { emailId: req.body.data.userEmailId },
         data:{
             paymentDone:true
         }
