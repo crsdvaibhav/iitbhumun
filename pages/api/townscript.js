@@ -44,11 +44,12 @@ import { getSession } from "next-auth/react";
 
 export default async function handler(req, res) {
     try {
-      console.log(req.body.data)
+      console.log(req.body.data,'1')
+      console.log(req.body.userEmailId,'2')
       const data= await req.body.data
-      console.log(data.userEmailId,'qtt')
+      console.log(data['userEmailId'],'3')
       const registerUser = await prisma.registration.update({
-        where: { emailId: data.userEmailId },
+        where: { emailId: data['userEmailId'] },
         data:{
             paymentDone:true
         }
