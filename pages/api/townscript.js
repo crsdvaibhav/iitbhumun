@@ -43,18 +43,18 @@ import { getSession } from "next-auth/react";
 
 
 export default async function handler(req, res) {
-console.log("hereeee")
     try {
-        console.log(req.body.data)
+        
       const registerUser = await prisma.registrations.update({
         where: { emailId: req.body.userEmailId },
-        update:{
+        data:{
             paymentDone:true
         }
       });
       console.log(registerUser)
       res.status(200).json(registerUser);
     } catch (error) {
+      console.log(error)
       res.status(401).json({"message":"Unauthorised"})
     }
   }
