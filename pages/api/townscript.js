@@ -2,16 +2,19 @@ import prisma from "../../lib/prisma";
 
 export default async function handler(req, res) {
   try {
-    console.log(req.body); // Log the entire request body for debugging
+    console.log(req.body); // Log the full request body for debugging
 
-    // Ensure 'data' exists in the request body
-    const { data } = req.body;
-    if (!data || !data.userEmailId) {
-      return res.status(400).json({ message: "Invalid request body" });
+    // Parse the 'data' field if it's a JSON string
+    const parsedData = JSON.parse(req.body.data);
+    console.log(parsedData); // Log the parsed data to verify
+
+    // Ensure required fields exist
+    if (!parsedData.userEmailId) {
+      return res.status(400).json({ message: "Missing userEmailId in request data" });
     }
 
-    // Extract userEmailId from the data
-    const { userEmailId } = data;
+    // Extract the userEmailId
+    const { userEmailId } = parsedData;
 
     // Perform the update in Prisma
     const registerUser = await prisma.registration.update({
@@ -21,7 +24,7 @@ export default async function handler(req, res) {
       },
     });
 
-    console.log(registerUser);
+    console.log(registerUser); // Log the updated record
     res.status(200).json(registerUser);
   } catch (error) {
     console.error(error); // Log the error for debugging
