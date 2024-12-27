@@ -1,18 +1,14 @@
 import Countdown from 'react-countdown';
 
 export default function CountdownElement() {
-  const arr = ["D", "H", "M", "S"]
+  const arr = ["DAYS", "HOURS", "MINUTES", "SECOND"]
 
-  const Completionist = () => <span>You are good to go!</span>;
-
-  const renderer = ({ days, hours, minutes, seconds, completed }) => {
-    if (completed) {
-      // Render a complete state
-      return <Completionist />;
-    } else {
+  
+  const renderer = ({ days, hours, minutes, seconds}) => {
+    {
       // Render a countdown
       return (
-        <div className="grid grid-cols-4 gap-3 lg:gap-5 mt-12 max-w-[90%] lg:max-w-[80%] 2xl:max-w-[60%] mx-auto">
+        <div className="grid grid-cols-4 gap-3 lg:gap-5 mt-0 max-w-[90%] lg:max-w-[80%] 2xl:max-w-[60%] mx-auto">
           {[days, hours, minutes, seconds].map((count, index) => (
               <div
                 key={count}
@@ -29,7 +25,7 @@ export default function CountdownElement() {
 
   return (
     <div className="w-full">
-      <Countdown date="2023-02-3" renderer={renderer} />
+      <Countdown date="2023-09-29" renderer={renderer} />
     </div>
   );
 }

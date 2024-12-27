@@ -7,7 +7,7 @@ export default function Card(props) {
       <p className="sm:mt-[0.625rem] font-custom font-normal text-xs sm:text-[1.125rem] text-[#189BA5]">
         {props.designation}
       </p>
-      <p className="my-4 px-2 sm:px-0 sm:mt-[3.125rem] text-justify font-light font-custom text-xs sm:text-lg overflow-auto sm:overflow-hidden sm:leading-6">
+      <p className="my-4 pb-2 pt-2 sm:px-0 sm:mt-[2.125rem] text-justify font-semibold font-custom text-xs sm:text-lg overflow-auto sm:overflow-hidden sm:leading-6">
         {props.review}
       </p>
     </div>

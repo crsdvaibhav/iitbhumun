@@ -4,11 +4,21 @@ import data from '../data/data.json';
 import Image from 'next/image';
 import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
+<<<<<<< HEAD
 
-const partners = () => {
+=======
+import NavBar2 from '../components/navbarforlogin';
+import { getAuth } from 'firebase/auth';
+import { useState } from 'react';
+import Doubtbox from '../components/doubtbox';
+>>>>>>> 586c920c8f90ff2d95a824774b4d6f67a4e5a39e
+
+const Partners = () => {
+    
+
     return (
         <div>
-            <NavBar navbar={true} />
+            {<NavBar navbar={true}/>}
             <div className="mt-12 sm:mt-[0rem] pt-48 m-auto justify-center">
                 <p className="font-bold font-heading text-center text-[#1A1E21] text-xl sm:text-[3.5rem]">
                     Our Collaborators
@@ -79,11 +89,11 @@ const partners = () => {
 
             </div>
 
-
+<Doubtbox/>
             <Footer />
 
         </div>
     )
 }
 
-export default partners
+export default Partners

@@ -78,9 +78,12 @@ export default function Footer() {
                 Participation
               </div>
               <div>
-                {!closeReg ? (<CloseReg />) : <button onClick={handleChange} className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
-                  Register
-                </button>}
+                 <button  className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                 <Link href={'/registerpage'}>    Register</Link> 
+                </button>
+                <button  className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] mx-6 font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                 <Link href={'/loginpage'}>    Login</Link> 
+                </button>
 
               </div>
             </div>
@@ -137,7 +140,19 @@ export default function Footer() {
                     </button>
                   </Link>
 
-                </div>
+                </div> <div className="ml-2 ">
+                    <Link href="https://discord.com/@iitbhumun">
+                      <button>
+                        <Image
+                          src="/images/discord.svg"
+                          width={35.5}
+                          height={27}
+                          
+                          alt="icons"
+                        />
+                      </button>
+                    </Link>
+                  </div>
               </div>
             </div>
           </div>
@@ -156,7 +171,7 @@ export default function Footer() {
                 <Link href="/home">
                   <button className="p-1 hover:text-[#189BA5]">Home</button>
                 </Link>
-                <Link href="">
+                <Link href="/committees">
                   <button className="p-1 hover:text-[#189BA5]" >Committees</button>
                 </Link>
                 <Link href="/secretariat">
@@ -201,13 +216,14 @@ export default function Footer() {
           <div className="ml-4">
             <div className="flex flex-col">
               <p className="font-bold">Participation</p>
-              {!closeReg ? (
-                <CloseReg />
-              ) :
-                <button onClick={handleChange} className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
-                  Register
+              <button  className="bg-[#189BA5] hover:shadow-xl text-[1.125rem] mx-6 font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                 <Link href={'/loginpage'}>    Login</Link> 
                 </button>
-              }
+                <button  className="bg-[#189BA5] text-[1.125rem] font-custom font-medium mt-[1.25rem] text-black rounded-lg px-10 py-3">
+                 <Link href={'/registerpage'}> Register</Link>
+                </button>
+                
+              
             </div>
             <div className="mt-[44px]">
               <p className="font-bold">Follow us</p>
@@ -254,6 +270,17 @@ export default function Footer() {
                       <button>
                         <Image
                           src="/images/medium.svg"
+                          width={38.5}
+                          height={22}
+                          alt="icons"
+                        />
+                      </button>
+                    </Link></div>
+                    <div className="ml-2">
+                    <Link href="https://discord.com/@iitbhumun">
+                      <button>
+                        <Image
+                          src="/images/discord.svg"
                           width={38.5}
                           height={22}
                           alt="icons"
