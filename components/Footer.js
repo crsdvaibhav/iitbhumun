@@ -140,7 +140,19 @@ export default function Footer() {
                     </button>
                   </Link>
 
-                </div>
+                </div> <div className="ml-2 ">
+                    <Link href="https://discord.com/@iitbhumun">
+                      <button>
+                        <Image
+                          src="/images/discord.svg"
+                          width={35.5}
+                          height={27}
+                          
+                          alt="icons"
+                        />
+                      </button>
+                    </Link>
+                  </div>
               </div>
             </div>
           </div>
@@ -159,7 +171,7 @@ export default function Footer() {
                 <Link href="/home">
                   <button className="p-1 hover:text-[#189BA5]">Home</button>
                 </Link>
-                <Link href="">
+                <Link href="/committees">
                   <button className="p-1 hover:text-[#189BA5]" >Committees</button>
                 </Link>
                 <Link href="/secretariat">
@@ -258,6 +270,17 @@ export default function Footer() {
                       <button>
                         <Image
                           src="/images/medium.svg"
+                          width={38.5}
+                          height={22}
+                          alt="icons"
+                        />
+                      </button>
+                    </Link></div>
+                    <div className="ml-2">
+                    <Link href="https://discord.com/@iitbhumun">
+                      <button>
+                        <Image
+                          src="/images/discord.svg"
                           width={38.5}
                           height={22}
                           alt="icons"

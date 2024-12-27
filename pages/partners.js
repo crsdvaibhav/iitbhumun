@@ -4,7 +4,14 @@ import data from '../data/data.json';
 import Image from 'next/image';
 import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
+<<<<<<< HEAD
 
+=======
+import NavBar2 from '../components/navbarforlogin';
+import { getAuth } from 'firebase/auth';
+import { useState } from 'react';
+import Doubtbox from '../components/doubtbox';
+>>>>>>> 586c920c8f90ff2d95a824774b4d6f67a4e5a39e
 
 const Partners = () => {
     
@@ -82,7 +89,7 @@ const Partners = () => {
 
             </div>
 
-
+<Doubtbox/>
             <Footer />
 
         </div>

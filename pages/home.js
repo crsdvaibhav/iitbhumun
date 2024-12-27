@@ -3,6 +3,7 @@ import NavBar from '../components/Navbar';
 import Main from '../components/Main';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
+<<<<<<< HEAD
 import { useSession } from 'next-auth/react';
 
 export default function Home() {
@@ -20,6 +21,37 @@ export default function Home() {
     if (window.scrollY >= 50) {
       setNavbar(true);
     } else {
+=======
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import NavBar2 from '../components/navbarforlogin';
+import Doubtbox from '../components/doubtbox';
+import Footer2 from '../components/footerforlogin';
+import Navbar from '@/components/common/navbar';
+import Testimonials from '@/components/home/testimonials';
+
+export default function Home() {
+  const auth = getAuth();
+  const [changebar, setbar] = useState(true);
+  function abc() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setbar(false);
+      } else {
+        setbar(true);
+      }
+    });
+  }
+  abc();
+
+  const [navbar, setNavbar] = useState(false);
+  const [ab, setab] = useState('');
+  const changeNavbar = () => {
+    if (window.scrollY >= 50) {
+      setab('white');
+      setNavbar(true);
+    } else {
+      setab('red');
+>>>>>>> 586c920c8f90ff2d95a824774b4d6f67a4e5a39e
       setNavbar(false);
     }
   };
@@ -38,11 +70,23 @@ export default function Home() {
   }
 
   return (
+<<<<<<< HEAD
     <div className="bg-[#F5F5F5]">
       <NavBar navbar={navbar} />
+=======
+    <div className="bg-[#FFFFFF] font-semibold">
+      <Navbar />
+      {/* {changebar ? (
+        <NavBar navbar={true} backgroundColor={ab} qt="" />
+      ) : (
+        <NavBar2 navbar={true} backgroundColor="white" />
+      )} */}
+>>>>>>> 586c920c8f90ff2d95a824774b4d6f67a4e5a39e
       <Hero />
       <Main />
-      <Footer />
+      <Testimonials />
+      <Doubtbox />
+      {changebar ? <Footer /> : <Footer2 />}
     </div>
   );
 }
